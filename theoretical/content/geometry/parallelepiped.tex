@@ -1,0 +1,39 @@
+\subsection{Parallelepiped}
+
+Let it be defined by three linear independent vectors
+
+\[
+  \vec{u}, \vec{v}, \vec{w}
+\]
+
+\subsubsection{Area delimited by two vectors}
+
+\[
+  A = |\vec{u} \times \vec{v}|
+\]
+
+\subsubsection{Volume}
+
+\[
+    V = |(\vec{u} \times \vec{v}) \cdot \vec{w}|,
+\]
+
+\[
+    (\vec{u} \times \vec{v}) \cdot \vec{w}
+    = \det \begin{bmatrix}
+        u_x & u_y & u_z \\
+        v_x & v_y & v_z \\
+        w_x & w_y & w_z \\
+    \end{bmatrix}
+\]
+
+or if you know the sides $a$,$b$, $c$, and the angles $\alpha$, $\beta$, $\gamma$: 
+
+\[
+    V = abc\sqrt{1 + 2\cos \alpha \cos \beta \cos \gamma - \cos^2 \alpha - \cos^2 \beta - \cos^2 \gamma}
+\]
+
+
+
+
+

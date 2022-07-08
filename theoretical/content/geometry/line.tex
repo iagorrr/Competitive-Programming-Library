@@ -1,0 +1,58 @@
+\subsection{Line}
+
+\subsubsection{General equation}
+
+\begin{equation}
+    ax + by + c = 0
+\end{equation}
+
+Note that a same line can have multiple representations (just multiply the equation by any real number), so to make each line have a single equation divide everyhting by $a$, or $b$ if $a$ is zero.
+
+\subsubsection{General equation from two points}
+
+Let $P$ and $Q$ be the points that define the line.
+
+\[
+  \begin{array}{l}
+  a = P_y - Q_y \\
+  b = Q_x-P_x  \\
+  c = P \times Q = P_x Q_y - P_y Q_x \\
+  \end{array}
+\]
+
+
+\subsubsection{Line inclination from two points}
+
+Let $P$ and $Q$ be two points that belongs to the line, such that $P_x < Q_x$ the inclination $m$ or angular coefficient is given by:
+
+\begin{equation}
+    m = \frac{Q_y - P_y}{Q_x - P_x}
+\end{equation}
+
+\subsubsection{Check if a point belongs to the line}
+
+Let $r$ be a line such that $ax + by + c = 0$ and $P$ a point. $P \in r$ if and only if :
+
+\[
+  a P_x + b P_y + c = 0
+\]
+
+\subsubsection{Distance from a point to a line}
+
+The distance from a point $P$ and a line $r$ is defined as the shortest distance possible between every point that belongs to $r$ and $P$. Such distance will be the distance from $P$ and the intersection between $r$ and the orthogonal projection from $P$ to $r$, and can be found by:
+
+
+\[
+    \frac{|a P_x + b P_y +c|}{\sqrt{a^2+b^2}}
+\]
+
+The coordinates of the point $Q$ are given by:
+
+\[
+  \begin{array}{c}
+    Q_x = \frac{b (b P_x - a P_y)-ac}{a^2+b^2} \\
+    Q_y = \frac{a(-bP_x+aP_y)-bc}{a^2+b^2} \\
+  \end{array}
+\]
+
+

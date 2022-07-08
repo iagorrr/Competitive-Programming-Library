@@ -1,0 +1,7 @@
+\section{Trees}
+
+\subsection{Heavy-Light Decomposition}
+Heavy-Light Decomposition (HLD) is a technique to decompose a tree into a set of disjoint paths. This technique is particularly useful to deal with problems which require us to do some path-queries in a tree which seemingly complicated but easy enough to be solved for a line-graph. The idea is to decompose the tree into several paths (line-graph) of disjoint vertices. Then, each path-query in the original tree might be able to be answered by queries in one or more of those paths.
+
+An edge (a, b) is heavy if and only if size(b)
+size(a)/2; otherwise, it is light
