@@ -1,0 +1,50 @@
+// iagorrr ;)
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string solve(string A, string B){
+    map <char, int> mapA;
+    map <char, int> mapB;
+
+    for(int i = 0; i < A.size(); i++) mapA[A[i]]++;
+    for(int i = 0; i < B.size(); i++) mapB[B[i]]++;
+
+    vector <pair<int, char>> mapAsort;
+    for(auto info : mapA) mapAsort.push_back({info.second, info.first});
+    vector <pair<int, char>> mapBsort;
+    for(auto info : mapB) mapBsort.push_back({info.second, info.first});
+
+    sort(mapAsort.begin(), mapAsort.end());
+    // for(int i = 0; i < mapAsort.size(); i++) cout << mapAsort[i].first << " " << mapAsort[i].second << endl;
+    sort(mapBsort.begin(), mapBsort.end());
+    // for(int i = 0; i < mapBsort.size(); i++) cout << mapBsort[i].first << " " << mapBsort[i].second << endl;
+
+    map <char, char> translate;
+    for(int i = 0; i < mapAsort.size(); i++) translate[mapBsort[i].second] = mapAsort[i].second;
+
+    string ans;
+    for(int i = 0; i < B.size(); i++) ans.push_back(translate[B[i]]);
+
+    
+    return ans;
+}
+int main(){
+    int T;
+    cin >> T;
+    int quebra = 0;
+    while(T--){
+        string A;
+        string B;
+        char temp;
+        getc(stdin);
+        cin >> A;
+        cin >> B;
+
+        if(quebra) cout << endl;
+        cout << solve(A, B) << endl;
+        quebra = 1;
+    }   
+
+    return 0;
+}
