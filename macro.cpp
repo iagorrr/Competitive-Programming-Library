@@ -46,7 +46,7 @@ ulli hibit(ulli x){
 // Function to verify if a given string is a palindrome or not.
 bool isPalindrome(string s){
     int l = 0;
-    int r = s.size();
+    int r = s.size() - 1;
     while(l < r){
         if(s[l] != s[r]) return false;
         l++;
