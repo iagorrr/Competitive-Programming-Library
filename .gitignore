@@ -1,6 +1,6 @@
 # vscode stuff.
 .vscode
-
+launch.json
 # inputs.
 *.in
 *.txt
