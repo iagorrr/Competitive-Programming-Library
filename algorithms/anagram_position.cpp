@@ -3,19 +3,22 @@
 
 */
 #include <bits/stdc++.h>
-
+#define MAX 250
 using namespace std;
 using ll = long long;
+using ull = unsigned long long;
 
-ll slowFat(ll n){
-    ll ans = 1;
-    for(int i = 1; i <= n; i++){
-        ans *= i;
-    }
-    return ans;
+
+vector <ull> fatAns(MAX, 0); 
+ull fastFat(int n){
+    if(fatAns[n]) return fatAns[n];
+    fatAns[n] = n * fastFat(n-1);
+    return fatAns[n];
+
 }
-ll totalPermutations(string s){
-    ll ans = 1;
+
+ull totalPermutations(string s){
+    ull ans = 1;
     map <char, int> h; // Histogram to remove the repetitions.
     for(int i = 0; i < s.size(); ++i){
         ans *= (i+1);
@@ -23,22 +26,22 @@ ll totalPermutations(string s){
     }
 
     for(auto i : h){
-        ans /= slowFat(i.second);        
+        ans /= fastFat(i.second);        
     }
 
     return ans;
 }
 
 // Function that returns the position of an anagram s between all permutations.
-ll anagramPosition(string s){
+ull anagramPosition(string s){
     // Find the sorted anagram is the first.
     string ss = s;
     sort(ss.begin(), ss.end());
 
-    ll ans = 0;
-    ll p = 0;
+    ull ans = 0;
+    ull p = 0;
     while(!ss.empty()){
-        int i = 0;
+        unsigned int i = 0;
         while(i < ss.size()){
             if(ss[i] == s[p]){
                 // cout << ss[i] << " YES." << endl;
@@ -62,9 +65,9 @@ ll anagramPosition(string s){
 void showEveryAnagram(string s){
     sort(s.begin(), s.end());
     map<string,bool> check;
-    int i = 0;
+    ull i = 0;
     do{
-        if(!check[s]) cout << i << " " <<  s << endl , i++;
+        if(!check[s]) cout << i << " " <<  s << endl , ++i;
 
     }
     while(next_permutation(s.begin(), s.end()));
