@@ -1,5 +1,10 @@
 # vscode stuff.
 .vscode
+
+# upsolving folder
+upsolving/
+./upsolving
+
 launch.json
 # inputs.
 *.in
