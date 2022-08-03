@@ -154,3 +154,5 @@ lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C) {
 pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B) {
   return {(A.first + B.first) / 2, (A.second + B.second) / 2};
 }
+
+// Accepted.
