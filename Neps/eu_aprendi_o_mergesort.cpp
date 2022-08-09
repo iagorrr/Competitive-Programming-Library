@@ -19,7 +19,7 @@ void merge(ll left, ll right, vector <ll> &values){
     ll p2 = middle+1;
 
     while(p1 <= middle && p2 <= right){
-        if(values[p1] <= values[p2]){
+        if(values[p1] >= values[p2]){
             aux.push_back(values[p1]);
             p1++;
         }
@@ -74,6 +74,11 @@ int main(){
 
     mergeSort(0, n-1, values);
 
-    for(ll i = 0; i < n; ++i) cout << values[i] << " ";
+    cout << values[0];
+    for(ll i = 1; i < n; ++i) cout << " " << values[i];
     cout << endl;
+
+    return 0;
 }
+
+// Accepted.
