@@ -51,7 +51,6 @@ void merge(ll left, ll right, vector <ll> &values){
 void mergeSort(ll left, ll right, vector <ll> &values){
     ll middle;
 
-
     if(left < right){// size != 1
         middle = (left+right)/2;
         

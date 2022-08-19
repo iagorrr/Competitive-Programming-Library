@@ -34,7 +34,10 @@ pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B);
 void outputFormated(string S, int lineSize);
 const string caeserAlphabet{" ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 /*====================================================================================================*/
-int main(void) { sws return 0; }
+int main(void) { 
+    sws 
+    return 0; 
+}
 /*====================================================================================================*/
 
 // Function to return the ~X.

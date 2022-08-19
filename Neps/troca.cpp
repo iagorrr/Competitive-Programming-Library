@@ -42,15 +42,16 @@ vector <ll> ans(10, 0);
 int main(){
     int n, q;
     cin >> n >> q;
+    vector <int> up(100000+5);
+    vector <int> down(100000+5);
+    vector <ll> turn(100000+5, 0);
+    vector<ll> ds(100000+5, 0);
 
-    vector <int> up(n+2);
     for(int i = 1; i < n+1; ++i) cin >> up[i];
 
-    vector <int> down(n+2);
     for(int i = 1; i < n+1; ++i) cin >> down[i];
 
     // delta sum.
-    vector <ll> turn(n+2, 0);
     for(int i = 0; i < q; ++i){
         int l, r;
         cin >> l >> r;
@@ -60,19 +61,17 @@ int main(){
     }
 
     // prefix sum and getting only the positive.
-    for(ll i = 1; i < n+1; ++i) turn[i] += turn[i-1];
-    for(ll i = 1; i < n+1; ++i) turn[i] = max(turn[i
-    ], -turn[i]);
+    for(ll i = 1; i < n+2; ++i) ds[i] = ds[i-1]+turn[i];
 
     // done !
-    cout << (turn[0]&1 ? down[1] : up[1]);
+    cout << (ds[1]%2==0 ? up[1] : down[1]);
     for(ll i = 2; i < n+1; ++i){
-        if(turn[i]&1) cout << " " << down[i];
-        else cout << " " << up[i];
+        if(ds[i]%2==0) cout << " " << up[i];
+        else cout << " " << down[i];
     }
     cout << endl;
 
     return 0;
 }
 
-// wa :(
+// Accepted :(
