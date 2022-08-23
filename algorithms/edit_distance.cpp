@@ -36,7 +36,7 @@ ll edit_distance(const string  &s1, const string &s2){
         for(ll j = 1; j <= n; ++j){
             ll insertion = editdp[i][j-1] + c_i;
             ll deletion = editdp[i-1][j] + c_d;
-            ll change = editdp[i-1][j-1] + c_s*(s1[i-1] == s2[j-1 ? 0 : 1]);
+            ll change = editdp[i-1][j-1] + c_s*(s1[i-1] == s2[j-1] ? 0 : 1);
 
             editdp[i][j] = min({insertion, deletion, change});
         }

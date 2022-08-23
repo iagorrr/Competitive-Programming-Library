@@ -1,4 +1,4 @@
-/*
+    /*
  * Longest increasing Sequence, dynamic programming and binary search.
 */
 #include <bits/stdc++.h>
@@ -37,8 +37,9 @@ int main(){
     srand(time(NULL));
     vll a(n);
     for(ll i = 0; i < n; ++i){
-        a[i] = rand()%100;
-        cout << a[i] << " ";
+        // a[i] = rand()%100;
+        // cout << a[i] << " ";
+        cin >> a[i];
     }
     cout << endl;
 
