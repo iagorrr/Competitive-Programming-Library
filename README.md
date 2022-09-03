@@ -12,4 +12,5 @@
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
 - [Neps Academy](https://neps.academy/br/courses)
+- [USACO Guide](https://usaco.guide/dashboard/)
 </details>
