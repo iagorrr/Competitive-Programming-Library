@@ -29,6 +29,7 @@ lli sumdigits(lli x);
 lli productScalar(pair<int, int> B, pair<int, int> A);
 lli normSquareVector(pair<int, int>);
 lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C);
+lli manhattanDistance(lli x1, lli y1, lli x2, lli y2);
 pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B);
 
 void outputFormated(string S, int lineSize);
@@ -117,4 +118,20 @@ lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C) {
 // Returns the average point of two given points.
 pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B) {
   return {(A.first + B.first) / 2, (A.second + B.second) / 2};
+}
+
+lli manhattanDistance(lli x1, lli y1, lli x2, lli y2){
+
+
+    if((x1 < 0 and x2 > 0) or (x1 > 0 and x2 < 0)){
+        xdist += max(x1, -x1) + max(x2, -x2);
+    }
+    else xdist += max(x1 - x2, x2 -x1);
+
+    if((y1 < 0 and y2 > 0) or (y1 > 0 and y2 < 0)){
+        ydist += max(y1, -y1) + max(y2, -y2);
+    }
+    else xdist += max(y1 - y2, y2 - y1);
+
+    return xdist + ydist;
 }
