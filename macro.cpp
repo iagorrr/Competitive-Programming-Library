@@ -2,16 +2,16 @@
 using namespace std;
 
 typedef vector<long long> vll;
-typedef long long int lli;
-typedef unsigned long long int ulli;
+typedef long long int ll;
+typedef unsigned long long int ull;
 
-#define LOOP(I, S, E) for (lli I = S; I < E; I++)
+#define LOOP(I, S, E) for (ll I = S; I < E; I++)
 #define LOOPIN(i, E, V)                                                        \
-  for (lli i = 0; i < E; i++) {                                                \
+  for (ll i = 0; i < E; i++) {                                                \
     cin >> V[i];                                                               \
   }
 #define LOOPOUT(i, E, V)                                                       \
-  for (lli i = 0; i < E; i++) {                                                \
+  for (ll i = 0; i < E; i++) {                                                \
     cout << V[i] << endl;                                                      \
   }
 #define SWAP(A, B) A ^= B ^= A ^= B
@@ -22,14 +22,14 @@ typedef unsigned long long int ulli;
   std::cin.tie(0);                                                             \
   std::cout.tie(0);
 
-ulli nop(ulli number);
-ulli hibit(ulli x);
+ull nop(ull number);
+ull hibit(ull x);
 bool isPalindrome(string s);
-lli sumdigits(lli x);
-lli productScalar(pair<int, int> B, pair<int, int> A);
-lli normSquareVector(pair<int, int>);
-lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C);
-lli manhattanDistance(lli x1, lli y1, lli x2, lli y2);
+ll sumdigits(ll x);
+ll productScalar(pair<int, int> B, pair<int, int> A);
+ll normSquareVector(pair<int, int>);
+ll colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C);
+ll manhattanDistance(ll x1, ll y1, ll x2, ll y2);
 pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B);
 
 void outputFormated(string S, int lineSize);
@@ -42,10 +42,10 @@ int main(void) {
 /*====================================================================================================*/
 
 // Function to return the ~X.
-ulli nop(ulli number) { return (~number) ^ (ULLONG_MAX << (hibit(number))); }
+ull nop(ull number) { return (~number) ^ (ULLONG_MAX << (hibit(number))); }
 
 // Function to return the highest bit position of a number.
-ulli hibit(ulli x) { return (lli)log2(x) + 1; }
+ull hibit(ull x) { return (ll)log2(x) + 1; }
 
 // Function to verify if a given string is a palindrome or not.
 bool isPalindrome(string s) {
@@ -62,9 +62,9 @@ bool isPalindrome(string s) {
 }
 
 // Function to return the sum of digits of a number.
-lli sumdigits(lli x) {
-  lli rest;
-  lli result = 0;
+ll sumdigits(ll x) {
+  ll rest;
+  ll result = 0;
 
   do {
     rest = x % 10;
@@ -76,17 +76,17 @@ lli sumdigits(lli x) {
 }
 
 // to find the scalar product between two vectors.
-lli productScalar(pair<int, int> A, pair<int, int> B) {
+ll productScalar(pair<int, int> A, pair<int, int> B) {
   return A.first * B.first + A.second * B.second;
 }
 
 // to find the square of the norm of a vector.
-lli normSquareVector(pair<int, int> A) {
+ll normSquareVector(pair<int, int> A) {
   return A.first * A.first + A.second * A.second;
 }
 void outputFormated(string S, int lineSize) {
   istringstream outputString(S);
-  size_t lineLen = 0; // Better than an int or lli.
+  size_t lineLen = 0; // Better than an int or ll.
   string currentWord;
 
   while (outputString >> currentWord) {
@@ -109,7 +109,7 @@ void outputFormated(string S, int lineSize) {
 }
 
 // returns the value of the determinant given three points.
-lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C) {
+ll colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C) {
   return (-1) * C.first * B.second + (-1) * C.second * A.first +
          (-1) * B.first * A.second + A.first * B.second + A.second * C.first +
          B.first * C.second;
@@ -118,20 +118,4 @@ lli colinearThreePoints(pair<int, int> A, pair<int, int> B, pair<int, int> C) {
 // Returns the average point of two given points.
 pair<int, int> averagePoint(pair<int, int> A, pair<int, int> B) {
   return {(A.first + B.first) / 2, (A.second + B.second) / 2};
-}
-
-lli manhattanDistance(lli x1, lli y1, lli x2, lli y2){
-
-
-    if((x1 < 0 and x2 > 0) or (x1 > 0 and x2 < 0)){
-        xdist += max(x1, -x1) + max(x2, -x2);
-    }
-    else xdist += max(x1 - x2, x2 -x1);
-
-    if((y1 < 0 and y2 > 0) or (y1 > 0 and y2 < 0)){
-        ydist += max(y1, -y1) + max(y2, -y2);
-    }
-    else xdist += max(y1 - y2, y2 - y1);
-
-    return xdist + ydist;
 }
