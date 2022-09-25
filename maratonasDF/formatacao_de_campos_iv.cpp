@@ -23,40 +23,30 @@ typedef unsigned long long int ull;
   std::cin.tie(0);                                                             \
   std::cout.tie(0);
 
-string tent = "AEOSRINDMTUCLPVGHQBFZJXKWY";
-string solve(string s, ll a){
-    map<char,bool> e;
-    ll te = 0;
-    for(auto c : s){ 
-      if(!e[c]) te++;
-      e[c] = true;
+
+string solve(string cpf){
+    if(cpf.size() != 11+3) return "Nao";
+
+    if(cpf[3] != '.' || cpf [7] != '.' || cpf[11] != '-') return "Nao";
+
+    for(int i = 0; i < cpf.size(); ++i){
+        if(i != 3 and i != 7 and i != 11 and (cpf[i] > '9' || cpf[i] < '0')) return "Nao";
+
     }
 
-    ll ans = 0;
-    for(auto c : tent){
-        if(e[c]) ans++;
-        else a--;
-        if(a == 0) break;
-    }
+    return "Sim";
 
-    return ans >= te ? "Sim" : "Nao";
 }
 
 int main(void) { 
     sws 
-    ll t;
-    cin >> t;
-
-    while(t--){
-        string s;
-        ll a;
-        cin >> s >> a;
-
-        cout << solve(s, a) << endl;
-    }
-
+    string cpf;
+    cin >> cpf;
+    cout << solve(cpf) << endl;
+    
     return 0; 
 }
 
 // Accepted.
+
 

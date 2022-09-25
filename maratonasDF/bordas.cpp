@@ -24,39 +24,45 @@ typedef unsigned long long int ull;
   std::cout.tie(0);
 
 string tent = "AEOSRINDMTUCLPVGHQBFZJXKWY";
-string solve(string s, ll a){
-    map<char,bool> e;
-    ll te = 0;
-    for(auto c : s){ 
-      if(!e[c]) te++;
-      e[c] = true;
-    }
+string solve(string a, string b){
+    ll match = 0;
+    ll m = a.size();
+    ll n = b.size();
+    bool prefixo, sufixo, borda, substring;
 
-    ll ans = 0;
-    for(auto c : tent){
-        if(e[c]) ans++;
-        else a--;
-        if(a == 0) break;
+    prefixo = sufixo = borda = substring = false;
+    // prefixo.
+    for(ll i = 0; i < n; ++i){
+        if(a[i] == b[i]) match++;
     }
+    if(match == n) prefixo = true;;
 
-    return ans >= te ? "Sim" : "Nao";
+    // sufixo;
+    ll pa = m-1;
+    ll pb = n-1;
+    match = 0;
+    while(pb >= 0){
+      if(a[pa] == b[pb]) match++;
+      pa--;
+      pb--;
+    }
+    if(match == n) sufixo = true;
+
+    if(sufixo and prefixo) return "borda";
+    else if (sufixo) return "sufixo";
+    else if (prefixo) return "prefixo";
+    else return "substring";
 }
 
 int main(void) { 
     sws 
-    ll t;
-    cin >> t;
-
-    while(t--){
-        string s;
-        ll a;
-        cin >> s >> a;
-
-        cout << solve(s, a) << endl;
-    }
-
+    string a, b;
+    cin >> a >> b;
+    cout << solve(a, b) << endl;
     return 0; 
 }
 
 // Accepted.
+
+
 
