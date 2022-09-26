@@ -4,6 +4,7 @@ using namespace std;
 
 char solve(vector<int> bolas){
 
+    sort(bolas.begin(), bolas.end());
     do{
         bool check = true;
         for(int i = 1; i < 8; ++i){
@@ -24,4 +25,4 @@ int main(){
     return 0;
 }
 
-// 60/100 WA.
+// 100/100 Aceito.
