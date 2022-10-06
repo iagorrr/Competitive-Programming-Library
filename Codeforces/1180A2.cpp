@@ -5,22 +5,20 @@ using namespace std;
 using ll = long long;
 const int maxn = 1000;
 
-ll dp[maxn];
-inline ll solve(int x){
+inline ll solve(const int x){
+    ll ans = 1;
 
-    // already calculed.
-    if(dp[x] != -1) return dp[x];
-
-    dp[x] = solve(x-1) + (x-1) * 4;
-    return dp[x];
+    for(int i = 2; i <= x; ++i) ans = ans + (i-1)*4;
+    
+    return ans;
 }
+
 int main(){
     fastio;
     ll n;
     cin >> n;
 
-    memset(dp, -1, sizeof(dp));
-    dp[1] = 1;
+    
     cout << solve(n) << '\n';
     return 0;
 }
