@@ -44,3 +44,7 @@ test.cpp
 *.exe
 *.out
 *.app
+
+# tests
+test.*
+# tests/
