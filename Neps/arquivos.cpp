@@ -1,28 +1,39 @@
 #include <bits/stdc++.h>
-using ll = long long;
 using namespace std;
+using ll = long long;
 
-int main(){
-    ll n, b;
-    cin >> n >> b;
-
-    vector <ll> a(n);
-    for(ll i = 0; i < n; ++i) cin >> a[i];
-
+ll solve(vector <ll> a, ll b){
     sort(a.begin(), a.end());
 
     ll ans = 0;
-    ll sum = 0;
-    ll c = 0;
-    for(ll i = 0; i < n; ++i){
-        if(a[i] >= b){
+    while(!a.empty() && a.back() == b){a.pop_back(); ans++;}
+    // Always sum the highest value with the lowest one.
+    ll l = 0;
+    ll r = a.size()-1;
+    while(l < r){
+        if(a[l] + a[r] <= b){
+            l++;
+            r--;
             ans++;
         }
-        else if (c < 2){
-            
+        else{
+            r--;
+            ans++;
         }
     }
-    
-    cout << ans << endl;
-    return 0;   
+    if(l == r) ans++;
+    return ans;
 }
+int main(){
+    ll n,b;
+    cin >> n >> b;
+    
+    vector<ll> a(n);
+    for(auto &x : a) cin >> x;
+
+    cout << solve(a, b) << endl;
+
+    return 0;
+}
+
+// AC
