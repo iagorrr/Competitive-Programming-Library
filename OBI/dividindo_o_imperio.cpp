@@ -48,3 +48,5 @@ int main(){
     cout << ans << '\n';
     return 0;
 }
+
+// Aceito 100/100.
