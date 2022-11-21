@@ -37,3 +37,5 @@ int main(){
         cout << solve(a, b) << '\n';
     }
 }
+
+// AC
