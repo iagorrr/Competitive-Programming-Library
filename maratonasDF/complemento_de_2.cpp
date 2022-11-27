@@ -42,3 +42,4 @@ int main(){
 	cout << solve(s, B , D) << '\n';
 	return 0;
 }
+// Ac.
