@@ -1,3 +1,4 @@
+# iagorrr ;)
 N = int(input())
 
 for i in range(0, N):
@@ -23,3 +24,4 @@ for i in range(0, N):
     else:
         print(2)
     
+# Accepted.

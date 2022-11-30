@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
+ 
 typedef vector<long long> vll;
 typedef long long int ll;
 typedef unsigned long long int ull;
