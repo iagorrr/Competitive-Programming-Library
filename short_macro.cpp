@@ -5,7 +5,7 @@ using namespace std;
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
-
+//•¨•.¸¸♪main•¨•.¸¸♪(　-ω-)ノ　(　・ω・)
 int main(){ 
     fastio
     return 0;
