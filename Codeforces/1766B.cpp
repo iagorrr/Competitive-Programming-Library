@@ -5,26 +5,27 @@ using namespace std;
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
+struct Node {
+    int x = -1;
+};
 //•¨•.¸¸♪main•¨•.¸¸♪(　-ω-)ノ　(　・ω・)
 string solve(string s, ll n){   
     if(n <= 3) return "NO";
 
-    map<string, vector<ll>> posis;
+    map<string, Node> posis;
     bool ans = false;
     for(int i = 0; i < (int)s.size()-1; ++i){
         string a  {s[i],s[i+1]};
-        for(auto pi : posis[a]){
-            if(pi != i-1){ 
-                ans = true;
-            }
-        }
-        posis[a].push_back(i); 
-    }
+        if(posis[a].x != -1)
+            if(posis[a].x != i-1) return "YES";
+        posis[a].x = posis[a].x == -1 ? i : min((int)i,(int) posis[a].x);
+     }
+         
     
     return ans ? "YES" : "NO";
 }
 int main(){ 
-    // fastio
+    fastio
     ll t;
     cin >> t;
 
