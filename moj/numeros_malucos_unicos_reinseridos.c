@@ -1,4 +1,4 @@
-// iagorrr ;) :( :(  :( :( :( :( :( :( :(
+// iagorrr
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -14,11 +14,11 @@ void merge(Item *v, int l,int r){// [l,r]
     int mid = l + (r-l)/2;
     int pl = l;
     int pr = mid+1;
-    int p = 0;
-    Item aux[r-l+1];
+    int p = 1;
+    Item aux[r-l+1+1]; aux[0] = -__INT_MAX__;
 
     while(pl <= mid && pr <= r){
-        if(LESS(v[pl], v[pr]))
+        if(LESSEQ(v[pl], v[pr]))
             aux[p++] = v[pl++];
         else
             aux[p++] = v[pr++];
@@ -29,43 +29,31 @@ void merge(Item *v, int l,int r){// [l,r]
     while(pr <= r)
         aux[p++] = v[pr++];
     
-    p = 0;
+    p = 1;
     for(int i = l; i <= r; ++i)
         v[i] = aux[p++];
 }
 
 // merge but doesn't repeat the values, return the total of repetitions.
-int merge_but_dont_touch(Item *v, int l, int r, int mid){// [l,r]
+int merge_but_dont_touch(Item *v, int l, int r, int mid){// [l,r] https://www.youtube.com/watch?v=J7aAKMzi4zw
     
     int pl = l;
     int pr = mid+1;
-    int p = 0;
-    Item aux[r-l+1];
+    int p = 1;
+    Item aux[r-l+1+1]; aux[0] = -__INT_MAX__;
 
     int repetitions = 0;
 
-    // printf("first half: \n");
-    // for(int i = 0; i <= mid; ++i) printf("%lli ", v[i]);
-    // printf("\n");
-
-
-    // printf("second half: \n");
-    // for(int i = mid+1; i <= r; ++i) printf("%lli ", v[i]);
-    // printf("\n");
-
     while(pl <= mid && pr <= r){
-        // printf("aux[%d] = %lli v[%d] = %lli v[%d] = %lli\n", p, aux[p], pl, v[pl], pr, v[pr]);
-        if(LESS(v[pl], v[pr])){
-            if(p != 0 && aux[p-1] == v[pl]){// ignore the element at left.
-                // printf("r\n");
+        if(LESSEQ(v[pl], v[pr])){
+            if(p != 1 && aux[p-1] == v[pl]){// ignore the element at left.
                 ++repetitions;
                 ++pl;
             }
             else aux[p++] = v[pl++];
         }
         else{
-            if(p != 0 && aux[p] == v[pr]){// guess what ?
-                // printf("r\n");
+            if(p != 1 && aux[p-1] == v[pr]){// guess what ?
                 ++repetitions;
                 ++pr;
             }
@@ -74,27 +62,24 @@ int merge_but_dont_touch(Item *v, int l, int r, int mid){// [l,r]
     }
 
     while(pl <= mid){
-        if(aux[p] == v[pl]){
-            // printf("r\n");
+        if(aux[p-1] == v[pl]){
             ++repetitions;
             ++pl;
         }
         else aux[p++] = v[pl++];
     }
     while(pr <= r){
-        if(aux[p] == v[pr]){
-            // printf("r\n");
+        if(aux[p-1] == v[pr]){
             ++repetitions;
             ++pr;
         }
         else aux[p++] = v[pr++];
     }
     
-    p = 0;
+    p = 1;
     for(int i = l; i <= r-repetitions; ++i)
         v[i] = aux[p++];
 
-    // printf("repetitions from merge: %d\n", repetitions);
     return repetitions;
 }
 
@@ -118,56 +103,36 @@ int merge_sort(Item *v, int l , int r, int first){// [l, r]
 }
 
 int main(){
-    // Leitura dos elementos do vetor :)
+    // Leitura dos elementos do vetor :), tudo intervalo fechado agora.
     int n;
     scanf("%d", &n);
-    Item v[2*n];    
-    for(int i = 0; i < n; ++i)
+    Item v[2*n+2];    
+    for(int i = 1; i <= n; ++i)
         scanf("%lli", &v[i]);
     
     // Ordenar o vetor de modo que tire as repetições, e adicionar o 1000000 se necessário.
-    int repetitions = merge_sort(&v[0], 0, n-1, 1);
+    int repetitions = merge_sort(&v[0], 1, n, 1);
     n -= repetitions;
-    if(n&1){
-        v[n] = (int)1e6;
-        n++;
-    }
-    // printf("Repetitions : %d\n", repetitions);
-    // printf("New vector: ");
-    // for(int i = 0 ; i < n; ++i) printf("%lli ", v[i]);
-    // printf("\n");
-
-    // printf("Sum2: ");
-    int preguica = 0;
-    for(int i = 0; i*2 < n-1; ++i){
-        v[i+n] = v[i*2]+v[(i*2)+1];
-        // printf("%lli ", v[i+n]);
-        ++preguica;
-    }
-    // printf("\n");
-    n += preguica;
-
-    // printf("New vector sum2: ");
-    // for(int i = 0 ; i < n; ++i) printf("%lli ", v[i]);
-    // printf("\n");
-
+    // printf("Após ordneção e tirar repete: "); print_v(v, 1, n);
+    if(n&1)
+        v[++n] = (ll)1e9;
     
-    repetitions = merge_sort(&v[0], 0, n-1, 1);
-    // printf("Repetitions : %d\n", repetitions);
+    // fazer as somas 2 a 2, e colocar no final do vetor.
+    int tot_soma2 = 0;
+    for(int i = 1; i <= n-1; i += 2)
+        v[n+(++tot_soma2)] = v[i]+v[i+1];   
+
+    // mergear e manter ordenação sem repetição do que ja tinha e das somas.
+    repetitions = merge_but_dont_touch(&v[0], 1, n+tot_soma2, n);
+    n+=tot_soma2;
     n -= repetitions;
-    // printf("New vector: ");
-    // for(int i = 0 ; i < n; ++i) printf("%lli ", v[i]);
-    // printf("\n");
+    
 
-
-    // printf("\n\n\n\n\n");
-    // pegar de 4 em 4.
-    for(int i = 0; i < n; i += 4)
+    // exibir oque foi solicitado
+    for(int i = 1; i <= n; i += 4)
         printf("%lli\n", v[i]);
 
     printf("Elementos: %d\n", n);
-    
-    
     
     return 0;
 }
