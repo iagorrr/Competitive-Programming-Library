@@ -7,6 +7,6 @@ using vll = vector<ll>;
 using pll = pair<ll, ll>;
 //•¨•.¸¸♪main•¨•.¸¸♪(　-ω-)ノ　(　・ω・)
 int main(){ 
-    fastio
+    fastio;
     return 0;
 }
