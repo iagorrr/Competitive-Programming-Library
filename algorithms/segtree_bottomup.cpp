@@ -44,7 +44,7 @@ class SegmentTree
         }
 
         // update a value in the original vector so change the sums influenced by it.
-        void update(int p, int u)
+        void update(int p, T u)
         {
             p += N;
             st[p] += u;
