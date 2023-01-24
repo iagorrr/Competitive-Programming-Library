@@ -11,25 +11,27 @@ string solve(string s)
         if (cc&1) odd++;
 
     if(odd > 1) return "NO SOLUTION";
-    if(odd == 1){
-    int qtd;
-    char q;
+
     string ans;
-    for(auto [c, cc] : hist)
-    {
-        if(cc&1)
+
+    if(odd == 1){
+        int qtd;
+        char q;
+        for(auto [c, cc] : hist)
         {
-            qtd = cc;
-            q = c;
+            if(cc&1)
+            {
+                qtd = cc;
+                q = c;
+                break;
+            }
         }
-    }
         ans.insert(0, qtd, q);
     }
 
-    for(auto [c, cc] : hist){
-        ans.insert(0,cc/2,c);
-        ans.insert(ans.size()-1, cc/2, c);
-    }
+    for(auto [c, cc] : hist)
+        if(not (cc&1)) 
+            ans = string(cc/2, c)+ans+string(cc/2,c) ;
     return ans;
 }
 
@@ -39,3 +41,5 @@ int main()
 
     cout << solve(s) << '\n';
 }
+
+// AC.
