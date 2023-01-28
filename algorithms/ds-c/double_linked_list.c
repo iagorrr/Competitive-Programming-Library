@@ -15,7 +15,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#define Item int
+#define Item char* 
 
 typedef struct linked_list_node_t 
 {
@@ -145,7 +145,7 @@ int linked_list_pop_front(linked_list_root_t *x)
 
 Item linked_list_back(linked_list_root_t *x)
 {
-	return x->first->item;
+	return x->last->item;
 }
 int linked_list_push_back(linked_list_root_t *x, Item i)
 {
@@ -178,19 +178,38 @@ int linked_list_pop_back(linked_list_root_t *x)
 	linked_list_node_t *t = x->last;
 
 	// our last element now is the previous to the old last.
-	x->last = x->last->previous;
+    x->last = x->last->previous;
+
 
 	// as he is the last one now there is no next after '''him'''.
-	x->last->next = NULL;
-
+    if(x->last != NULL)
+	    x->last->next = NULL;
+    else {
+        x->first = NULL;
+    }
 	// :)
 	x->size--;
+    free(t->item);
 	free(t);
+    return 1;
 }
 
-int main()
+void show_linked_list(linked_list_root_t *l)
 {
+    linked_list_node_t *l2 = l->first;
+    
+    int i = 0;
+    while(l2 != NULL)
+    {
+        printf("%i %s\n", i++, l2->item);
+        l2 = l2->next;
+    }
 }
+
+
+
+
+
 
 
 
