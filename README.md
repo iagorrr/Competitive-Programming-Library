@@ -4,6 +4,13 @@
 ## Algorithms and Data Structures
 
 ### Sorting
+
+<details> <summary> <i>extras</i> </summary>
+
+- [Test sort algorithms](https://www.codechef.com/problems/TSORT)
+
+</details>
+
 1. Quicksort
    1. [Partition](algorithms/ds-c/partition.c)
    2. [Quicksort Naive](algorithms/ds-c/quicksort_1_naive.c)
