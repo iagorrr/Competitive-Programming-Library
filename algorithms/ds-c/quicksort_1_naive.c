@@ -1,12 +1,13 @@
 // iagorrr ;)
 #include <stdio.h>
 
-typedef int Item;
-#define less(a, b) a < b 
 #define greater(a, b) a > b
 #define exchange(a, b) Item t = a; a = b; b = t;
+#define less(a, b) a < b 
 
-int partition(Item *v, int l, int r){
+typedef int Item;
+
+int partition(Item *v, int l, int r){ // [l, r]
     int i = l - 1; 
     int  j = r; 
     Item pivot = v[r];
@@ -23,6 +24,12 @@ int partition(Item *v, int l, int r){
     return i; 
 }
 
+void quicksort(Item *v,int l, int r) // [l, r]
+{
+    if(r <= l) return;
 
+    int i = partition(v, l, r);
 
-
+    quicksort(v, l, i);
+    quicksort(v, i+1, r);
+}
