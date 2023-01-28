@@ -1,6 +1,22 @@
 # Competitive-Programming-Algorithms
 - A repository to store my solutions to competitive programming problems, of some platforms, and also useful algorithms and links to study.
 
+## Algorithms and Data Structures
+
+### Sorting
+1. Quicksort
+   1. [Partition](algorithms/ds-c/partition.c)
+   2. [Quicksort Naive](algorithms/ds-c/quicksort_1_naive.c)
+   3. [Quicksort M3](algorithms/ds-c/quicksort_2_m3.c)
+   4. [Quicksort M3 and Insertion](algorithms/ds-c/quicksort_3_m3_insertion.c)
+   5. [Quicksort M3 and Insertion with max recurstion](algorithms/ds-c/quicksort_4_m3_insertion_maxrec.c)
+    <details> <summary> <i>extras</i> </summary>
+
+    [partition animation](http://cs.armstrong.edu/liang/animation/animation.html)
+
+    </details>
+2. Merge Sort
+
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
 </div>
