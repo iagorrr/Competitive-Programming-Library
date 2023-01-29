@@ -29,6 +29,7 @@
 1. Queue
    1. [Naive version](algorithms/ds-c/queue_naive.c)
    2. [Circular](algorithms/ds-c/queue_circular.c)
+   3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
 
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
