@@ -11,6 +11,8 @@
  *          - back.
  *          - size.
  *          - show_queue (must for debug)
+ *          - full
+ *          - empty.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,21 +27,23 @@ typedef struct queue
     int csize;
     Item_t *q;
     
-    int (*enqueue)(struct queue*, Item_t);
+    void (*enqueue)(struct queue*, Item_t);
     void (*dequeue)(struct queue*);
     Item_t (*front)(struct queue*); 
     Item_t (*back)(struct queue*);
     int (*size)(struct queue*);
+    char (*empty)(struct queue*);
     void (*show)(struct queue*);
     void (*destroy)(struct queue*);
+    char (*full)(struct queue*);
 } queue;
 
-int queue_enqueue(queue *q, Item_t i);
+void queue_enqueue(queue *q, Item_t i);
 void queue_dequeue(queue*q);
 Item_t queue_front(queue *q);
 Item_t queue_back(queue *q);
-int queue_empty(queue *q);
-int queue_full(queue* q);
+char queue_empty(queue *q);
+char queue_full(queue* q);
 queue queue_initialize(int maxs);
 int queue_size(queue *q);
 void queue_show(queue *q);
@@ -84,6 +88,8 @@ queue queue_initialize(int maxs)
 
     new.enqueue = queue_enqueue;
     new.dequeue = queue_dequeue;
+    new.empty = queue_empty;
+    new.full = queue_full;
     new.front = queue_front;
     new.back = queue_back;
     new.size = queue_size;
@@ -100,14 +106,14 @@ void queue_show(queue *q)
     printf("\n");
 
 }
-int queue_full(queue* q)
+char queue_full(queue* q)
 {
-    return (q->r+1 == q->l) || (q->r+1 == q->maxsize && q->l == 0);
+    return q->csize == q->maxsize; 
 }
 
-int queue_empty(queue *q)
+char queue_empty(queue *q)
 {
-    return q->l == q->r;
+    return q->csize == 0;
 }
 
 Item_t queue_back(queue *q)
@@ -126,15 +132,14 @@ void queue_dequeue(queue*q)
     q->csize--;
 }
 
-int queue_enqueue(queue *q, Item_t i) {
-    if(q->r == q->maxsize) return 0;
+void queue_enqueue(queue *q, Item_t i) {
+    if(q.full(q)) return 0;
     
     q->q[q->r] = i;
 
     q->r = (q->r + 1) % q->maxsize;
     
     q->csize++;
-    return 1;
 }
 
 int queue_size(queue* q)
