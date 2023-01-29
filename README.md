@@ -24,6 +24,11 @@
     </details>
 2. Merge Sort
 
+### Data structures
+
+1. Queue
+   1. [Naive version](algorithms/ds-c/queue_naive.c)
+
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
 </div>
@@ -36,4 +41,5 @@
 - [Macacário](https://github.com/splucs/Competitive-Programming)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
+- [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html )
 </details>
