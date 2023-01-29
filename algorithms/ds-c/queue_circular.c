@@ -4,6 +4,7 @@
  *      - static size.
  *      - 'methods':
  *          - initialize.
+ *          - destroy.
  *          - enqueue.
  *          - dequeue.
  *          - front.
@@ -12,6 +13,7 @@
  *          - show_queue (must for debug)
  */
 #include <stdio.h>
+#include <stdlib.h>
 #define MAXQUEUESIZE (int)1e5
 #define Item_t int
 
@@ -21,7 +23,7 @@ typedef struct queue
     int r;
     int maxsize;
     int csize;
-    Item_t q[MAXQUEUESIZE];
+    Item_t *q;
     
     int (*enqueue)(struct queue*, Item_t);
     void (*dequeue)(struct queue*);
@@ -29,6 +31,7 @@ typedef struct queue
     Item_t (*back)(struct queue*);
     int (*size)(struct queue*);
     void (*show)(struct queue*);
+    void (*destroy)(struct queue*);
 } queue;
 
 int queue_enqueue(queue *q, Item_t i);
@@ -40,6 +43,7 @@ int queue_full(queue* q);
 queue queue_initialize(int maxs);
 int queue_size(queue *q);
 void queue_show(queue *q);
+void queue_destroy(queue *q);
 
 int main(void)
 {
@@ -63,13 +67,15 @@ int main(void)
     q.enqueue(&q, -2);
 
     q.show(&q);
+
+    q.destroy(&q);
 }
-
-
 
 queue queue_initialize(int maxs)
 {
     queue new;
+
+    new.q = malloc(sizeof(Item_t)*maxs);
 
     new.l = 0;
     new.r = 0;
@@ -82,7 +88,7 @@ queue queue_initialize(int maxs)
     new.back = queue_back;
     new.size = queue_size;
     new.show = queue_show;
-    
+    new.destroy = queue_destroy; 
     return new;
 }
 
@@ -134,4 +140,9 @@ int queue_enqueue(queue *q, Item_t i) {
 int queue_size(queue* q)
 {
     return q->csize;
+}
+
+void queue_destroy(queue *q)
+{
+    free(q->q);
 }
