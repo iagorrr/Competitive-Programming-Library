@@ -8,6 +8,7 @@
  *          - dequeue.
  *          - front.
  *          - back.
+ *          - size.
  */
 #include <stdio.h>
 #define MAXQUEUESIZE (int)1e5
@@ -24,6 +25,7 @@ typedef struct queue
     void (*dequeue)(struct queue*);
     Item_t (*front)(struct queue*); 
     Item_t (*back)(struct queue*);
+    int (*size)(struct queue*);
 } queue;
 
 int queue_enqueue(queue *q, Item_t i);
@@ -33,6 +35,7 @@ Item_t queue_back(queue *q);
 int queue_empty(queue *q);
 int queue_full(queue* q);
 queue queue_initialize(int maxs);
+int queue_size(queue *q);
 
 int main(void)
 {
@@ -50,7 +53,8 @@ int main(void)
     printf("%d\n", q.back(&q));
 
     q.dequeue(&q);
-   printf("%d\n", q.front(&q)); 
+    printf("%d\n", q.front(&q)); 
+    printf("%d\n", q.size(&q));
 }
 
 
@@ -67,6 +71,7 @@ queue queue_initialize(int maxs)
     new.dequeue = queue_dequeue;
     new.front = queue_front;
     new.back = queue_back;
+    new.size = queue_size;
     
     return new;
 }
@@ -102,4 +107,9 @@ int queue_enqueue(queue *q, Item_t i) {
     q->q[q->r++] = i;
     
     return 1;
+}
+
+int queue_size(queue* q)
+{
+    return q->r - q->l;
 }
