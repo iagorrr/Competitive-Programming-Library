@@ -23,6 +23,7 @@
 
     </details>
 2. Merge Sort
+   1. [Regular (c)](algorithms/ds-c/merge_sort.c)
 
 ### Data structures
 1. Double Linked List
