@@ -25,9 +25,10 @@
 2. Merge Sort
 
 ### Data structures
-
-1. Queue
-   1. [Naive version](algorithms/ds-c/queue_naive.c)
+1. Double Linked List
+   1. [Naive](algorithms/ds-c/double_linked_list_full.c)
+2. Queue
+   1. [Naive](algorithms/ds-c/queue_naive.c)
    2. [Circular](algorithms/ds-c/queue_circular.c)
    3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
 
