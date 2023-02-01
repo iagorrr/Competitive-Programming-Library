@@ -28,6 +28,9 @@
 ### Searching
 1. Binary Search
    1. [naive (c)](algorithms/ds-c/binary_search.c)
+2. Ternary Search
+   1. [Recursive with eps](algorithms/ternary_search_recursive.cpp)
+   2. 
 ### Data structures
 1. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)
