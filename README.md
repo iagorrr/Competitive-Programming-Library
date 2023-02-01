@@ -25,6 +25,9 @@
 2. Merge Sort
    1. [Regular (c)](algorithms/ds-c/merge_sort.c)
 
+### Searching
+1. Binary Search
+   1. [naive (c)](algorithms/ds-c/binary_search.c)
 ### Data structures
 1. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)

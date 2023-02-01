@@ -1,14 +1,19 @@
 typedef int Item;
 
-#define LESS(a, b) a < b
-#define LESSEQ(a, b) a <= b
-#define SWAP(a , B) {Item t = a; a = b; b = t;}
+#define less(a, b) (a < b)
+#define eq(a, b) (a == b)
 
-int binary_search(Item *v, int l, int r, int x){
-    while(l + 1 < r){
-        int mid = l + (r-l)/2;
-        if(LESSEQ(v[mid], x)) l = mid;
-        else r = mid;
+// naive implementation, returns a position where x appears.
+int binary_search(Item *v, int l, int r, Item x){
+    int mid;
+    while(l <= r){
+        mid = l + (r-l)/2;
+        if(eq(v[mid], x)) return mid;
+        else if(less(v[mid], x)) l = mid+1;
+        else r = mid-1;
     }
-    return l;
+
+    return -1;
 }
+
+
