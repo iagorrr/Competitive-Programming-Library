@@ -7,7 +7,5 @@ using vll = vector<ll>;
 using pll = pair<ll, ll>;
 #define minpq  priority_queue<ll, vll, greater<ll>()>
 //•¨•.¸¸♪main•¨•.¸¸♪(　-ω-)ノ　(　・ω・)
-int main(){ 
-    fastio;
-    return 0;
+int32_t main(void){ fastio;
 }
