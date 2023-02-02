@@ -26,11 +26,25 @@
    1. [Regular (c)](algorithms/ds-c/merge_sort.c)
 
 ### Searching
+
 1. Binary Search
    1. [naive (c)](algorithms/ds-c/binary_search.c)
 2. Ternary Search
    1. [Recursive with eps](algorithms/ternary_search_recursive.cpp)
-   2. 
+
+### Strings
+
+1.Morris-Pratt
+
+   <details>
+
+      ```
+         Find the total occurrence of the string P as substring of S in O(N+M)
+      ```
+   [Test implementation](https://cses.fi/problemset/task/1753/)
+   </details>
+
+   1. [in c](algorithms/morris-pratt.c)
 ### Data structures
 1. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)
