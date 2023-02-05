@@ -58,13 +58,16 @@
    1. [python version](algorithms/dsu.py)
    2. [c++ version](algorithms/dsu.cpp)
 
+### Graphs
+1. Kruskal
+   1. [python](algorithms/kruskal.py)
+
+
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
 </div>
 
-### Graphs
-1. Kruskal
-   1. [python](algorithms/kruskal.py)
+
 
 
 <details><summary> <b>References & Courses</b> </summary>
