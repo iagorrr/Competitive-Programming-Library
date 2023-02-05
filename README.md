@@ -54,6 +54,9 @@
    3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
 3. Segment Tree
    1. [Point update, Range minimum query](algorithms/segtree_point_rmq.cpp)
+4. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
+   1. [python version](algorithms/dsu.py)
+   2. [c++ version](algorithms/dsu.cpp)
 
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
