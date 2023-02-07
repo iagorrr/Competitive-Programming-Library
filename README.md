@@ -57,6 +57,8 @@
 4. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
    1. [python version](algorithms/dsu.py)
    2. [c++ version](algorithms/dsu.cpp)
+5. Prefix sum
+   1. [python version](algorithms/prefix_sum.py)
 
 ### Graphs
 1. Kruskal
