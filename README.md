@@ -35,16 +35,16 @@
 ### Strings
 
 1.Morris-Pratt
-
-   <details>
-
-      ```
-         Find the total occurrence of the string P as substring of S in O(N+M)
-      ```
-   [Test implementation](https://cses.fi/problemset/task/1753/)
-   </details>
-
    1. [in c](algorithms/morris-pratt.c)
+
+      <details>
+
+         ```
+            Find the total occurrence of the string P as substring of S in O(N+M)
+         ```
+      [Test implementation](https://cses.fi/problemset/task/1753/)
+      </details>
+
 ### Data structures
 1. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)
@@ -59,6 +59,11 @@
    2. [c++ version](algorithms/dsu.cpp)
 5. Prefix sum
    1. [python version](algorithms/prefix_sum.py)
+      <details>
+         Exercises:
+
+         1.[static range sum queries](https://cses.fi/problemset/task/1646)
+      </details>
 
 ### Graphs
 1. Kruskal
