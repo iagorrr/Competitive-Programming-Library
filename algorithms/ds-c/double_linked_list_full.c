@@ -2,14 +2,17 @@
 	iagorrr ;)
 	Double linked list implementation.
     Methods:
-        - Constructor
-        - Empty
-        - push back
-        - pop back
-        - push front
-        - pop front
-        - front
-        - back
+        - Constructor : sets the functions, initialize nodes, and size.
+        - Empty : returns boolean if size equals to 0.
+        - push back : append an item to the end of the list.
+        - pop back : removes the item at back.
+        - push front insert an item at the first position.
+        - pop front : remove the element from front.
+        - front : returns the item stored in the node at front.
+        - back : returns the item stored in the node at front.
+    
+        *** None of the above methods check for erros of allocation, invalid
+        remove or invalid acces.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,7 +56,6 @@ Item_t double_linked_front(double_linked_list *dll);
 
 int main()
 {
-
 }
 void double_linked_list_node_constructor(double_linked_list_node *new)
 {
