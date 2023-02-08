@@ -136,6 +136,10 @@ int linked_list_pop_front(linked_list_root_t *x)
 	// now the first is the one after the first '-'
 	x->first = x->first->next;
 
+    if(x->size == 1)
+    {
+        x->last = NULL;
+    }
 	// :P
 	x->size--;
 

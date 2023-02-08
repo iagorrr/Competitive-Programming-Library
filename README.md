@@ -36,9 +36,7 @@
 
 1.Morris-Pratt
    1. [in c](algorithms/morris-pratt.c)
-
       <details>
-
          ```
             Find the total occurrence of the string P as substring of S in O(N+M)
          ```
@@ -46,22 +44,23 @@
       </details>
 
 ### Data structures
-1. Double Linked List
+1. Stack
+   1. [Naive (c)](algorithms/ds-c/stack_naive.c)
+2. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)
-2. Queue
+3. Queue
    1. [Naive](algorithms/ds-c/queue_naive.c)
    2. [Circular](algorithms/ds-c/queue_circular.c)
    3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
-3. Segment Tree
+4. Segment Tree
    1. [Point update, Range minimum query](algorithms/segtree_point_rmq.cpp)
-4. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
+5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
    1. [python version](algorithms/dsu.py)
    2. [c++ version](algorithms/dsu.cpp)
-5. Prefix sum
+6. Prefix sum
    1. [python version](algorithms/prefix_sum.py)
       <details>
          Exercises:
-
          1.[static range sum queries](https://cses.fi/problemset/task/1646)
       </details>
 
