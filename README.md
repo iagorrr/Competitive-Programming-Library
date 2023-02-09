@@ -67,6 +67,7 @@
 ### Brute Force
 1. Combinatorics N choose K
    1. [No repetitions (c++)](algorithms/combinatorics_no_repetitions.cpp)
+   2. [With repetitions (c++)](algorithms/combinatorics_with_repetitions.cpp)
 ### Graphs
 1. Kruskal
    1. [python](algorithms/kruskal.py)
