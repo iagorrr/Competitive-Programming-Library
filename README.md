@@ -64,10 +64,12 @@
          1.[static range sum queries](https://cses.fi/problemset/task/1646)
       </details>
 
-### Brute Force
+### Brute Force / Complete Search
 1. Combinatorics N choose K
    1. [No repetitions (c++)](algorithms/combinatorics_no_repetitions.cpp)
    2. [With repetitions (c++)](algorithms/combinatorics_with_repetitions.cpp)
+2. Arrangement N choose K
+   1. [Recursive (c++)](algorithms/arrangement_rec.cpp)
 ### Graphs
 1. Kruskal
    1. [python](algorithms/kruskal.py)
