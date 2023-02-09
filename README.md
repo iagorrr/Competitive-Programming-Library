@@ -64,6 +64,9 @@
          1.[static range sum queries](https://cses.fi/problemset/task/1646)
       </details>
 
+### Brute Force
+1. Combinatorics N choose K
+   1. [No repetitions (c++)](algorithms/combinatorics_no_repetitions.cpp)
 ### Graphs
 1. Kruskal
    1. [python](algorithms/kruskal.py)
