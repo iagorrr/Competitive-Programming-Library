@@ -12,30 +12,28 @@
 </details>
 
 1. Quicksort
-   1. [Partition](algorithms/ds-c/partition.c)
-   2. [Quicksort Naive](algorithms/ds-c/quicksort_1_naive.c)
-   3. [Quicksort M3](algorithms/ds-c/quicksort_2_m3.c)
-   4. [Quicksort M3 and Insertion](algorithms/ds-c/quicksort_3_m3_insertion.c)
-   5. [Quicksort M3 and Insertion with max recurstion](algorithms/ds-c/quicksort_4_m3_insertion_maxrec.c)
+   1. [Partition <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/partition.c)
+   2. [Quicksort Naive <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/quicksort_1_naive.c)
+   3. [Quicksort M3 <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/quicksort_2_m3.c)
+   4. [Quicksort M3 and Insertion <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/quicksort_3_m3_insertion.c)
+   5. [Quicksort M3 and Insertion with max recurstion <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/quicksort_4_m3_insertion_maxrec.c)
     <details> <summary> <i>extras</i> </summary>
 
     [partition animation](http://cs.armstrong.edu/liang/animation/animation.html)
 
     </details>
 2. Merge Sort
-   1. [Regular (c)](algorithms/ds-c/merge_sort.c)
+   1. [ Regular <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/merge_sort.c)
 
 ### Searching
 
-1. Binary Search
-   1. [naive (c)](algorithms/ds-c/binary_search.c)
+1. Binary Search [<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/binary_search.c)
 2. Ternary Search
-   1. [Recursive with eps](algorithms/ternary_search_recursive.cpp)
+   1. [Recursive with eps <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/ternary_search_recursive.cpp)
 
 ### Strings
 
-1.Morris-Pratt
-   1. [in c](algorithms/morris-pratt.c)
+1.Morris-Pratt [<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/morris-pratt.c)
       <details>
          ```
             Find the total occurrence of the string P as substring of S in O(N+M)
@@ -45,20 +43,18 @@
 
 ### Data structures
 1. Stack
-   1. [Naive (c)](algorithms/ds-c/stack_naive.c)
+   1. [Naive <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/stack_naive.c)
 2. Double Linked List
-   1. [Naive](algorithms/ds-c/double_linked_list_full.c)
+   1. [Naive <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/double_linked_list_full.c)
 3. Queue
-   1. [Naive](algorithms/ds-c/queue_naive.c)
-   2. [Circular](algorithms/ds-c/queue_circular.c)
-   3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
+   1. [Naive <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/queue_naive.c)
+   2. [Circular <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/queue_circular.c)
+   3. [Circular and dynamic <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/queue_circular_dynamic.c)
 4. Segment Tree
-   1. [Point update, Range minimum query](algorithms/segtree_point_rmq.cpp)
-5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
-   1. [python version](algorithms/dsu.py)
-   2. [c++ version](algorithms/dsu.cpp)
-6. Prefix sum
-   1. [python version](algorithms/prefix_sum.py)
+   1. [Point update, Range minimum query <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/segtree_point_rmq.cpp)
+5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set) [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height="20px" alt="Python_Logo"></a>](algorithms/dsu.py)
+   1. [c++ version](algorithms/dsu.cpp)
+6. Prefix sum [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height=20px alt="Python_Logo"></a>](algorithms/prefix_sum.py)
       <details>
          Exercises:
          1.[static range sum queries](https://cses.fi/problemset/task/1646)
@@ -66,13 +62,12 @@
 
 ### Brute Force / Complete Search
 1. Combinatorics N choose K
-   1. [No repetitions (c++)](algorithms/combinatorics_no_repetitions.cpp)
-   2. [With repetitions (c++)](algorithms/combinatorics_with_repetitions.cpp)
+   1. [No repetitions <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/combinatorics_no_repetitions.cpp)
+   2. [With repetitions <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/combinatorics_with_repetitions.cpp)
 2. Arrangement N choose K
-   1. [Recursive (c++)](algorithms/arrangement_rec.cpp)
+   1. [Recursive <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/arrangement_rec.cpp)
 ### Graphs
-1. Kruskal
-   1. [python](algorithms/kruskal.py)
+1. Kruskal [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height="15px" alt="Python_Logo"></a>](algorithms/kruskal.py)
 
 
 <div align="center" max-height="100%">
