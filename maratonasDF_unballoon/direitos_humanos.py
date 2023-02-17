@@ -11,3 +11,4 @@ for c in combinations(l, n): # l tomado n a n.
 print(len(ans))
 for s in ans:
     print(','.join(x[0] for x in s))
+#AC.
