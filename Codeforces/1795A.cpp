@@ -9,30 +9,11 @@ string solve(string s, string t){
   reverse(t.begin(), t.end());
   string a; 
   a = s + t;
-  
-  // see how much equal segments we have.
-  vector<int> r;
-  int p = 0;
-  int c = 0;
-  for(int i = 0; i < (int)a.size(); ++i){
-    if(a[i] == a[p]) ++c;
-    else{
-      if(c > 1) r.emplace_back(c);
-      p = i;
-      c = 1;
-    }
+  int cont = 0;
+  for(int i = 0; i < (int)a.size()-1; ++i){
+    if(a[i] == a[i+1]) cont++;
+    if(cont > 1) return "NO";
   }
-  if(c > 1) r.emplace_back(c);
-
-  // two or more repetitions, impossible to solve.
-  if((int)r.size() >= 2) return "NO";
-    
-
-  // any repetition longer than two, impossible to solve.
-  auto x = max_element(r.begin(), r.end());
-  if(x != r.end() and *x > 2) return "NO";
-  
-  // no error found.
   return "YES";
 }
 int32_t main(void){
