@@ -4,23 +4,19 @@ using namespace std;
 
 void solve(const vector<int> &a, const int n, const int x){
     using ii = pair<int,int>;
-    unordered_map<int, set<ii>> vii;
+    unordered_map<int, set<ii>> vii; 
     unordered_set<int> sums;
     for(int i = 0; i < n; ++i)
-        for(int j = 0; j < n; ++j)
-            if(i != j){
-                vii[a[i]+a[j]].insert({i, j});
-                sums.insert(a[i]+a[j]);
-            }
+        for(int j = i+1; j < n; ++j){
+          vii[a[i]+a[j]].insert({i, j});
+          sums.insert(a[i]+a[j]);
+        }
 
     
     for(auto s : sums){
         for(auto pii : vii[s]){
-            unordered_set<int> index;
-            index.insert(pii.first);
-            index.insert(pii.second);
             for(auto pjj : vii[x-s]){
-                if(not index.count(pjj.first) and not index.count(pjj.second)){
+                if(pjj.first != pii.first and pjj.first != pii.second and pjj.second != pii.first and pjj.second != pii.second){
                     cout << pii.first + 1 << ' ' << pii.second + 1 << ' ' << pjj.first + 1 << ' ' << pjj.second + 1 << '\n';
                     return;
                 }
@@ -33,6 +29,7 @@ void solve(const vector<int> &a, const int n, const int x){
 }
 
 int main(){
+    ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
     int n, x; cin >> n >> x;
 
     vector<int> a(n); 
