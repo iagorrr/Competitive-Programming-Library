@@ -71,7 +71,7 @@
 
 ### Math
 
-1. Fast power [<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/fast_pow.cpp)[<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=22px>](algorithms/fast_pow.c)
+1. Fast exponentiation [<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/fast_expp.cpp)[<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=22px>](algorithms/fast_exp.c)
 
 <div align="center" max-height="100%">
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
