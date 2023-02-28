@@ -3,34 +3,38 @@
 using namespace std;
 using ll = long long;
 
+vector<ll> d((1<<20)+1, -1); 
 ll solve(ll n, ll x, ll y){
-	if(x == (1<<(n-1)) and y == (1<<(n-1))) return 0;
-
-	map<ll, bool> found;
-
 	queue<pair<ll,ll>> q;
+  d[(1<<(n-1))] = 0;
 	q.push({0, 1<<(n-1)});
-	ll ans = LLONG_MAX;
-
 	while(!q.empty()){
-		auto c = q.front();
-		// cout << c.first << ' ' << c.second << '\n';
-		q.pop();
-		if(c.second == x || c.second == y){
-			if(found[c.first]) return c.first; // found x or y with c.first operations before.
-			found[c.first] = true;
-		}
-		q.push({c.first+1, c.second/2});
-		q.push({c.first+1, ((1<<(n))-c.second)/2});
-	}
+		auto c = q.front(); q.pop();
 
+    if(c.second == x)
+      if(d[y] != -1) return lcm(c.first, d[y]);
+
+    if(c.second == y)
+      if(d[x] != -1) return lcm(d[x], c.first);
+
+    ll u = c.second/2;
+    if(d[u] == -1){
+      d[u] = c.first+1;
+      q.emplace(c.first+1, u);
+    }
+    u = ((1<<n)+c.second)/2;
+    if(d[u] == -1){
+        d[u] = c.first+1;
+        q.emplace(c.first+1, u);
+    }
+	}
 }
 int main(){
 	ll n, x, y;
 	cin >> n >> x >> y;
-
 	cout << solve(n, x, y) << '\n';
 	return 0;
 }
 
-// TLE, 5
+// UNTESTED.
+
