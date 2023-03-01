@@ -1,21 +1,27 @@
-// iagorrr :)
+/*
+  iagorrr ;)
+  Sparse table implementation for rmq.
+    build: O(NlogN)
+    query: O(1)
+*/
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
+using ull = unsigned long long;
 #define all(x) x.begin(), x.end()
 
 int fastlog2(ll x){
-  return x ? __builtin_clzll(1) - __builtin_clzll(x) : -1;
+  ull i = x;
+  return i ? __builtin_clzll(1) - __builtin_clzll(i) : -1;
 }
-
 template<typename T>
 class SparseTable {
   public:
-    vector<vector<T>> st;
     int N;
     int K;
-    SparseTable(vector<T> vs) : N((int)vs.size()), K(fastlog2(N) + 1), st(vector<vector<T>>(K+1, vector<T>(N))) {
-      copy(vs.begin(), vs.end(), st[0]);
+    vector<vector<T>> st;
+    SparseTable(vector<T> vs) : N((int)vs.size()), K(fastlog2(N) + 1), st(K+1, vector<T>(N+1)) {
+      copy(vs.begin(), vs.end(), st[0].begin());
 
       for(int i = 1; i <= K; ++i)
         for(int j = 0; j + (1<<i) <= N; ++j)
@@ -26,3 +32,6 @@ class SparseTable {
       return min(st[i][l], st[i][r-(1<<i)+1]);
     }
 };
+
+int main(){
+}

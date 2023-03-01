@@ -59,6 +59,9 @@
          Exercises:
          1.[static range sum queries](https://cses.fi/problemset/task/1646)
       </details>
+      
+7. Sparse Table
+   1. [RMQ <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/sparse_table_rmq.cpp)
 
 ### Brute Force / Complete Search
 1. Combinatorics N choose K
