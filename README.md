@@ -77,6 +77,7 @@
     <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg">
 </div>
 
+2. [Fast Log 2 <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/log2_fast.cpp)
 
 
 
@@ -85,6 +86,7 @@
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
+- [Algorithms for Competitive Programming](https://cp-algorithms.com/)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html )
