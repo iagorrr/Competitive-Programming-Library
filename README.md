@@ -52,6 +52,7 @@
    3. [Circular and dynamic <img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/queue_circular_dynamic.c)
 4. Segment Tree
    1. [Point update, Range minimum query <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/segtree_point_rmq.cpp)
+   1. [Range update, lazy propagation, range minimum query <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/segtree_rmq_lazy_range.cpp)
 5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set) [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height="20px" alt="Python_Logo"></a>](algorithms/dsu.py)
    1. [c++ version](algorithms/dsu.cpp)
 6. Prefix sum [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height=20px alt="Python_Logo"></a>](algorithms/prefix_sum.py)
