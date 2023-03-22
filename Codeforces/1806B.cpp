@@ -15,12 +15,36 @@ template <typename H, typename... T>
 void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
 #define dbg(...) { cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__); }
 
-void run(){
+ll solve(vll a, ll n) {
+  vll b;
+  ll maxe = -1;
+  ll zero = 0;
+  for(auto x : a) {
+    if(x != 0) b.push_back(x);
+    else zero++;
+    maxe = max(maxe, x);
+  }
+  ll m = b.size();
+  if(m == 0) return 1;
+  else if(zero-1 > m) { 
+    return maxe == 1 ? 2 : 1;
+  } 
+  else {  
+    return 0;
+  }
 
 }
-int32_t main(void){ fastio;
+void run(){
+  ll n;
+  cin >> n;
+  vll a(n); INV(a);
+  cout << solve(a, n) << '\n';
+}
+int32_t main(void){ //fastio;
   int t; t = 1;
-  
+  cin >> t;  
   while(t--)
     run();
 }
+
+// AC, ad-hoc
