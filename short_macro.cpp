@@ -7,8 +7,10 @@ using vll = vector<ll>;
 using pll = pair<ll, ll>;
 using vi = vector<int>;
 using pii = pair<int, int>;
-#define INV(xxxx) for(auto &xxx : xxxx) cin >> xxxx;
+#define INV(xxxx) for(auto &xxx : xxxx) cin >> xxx;
 #define all(a) a.begin(), a.end()
+#define snd second
+#define fst first
 
 void dbg_out() { cerr << endl; }
 template <typename H, typename... T>
