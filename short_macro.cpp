@@ -7,7 +7,7 @@ using vll = vector<ll>;
 using pll = pair<ll, ll>;
 using vi = vector<int>;
 using pii = pair<int, int>;
-#define INV(a) for(auto &x : a) cin >> x
+#define INV(xxxx) for(auto &xxx : xxxx) cin >> xxxx;
 #define all(a) a.begin(), a.end()
 
 void dbg_out() { cerr << endl; }
