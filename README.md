@@ -64,17 +64,19 @@
 7. Sparse Table
    1. [RMQ <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/sparse_table_rmq.cpp)
 
+### Graphs & Trees
+1. Kruskal [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height="15px" alt="Python_Logo"></a>](algorithms/fast_pow.c) 
+1. LCA (Lowest Common Ancestor)
+   1. [Sparse Table <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/lowest_common_ancestor_sparse_table.cpp)
+
+### Dynamic Programming
+1.[Knapsack 0-1 (with values) <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/knapsack_dp_values_01.cpp)
 ### Brute Force / Complete Search
 1. Combinatorics N choose K
    1. [No repetitions <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/combinatorics_no_repetitions.cpp)
    2. [With repetitions <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/combinatorics_with_repetitions.cpp)
 2. Arrangement N choose K
    1. [Recursive <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/arrangement_rec.cpp)
-
-### Graphs & Trees
-1. Kruskal [<img src="https://cdn3.emoji.gg/emojis/1850-python-logo.png" height="15px" alt="Python_Logo"></a>](algorithms/fast_pow.c) 
-1. LCA (Lowest Common Ancestor)
-   1. [Sparse Table <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/lowest_common_ancestor_sparse_table.cpp)
 
 
 ### Math
