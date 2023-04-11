@@ -13,7 +13,7 @@ void merge(Item *v, int l, int r){// [l,r]
     int pl = l;
     int pr = mid+1;
     int p = 0;
-    Item *aux = malloc(sizeof(Item)*(r-l+1));
+    Item *aux = (Item*) malloc(sizeof(Item)*(r-l+1));
 
     while(pl <= mid && pr <= r){
         if(less(v[pl], v[pr]))
