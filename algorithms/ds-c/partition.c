@@ -13,7 +13,7 @@ int partition(Item *v, int l, int r){
     for(;;){
         while(less(v[++i], pivot)); 
 
-        while(greater(v[--j], pivot));
+        while(less(pivot, v[--j])) if(j==l) break;
 
         if(i >= j) break; 
 
@@ -22,7 +22,4 @@ int partition(Item *v, int l, int r){
 	exchange(v[i], v[r]);
     return i; 
 }
-
-
-
 
