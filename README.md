@@ -30,7 +30,8 @@
 1. Binary Search [<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/ds-c/binary_search.c)
 2. Ternary Search
    1. [Recursive with eps <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorithms/ternary_search_recursive.cpp)
-
+3. Quick Select
+   1. [Naive <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" height=20px>](algorightms/ds-c/quick_select.c)
 ### Strings
 
 1.Morris-Pratt [<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/morris-pratt.c)
