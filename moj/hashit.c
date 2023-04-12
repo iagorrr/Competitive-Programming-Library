@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
 const int k = 19;
 const int mod =101;
-const int strmax = 15;
+const int strmax = 20;
 typedef char* Item;
 typedef struct ht {
   Item *ht;
@@ -22,16 +21,17 @@ int hash_str(Item s) {
   int i = 0;
   int h = 0;
   while(s[i] != '\0'){
-    h = (h + s[i]*(i+1)) % mod;
+    h = (h + s[i]*(i+1));
     ++i;
   }
-  h = (h*k) % mod;
+  h = (h*k) % 101;
   return h;
 }
 void ht_init(ht *ht, int n){
   ht->ht = (Item*) calloc(n, sizeof(Item));
   for(int i = 0; i < n; ++i) {
     ht->ht[i] = (char*) calloc(strmax, sizeof(char));
+    ht->ht[i][0] = '\0';
   }
 }
 
@@ -50,7 +50,7 @@ void ht_insert(ht *ht, Item x) {
   int h = hash_str(x);
   int first_free = -1;
   int  curpos = h;
-  while(j < 20) {
+  while(j <= 20) {
     if(first_free < 0 && ht->ht[curpos][0] == '\0') {
       first_free = curpos;
     }
@@ -60,6 +60,8 @@ void ht_insert(ht *ht, Item x) {
     curpos = hash_open(h, j);
     j++;
   }
+
+  if(first_free == -1) return;
 
   // insert.
   int i = 0;
@@ -77,7 +79,7 @@ int ht_find(ht *ht, Item x) {
   int j = 1;
   int h = hash_str(x);
   int  curpos = h;
-  while(j < 20) {
+  while(j <= 20) {
     if(strcmp(x, ht->ht[curpos]) == 0)  {
       return curpos;
     }
@@ -97,7 +99,7 @@ void ht_delete(ht *ht, Item x) {
   int j = 1;
   int h = hash_str(x);
   int  curpos = h;
-  while(j < 20) {
+  while(j <= 20) {
     if(strcmp(x, ht->ht[curpos]) == 0)  {
       ht->ht[curpos][0] = '\0';
       return;
@@ -111,7 +113,7 @@ void ht_delete(ht *ht, Item x) {
 void run() {
   int n; scanf("%d", &n); 
   scanf("*c");
-  ht ht; ht_init(&ht, mod+10);
+  ht ht; ht_init(&ht, mod);
   while(n--) {
     char *s = (char*) malloc(sizeof(char)*30);
     scanf("%s", s);
@@ -135,6 +137,8 @@ void run() {
       printf("%d:%s\n", i, ht.ht[i]);
     }
   }
+
+  printf("\n");
 }
 int main(void) {
   int t; scanf("%d", &t);
@@ -144,4 +148,4 @@ int main(void) {
   }
 }
 
-// run time error.
+// WA. 
