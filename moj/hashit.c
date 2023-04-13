@@ -1,11 +1,17 @@
 // iagorrr ;)
+
+/*
+  Pra esse exercício ele checa a primeira posição e o hash
+  para resolver colisão só começa a incrementar o J depois
+  da verificação do primeiro.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 const int k = 19;
 const int mod =101;
-const int strmax = 20;
+const int strmax = 30;
 typedef char* Item;
 typedef struct ht {
   Item *ht;
@@ -24,7 +30,7 @@ int hash_str(Item s) {
     h = (h + s[i]*(i+1));
     ++i;
   }
-  h = (h*k) % 101;
+  h = (h*k)%mod;
   return h;
 }
 void ht_init(ht *ht, int n){
@@ -46,18 +52,33 @@ void ht_insert(ht *ht, Item x) {
     and find the first valid posi
     tion to inset.
   */
-  int j = 1;
   int h = hash_str(x);
+  if(ht->ht[h][0] == '\0'){
+  // insert.
+    int i = 0;
+    while(x[i] != '\0') {
+      
+      ht->ht[h][i] = x[i]; 
+      i++;
+    }
+    ht->ht[h][i] = '\0';
+    return;
+  }
+
+
+  if(strcmp(x, ht->ht[h]) == 0) return;
+
   int first_free = -1;
   int  curpos = h;
-  while(j <= 20) {
+  int j = 1;
+  while(j < 20) {
+    curpos = hash_open(h, j);
     if(first_free < 0 && ht->ht[curpos][0] == '\0') {
       first_free = curpos;
     }
     if(strcmp(x, ht->ht[curpos]) == 0)  {
       return;
     }
-    curpos = hash_open(h, j);
     j++;
   }
 
@@ -66,28 +87,11 @@ void ht_insert(ht *ht, Item x) {
   // insert.
   int i = 0;
   while(x[i] != '\0') {
+    
     ht->ht[first_free][i] = x[i]; 
     i++;
   }
-}
-
-int ht_find(ht *ht, Item x) {
-  /*
-    find the index of the given item,
-    ignore if there is no item.
-  */
-  int j = 1;
-  int h = hash_str(x);
-  int  curpos = h;
-  while(j <= 20) {
-    if(strcmp(x, ht->ht[curpos]) == 0)  {
-      return curpos;
-    }
-    curpos = hash_open(curpos, j);
-    j++;
-  }
-
-  return -1;
+  ht->ht[first_free][i] = '\0';
 }
 
 void ht_delete(ht *ht, Item x) {
@@ -98,13 +102,18 @@ void ht_delete(ht *ht, Item x) {
   */
   int j = 1;
   int h = hash_str(x);
+  if(strcmp(x, ht->ht[h]) == 0) {
+    ht->ht[h][0] = '\0';
+    return;
+  }
+
   int  curpos = h;
-  while(j <= 20) {
+  while(j < 20) {
+    curpos = hash_open(h, j);
     if(strcmp(x, ht->ht[curpos]) == 0)  {
       ht->ht[curpos][0] = '\0';
       return;
     }
-    curpos = hash_open(curpos, j);
     j++;
   }
 }
@@ -112,7 +121,7 @@ void ht_delete(ht *ht, Item x) {
 
 void run() {
   int n; scanf("%d", &n); 
-  scanf("*c");
+
   ht ht; ht_init(&ht, mod);
   while(n--) {
     char *s = (char*) malloc(sizeof(char)*30);
@@ -137,8 +146,6 @@ void run() {
       printf("%d:%s\n", i, ht.ht[i]);
     }
   }
-
-  printf("\n");
 }
 int main(void) {
   int t; scanf("%d", &t);
@@ -148,4 +155,3 @@ int main(void) {
   }
 }
 
-// WA. 
