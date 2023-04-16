@@ -34,8 +34,11 @@ void dbg_out(H h, T... t)
     dbg_out(__VA_ARGS__);        \
   }
 
+/*
+  The best solution is always before some birthday.
+*/
 vector<int> days_month{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-array<int, 365> year;
+array<int, 366> year;
 
 pii daytodate(int x)
 {
@@ -66,7 +69,7 @@ int datetoday(pii x)
 
 int calcdist(int x, int y)
 {
-  // sair y ->>> x
+  // today is x, how much time passed since y
   if(x > y) {
     return x - y;
   }
@@ -90,20 +93,8 @@ void run()
 {
   int n;
   scanf("%d", &n);
-  if (n == 1)
-  {
-    char foo[30];
-    scanf("%s", foo);
-    int day, month;
-    scanf("%d-%d", &month, &day);
-    int x = datetoday({month, day});
-    x = x == 1 ? 365 : x - 1;
-    auto [m, d] = daytodate(x);
-    printf("%d%d-%d%d\n", m / 10, m % 10, d / 10, d % 10);
-    return;
-  }
+  
   vi yearday(n);
-  vector<pii> monthday(n);
 
   for (int i = 0; i < n; ++i)
   {
@@ -111,71 +102,64 @@ void run()
     scanf("%s", foo);
     int day, month;
     scanf("%d-%d", &month, &day);
-    monthday[i].first = month;
-    monthday[i].second = day;
 
-    int aaa = datetoday(monthday[i]);
-    yearday[i] = aaa;
-    year[aaa - 1] = 1;
+    int dayinyear = datetoday({month, day});
+    yearday[i] = dayinyear;
+    year[dayinyear] = 1;
   }
-
-  sort(all(monthday));
   sort(all(yearday));
 
-  
-  int curans = -1;
-  int distans = -1;
-  int lastbd = yearday.back();
-  for (int i = 1; i <= 365; ++i)
-  {
-    if (year[i - 1])
-    {
-      lastbd = i;
-      continue;
-    }
-    if (i == datetoday({10, 27}))
-      continue;
+  int ansdist = -1;
+  int ans = -1;
+  for(int i = 0; i < n; ++i) {
+    int curday = yearday[i];
+    int prevday = curday == 1 ? 365 : curday-1;
 
-  
-    auto curdist = calcdist(i, lastbd);
-    auto curclose = calcclose(i);
-    if(curans == -1) {
-      curans = i;
-      distans = calcdist(i, lastbd);
-      continue;
+    if(year[prevday]) continue;
+
+    int mindist = 366;
+    int minzao = 0;
+    for(int j = 0; j < n; ++j) {
+      if(yearday[j] == prevday) continue;
+
+      if(calcdist(prevday, yearday[j]) < mindist){
+        mindist =  calcdist(prevday, yearday[j]);
+        minzao = j;
+      }
     }
-    // printf("%d-%d: ", daytodate(i).fst, daytodate(i).second); dbg(curdist);
-    if (curdist > distans)
-    {
-      curans = i;
-      distans = curdist;
+
+    // printf("d:%d-%d (%d) p: %d-%d (%d) mindist: %d para %d-%d (%d)\n",  daytodate(curday).first, 
+    //                                                                   daytodate(curday).second,
+    //                                                                   curday,
+    //                                                                   daytodate(prevday).first,
+    //                                                                   daytodate(prevday).second,
+    //                                                                   prevday,
+    //                                                                   mindist,
+    //                                                                   daytodate(yearday[minzao]).first,
+    //                                                                   daytodate(yearday[minzao]).second,
+    //                                                                   yearday[minzao]
+    //                                                                   );
+    if(ans == -1 or ansdist < mindist) {
+      ans = prevday;
+      ansdist = mindist;
     }
-    else if (curdist == distans)
-    {
-      if (curclose < calcclose(curans))
-      {
-        curans = i;
-        distans = curdist;
+    if(ansdist == mindist and prevday != datetoday({10, 27})) {
+      if(ans == datetoday({10, 27}) or calcclose(ans) > calcclose(prevday)){
+        ans = prevday;
+        ansdist = mindist;
       }
     }
   }
-
-  auto [mes, dia] = daytodate(curans);
-  printf("%d%d-%d%d\n", mes / 10, mes % 10, dia / 10, dia % 10);
+  auto [month, day] = daytodate(ans);
+  printf("%d%d-%d%d\n", month/10, month%10, day/10, day%10);
 }
 int32_t main(void)
 {
   int t;
   t = 1;
 
-  // int a = datetoday({12, 31});
-  // int b = datetoday({1, 1});
-  // cout << a << ' ' << b << '\n';
-
-  // cout << calcdist(a, b) << '\n';
-  // return 0;
   while (t--)
     run();
 }
 
-// WA, on test 10
+// AC, A FUCKING IMPLEMENTATION.
