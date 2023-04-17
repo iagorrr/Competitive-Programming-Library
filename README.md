@@ -5,48 +5,50 @@
 ### Searching
 
 2. Ternary Search
-   1. [Recursive with eps](algorithms/ternary_search_recursive.cpp)
-3. Quick Select
-   1. [Naive ](algorightms/ds-c/quick_select.c)
+   1. [Recursive with eps](algorithms/searching/ternary_search_recursive.cpp)
+
 ### Data structures
 
 1. Segment Tree
-   1. [Point update, Range minimum query](algorithms/segtree_point_rmq.cpp)
-   1. [Range update, lazy propagation, range minimum query](algorithms/segtree_rmq_lazy_range.cpp)
+   1. [Point update, Range minimum query](algorithms/data_structures/segtree_point_rmq.cpp)
+   1. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
 5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
-   1. [Python](algorithms/dsu.py)
-   1. [c++ version](algorithms/dsu.cpp)
+   1. [Python](algorithms/data_structures/dsu.py)
+   1. [c++ version](algorithms/data_structures/dsu.cpp)
 
 6. Prefix sum 
-   1. [Python](algorithms/prefix_sum.py)
+   1. [Python](algorithms/data_structures/prefix_sum.py)
       
 7. Sparse Table
-   1. [RMQ](algorithms/sparse_table_rmq.cpp)
+   1. [RMQ](algorithms/data_structures/sparse_table_rmq.cpp)
 
-### Graphs & Trees
+1. Ordered set
+   1. [GNU PBDS](algorithms/data_structures/ordered_set_gnu_pbds.cpp)
+
+### Graphs
 1. Kruskal 
-   1. [Python </a>](algorithms/kruskal.py) 
+   1. [Python](algorithms/graphs/kruskal.py) 
 2. LCA (Lowest Common Ancestor)
-   1. [Sparse Table ](algorithms/lowest_common_ancestor_sparse_table.cpp)
+   1. [Sparse Table ](algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
 
 ### Dynamic Programming
-1. [Knapsack 0-1 (with values)](algorithms/knapsack_dp_values_01.cpp)
 
-### Brute Force / Complete Search
-1. Combinatorics N choose K
-   1. [No repetitions](algorithms/combinatorics_no_repetitions.cpp)
-   2. [With repetitions](algorithms/combinatorics_with_repetitions.cpp)
-2. Arrangement N choose K
-   1. [Recursive ](algorithms/arrangement_rec.cpp)
-
+1. [Knapsack 0-1 (with values)](algorithms/dynamic_programming/knapsack_dp_values_01.cpp)
 
 ### Math
 
-1. [Fast exponentiation](algorithms/fast_expp.cpp)
+1. Combinatorics N choose K
+   1. [No repetitions](algorithms/math/combinatorics_no_repetitions.cpp)
+   2. [With repetitions](algorithms/math/combinatorics_with_repetitions.cpp)
 
-2. [Fast Log 2](algorithms/log2_fast.cpp)
+2. Arrangement N choose K
+   1. [Recursive ](algorithms/math/arrangement_rec.cpp)
 
-3. [Equals EPS](algorithms/equals_eps.cpp)
+1. [Fast exponentiation](algorithms/math/fast_exp.cpp)
+
+2. [Fast Log 2](algorithms/math/log2_fast.cpp)
+
+3. [Equals EPS](algorithms/math/equals_eps.cpp)
 
 
 
@@ -56,8 +58,11 @@
 ## Algorithms and Data Structures (in pure C)
 
 ### Algorithms ad-hoc ?
+
 1. [Partition](algorithms/ds-c/partition.c)
-### Sorting
+
+3. Quick Select
+   1. [Naive ](algorightms/ds-c/quick_select.c)
 
 1. Quicksort
    1. [Quicksort Naive ](algorithms/ds-c/quicksort_1_naive.c)
@@ -85,7 +90,8 @@
 1. [Binary Search](algorithms/ds-c/binary_search.c)
 
 ### Strings
-1.Morris-Pratt [<img src="https://upload.wikimedia.org/wikipedia/commons/archive/3/35/20220802133510%21The_C_Programming_Language_logo.svg" height=20px>](algorithms/morris-pratt.c)
+
+1. [Morris-Prat   t](algorithms/morris-pratt.c)
 
 
 <div align="center" max-height="100%"> <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg"> </div> 
