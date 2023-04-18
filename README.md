@@ -77,6 +77,8 @@
 1. Stack
    1. [Naive](algorithms/ds-c/stack_naive.c)
 
+1. Linked list
+   1. [Insert and remove in order](algorithms/ds-c/linked_list_order.c)
 2. Double Linked List
    1. [Naive](algorithms/ds-c/double_linked_list_full.c)
 
