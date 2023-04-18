@@ -87,6 +87,9 @@
    2. [Circular](algorithms/ds-c/queue_circular.c)
    3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
 
+1. Hash Table
+   1. [Linked List](algorithms/ds-c/hash_table_linked.c)
+
 ### Searching
 
 1. [Binary Search](algorithms/ds-c/binary_search.c)
