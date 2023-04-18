@@ -123,6 +123,19 @@ void ll_pop(ll_head *head, Item_st *x)
   }
 }
 
+char ll_find(ll_head *head, Item_st *x)
+{
+  ll_node *cur = head->first;
+  while (cur)
+  {
+    if (eq(cur->item, x))
+      return 1;
+    if(greater(cur->item, x))
+      break;
+    cur = cur->next;
+  }
+  return 0;
+}
 int main()
 {
   ll_head *head = ll_head_init();
@@ -130,18 +143,24 @@ int main()
   int i = 0;
   while (1)
   {
-    printf("1: insert \n2: pop\nopt: ");
-    int opt; scanf("%d", &opt);
-    
+    printf("1: insert \n2: pop\n3: find\nopt: ");
+    int opt;
+    scanf("%d", &opt);
+
     Item_st *x = malloc(sizeof(Item_st));
     x->str = malloc(sizeof(char) * 20);
-    printf("str: ");scanf("%s", x->str);
+    printf("str: ");
+    scanf("%s", x->str);
     x->id = i++;
-    if(opt == 1) 
+    if (opt == 1)
       ll_push(head, x);
     else if (opt == 2)
       ll_pop(head, x);
+    else if (opt == 3) {
+      printf("find: %d\n", ll_find(head, x));
+    }
 
-    ll_debug(head);printf("\n\n\n") ;
+    ll_debug(head);
+    printf("\n\n\n");
   }
 }
