@@ -170,7 +170,7 @@ ht_st *ht_init(int mod, int k, int (*hash_func)(Item_st *))
     new->mod = mod;
     new->size = 0;
     new->hash_func = hash_func;
-    new->ht = (ll_head *)malloc(sizeof(Item_st) * mod);
+    new->ht = calloc(mod, sizeof(ll_head));
     return new;
 }
 
