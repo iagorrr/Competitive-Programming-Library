@@ -10,14 +10,14 @@
 #define lesseq(a, b) (a.id <= b.id)
 #define greater(a, b) (a.id > b.id)
 #define greatereq(a, b) (a.id >= b.id)
-
+const int MOD = 1e5 + 7;
 typedef struct Item_st
 {
     int id;
-    char fn[50];
-    char ln[50];
-    char bd[50];
-    char pn[50];
+    char fn[70];
+    char ln[70];
+    char bd[70];
+    char pn[70];
 } Item_st;
 
 //                                         Linked list
@@ -134,6 +134,19 @@ char ll_find(ll_head *head, Item_st x)
     }
     return 0;
 }
+
+Item_st *ll_find_by_id(ll_head *head, int id)
+{
+    ll_node *cur = head->first;
+    while (cur)
+    {
+        if (cur->item.id == id)
+            return &(cur->item);
+        cur = cur->next;
+    }
+    return NULL;
+}
+
 //                                        Hash Table
 typedef struct ht_t
 {
@@ -149,7 +162,7 @@ int f(char c) { return c + 1; }
 int hash_fn(Item_st x)
 {
     const int p = 257;
-    const int q = 1e5 + 7;
+    const int q = MOD;
     int h = 0;
     int i = 0;
     while (x.fn[i++] != '\0')
@@ -162,7 +175,7 @@ int hash_fn(Item_st x)
 int hash_ln(Item_st x)
 {
     const int p = 257;
-    const int q = 1e5 + 7;
+    const int q = MOD;
     int h = 0;
     int i = 0;
     while (x.ln[i++] != '\0')
@@ -175,7 +188,7 @@ int hash_ln(Item_st x)
 int hash_bd(Item_st x)
 {
     const int p = 257;
-    const int q = 1e5 + 7;
+    const int q = MOD;
     int h = 0;
     int i = 0;
     while (x.bd[i++] != '\0')
@@ -188,7 +201,7 @@ int hash_bd(Item_st x)
 int hash_pn(Item_st x)
 {
     const int p = 257;
-    const int q = 1e5 + 7;
+    const int q = MOD;
     int h = 0;
     int i = 0;
     while (x.pn[i++] != '\0')
@@ -200,7 +213,7 @@ int hash_pn(Item_st x)
 }
 int hash_id(Item_st x)
 {
-    return x.id % ((int)1e5 + 7);
+    return x.id % MOD;
 }
 
 ht_st *ht_init(int mod, int k, int (*hash_func)(Item_st))
@@ -209,7 +222,7 @@ ht_st *ht_init(int mod, int k, int (*hash_func)(Item_st))
     new->mod = mod;
     new->size = 0;
     new->hash_func = hash_func;
-    new->ht = (ll_head *)malloc(sizeof(Item_st) * mod);
+    new->ht = calloc(mod, sizeof(ll_head));
     return new;
 }
 
@@ -232,56 +245,82 @@ char ht_find(ht_st *ht, Item_st x)
     int hashit = ht->hash_func(x);
     return ll_find(&(ht->ht[hashit]), x);
 }
-
-void ht_query(ht_st *ht, Item_st x) {
+Item_st *ht_find_by_id(ht_st *ht, Item_st x)
+{
+    int hashit = ht->hash_func(x);
+    return ll_find_by_id(&(ht->ht[hashit]), x.id);
+}
+void ht_query(ht_st *ht, Item_st x)
+{
     int pos = ht->hash_func(x);
 
     ll_node *cur = ht->ht[pos].first;
     int i = 0;
-    int *ans = malloc(sizeof(int)*(int)1e5+7);
-    while(cur) {
+    int *ans = malloc(sizeof(int) * (int)MOD);
+    while (cur)
+    {
 
         // printf("%d %s %s %s %s\n", cur->item.id, cur->item.fn, cur->item.ln, cur->item.bd, cur->item.pn);
         int match = 1;
-        if(x.id && cur->item.id != x.id) {match = 0; break;}
-        if(x.fn[0] != 0 && strcmp(cur->item.fn, x.fn) != 0) {match = 0;}
-        if(x.ln[0] != 0 && strcmp(cur->item.ln, x.ln) != 0) {match = 0;}
-        if(x.bd[0] != 0 && strcmp(cur->item.bd, x.bd) != 0) {match = 0;}
-        if(x.pn[0] != 0 && strcmp(cur->item.pn, x.pn) != 0) {match = 0;}
+        if (x.id && cur->item.id != x.id)
+        {
+            match = 0;
+            break;
+        }
+        if (x.fn[0] != 0 && strcmp(cur->item.fn, x.fn) != 0)
+        {
+            match = 0;
+        }
+        if (x.ln[0] != 0 && strcmp(cur->item.ln, x.ln) != 0)
+        {
+            match = 0;
+        }
+        if (x.bd[0] != 0 && strcmp(cur->item.bd, x.bd) != 0)
+        {
+            match = 0;
+        }
+        if (x.pn[0] != 0 && strcmp(cur->item.pn, x.pn) != 0)
+        {
+            match = 0;
+        }
 
-        if(match){
+        if (match)
+        {
             ans[i] = cur->item.id;
             ++i;
         }
         cur = cur->next;
     }
 
-    if(i) {
-        for(int j = 0; j < i; ++j)
+    if (i)
+    {
+        for (int j = 0; j < i; ++j)
             printf("%d ", ans[j]);
     }
     printf("\n");
+    free(ans);
 }
 
 int main(void)
 {
     char cmd[6];
-    ht_st *ht_fn = ht_init(1e5 + 7, 257, hash_fn);
-    ht_st *ht_ln = ht_init(1e5 + 7, 257, hash_ln);
-    ht_st *ht_bd = ht_init(1e5 + 7, 257, hash_bd);
-    ht_st *ht_pn = ht_init(1e5 + 7, 257, hash_pn);
-    ht_st *ht_id = ht_init(1e5 + 7, 257, hash_id);
-    Item_st *rouba = calloc((int)1e5, sizeof(Item_st));
+    ht_st *ht_fn = ht_init(MOD, 257, hash_fn);
+    ht_st *ht_ln = ht_init(MOD, 257, hash_ln);
+    ht_st *ht_bd = ht_init(MOD, 257, hash_bd);
+    ht_st *ht_pn = ht_init(MOD, 257, hash_pn);
+    ht_st *ht_id = ht_init(MOD, 257, hash_id);
+
     while (scanf("%s", cmd) != EOF)
     {
         int id;
         Item_st cur;
+        Item_st *found;
         switch (cmd[0])
         {
         case ('a'):
             scanf("%d %s %s %s %s", &cur.id, cur.fn, cur.ln, cur.bd, cur.pn);
             // printf("%d %s %s %s %s\n", cur.id, cur.fn, cur.ln, cur.bd, cur.pn);
-            if (rouba[cur.id].id != 0)
+            if (ht_find_by_id(ht_id, cur))
             {
                 printf("ID %d ja cadastrado.\n", cur.id);
                 break;
@@ -291,29 +330,32 @@ int main(void)
             ht_insert(ht_bd, cur);
             ht_insert(ht_pn, cur);
             ht_insert(ht_id, cur);
-            rouba[cur.id] = cur;
             break;
         case 'd':
             scanf("%d", &id);
-            if (rouba[id].id == 0)
+            cur.id = id;
+            found = ht_find_by_id(ht_id, cur);
+            if (found == NULL)
             {
                 printf("ID %d nao existente.\n", id);
                 break;
             }
-            ht_delete(ht_fn, rouba[id]);
-            ht_delete(ht_ln, rouba[id]);
-            ht_delete(ht_bd, rouba[id]);
-            ht_delete(ht_pn, rouba[id]);
-            rouba[id].id = 0;
+            ht_delete(ht_fn, *found);
+            ht_delete(ht_ln, *found);
+            ht_delete(ht_bd, *found);
+            ht_delete(ht_pn, *found);
+            ht_delete(ht_id, *found);
             break;
         case 'i':
             scanf("%d", &id);
-            if (rouba[id].id == 0)
+            cur.id = id;
+            found = ht_find_by_id(ht_id, cur);
+            if (found == NULL)
             {
                 printf("ID %d nao existente.\n", id);
                 break;
             }
-            printf("%s %s %s %s\n", rouba[id].fn, rouba[id].ln, rouba[id].bd, rouba[id].pn);
+            printf("%s %s %s %s\n", found->fn, found->ln, found->bd, found->pn);
             break;
         case 'q':
             scanf("%*c");
@@ -345,19 +387,23 @@ int main(void)
             }
 
             // printf("match: [%s] [%s] [%s] [%s]\n", match.fn, match.ln, match.bd, match.pn);
-            if (match.fn[0] != 0){
+            if (match.fn[0] != 0)
+            {
                 // printf("query fn\n");
                 ht_query(ht_fn, match);
             }
-            else if (match.ln[0] != 0) {
+            else if (match.ln[0] != 0)
+            {
                 // printf("query ln\n");
                 ht_query(ht_ln, match);
             }
-            else if (match.bd[0] != 0) {
+            else if (match.bd[0] != 0)
+            {
                 // printf("query bd\n");
                 ht_query(ht_bd, match);
             }
-            else if (match.pn[0] != 0) {
+            else if (match.pn[0] != 0)
+            {
                 // printf("query pn\n");
                 ht_query(ht_pn, match);
             }
@@ -367,5 +413,4 @@ int main(void)
     }
 }
 
-
-// Run time error.
+// AC, hash table.
