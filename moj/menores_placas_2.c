@@ -1,15 +1,6 @@
 
 /*
  * iagorrr ;)
- * pq implementation based in the Algorithms in C - Sedgewick
- *
- *  Construct a priority queue given N items.
- *  Insert a new item.
- *  Remove the largest item.
- *  Replace the largest item with a new.
- *  Change the priority of an item.
- *  Delete an arbitrary specified item.
- *  Join two priority queues into one large one. 
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,7 +18,6 @@ typedef struct pq_st {
   int n;
   int last; // first free position.
   Item_st *heap;
-  int prior_min;
 } pq_st;
 
 pq_st *pq_construct(int size) {
@@ -36,52 +26,62 @@ pq_st *pq_construct(int size) {
   pq->heap = (Item_st*) malloc(sizeof(Item_st)*(size+1));
   pq->last = 1; 
   pq->n = size;
-  pq->prior_min = 0;
   return pq;
 }
 
 void pq_upheap(pq_st *pq, int k) {
-  if(k <= 1) return;
-
-  if(lessp(pq->heap[k/2], pq->heap[k])) {
-    exch(pq->heap[k/2], pq->heap[k]);
-    pq_upheap(pq, k/2);
+  Item_st v;
+  v = pq->heap[k];
+  while(k > 1 && lessp(pq->heap[k/2], v)){
+    pq->heap[k] = pq->heap[k/2];
+    k /= 2;
   }
+  pq->heap[k] = v;
+
 }
 
 void pq_push(pq_st *pq, Item_st item) {
-  /* 
-    insert at the first free position
-    increment the free position
-    calls upheap
-  */
+  // printf("push %d\n", pq->n);
   if(pq->last == pq->n+1){
-    if(lessp(item, pq->heap[pq->prior_min])) return;
-  }
-  if(!pq->prior_min || lessp(item, pq->heap[pq->prior_min])) pq->prior_min = pq->last;
+      // find the leaf with lowest value.
+    Item_st minvalue = pq->heap[pq->last-1];
+    int minpos = pq->last-1;
+    for(int i = pq->last-1; i >= 1; --i) {
+      if(i*2 <= pq->last-1) break;
+      if(lessp(pq->heap[i], minvalue)){
+        minpos = i;
+        minvalue = pq->heap[i];
+      }
+    }
 
-  pq->heap[pq->last++]  = item;
+    if(lessp(item, minvalue)) return;
+    else {
+      pq->heap[minpos] = item;
+      pq_upheap(pq, minpos);
+      return;
+    }
+  }
+  
+  pq->heap[pq->last++] = item;
   pq_upheap(pq, pq->last-1);
 }
 
 Item_st *pq_front(pq_st *pq){
-  /*Simply return the 'greatest value'*/
   return &(pq->heap[1]);
 }
 
 void pq_downheap(pq_st *pq) {
-  /*
-   * goes from root to leaf fixing the heap. 
-  */
   int k = 1;
+  Item_st v = pq->heap[k];
   int n = pq->last -1;
-  while(k <= n/2) { // until the parent of the last
+  while(k <= n/2) { 
     int j = k*2;
     if(j < n  && lessp(pq->heap[j], pq->heap[j+1])) ++j;
-    if(!lessp(pq->heap[k], pq->heap[j])) break;
-    exch(pq->heap[k], pq->heap[j]);
+    if(!lessp(v, pq->heap[j])) break;
+    pq->heap[k] = pq->heap[j];
     k = j;
   }
+  pq->heap[k] = v;
 }
 char pq_empty(pq_st *pq) {
   return pq->last == 1;
@@ -92,14 +92,9 @@ void pq_pop(pq_st *pq) {
   pq_downheap(pq);
 }
 
-void pq_debug(pq_st *pq) {
-  for(int i = 1; i <= pq->last-1; ++i) {
-    printf("(%d, %d), ", i, pq->heap[i].value);
-  }
-}
 int main(void) {
   int o, p;
-  pq_st *pq = pq_construct((int)1e7+1);
+  pq_st *pq = pq_construct((int)1e2);
   int aux[100];
   int ap;
   while(scanf("%d %d", &o, &p)!= EOF) {
@@ -122,4 +117,5 @@ int main(void) {
     }
   }
 }
-// TLE.
+
+// AC.
