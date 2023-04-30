@@ -8,24 +8,23 @@
    1. [Recursive with eps](algorithms/searching/ternary_search_recursive.cpp)
 
 ### Data structures
-
 1. Segment Tree
    1. [Point update, Range minimum query](algorithms/data_structures/segtree_point_rmq.cpp)
-   1. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
-   1. [Range update, lazy propagation, range max query, max update](algorithms/data_structures/segtree_rmq_lazy_max_update.cpp)
-   1. [Range update, lazy propagation, range sum query, sum update](algorithms/data_structures/segtree_rsq_lazy_range_sum.cpp)
+   2. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
+   3. [Range update, lazy propagation, range max query, max update](algorithms/data_structures/segtree_rmq_lazy_max_update.cpp)
+   4. [Range update, lazy propagation, range sum query, sum update](algorithms/data_structures/segtree_rsq_lazy_range_sum.cpp)
 
-5. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
+2. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
    1. [Python](algorithms/data_structures/dsu.py)
-   1. [c++ version](algorithms/data_structures/dsu.cpp)
+   2. [c++ version](algorithms/data_structures/dsu.cpp)
 
-6. Prefix sum 
+3. Prefix sum 
    1. [Python](algorithms/data_structures/prefix_sum.py)
       
-7. Sparse Table
+4. Sparse Table
    1. [RMQ](algorithms/data_structures/sparse_table_rmq.cpp)
 
-1. Ordered set
+5. Ordered set
    1. [GNU PBDS](algorithms/data_structures/ordered_set_gnu_pbds.cpp)
 
 ### Graphs
@@ -43,7 +42,6 @@
 1. Combinatorics N choose K
    1. [No repetitions](algorithms/math/combinatorics_no_repetitions.cpp)
    2. [With repetitions](algorithms/math/combinatorics_with_repetitions.cpp)
-   1. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 2. Arrangement N choose K
    1. [Recursive ](algorithms/math/arrangement_rec.cpp)
 
@@ -52,6 +50,8 @@
 4. [Fast Log 2](algorithms/math/log2_fast.cpp)
 
 5. [Equals EPS](algorithms/math/equals_eps.cpp)
+
+6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 
 
 
