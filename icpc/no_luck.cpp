@@ -17,7 +17,7 @@ private:
 
 public:
     SegmentTree(const std::vector<ll>& xs)
-        : N(xs.size()), ns(4*N, 0), lazy(4*N, 0)
+        : N(xs.size()), ns(40*N, 0), lazy(40*N, 0)
     {
         for (size_t i = 0; i < xs.size(); ++i)
             update(i, i, xs[i]);
@@ -100,32 +100,39 @@ private:
 
         return x + y;
     }
+
+public:
+    void debug() {
+      for(int i = 0; i <= N; ++i) {
+        cout << "(" << i << ',' << RSQ(i, i) << ") ";
+      }
+      cout << '\n';
+    }
 };
 void run(){
   ll n, k; cin >> n >> k;
   vll xs(n); for(auto &x : xs) cin >> x;
 
-  vector<array<ll, 3>> infos(n);
-  for(int i = 0; i < n; ++i) {
+  vector<array<ll, 3>> infos(k);
+  for(int i = 0; i < k; ++i) {
     for(int j = 0; j < 3; ++j) {
       cin >> infos[i][j];
     }
   }
-  sort(all(infos));
 
   // marcar onde cada um comecou e termiou.
   vector<vector<ll>> observa(n+1);
   for(int i = 0; i < k; ++i) {
     auto [edicao, posicao, observou] = infos[i];
     if(posicao <= xs[edicao-1]) continue;
-    ll comeco = edicao-1+1-1;
-    ll fim = edicao-1+observou;
+    ll comeco = min(edicao-1+1-1, n-1);
+    ll fim = min(edicao-1+observou, n-1);
     observa[comeco].push_back(i+1);
     observa[fim].push_back(-(i+1));
   }
 
   ll maxvagas = *max_element(all(xs));
-  vector<ll> aux(maxvagas, 0);
+  vector<ll> aux(maxvagas+1, 0);
   SegmentTree <ll>segtree(aux);
   vector<pair<ll, ll>> ans(k);
   for(int i = 0; i < n; ++i) {
@@ -135,18 +142,23 @@ void run(){
     for(auto obs : observa[i]){
       if(obs>0){
         obs = obs-1;
+        ll posicao = infos[obs][1];
         // cout << "ans.first: " << ans[obs].first << '\n';
-        ans[obs].first = segtree.RSQ(infos[obs][1], infos[obs][1]);
+        ans[obs].first = segtree.RSQ(posicao, posicao);
+        // segtree.debug();
+        // cout << "poiscao: " << posicao << "ans.f: " << ans[obs].first << '\n';
       }
       else {
         obs++;
         obs = -obs;
+        ll posicao = infos[obs][1];
         //cout << "ans.second: " << ans[obs].second << '\n';
-        ans[obs].second = segtree.RSQ(infos[obs][1], infos[obs][1]);
+        ans[obs].second = segtree.RSQ(posicao, posicao);
+        // segtree.debug();
+        // cout << "posicao: " << posicao << "ans.s: " << ans[obs].second << '\n';
       }
     }
   }
-
 
   for(int i = 0; i < k; ++i) {
     cout << ans[i].second - ans[i].first << '\n';
@@ -162,4 +174,4 @@ int32_t main() {
   }
 }
 
-// Run time error on test 4
+// AC, segmente tree, RSQ
