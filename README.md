@@ -43,15 +43,15 @@
 1. Combinatorics N choose K
    1. [No repetitions](algorithms/math/combinatorics_no_repetitions.cpp)
    2. [With repetitions](algorithms/math/combinatorics_with_repetitions.cpp)
-
+   1. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 2. Arrangement N choose K
    1. [Recursive ](algorithms/math/arrangement_rec.cpp)
 
-1. [Fast exponentiation](algorithms/math/fast_exp.cpp)
+3. [Fast exponentiation](algorithms/math/fast_exp.cpp)
 
-2. [Fast Log 2](algorithms/math/log2_fast.cpp)
+4. [Fast Log 2](algorithms/math/log2_fast.cpp)
 
-3. [Equals EPS](algorithms/math/equals_eps.cpp)
+5. [Equals EPS](algorithms/math/equals_eps.cpp)
 
 
 
