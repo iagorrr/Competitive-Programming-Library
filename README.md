@@ -103,8 +103,8 @@
 ### Strings
 
 1. [Morris-Prat   t](algorithms/morris-pratt.c)
-1. [Trie]
-   1.[Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
+1. Trie
+   1. [Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
 
 
 <div align="center" max-height="100%"> <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg"> </div> 
