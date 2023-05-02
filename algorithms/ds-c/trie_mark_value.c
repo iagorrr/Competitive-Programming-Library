@@ -1,7 +1,7 @@
 /*
   iagorrr ;)
     - 'trie' implementation that asign a value to a string, as example product name and price.
-    - not so interesting if strings size are longer than 100.
+    - not so interesting if strings size are longer than 10. TOO MUCH MEMORY.
 
     * let |s| be the size of the string.
     - methods: 
@@ -12,15 +12,12 @@
         - get the value of a given string, if there is no string returns -1.
       delete O(|s|):
         - the given string will not be considered in the set anymore. 
-
-      
-
 */
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-int N = 100;    // tamanho alfabeto
+int N = 100;    // maior char possível
 int M = 10;     // tamanho max str
 
 typedef struct trie_node {
