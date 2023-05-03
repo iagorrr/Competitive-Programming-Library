@@ -53,6 +53,9 @@
 
 6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 
+7. Bhaskara
+   1. [cpp](algorithms/math/bhaskara.cpp)
+   2. [python](algorithms/math/bhaskara.py)
 
 
 
