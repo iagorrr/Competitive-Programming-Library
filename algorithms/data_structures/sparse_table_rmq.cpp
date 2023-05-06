@@ -27,7 +27,7 @@ class SparseTable {
         for(int j = 0; j + (1<<i) <= N; ++j)
           st[i][j] = min(st[i-1][j], st[i-1][j+(1 << (i-1))]);
     }
-    T RMQ(int l, int r) {
+    T RMQ(int l, int r) {// [l, r], 0 indexed
       int i = fastlog2(r-l+1);
       return min(st[i][l], st[i][r-(1<<i)+1]);
     }
