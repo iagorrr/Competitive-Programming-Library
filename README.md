@@ -13,7 +13,7 @@
    2. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
    3. [Range update, lazy propagation, range max query, max update](algorithms/data_structures/segtree_rmq_lazy_max_update.cpp)
    4. [Range update, lazy propagation, range sum query, sum update](algorithms/data_structures/segtree_rsq_lazy_range_sum.cpp)
-
+   4. [Range update, lazy propagation, xor query, xor update](algorithms/data_structures/segtree_rxq_lazy_range_xor.cpp)
 2. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
    1. [Python](algorithms/data_structures/dsu.py)
    2. [c++ version](algorithms/data_structures/dsu.cpp)
