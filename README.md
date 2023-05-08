@@ -1,19 +1,22 @@
-# Competitive-Programming-Algorithms
+<div align="center"> <h1> Competitive Programming Algorithms </h1> </div>
 
-## Algorithms and Data Structures
+<p align="center">Useful algorithms in the competitive programming context, submissions and my submissions in some oline judges.</p>
 
+## Algorithms
 ### Searching
 
 2. Ternary Search
    1. [Recursive with eps](algorithms/searching/ternary_search_recursive.cpp)
 
 ### Data structures
+
 1. Segment Tree
    1. [Point update, Range minimum query](algorithms/data_structures/segtree_point_rmq.cpp)
    2. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
    3. [Range update, lazy propagation, range max query, max update](algorithms/data_structures/segtree_rmq_lazy_max_update.cpp)
    4. [Range update, lazy propagation, range sum query, sum update](algorithms/data_structures/segtree_rsq_lazy_range_sum.cpp)
    4. [Range update, lazy propagation, xor query, xor update](algorithms/data_structures/segtree_rxq_lazy_range_xor.cpp)
+   </details>
 2. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
    1. [Python](algorithms/data_structures/dsu.py)
    2. [c++ version](algorithms/data_structures/dsu.cpp)
@@ -58,10 +61,7 @@
    2. [python](algorithms/math/bhaskara.py)
 
 
-
-
-
-## Algorithms and Data Structures (in pure C)
+<details><summary> <b>Pure C implementations </b></summary>
 
 ### Algorithms ad-hoc ?
 
@@ -108,12 +108,31 @@
 1. [Morris-Prat   t](algorithms/morris-pratt.c)
 1. Trie
    1. [Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
+   
 
+</details>
 
-<div align="center" max-height="100%"> <img heigh="100px" src="https://raw.githubusercontent.com/Iagorrr04/Competitive-Programming-Algorithms/main/komi_algorithms.jpg"> </div> 
+## Submissions
 
+- [scripts](scripts/)
+- [SPOJ-sphere](SPOJ-sphere/)
+- [icpc](icpc/)
+- [CodeChef](CodeChef/)
+- [Becrowd](Becrowd/)
+- [Codeforces](Codeforces/)
+- [leetCode](leetCode/)
+- [upsolving](upsolving/)
+- [moj](moj/)
+- [UVA-OJ](UVA-OJ/)
+- [atCoder](atCoder/)
+- [maratonasDF_unballoon](maratonasDF_unballoon/)
+- [CSES](CSES/)
+- [OBI](OBI/)
+- [google](google/)
+- [Neps](Neps/)
+- [algorithms](algorithms/)
+## References & Courses
 
-<details><summary> <b>References & Courses</b> </summary>
 
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
@@ -121,5 +140,6 @@
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
-- [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html )
-</details>
+- [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
+- [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
+
