@@ -114,24 +114,20 @@
 
 ## Submissions
 
-- [scripts](scripts/)
-- [SPOJ-sphere](SPOJ-sphere/)
-- [icpc](icpc/)
-- [CodeChef](CodeChef/)
-- [Becrowd](Becrowd/)
-- [Codeforces](Codeforces/)
-- [leetCode](leetCode/)
-- [upsolving](upsolving/)
-- [moj](moj/)
-- [UVA-OJ](UVA-OJ/)
-- [atCoder](atCoder/)
-- [maratonasDF_unballoon](maratonasDF_unballoon/)
-- [CSES](CSES/)
-- [OBI](OBI/)
-- [google](google/)
-- [Neps](Neps/)
-- [algorithms](algorithms/)
-## References & Courses
+- [SPOJ-sphere](submissions/SPOJ-sphere)
+- [icpc](submissions/icpc)
+- [CodeChef](submissions/CodeChef)
+- [Becrowd](submissions/Becrowd)
+- [Codeforces](submissions/Codeforces)
+- [leetCode](submissions/leetCode)
+- [moj](submissions/moj)
+- [UVA-OJ](submissions/UVA-OJ)
+- [atCoder](submissions/atCoder)
+- [maratonasDF_unballoon](submissions/maratonasDF_unballoon)
+- [CSES](submissions/CSES)
+- [OBI](submissions/OBI)
+- [google](submissions/google)
+- [Neps](submissions/Neps)## References & Courses
 
 
 - [TEP](https://github.com/edsomjr/TEP)
