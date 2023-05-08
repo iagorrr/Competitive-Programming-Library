@@ -105,7 +105,7 @@
 
 ### Strings
 
-1. [Morris-Prat   t](algorithms/morris-pratt.c)
+1. [Morris-Pratt](algorithms/morris-pratt.c)
 1. Trie
    1. [Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
    
@@ -127,8 +127,9 @@
 - [CSES](submissions/CSES)
 - [OBI](submissions/OBI)
 - [google](submissions/google)
-- [Neps](submissions/Neps)## References & Courses
+- [Neps](submissions/Neps)
 
+## References & Courses
 
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
