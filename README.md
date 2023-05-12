@@ -39,6 +39,7 @@
 ### Dynamic Programming
 
 1. [Knapsack 0-1 (with values)](algorithms/dynamic_programming/knapsack_dp_values_01.cpp)
+2. [Edit distance](algorithms/dynamic_programming/edit_distance.cpp)
 
 ### Math
 
@@ -55,6 +56,8 @@
 5. [Equals EPS](algorithms/math/equals_eps.cpp)
 
 6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
+
+1. [Integer mod class](algorithms/math/integer_mod.cpp)
 
 7. Bhaskara
    1. [cpp](algorithms/math/bhaskara.cpp)
