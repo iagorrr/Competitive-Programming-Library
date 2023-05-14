@@ -18,30 +18,26 @@ void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
 #define dbg(...) { cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__); }
 
 
-// bottom up.
-vector<vll> dpm(1e3+1, vll(1e3+1, -1));
-ll n, impa;
-ll dp(ll x, ll impax){// quantas tenho, impa que posso por
-	if(x == n) return 1;
-	if(impax > impa) return 0;
-	if(x > n) return 0;
-
-	if(dpm[x][impax] != -1) return dpm[x][impax];
-
-	auto t1 = dp(x+impax, impax+2);
-	auto t2 = dp(x, impax+2);
-	return dpm[x][impax] = t1+t2;
+// topdown
+vector<vll> dpm((int)1e3+1, vll(1e3+1, -1));
+ll dp(ll n, ll b) {
+	if(n == 0) return 1;
+	if(n < 0 or b<0) return 0;
+	
+	if(dpm[n][b] != -1) return dpm[n][b];
+	auto t1 = dp(n, b-2);
+	auto t2 = dp(n-b, b-2);
+	return dpm[n][b] = t1+t2;
 }
 void run(){
-	n; cin >> n;
-	impa = n&1 ? n : n-1;
-	cout << dp(0, 1) << '\n';
+	ll n; cin >> n;
+	ll impa = n&1 ? n : n-1;
+	cout << dp(n, impa);	
 }
-int32_t main(void){ //fastio;
+int32_t main(void){ fastio;
   int t; t = 1;
   
   while(t--)
     run();
 }
-
 
