@@ -40,7 +40,7 @@
 
 1. [Knapsack 0-1 (with values)](algorithms/dynamic_programming/knapsack_dp_values_01.cpp)
 2. [Edit distance](algorithms/dynamic_programming/edit_distance.cpp)
-
+1.  [Money Sum (bottom up)](algorithms/dynamic_programming/money_sum_bottom_up.cpp)
 ### Math
 
 1. Combinatorics N choose K
