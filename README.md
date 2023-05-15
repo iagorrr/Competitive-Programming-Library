@@ -57,11 +57,13 @@
 
 6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 
-1. [Integer mod class](algorithms/math/integer_mod.cpp)
+1. [Integer mod struct](algorithms/math/integer_mod.cpp)
 
 7. Bhaskara
    1. [cpp](algorithms/math/bhaskara.cpp)
    2. [python](algorithms/math/bhaskara.py)
+
+1. [Polynomial](algorithms/math/polynomial.cpp)
 
 
 <details><summary> <b>Pure C implementations </b></summary>
