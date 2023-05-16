@@ -23,8 +23,8 @@ typedef struct node_st {
   struct node_st *left, *right;
 } node_st;
 
-void insert(node_st *root, item_st *item) {
-  node_st *cur = root;
+void insert(node_st **root, item_st *item) {
+  node_st *cur = *root;
   node_st *prev = NULL;
   while (cur) {
     prev = cur;
@@ -38,8 +38,10 @@ void insert(node_st *root, item_st *item) {
   }
   cur = malloc(sizeof(node_st));
   cur->info = *item;
-  if (!root)
-    root = cur;
+  cur->left = NULL;
+  cur->right = NULL;
+  if (!*root)
+    *root = cur;
   else if (less(&prev->info, item))
     prev->left = cur;
   else
