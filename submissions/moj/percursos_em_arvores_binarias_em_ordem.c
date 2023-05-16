@@ -32,7 +32,7 @@ bool empty(stack *st) {
   return st->stack==NULL;
 }
 
-no *pop(stack *st) {
+void pop(stack *st) {
   cell *tmp = st->stack;
   st->stack=st->stack->next;
   free(tmp);
@@ -40,21 +40,27 @@ no *pop(stack *st) {
 
 void em_ordem(no *raiz) {
   stack *st = malloc(sizeof(stack));
-  put(st, raiz);
-
-  while(!empty(st)) {
+  put(st, raiz); 
+  while(!empty(st)){
     no *cur = get(st);
-    if(cur == NULL) {
-      pop(st);
-      if(empty(st)) break;
-      cur =  get(st);
-      printf("%d ", cur->dado);
-      pop(st);
-      put(st, cur->dir);
+    if(cur) {
+      put(st, NULL);
+      if(cur->esq)
+        put(st, cur->esq);
     }
     else {
-      put(st, cur->esq);
+      pop(st);
+      if(empty(st)) continue;
+      no *cur = get(st);
+      if(cur == NULL) continue;
+      printf("%d ", cur->dado);
+      pop(st);
+      if(cur->dir)
+        put(st, cur->dir);
     }
   }
+
   printf("\n");
 }
+
+// AC, árvores binárias, percurso em ordem.
