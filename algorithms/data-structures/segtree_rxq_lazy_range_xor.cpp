@@ -44,11 +44,9 @@ struct SegTree {
       lazy[node] = 0;
     }
 
-    // [a, b] ∩ [L, R] = {∅}
     if (a > R or b < L)
       return;
 
-    // [L, R] ⊂ [a, b] está contido; é subconjunto de
     if (a <= L and R <= b) {
       ns[node] ^= value;
 
