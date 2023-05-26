@@ -11,24 +11,24 @@
 ### Data structures
 
 1. Segment Tree
-   1. [Point update, Range minimum query](algorithms/data_structures/segtree_point_rmq.cpp)
-   2. [Range update, lazy propagation, range minimum query](algorithms/data_structures/segtree_rmq_lazy_range.cpp)
-   3. [Range update, lazy propagation, range max query, max update](algorithms/data_structures/segtree_rmq_lazy_max_update.cpp)
-   4. [Range update, lazy propagation, range sum query, sum update](algorithms/data_structures/segtree_rsq_lazy_range_sum.cpp)
-   4. [Range update, lazy propagation, xor query, xor update](algorithms/data_structures/segtree_rxq_lazy_range_xor.cpp)
+   1. [Point update, Range minimum query](algorithms/data-structures/segtree_point_rmq.cpp)
+   2. [Range update, lazy propagation, range minimum query](algorithms/data-structures/segtree_rmq_lazy_range.cpp)
+   3. [Range update, lazy propagation, range max query, max update](algorithms/data-structures/segtree_rmq_lazy_max_update.cpp)
+   4. [Range update, lazy propagation, range sum query, sum update](algorithms/data-structures/segtree_rsq_lazy_range_sum.cpp)
+   4. [Range update, lazy propagation, xor query, xor update](algorithms/data-structures/segtree_rxq_lazy_range_xor.cpp)
    </details>
 2. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
-   1. [Python](algorithms/data_structures/dsu.py)
-   2. [c++ version](algorithms/data_structures/dsu.cpp)
+   1. [Python](algorithms/data-structures/dsu.py)
+   2. [c++ version](algorithms/data-structures/dsu.cpp)
 
 3. Prefix sum 
-   1. [Python](algorithms/data_structures/prefix_sum.py)
+   1. [Python](algorithms/data-structures/prefix_sum.py)
       
 4. Sparse Table
-   1. [RMQ](algorithms/data_structures/sparse_table_rmq.cpp)
+   1. [RMQ](algorithms/data-structures/sparse_table_rmq.cpp)
 
 5. Ordered set
-   1. [GNU PBDS](algorithms/data_structures/ordered_set_gnu_pbds.cpp)
+   1. [GNU PBDS](algorithms/data-structures/ordered_set_gnu_pbds.cpp)
 
 ### Graphs
 1. Kruskal 
