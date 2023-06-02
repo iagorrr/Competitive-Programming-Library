@@ -66,6 +66,8 @@
 
 1. [Polynomial](algorithms/math/polynomial.cpp)
 
+1. [GCD](algorithms/math/gcd.cpp)
+
 
 <details><summary> <b>Pure C implementations </b></summary>
 
