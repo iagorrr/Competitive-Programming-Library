@@ -66,8 +66,9 @@
 
 1. [Polynomial](algorithms/math/polynomial.cpp)
 
-1. [GCD](algorithms/math/gcd.cpp)
+1. [GCD](algorithms/math/gcd.)
 
+1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
 
 <details><summary> <b>Pure C implementations </b></summary>
 
