@@ -89,6 +89,7 @@
    1. [ Regular ](algorithms/ds-c/merge_sort.c)
 
 ### Data structures
+
 1. Stack
    1. [Naive](algorithms/ds-c/stack_naive.c)
 
@@ -105,6 +106,9 @@
 1. Hash Table
    1. [Linked List](algorithms/ds-c/hash_table_linked.c)
    1. [Open Address](algorithms/ds-c/hash_open_address.c)
+
+1. Binary Search trees
+    1. [Save by copy](algorithms/ds-c/binary_search_tree_pointers.c)
 
 1. Priority Queue
    1 [Regular (Sedgewick)](algorithms/ds-c/priority_queue.c)

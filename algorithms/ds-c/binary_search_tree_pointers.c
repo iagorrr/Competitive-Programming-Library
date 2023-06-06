@@ -1,6 +1,5 @@
 /*
   iagorrr ;)
-  * salva o conteúdo por cópia.
  */
 #include <stdbool.h>
 #include <stdio.h>
