@@ -113,6 +113,8 @@
 1. Priority Queue
    1 [Regular (Sedgewick)](algorithms/ds-c/priority_queue.c)
 
+1. Set
+   1. [Foo, bst](algorithms/ds-c/set_foo_bst.c)
 ### Searching
 
 1. [Binary Search](algorithms/ds-c/binary_search.c)
