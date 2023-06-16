@@ -31,6 +31,7 @@
    1. [GNU PBDS](algorithms/data-structures/ordered_set_gnu_pbds.cpp)
 
 ### Graphs
+
 1. Kruskal 
    1. [Python](algorithms/graphs/kruskal.py) 
 2. LCA (Lowest Common Ancestor)
@@ -125,6 +126,10 @@
 1. Trie
    1. [Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
    
+### Graph
+
+1. [DSU](algorithms/ds-c/dsu.c)
+2. [DFS](algorithms/ds-c/dfs-recursive.c)
 
 </details>
 
