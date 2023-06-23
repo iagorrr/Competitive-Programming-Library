@@ -71,6 +71,8 @@
 
 1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
 
+1. [Is Prime](algorithms/math/is-prime.cpp)
+
 ### Strings 
    1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
    1. [Trie (naive)](algorithms/strings/trie-naive.cpp)
