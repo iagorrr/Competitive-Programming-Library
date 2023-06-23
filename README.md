@@ -59,6 +59,10 @@
 
 6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
 
+1. [Is Prime](algorithms/math/is-prime.cpp)
+
+1. [List Primes](algorithms/math/sieve-list-primes.cpp)
+
 1. [Integer mod struct](algorithms/math/integer_mod.cpp)
 
 7. Bhaskara
@@ -71,7 +75,6 @@
 
 1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
 
-1. [Is Prime](algorithms/math/is-prime.cpp)
 
 ### Strings 
    1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
