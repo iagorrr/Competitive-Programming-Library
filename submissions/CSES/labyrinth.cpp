@@ -38,12 +38,26 @@ int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, -1, 1};
 string dir("DULR");
 char vis[1'000][1'000];
+int parent[1'000][1'000];
 
 bool check(int x, int y) {
   if (x < 0 || y < 0 || x >= n || y >= m || grid[x][y] == '#' || vis[x][y])
     return false;
 
   return true;
+}
+string reconstruct() {
+  int x, y;
+  x = b.fst;
+  y = b.snd;
+  string ans;
+  while (make_pair(x, y) != a) {
+    int parent_dir = parent[x][y];
+    ans.push_back(dir[parent_dir]);
+    x += (-dx[parent_dir]);
+    y += (-dy[parent_dir]);
+  }
+  return ans;
 }
 void run() {
   cin >> n >> m;
@@ -59,15 +73,16 @@ void run() {
     }
   }
   string ans;
-  queue<pair<pii, string>> q;
-  q.emplace(pair<pii, string>(a, ""));
-
+  queue<pair<pii, int>> q;
+  q.emplace(pair<pii, int>(a, 0));
   vis[a.fst][a.snd] = true;
   while (!q.empty()) {
     auto cur = q.front();
     q.pop();
     if (cur.fst == b) {
-      ans = (ans.size() != 0) and ans.size() < cur.snd.size() ? ans : cur.snd;
+      if (ans.size() == 0 || (int)ans.size() > cur.snd) {
+        ans = reconstruct();
+      }
       continue;
     }
 
@@ -76,12 +91,14 @@ void run() {
       int y2 = cur.fst.snd + dy[i];
       if (check(x2, y2)) {
         vis[x2][y2] = true;
-        q.push({{x2, y2}, cur.snd + dir[i]});
+        parent[x2][y2] = i;
+        q.push({{x2, y2}, cur.snd + 1});
       }
     }
   }
   if (ans.size()) {
     cout << "YES\n";
+    reverse(all(ans));
     cout << ans.size() << '\n';
     cout << ans << '\n';
   } else {
@@ -97,4 +114,4 @@ int32_t main(void) {
     run();
 }
 
-// TLE
+// AC, bfs, path reconstuction
