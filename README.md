@@ -37,6 +37,7 @@
 2. LCA (Lowest Common Ancestor)
    1. [Sparse Table ](algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
 1. [Dijkstra](algorithms/graphs/dijkstra.cpp)
+1. [Floyd Warshall](algorithms/graphs/floyd_warshall.cpp)
 
 ### Dynamic Programming
 
