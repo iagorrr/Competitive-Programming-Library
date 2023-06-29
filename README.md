@@ -36,6 +36,7 @@
    1. [Python](algorithms/graphs/kruskal.py) 
 2. LCA (Lowest Common Ancestor)
    1. [Sparse Table ](algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
+1. [Dijkstra](algorithms/graphs/dijkstra.cpp)
 
 ### Dynamic Programming
 
