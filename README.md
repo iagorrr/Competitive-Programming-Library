@@ -88,6 +88,7 @@
 #### Extras
 
 1. [Binary to Gray code](algorithms/extras/binary_to_gray.cpp)
+1. [Big int](algorithms/extras/bigint.cpp)
 
 <details><summary> <b>Pure C implementations </b></summary>
 
