@@ -17,6 +17,10 @@ using pii = pair<int, int>;
 #define all(a) a.begin(), a.end()
 #define snd second
 #define fst first
+#define pb(___x) push_back(___x)
+#define mp(___a, ___b) make_pair(___a, ___b)
+#define eb(___x) emplace_back(___x)
+
 
 void dbg_out() { cerr << endl; }
 template <typename H, typename... T> void dbg_out(H h, T... t) {
