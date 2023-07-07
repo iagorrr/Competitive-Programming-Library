@@ -41,7 +41,7 @@
 
 ### Trees
 
-1. [Tree diameter](algorithms/trees/tree_diameter.cppk)
+1. [Tree diameter](algorithms/trees/tree_diameter.cpp)
 ### Dynamic Programming
 
 1. [Knapsack 0-1 (with values)](algorithms/dynamic_programming/knapsack_dp_values_01.cpp)
