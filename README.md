@@ -80,6 +80,8 @@
 
 1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
 
+1. [Power Sum](algorithms/math/power-sum.cpp)
+
 
 ### Strings 
    1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
