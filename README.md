@@ -83,6 +83,7 @@
 
 1. [Power Sum](algorithms/math/power-sum.cpp)
 
+1. [Factorial](algorithms/math/factorial.cpp)
 
 ### Strings 
    1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
