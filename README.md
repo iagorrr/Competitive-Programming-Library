@@ -89,6 +89,8 @@
 
 1. [Factorization](algorithms/math/factorization.cpp)
 
+1. [Mudular Inverse Phi](algorithms/math/modular-inverse-phi.cpp)
+
 ### Strings 
    1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
    1. [Trie (naive)](algorithms/strings/trie-naive.cpp)
