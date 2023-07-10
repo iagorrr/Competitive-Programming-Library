@@ -77,7 +77,7 @@
 
 1. [Polynomial](algorithms/math/polynomial.cpp)
 
-1. [GCD](algorithms/math/gcd.)
+1. [GCD](algorithms/math/gcd.cpp)
 
 1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
 
@@ -143,6 +143,7 @@
 
 1. Set
    1. [Foo, bst](algorithms/ds-c/set_foo_bst.c)
+
 ### Searching
 
 1. [Binary Search](algorithms/ds-c/binary_search.c)
