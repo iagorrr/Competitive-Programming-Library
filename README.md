@@ -51,11 +51,13 @@
 1.  [TSP](algorithms/dynamic_programming/tsp.cpp)
 ### Math
 
-1. Combinatorics N choose K
+1. Combinatorics N choose K (elements)
    1. [No repetitions](algorithms/math/combinatorics_no_repetitions.cpp)
    2. [With repetitions](algorithms/math/combinatorics_with_repetitions.cpp)
-2. Arrangement N choose K
+2. Arrangement N choose K (elements)
    1. [Recursive ](algorithms/math/arrangement_rec.cpp)
+
+1. [Combinatorics N choose K (binom)](algorithms/math/n-choose-k-count.cpp)
 
 3. [Fast exponentiation](algorithms/math/fast_exp.cpp)
 
