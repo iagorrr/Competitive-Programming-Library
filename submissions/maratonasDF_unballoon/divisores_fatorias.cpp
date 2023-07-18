@@ -75,6 +75,7 @@ map<ll, ll> prime_factors(ll n) {
 		if(cnt)
 			ans[p] = cnt;
         } 
+	if(n != 1)  ans[n] = 1;
 	return ans;        
 }
 void run() {
@@ -86,6 +87,7 @@ void run() {
 
 	ll ans = LLONG_MAX;
 	for(auto [pi, qi] : nfact) {
+		// cout << "pi: " << pi << " qi: " << qi << '\n';
 		ans = min(ans, mfact[pi]/qi);
 	}
 
