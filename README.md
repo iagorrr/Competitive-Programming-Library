@@ -1,189 +1,94 @@
-<div align="center"> <h1> Competitive Programming Algorithms </h1> </div>
-
-<p align="center">Useful algorithms in the competitive programming context, submissions and my submissions in some oline judges.</p>
+# Competitive Programming Algorithms
+Here you will find implementation of algorithms and data structures used in competitive programming and submissions to many OJ
 
 ## Algorithms
-### Searching
+- Data Structures
+    - [dsu](/algorithms/data-structures/dsu.cpp)
+    - [dsu (python)](/algorithms/data-structures/dsu.py)
+    - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
+    - [prefix sum (python)](/algorithms/data-structures/prefix_sum.py)
+    - [segtree point rmq](/algorithms/data-structures/segtree_point_rmq.cpp)
+    - [segtree rmq lazy max update](/algorithms/data-structures/segtree_rmq_lazy_max_update.cpp)
+    - [segtree rmq lazy range](/algorithms/data-structures/segtree_rmq_lazy_range.cpp)
+    - [segtree rsq lazy range sum](/algorithms/data-structures/segtree_rsq_lazy_range_sum.cpp)
+    - [segtree rxq lazy range xor](/algorithms/data-structures/segtree_rxq_lazy_range_xor.cpp)
+    - [sparse table rmq](/algorithms/data-structures/sparse_table_rmq.cpp)
 
-2. Ternary Search
-   1. [Recursive with eps](algorithms/searching/ternary_search_recursive.cpp)
+- Dynamic Programming
+    - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
+    - [knapsack dp values 01](/algorithms/dynamic-programming/knapsack_dp_values_01.cpp)
+    - [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
+    - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
-### Data structures
+- Extras
+    - [bigint](/algorithms/extras/bigint.cpp)
+    - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
 
-1. Segment Tree
-   1. [Point update, Range minimum query](algorithms/data-structures/segtree_point_rmq.cpp)
-   2. [Range update, lazy propagation, range minimum query](algorithms/data-structures/segtree_rmq_lazy_range.cpp)
-   3. [Range update, lazy propagation, range max query, max update](algorithms/data-structures/segtree_rmq_lazy_max_update.cpp)
-   4. [Range update, lazy propagation, range sum query, sum update](algorithms/data-structures/segtree_rsq_lazy_range_sum.cpp)
-   4. [Range update, lazy propagation, xor query, xor update](algorithms/data-structures/segtree_rxq_lazy_range_xor.cpp)
-   </details>
-2. DSU/UFDS (Disjoint Set Union or Union-set Disjoint Set)
-   1. [Python](algorithms/data-structures/dsu.py)
-   2. [c++ version](algorithms/data-structures/dsu.cpp)
+- Graphs
+    - [dijkstra](/algorithms/graphs/dijkstra.cpp)
+    - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
+    - [kruskal (python)](/algorithms/graphs/kruskal.py)
+    - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
 
-3. Prefix sum 
-   1. [Python](algorithms/data-structures/prefix_sum.py)
-      
-4. Sparse Table
-   1. [RMQ](algorithms/data-structures/sparse_table_rmq.cpp)
+- Math
+    - [arrangement rec](/algorithms/math/arrangement_rec.cpp)
+    - [bhaskara](/algorithms/math/bhaskara.cpp)
+    - [bhaskara (python)](/algorithms/math/bhaskara.py)
+    - [brent](/algorithms/math/brent.cpp)
+    - [combinatorics no repetitions](/algorithms/math/combinatorics_no_repetitions.cpp)
+    - [combinatorics with repetitions](/algorithms/math/combinatorics_with_repetitions.cpp)
+    - [count divisors memo](/algorithms/math/count_divisors_memo.cpp)
+    - [equals eps](/algorithms/math/equals_eps.cpp)
+    - [euler phi](/algorithms/math/euler-phi.cpp)
+    - [euler phi range](/algorithms/math/euler-phi-range.cpp)
+    - [factorial](/algorithms/math/factorial.cpp)
+    - [factorization](/algorithms/math/factorization.cpp)
+    - [fast exp](/algorithms/math/fast_exp.cpp)
+    - [fractions](/algorithms/math/fractions.cpp)
+    - [gcd](/algorithms/math/gcd.cpp)
+    - [integer mod](/algorithms/math/integer_mod.cpp)
+    - [is prime](/algorithms/math/is-prime.cpp)
+    - [lcm](/algorithms/math/lcm.cpp)
+    - [log2 fast](/algorithms/math/log2_fast.cpp)
+    - [modular inverse phi](/algorithms/math/modular-inverse-phi.cpp)
+    - [n choose k count](/algorithms/math/n-choose-k-count.cpp)
+    - [permutation count](/algorithms/math/permutation-count.cpp)
+    - [phi one](/algorithms/math/phi-one.cpp)
+    - [polynomial](/algorithms/math/polynomial.cpp)
+    - [power sum](/algorithms/math/power-sum.cpp)
+    - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
+    - [sieve of eratosthenes](/algorithms/math/sieve_of_eratosthenes.cpp)
 
-5. Ordered set
-   1. [GNU PBDS](algorithms/data-structures/ordered_set_gnu_pbds.cpp)
+- Searching
+    - [ternary search recursive](/algorithms/searching/ternary_search_recursive.cpp)
 
-### Graphs
+- Strings
+    - [rabin karp](/algorithms/strings/rabin-karp.cpp)
+    - [trie naive](/algorithms/strings/trie-naive.cpp)
 
-1. Kruskal 
-   1. [Python](algorithms/graphs/kruskal.py) 
-2. LCA (Lowest Common Ancestor)
-   1. [Sparse Table ](algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
-1. [Dijkstra](algorithms/graphs/dijkstra.cpp)
-1. [Floyd Warshall](algorithms/graphs/floyd_warshall.cpp)
+- Trees
+    - [maximum distances](/algorithms/trees/maximum-distances.cpp)
+    - [tree diameter](/algorithms/trees/tree_diameter.cpp)
 
-### Trees
-
-1. [Tree Diameter](algorithms/trees/tree_diameter.cpp)
-1. [Maximum Distances](algorithms/trees/maximum-distances.cpp)
-### Dynamic Programming
-
-1. [Knapsack 0-1 (with values)](algorithms/dynamic_programming/knapsack_dp_values_01.cpp)
-2. [Edit distance](algorithms/dynamic_programming/edit_distance.cpp)
-1.  [Money Sum (bottom up)](algorithms/dynamic_programming/money_sum_bottom_up.cpp)
-1.  [TSP](algorithms/dynamic_programming/tsp.cpp)
-### Math
-
-1. Combinatorics N choose K (elements)
-   1. [No repetitions](algorithms/math/combinatorics_no_repetitions.cpp)
-   2. [With repetitions](algorithms/math/combinatorics_with_repetitions.cpp)
-2. Arrangement N choose K (elements)
-   1. [Recursive ](algorithms/math/arrangement_rec.cpp)
-
-1. [Combinatorics N choose K (binom)](algorithms/math/n-choose-k-count.cpp)
-
-3. [Fast exponentiation](algorithms/math/fast_exp.cpp)
-
-4. [Fast Log 2](algorithms/math/log2_fast.cpp)
-
-5. [Equals EPS](algorithms/math/equals_eps.cpp)
-
-6. [Sieve of Eratosthenes](algorithms/math/sieve_of_eratosthenes.cpp)
-
-1. [Is Prime](algorithms/math/is-prime.cpp)
-
-1. [List Primes](algorithms/math/sieve-list-primes.cpp)
-
-1. [Integer mod struct](algorithms/math/integer_mod.cpp)
-
-7. Bhaskara
-   1. [cpp](algorithms/math/bhaskara.cpp)
-   2. [python](algorithms/math/bhaskara.py)
-
-1. [Polynomial](algorithms/math/polynomial.cpp)
-
-1. [GCD](algorithms/math/gcd.cpp)
-
-1. [Count divisors](algorithms/math/count_divisors_memo.cpp)
-
-1. [Power Sum](algorithms/math/power-sum.cpp)
-
-1. [Factorial](algorithms/math/factorial.cpp)
-
-1. [Phi function](algorithms/math/phi-one.cpp)
-
-1. [Factorization](algorithms/math/factorization.cpp)
-
-1. [Mudular Inverse Phi](algorithms/math/modular-inverse-phi.cpp)
-
-### Strings 
-   1. [Rabin-karp(naive)](algorithms/strings/rabin-karp.cpp)
-   1. [Trie (naive)](algorithms/strings/trie-naive.cpp)
-
-#### Extras
-
-1. [Binary to Gray code](algorithms/extras/binary_to_gray.cpp)
-1. [Big int](algorithms/extras/bigint.cpp)
-
-<details><summary> <b>Pure C implementations </b></summary>
-
-### Algorithms ad-hoc ?
-
-1. [Partition](algorithms/ds-c/partition.c)
-
-3. Quick Select
-   1. [Naive ](algorightms/ds-c/quick_select.c)
-
-1. Quicksort
-   1. [Quicksort Naive ](algorithms/ds-c/quicksort_1_naive.c)
-   2. [Quicksort M3](algorithms/ds-c/quicksort_2_m3.c)
-   3. [Quicksort M3 and Insertion ](algorithms/ds-c/quicksort_3_m3_insertion.c)
-   4. [Quicksort M3 and Insertion with max recurstion ](algorithms/ds-c/quicksort_4_m3_insertion_maxrec.c)
-
-2. Merge Sort
-   1. [ Regular ](algorithms/ds-c/merge_sort.c)
-
-### Data structures
-
-1. Stack
-   1. [Naive](algorithms/ds-c/stack_naive.c)
-
-1. Linked list
-   1. [Insert and remove in order](algorithms/ds-c/linked_list_order.c)
-2. Double Linked List
-   1. [Naive](algorithms/ds-c/double_linked_list_full.c)
-
-3. Queue
-   1. [Naive ](algorithms/ds-c/queue_naive.c)
-   2. [Circular](algorithms/ds-c/queue_circular.c)
-   3. [Circular and dynamic](algorithms/ds-c/queue_circular_dynamic.c)
-
-1. Hash Table
-   1. [Linked List](algorithms/ds-c/hash_table_linked.c)
-   1. [Open Address](algorithms/ds-c/hash_open_address.c)
-
-1. Binary Search trees
-    1. [Save by copy](algorithms/ds-c/binary_search_tree_pointers.c)
-
-1. Priority Queue
-   1 [Regular (Sedgewick)](algorithms/ds-c/priority_queue.c)
-
-1. Set
-   1. [Foo, bst](algorithms/ds-c/set_foo_bst.c)
-
-### Searching
-
-1. [Binary Search](algorithms/ds-c/binary_search.c)
-
-### Strings
-
-1. [Morris-Pratt](algorithms/morris-pratt.c)
-1. Trie
-   1. [Mark value (can use as a set)](algorithms/ds-c/trie_mark_value.c)
-   
-### Graph
-
-1. [DSU](algorithms/ds-c/dsu.c)
-2. [DFS](algorithms/ds-c/dfs-recursive.c)
-
-</details>
 
 ## Submissions
-
-- [SPOJ-sphere](submissions/SPOJ-sphere)
-- [icpc](submissions/icpc)
-- [CodeChef](submissions/CodeChef)
-- [Becrowd](submissions/Becrowd)
-- [Codeforces](submissions/Codeforces)
-- [leetCode](submissions/leetCode)
-- [moj](submissions/moj)
-- [UVA-OJ](submissions/UVA-OJ)
-- [atCoder](submissions/atCoder)
-- [maratonasDF_unballoon](submissions/maratonasDF_unballoon)
-- [CSES](submissions/CSES)
-- [OBI](submissions/OBI)
-- [google](submissions/google)
-- [Neps](submissions/Neps)
+- [SPOJ sphere](/submissions/SPOJ-sphere)
+- [icpc](/submissions/icpc)
+- [CodeChef](/submissions/CodeChef)
+- [Becrowd](/submissions/Becrowd)
+- [Codeforces](/submissions/Codeforces)
+- [leetCode](/submissions/leetCode)
+- [upsolving](/submissions/upsolving)
+- [moj](/submissions/moj)
+- [UVA OJ](/submissions/UVA-OJ)
+- [atCoder](/submissions/atCoder)
+- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
+- [CSES](/submissions/CSES)
+- [OBI](/submissions/OBI)
+- [google](/submissions/google)
+- [Neps](/submissions/Neps)
 
 ## References & Courses
-
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
@@ -192,4 +97,5 @@
 - [USACO Guide](https://usaco.guide/dashboard/)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
 - [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
+    
 
