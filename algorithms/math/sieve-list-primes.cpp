@@ -1,9 +1,4 @@
-// iagorrr ;)
-#include <bits/stdc++.h>
-using namespace std;
-using ll = long long;
-using vll = vector<ll>;
-
+// lsit every prime until MAXN
 const ll MAXN = 1e5;
 vll list_primes(ll n) { // Nlog * log N
   vll ps;
