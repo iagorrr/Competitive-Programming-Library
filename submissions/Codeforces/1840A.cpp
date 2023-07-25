@@ -33,11 +33,26 @@ void dbg_out(H h, T... t) {
                 dbg_out(__VA_ARGS__);        \
         }
 
-void run() {}
+void run() {
+        ll n;
+        cin >> n;
+        string s;
+        cin >> s;
+        for (int i = 0; i < n; ++i) {
+                cout << s[i];
+                int j = i;
+                do {
+                        i++;
+                } while (s[j] != s[i]);
+        }
+        cout << '\n';
+}
 int32_t main(void) {
-        fastio;
+        // fastio;
         int t;
         t = 1;
         cin >> t;
         while (t--) run();
 }
+
+// AC, ad-hoc

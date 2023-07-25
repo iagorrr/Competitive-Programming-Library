@@ -33,7 +33,40 @@ void dbg_out(H h, T... t) {
                 dbg_out(__VA_ARGS__);        \
         }
 
-void run() {}
+ll calc(ll n, ll k) {
+        // dbg(k, n);
+        ll m = n - k+1;
+        return (m * (m + 1)) / 2;
+}
+void run() {
+        ll n, k, q;
+        cin >> n >> k >> q;
+        vll as(n);
+        for (int i = 0; i < n; i++) cin >> as[i];
+
+        ll l = 0;
+        ll r = 0;
+        ll ans = 0;
+        while (l < n and r < n) {
+                if (as[r] > q) {  // too hot
+                        // long enought
+                        if (r - l >= k) {
+                                // dbg(q, r, l);
+                                ans += calc(r - l, k);
+                        }
+                        r++;
+                        l = r;
+
+                } else if (r == n - 1) {
+                        if(r-l+1 >= k)
+                                ans += calc(r - l + 1, k);
+                        r++;
+                } else
+                        r++;
+        }
+        // dbg(ans);
+        cout << ans << '\n';
+}
 int32_t main(void) {
         fastio;
         int t;
@@ -41,3 +74,4 @@ int32_t main(void) {
         cin >> t;
         while (t--) run();
 }
+// AC, two pointers

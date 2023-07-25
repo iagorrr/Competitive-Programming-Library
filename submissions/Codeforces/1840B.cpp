@@ -1,4 +1,7 @@
 // iagorrr ;)
+#pragma GCC optimize("O2")
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -33,7 +36,19 @@ void dbg_out(H h, T... t) {
                 dbg_out(__VA_ARGS__);        \
         }
 
-void run() {}
+void run() {
+        ll n, k;
+        cin >> n >> k;
+        ll l2 = log2(n);
+        ll ans;
+        // dbg(l2, k);
+        if (l2 >= k) {  // can buy it all
+                ans = (1ll << (k));
+        } else {
+                ans = n + 1;
+        }
+        cout << ans << '\n';
+}
 int32_t main(void) {
         fastio;
         int t;
@@ -41,3 +56,5 @@ int32_t main(void) {
         cin >> t;
         while (t--) run();
 }
+
+// AC, bitwise operations
