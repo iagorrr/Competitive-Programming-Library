@@ -1,7 +1,4 @@
 // iagorrr ;)
-#pragma GCC optimize("O2")
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
 #include <bits/stdc++.h>
 using namespace std;
 #define endl '\n'
@@ -41,5 +38,6 @@ int32_t main(void) {
         fastio;
         int t;
         t = 1;
+        cin >> t;
         while (t--) run();
 }
