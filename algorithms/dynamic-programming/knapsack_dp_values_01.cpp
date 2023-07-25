@@ -1,3 +1,5 @@
+const int MAX_N = 1001;
+const int MAX_S = 100001;
 array<array<int, MAX_S>, MAX_N> dp;
 bool check[MAX_N][MAX_S];
 pair<int, vi> knapsack(int S, const vector<pii> &xs) {
