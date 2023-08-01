@@ -32,6 +32,7 @@ void dbg_out(H h, T... t) {
                 cerr << #__VA_ARGS__ << ':'; \
                 dbg_out(__VA_ARGS__);        \
         }
+const ll INF = 1e18;
 
 void run() {}
 int32_t main(void) {
