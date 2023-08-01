@@ -24,6 +24,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
 
 - Graphs
+    - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [kruskal (python)](/algorithms/graphs/kruskal.py)
