@@ -58,12 +58,15 @@ def get_algorithms_md() -> str:
 
         md += "\n"
 
-    md += '\n'
+    md += "\n"
     return md
 
 
+SECTIONS_TO_IGNORE = ["upsolving"]
+
+
 def valid_sub_section(section: Path) -> bool:
-    return section.is_dir()
+    return section.is_dir() and section.name not in SECTIONS_TO_IGNORE
 
 
 def get_sub_section_name(section: str) -> str:
