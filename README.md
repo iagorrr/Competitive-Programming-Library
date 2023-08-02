@@ -57,6 +57,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Strings
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
+    - [string psum](/algorithms/strings/string-psum.cpp)
     - [trie naive](/algorithms/strings/trie-naive.cpp)
 
 - Trees
