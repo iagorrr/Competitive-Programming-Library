@@ -7,6 +7,7 @@ using namespace std;
         cin.tie(0);                       \
         cout.tie(0);
 #define rep(i, l, r) for (int i = (l); i < (r); i++)
+#define len(__x) (ll)__x.size()
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
