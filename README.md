@@ -31,7 +31,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [kruskal (python)](/algorithms/graphs/kruskal.py)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
-    - [topological sorting (like dependency)](/algorithms/graphs/topological-sorting-(like-dependency).cpp)
 
 - Math
     - [combinatorics with repetitions](/algorithms/math/combinatorics_with_repetitions.cpp)
