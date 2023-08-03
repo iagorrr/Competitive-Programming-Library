@@ -7,15 +7,18 @@ using namespace std;
         cin.tie(0);                       \
         cout.tie(0);
 #define rep(i, l, r) for (int i = (l); i < (r); i++)
-#define len(__x) (ll)__x.size()
+#define len(__x) (ll) __x.size()
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
 using vi = vector<int>;
 using pii = pair<int, int>;
+#define all(a) a.begin(), a.end()
 #define INV(xxxx) \
         for (auto &xxx : xxxx) cin >> xxx;
-#define all(a) a.begin(), a.end()
+#define PRINTV(___x)                                                  \
+        for_each(all(___x), [](ll &____x) { cout << ____x << ' '; }), \
+                cout << '\n';
 #define snd second
 #define fst first
 #define pb(___x) push_back(___x)
