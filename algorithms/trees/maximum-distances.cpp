@@ -1,3 +1,6 @@
+/*
+ * Returns the maximum distance from every node to any other node in the tree.
+ * */
 pll mostDistantFrom(const vector<vll> &adj, ll n, ll root) {
         // 0 indexed
         ll mostDistantNode = root;
@@ -69,7 +72,6 @@ vll everyDistanceFromNode(const vector<vll> &adj, ll n, ll root) {
 }
 
 vll maxDistances(const vector<vll> &adj, ll n) {
-        // returns the maximum distance possible for each node
         auto [node1, node2, diameter] = tree_diameter(adj, n);
         auto distances1 = everyDistanceFromNode(adj, n, node1);
         auto distances2 = everyDistanceFromNode(adj, n, node2);
