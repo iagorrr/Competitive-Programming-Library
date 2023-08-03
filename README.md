@@ -22,6 +22,7 @@ Here you will find implementation of algorithms and data structures used in comp
 - Extras
     - [bigint](/algorithms/extras/bigint.cpp)
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
+    - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
 
 - Graphs
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
@@ -29,6 +30,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [kruskal (python)](/algorithms/graphs/kruskal.py)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
+    - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
+    - [topological sorting (like dependency)](/algorithms/graphs/topological-sorting-(like-dependency).cpp)
 
 - Math
     - [combinatorics with repetitions](/algorithms/math/combinatorics_with_repetitions.cpp)
