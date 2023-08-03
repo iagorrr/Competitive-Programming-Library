@@ -23,7 +23,7 @@ bool dfs(const vector<vll> &adj, ll s, vector<state> &states, vll &order) {
 vll topologicalSorting(const vector<vll> &adj) {
         ll n = len(adj);
         vll order;
-        vector<state> states(n, not_visited);
+        vector<state> states(n, state::not_visited);
         for (int i = 0; i < n; ++i) {
                 if (states[i] == state::not_visited) {
                         if (not dfs(adj, i, states, order)) return {};
