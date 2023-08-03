@@ -37,7 +37,40 @@ void dbg_out(H h, T... t) {
                 dbg_out(__VA_ARGS__);        \
         }
 const ll INF = 1e18;
-
+/*
+ * O(V)
+ * assumes:
+ *      * vertices have index [0, n-1]
+ * if is a DAG:
+ *     * returns a topological sorting
+ * else:
+ *    * returns an empty vector
+ * */
+enum class state { not_visited, processing, done };
+bool dfs(const vector<vll> &adj, ll s, vector<state> &states, vll &order) {
+        states[s] = state::processing;
+        for (auto &v : adj[s]) {
+                if (states[v] == state::not_visited) {
+                        if (not dfs(adj, v, states, order)) return false;
+                } else if (states[v] == state::processing)
+                        return false;
+        }
+        states[s] = state::done;
+        order.pb(s);
+        return true;
+}
+vll topologicalSorting(const vector<vll> &adj) {
+        ll n = len(adj);
+        vll order;
+        vector<state> states(n, state::not_visited);
+        for (int i = 0; i < n; ++i) {
+                if (states[i] == state::not_visited) {
+                        if (not dfs(adj, i, states, order)) return {};
+                }
+        }
+        // reverse(all(order));
+        return order;
+}
 void run() {
         ll n, m;
         cin >> n >> m;
@@ -45,44 +78,48 @@ void run() {
         for (int i = 0; i < m; ++i) {
                 ll u, v;
                 cin >> u >> v, u--, v--;
-                adj[u].pb(v);
+                // v can be reached from u
+                adj[v].pb(u);
         }
 
+        // gets the possible order of visitation
+        auto order = topologicalSorting(adj);
+
+        /*
+         * Sets the longest path from node_i to node 1
+         * ans their respective parents
+         * */
+        vll parent(n, -1);
         vll dists(n, -1);
-        vll parent(n);
-        iota(all(parent), 0);
         dists[0] = 0;
-        queue<pll> q;
-        q.emplace(0ll, 0ll);
-        while (!q.empty()) {
-                auto [city, dist] = q.front();
-                q.pop();
-                if (dist < dists[city]) continue;
-                for (auto &neighboor : adj[city]) {
-                        if (dists[neighboor] < dist + 1) {
-                                q.emplace(neighboor, dist + 1);
-                                parent[neighboor] = city;
-                                dists[neighboor] = dist + 1;
+        for (auto &u : order) {
+                for (auto &v : adj[u]) {
+                        if (dists[u] < dists[v] + 1 and dists[v] >= 0) {
+                                dists[u] = dists[v] + 1;
+                                parent[u] = v;
                         }
                 }
         }
-        if (dists[n - 1] == -1)
-                cout << "IMPOSSIBLE\n";
-        else {
-                ll cur = n - 1;
-                vll path;
-                while (cur != 0) {
-                        path.eb(cur + 1);
-                        cur = parent[cur];
-                }
-                path.eb(1);
-                cout << path.size() << endl;
-                for (int i = path.size() - 1; i >= 0; i--) {
-                        cout << path[i] << ' ';
-                }
-                cout << endl;
+
+        // reconstruct the path based in each parent
+        ll cur = n - 1;
+        vll ans;
+        while (cur > 0) {
+                ans.eb(cur+1);
+                cur = parent[cur];
+                if(cur == 0) ans.pb(1);
         }
+        if (ans.front() != n or ans.back() != 1) {
+                cout << "IMPOSSIBLE\n";
+                return;
+        }
+        cout << len(ans) << '\n';
+        for (int i = len(ans) - 1; i >= 0; --i) {
+                cout << ans[i] << ' ';
+        }
+        cout << endl;
 }
+
 int32_t main(void) {
         fastio;
         int t;
@@ -90,4 +127,4 @@ int32_t main(void) {
         while (t--) run();
 }
 
-// TLE in two cases
+// AC, graphs, topological sorting
