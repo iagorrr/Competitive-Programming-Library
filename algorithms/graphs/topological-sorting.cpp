@@ -1,23 +1,32 @@
 /*
  * O(V)
- * Assumes:
- *      * the given graph is acyclic
+ * assumes:
  *      * vertices have index [0, n-1]
+ * if is a DAG:
+ *     * returns a topological sorting
+ * else:
+ *    * returns an empty vector
  * */
-void dfs(const vector<vll> &adj, ll s, vector<char> &vis, vll &order) {
-        vis[s] = true;
+enum class state { not_visited, processing, done };
+bool dfs(const vector<vll> &adj, ll s, vector<state> &states, vll &order) {
+        states[s] = state::processing;
         for (auto &v : adj[s]) {
-                if (not vis[v]) dfs(adj, v, vis, order);
+                if (states[v] == state::not_visited) {
+                        if (not dfs(adj, v, states, order)) return false;
+                } else if (states[v] == state::processing)
+                        return false;
         }
+        states[s] = state::done;
         order.pb(s);
+        return true;
 }
 vll topologicalSorting(const vector<vll> &adj) {
         ll n = len(adj);
         vll order;
-        vector<char> visited(n);
+        vector<state> states(n, not_visited);
         for (int i = 0; i < n; ++i) {
-                if (not visited[i]) {
-                        dfs(adj, i, visited, order);
+                if (states[i] == state::not_visited) {
+                        if (not dfs(adj, i, states, order)) return {};
                 }
         }
         reverse(all(order));
