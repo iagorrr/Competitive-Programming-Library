@@ -26,6 +26,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Graphs
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
+    - [count SCC (kosajaru)](/algorithms/graphs/count-SCC-(kosajaru).cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [kruskal (python)](/algorithms/graphs/kruskal.py)
