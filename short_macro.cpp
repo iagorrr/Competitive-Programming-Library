@@ -13,6 +13,7 @@ using vll = vector<ll>;
 using pll = pair<ll, ll>;
 using vi = vector<int>;
 using pii = pair<int, int>;
+using vii = vector<pii>;
 #define all(a) a.begin(), a.end()
 #define INV(xxxx) \
         for (auto &xxx : xxxx) cin >> xxx;
