@@ -11,6 +11,7 @@ using namespace std;
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
+using vll2d = vector<vll>;
 using vi = vector<int>;
 using pii = pair<int, int>;
 using vii = vector<pii>;
