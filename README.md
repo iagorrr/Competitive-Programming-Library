@@ -25,6 +25,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
 
 - Graphs
+    - [2 SAT (struct)](/algorithms/graphs/2-SAT-(struct).cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [SCC nodes (kosajaru)](/algorithms/graphs/SCC-nodes-(kosajaru).cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
