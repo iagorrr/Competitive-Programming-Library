@@ -1,7 +1,9 @@
-template <ll MOD = 998'244'353>
+const ll INF = 1e18;
+const ll mod = 998244353;
+template <ll MOD = mod>
 struct Modular {
-        int value;
-        static const int MOD_value = MOD;
+        ll value;
+        static const ll MOD_value = MOD;
 
         Modular(ll v = 0) {
                 value = v % MOD;
@@ -40,8 +42,19 @@ struct Modular {
 
         Modular& operator/=(Modular const& b) { return *this *= inverse(b); }
         friend Modular operator+(Modular a, Modular const b) { return a += b; }
+        Modular operator++(int) {
+                return this->value = (this->value + 1) % MOD;
+        }
+        Modular operator++() { return this->value = (this->value + 1) % MOD; }
         friend Modular operator-(Modular a, Modular const b) { return a -= b; }
         friend Modular operator-(Modular const a) { return 0 - a; }
+        Modular operator--(int) {
+                return this->value = (this->value - 1 + MOD) % MOD;
+        }
+
+        Modular operator--() {
+                return this->value = (this->value - 1 + MOD) % MOD;
+        }
         friend Modular operator*(Modular a, Modular const b) { return a *= b; }
         friend Modular operator/(Modular a, Modular const b) { return a /= b; }
         friend std::ostream& operator<<(std::ostream& os, Modular const& a) {
