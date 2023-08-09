@@ -81,6 +81,7 @@ Here you will find implementation of algorithms and data structures used in comp
 - [moj](/submissions/moj)
 - [UVA OJ](/submissions/UVA-OJ)
 - [atCoder](/submissions/atCoder)
+- [kattis](/submissions/kattis)
 - [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
 - [CSES](/submissions/CSES)
 - [OBI](/submissions/OBI)
