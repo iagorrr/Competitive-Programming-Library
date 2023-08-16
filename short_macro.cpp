@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #ifdef DEBUG
-#inlude "debug.cpp"
+#include "debug.cpp"
 #else
 #define dbg(...) 666
 #endif
@@ -35,7 +35,9 @@ using vc = vector<char>;
 
 const ll INF = 1e18;
 
-void run() { dbg("iago"); }
+void run() {
+
+}
 int32_t main(void) {
     fastio;
     int t;
