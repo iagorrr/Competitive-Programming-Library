@@ -36,22 +36,18 @@ using vc = vector<char>;
 const ll INF = 1e18;
 
 void run() {
-    string s;
-    cin >> s;
-    int n = len(s);
-    string s2 = "";
-    for (ll i = 0; i < n; ++i) {
-        s2.pb(s[i]);
-        string s3;
-        for (ll j = i + 1; j < n; ++j) {
-            s3.pb(s[j]);
-        }
-        if (s2 == s3) {
-            cout << "YES\n";
-            return;
-        }
+    ll n = 0;
+    cin >> n;
+
+    ll ans = 1;
+    set<ll> checked;
+    for (ll i = 2; i <= sqrt(n) + 10; ++i) {
+        ans += (i * i <= n and not checked.count(i * i));
+        ans += (i * i * i <= n and not checked.count(i * i * i));
+        checked.insert(i * i);
+        checked.insert(i * i * i);
     }
-    cout << "NO\n";
+    cout << ans << '\n';
 }
 int32_t main(void) {
     fastio;
@@ -61,4 +57,4 @@ int32_t main(void) {
     while (t--) run();
 }
 
-// AC, strings , brute
+// AC, math
