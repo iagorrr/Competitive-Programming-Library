@@ -5,7 +5,7 @@ ll E(ll n, ll p) {
                 k += n / b;
                 b *= p;
         }
-        reutrn k;
+        return k;
 }
 
 // lsit every prime until MAXN O(Nlog * log N)
