@@ -1,6 +1,6 @@
 /*
-  iagorrr ;)
-  Fast exponentiation algorithm to compute a^n in O(log(n))
+  Fast exponentiation algorithm,
+  compute a^n in O(log(n))
 */
 ll fexp(ll a, int n){
         if(n == 0) return 1;
