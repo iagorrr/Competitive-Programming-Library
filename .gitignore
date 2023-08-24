@@ -62,3 +62,7 @@ algorithms/ds-c/test.c
 # tests
 test.*
 # tests/
+
+# notebook stuff.
+notebook.tex
+
