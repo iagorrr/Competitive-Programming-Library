@@ -1,13 +1,15 @@
-\documentclass{article}
+% \documentclass{article}
+\documentclass[10pt, twocolumn]{article}
 
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
 
-\usepackage[top=0.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage[a4paper, landscape, top=1cm, bottom=0.4cm, left=0.8cm, right=0.4cm]{geometry}
 
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -16,9 +18,14 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{ballblue}{rgb}{0.0, 0.0, 0.8}
 
+% pra deixar deitado
+\title{\textbf{The Reference}}
+\author{}
+\date{}
+
 \lstset{
    language=c++,
-   tabsize=4,
+   tabsize=2,
    commentstyle=\color{gray},
    keywordstyle=\color{ballblue},
    numberstyle=\tiny\color{codegray},
@@ -42,13 +49,11 @@
    \lstinputlisting{#2}
 }
 
-\title{ICPC - Notebook}
-\author{}
-\date{}
+
 
 \begin{document}
 \maketitle
-\begin{multicols}{2}
+\begin{flushleft}
 
 \tableofcontents
 

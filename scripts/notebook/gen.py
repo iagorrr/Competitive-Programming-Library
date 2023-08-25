@@ -8,7 +8,6 @@ import shutil
 import argparse
 from pathlib import Path
 
-# TODO: fix path code duplicated
 
 # Get the path from the command line
 parser = argparse.ArgumentParser(description="Create notebook from C++ files.")
@@ -93,7 +92,7 @@ def create_notebook(section):
                       " file_path: ", file_path, flush=True)
                 aux += "\\includes{%s}{%s}\n" % (file_name, file_path)
 
-        aux += "\n\\end{multicols}\n\\end{document}\n"
+        aux += "\n\\end{flushleft}\n\\end{document}\n"
         texfile.write(aux)
 
     print("notebook.tex created !")
