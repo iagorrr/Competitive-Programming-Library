@@ -1,18 +1,23 @@
-template <typename T = ll>
-struct SegTree {
-  int N;
-  vector<T> st, lazy;
-  T nu = 0;
-  T nq = 0;
-  SegTree(const vector<T> &xs) : N(len(xs)), st(4 * N, nu), lazy(4 * N, nu) {
+template <typename t = ll>
+struct segtree {
+  int n;
+  t nu;
+  t nq;
+  vector<t> st, lazy;
+  segtree(const vector<t> &xs)
+    : n(len(xs)),
+      nu(0),
+      nq(numeric_limits<t>::max()),
+      st(4 * n, nu),
+      lazy(4 * n, nu) {
     for (int i = 0; i < len(xs); ++i) update(i, i, xs[i]);
   }
 
-  SegTree(int n) : N(n), st(4 * N, nu), lazy(4 * N, nu) {}
+  segtree(int n) : n(n), st(4 * n, nu), lazy(4 * n, nu) {}
 
-  void update(int l, int r, ll value) { update(1, 0, N - 1, l, r, value); }
+  void update(int l, int r, ll value) { update(1, 0, n - 1, l, r, value); }
 
-  T query(int l, int r) { return query(1, 0, N - 1, l, r); }
+  t query(int l, int r) { return query(1, 0, n - 1, l, r); }
 
   void update(int node, int nl, int nr, int ql, int qr, ll v) {
     propagation(node, nl, nr);
@@ -33,25 +38,25 @@ struct SegTree {
     update(left(node), nl, mid(nl, nr), ql, qr, v);
     update(right(node), mid(nl, nr) + 1, nr, ql, qr, v);
 
-    st[node] = st[left(node)] + st[right(node)];
+    st[node] = min(st[left(node)], st[right(node)]);
   }
 
-  T query(int node, int nl, int nr, int ql, int qr) {
+  t query(int node, int nl, int nr, int ql, int qr) {
     propagation(node, nl, nr);
 
     if (ql > nr or qr < nl) return nq;
 
     if (ql <= nl and nr <= qr) return st[node];
 
-    T x = query(left(node), nl, mid(nl, nr), ql, qr);
-    T y = query(right(node), mid(nl, nr) + 1, nr, ql, qr);
+    t x = query(left(node), nl, mid(nl, nr), ql, qr);
+    t y = query(right(node), mid(nl, nr) + 1, nr, ql, qr);
 
-    return x + y;
+    return min(x, y);
   }
 
   void propagation(int node, int nl, int nr) {
     if (lazy[node]) {
-      st[node] += (nr - nl + 1) * lazy[node];
+      st[node] += lazy[node];
 
       if (nl < nr) {
         lazy[left(node)] += lazy[node];
