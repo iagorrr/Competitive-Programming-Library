@@ -9,7 +9,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [segtree point rmq](/algorithms/data-structures/segtree_point_rmq.cpp)
     - [segtree rmq lazy max update](/algorithms/data-structures/segtree_rmq_lazy_max_update.cpp)
     - [segtree rmq lazy range](/algorithms/data-structures/segtree_rmq_lazy_range.cpp)
-    - [segtree rsq lazy range sum](/algorithms/data-structures/segtree_rsq_lazy_range_sum.cpp)
+    - [segtree rsq rsu](/algorithms/data-structures/segtree_rsq_rsu.cpp)
     - [segtree rxq lazy range xor](/algorithms/data-structures/segtree_rxq_lazy_range_xor.cpp)
     - [sparse table rmq](/algorithms/data-structures/sparse_table_rmq.cpp)
 
