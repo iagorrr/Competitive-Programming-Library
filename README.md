@@ -23,6 +23,9 @@ Here you will find implementation of algorithms and data structures used in comp
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
 
+- Geometry
+    - [point template](/algorithms/geometry/point-template.cpp)
+
 - Graphs
     - [2 SAT (struct)](/algorithms/graphs/2-SAT-(struct).cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
