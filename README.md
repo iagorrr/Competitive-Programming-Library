@@ -10,8 +10,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [segtree rminq pau](/algorithms/data-structures/segtree-rminq-pau.cpp)
     - [segtree rminq rsu](/algorithms/data-structures/segtree_rminq_rsu.cpp)
     - [segtree rsq rsu](/algorithms/data-structures/segtree_rsq_rsu.cpp)
-    - [segtree rxq lazy range xor](/algorithms/data-structures/segtree_rxq_lazy_range_xor.cpp)
-    - [sparse table rmq](/algorithms/data-structures/sparse_table_rmq.cpp)
+    - [sparse table rminq](/algorithms/data-structures/sparse_table_rminq.cpp)
 
 - Dynamic Programming
     - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
