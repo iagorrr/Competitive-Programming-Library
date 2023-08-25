@@ -6,7 +6,9 @@ format:
 	python3 scripts/format/format-algorithms.py --path ${CURDIR}/algorithms
 
 notebook: format
-	python3 scripts/notebook/gen.py --path ${CURDIR}/algorithms
+	python3 scripts/notebook/gen.py \
+		--path ${CURDIR}/algorithms \
+		--confpath ${CURDIR}/settings-and-macros
 	firefox notebook.pdf
 
 notepdf:

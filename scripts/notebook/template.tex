@@ -1,5 +1,4 @@
-% \documentclass{article}
-\documentclass[10pt, twocolumn]{article}
+\documentclass[10pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -46,17 +45,23 @@
 }
 
 
-\newcommand\includes[2]{ % Thanks to joseleite19 icpc notebook on github
-   \subsection{#1}
-   \lstinputlisting{#2}
+\newcommand\includes[3]{ % Thanks to joseleite19 icpc notebook on github
+   \subsection{#1} % subsection name
+   \input{#3} % brief description
+   \lstinputlisting{#2} % code
 }
 
 
 
 \begin{document}
 \maketitle
+
+\begin{multicols}{3}
+\tableofcontents
+\end{multicols}
+\newpage
+
+\begin{multicols}{2}
 \begin{flushleft}
 
-\tableofcontents
 
-\newpage

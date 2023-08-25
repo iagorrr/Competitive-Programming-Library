@@ -73,8 +73,10 @@ def get_dir():
                     (file_name, (path / section_name / file_name).absolute().__str__())
                 )
 
+        subsection.sort()
         section.append((section_name, subsection))
 
+    section.sort()
     conf_files: List[Tuple[str, str]] = []
     for conf in os.listdir(confpath):
         conf_files.append((conf, (confpath / conf).absolute().__str__()))
@@ -111,9 +113,14 @@ def create_notebook(section):
 
                 print("file_name: ", file_name,
                       " file_path: ", fpath, flush=True)
-                aux += "\\includes{%s}{%s}\n" % (file_name, fpath)
+                description = ""
+                aux += "\\includes{%s}{%s}{%s}\n" % (
+                    file_name, fpath, description)
 
-        aux += "\n\\end{flushleft}\n\\end{document}\n"
+        aux += "\n\\end{flushleft}"
+        aux += "\n\\end{multicols}\n"
+        aux += "\n\\end{document}\n"
+
         texfile.write(aux)
 
     print("notebook.tex created !")
