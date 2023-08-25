@@ -107,8 +107,9 @@ def create_notebook(section):
                     else:
                         spt = "-"
 
-                    file_name = " ".join([x.capitalize()
-                                         for x in file_name.split(spt)])
+                    file_name = " ".join(
+                        [x[0].upper() + x[1:] for x in file_name.split(spt)]
+                    )
                     file_name += suffix
 
                 print("file_name: ", file_name,
