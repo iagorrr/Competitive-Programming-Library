@@ -125,4 +125,4 @@ int32_t main(void) {
   while (t--) run();
 }
 
-// AC, segment tree, range sum update, range min query
+// AC, Segment tree range mininum query, range sum update
