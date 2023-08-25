@@ -6,16 +6,22 @@ import os
 import subprocess
 import shutil
 import argparse
+from typing import Tuple, List
 from pathlib import Path
 
 
 # Get the path from the command line
 parser = argparse.ArgumentParser(description="Create notebook from C++ files.")
 parser.add_argument(
-    "--path", type=str, default="C++", help="Path to implementation paths"
+    "--path", type=str, default="algorithms/", help="Path to implementation paths"
+)
+
+parser.add_argument(
+    "--confpath", type=str, default="settings/", help="Path to settings and macros"
 )
 args = parser.parse_args()
-path = args.path
+path = Path(args.path)
+confpath = Path(args.confpath)
 
 
 def cpy_template():
@@ -53,25 +59,28 @@ def get_dir():
         ):
             continue
         print(section_name)
-        subsection = []
+        subsection: List[Tuple[str, str]] = []
         section_path = os.path.join(path, section_name)
         items = os.listdir(section_path)
         for file_name in items:
             print(file_name)
-            if file_name.endswith(".cpp") or file_name.endswith(".py"):
-                subsection.append(file_name)
-            elif os.path.isdir(os.path.join(section_path, file_name)):
-                # Sub Directory
-                sub_files = os.listdir(os.path.join(section_path, file_name))
-                subsection.extend(
-                    [
-                        os.path.join(file_name, name)
-                        for name in sub_files
-                        if name.endswith(".cpp")
-                    ]
+            if file_name.endswith(".cpp"):
+                subsection.append(
+                    (file_name, (path / section_name / file_name).absolute().__str__())
+                )
+            elif file_name.endswith(".py"):
+                subsection.append(
+                    (file_name, (path / section_name / file_name).absolute().__str__())
                 )
 
         section.append((section_name, subsection))
+
+    conf_files: List[Tuple[str, str]] = []
+    for conf in os.listdir(confpath):
+        conf_files.append((conf, (confpath / conf).absolute().__str__()))
+
+    section.append(("Settings and Macros", conf_files))
+
     return section
 
 
@@ -81,16 +90,28 @@ def create_notebook(section):
     with open(Path(__file__).parent.absolute() / "notebook.tex", "a") as texfile:
         for item, subsection in section:
             print("item: ", item, " subsection: ", subsection, flush=True)
-            aux += f"\\section{{{item.replace('-', ' ')}}}\n"
-            for file in subsection:
-                name, _ = os.path.splitext(file)
-                name = os.path.split(name)[1]  # Remove Segtree/ prefix
-                file_name = " ".join([x.capitalize() for x in name.split("_")])
-                file_path = os.path.join(path, item, file).replace("\\", "/")
+            aux += f"\\section{{{item.replace('-', ' ').capitalize()}}}\n"
+            for file, fpath in subsection:
+                file_name = file
+                if item != "Settings and Macros":
+                    suffix = ""
+                    if file.endswith(".py"):
+                        suffix = " (Python)"
+                    file_name, _ = os.path.splitext(file)
+                    # Remove Segtree/ prefix
+                    file_name = os.path.split(file_name)[1]
+                    if "_" in file_name:
+                        spt = "_"
+                    else:
+                        spt = "-"
+
+                    file_name = " ".join([x.capitalize()
+                                         for x in file_name.split(spt)])
+                    file_name += suffix
 
                 print("file_name: ", file_name,
-                      " file_path: ", file_path, flush=True)
-                aux += "\\includes{%s}{%s}\n" % (file_name, file_path)
+                      " file_path: ", fpath, flush=True)
+                aux += "\\includes{%s}{%s}\n" % (file_name, fpath)
 
         aux += "\n\\end{flushleft}\n\\end{document}\n"
         texfile.write(aux)
@@ -98,7 +119,7 @@ def create_notebook(section):
     print("notebook.tex created !")
 
 
-def main():
+if __name__ == "__main__":
     cpy_template()
     section = get_dir()
     create_notebook(section)
@@ -119,7 +140,3 @@ def main():
     remove_aux()
 
     print("Notebook successfully created !")
-
-
-if __name__ == "__main__":
-    main()
