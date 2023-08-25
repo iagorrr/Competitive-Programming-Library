@@ -14,7 +14,10 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Dynamic Programming
     - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
-    - [knapsack dp values 01](/algorithms/dynamic-programming/knapsack_dp_values_01.cpp)
+    - [kadane](/algorithms/dynamic-programming/kadane.cpp)
+    - [knapsack (value)](/algorithms/dynamic-programming/knapsack-(value).cpp)
+    - [knapsack with elements](/algorithms/dynamic-programming/knapsack-with-elements.cpp)
+    - [longest increasing sequence](/algorithms/dynamic-programming/longest-increasing-sequence.cpp)
     - [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
     - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
@@ -30,6 +33,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [2 SAT (struct)](/algorithms/graphs/2-SAT-(struct).cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [SCC nodes (kosajaru)](/algorithms/graphs/SCC-nodes-(kosajaru).cpp)
+    - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [count SCC (kosajaru)](/algorithms/graphs/count-SCC-(kosajaru).cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
@@ -47,6 +51,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [factorization](/algorithms/math/factorization.cpp)
     - [factorization with primes](/algorithms/math/factorization-with-primes.cpp)
     - [fast exp](/algorithms/math/fast_exp.cpp)
+    - [fast fourrier transform](/algorithms/math/fast-fourrier-transform.cpp)
+    - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
     - [gcd](/algorithms/math/gcd.cpp)
     - [gcd using factorization](/algorithms/math/gcd-using-factorization.cpp)
     - [integer mod](/algorithms/math/integer_mod.cpp)
@@ -64,6 +70,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [ternary search recursive](/algorithms/searching/ternary_search_recursive.cpp)
 
 - Strings
+    - [hash range query](/algorithms/strings/hash-range-query.cpp)
+    - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
     - [trie naive](/algorithms/strings/trie-naive.cpp)
