@@ -75,6 +75,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
     - [trie naive](/algorithms/strings/trie-naive.cpp)
+    - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
 
 - Trees
     - [binary lifting](/algorithms/trees/binary-lifting.cpp)
