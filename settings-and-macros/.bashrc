@@ -11,7 +11,6 @@ cpp() {
       -fsanitize=address,undefined \
       -fno-sanitize-recover \
       -Wfatal-errors  \
-      -DDEBUG $1 \
 
   if [ $? -ne 0 ]; then
       echo ">> FAILED <<" 1>&2

@@ -1,15 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-#ifdef DEBUG
-#include "debug.cpp"
-#else
-#define dbg(...) 666
-#endif
 #define endl '\n'
-#define fastio                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(0);                       \
-    cout.tie(0);
+#define fastio                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(0);                       \
+  cout.tie(0);
 #define len(__x) (ll) __x.size()
 using ll = long long;
 using vll = vector<ll>;
@@ -29,13 +24,11 @@ using vc = vector<char>;
 
 const ll INF = 1e18;
 
-void run() {
-
-}
+void run() {}
 int32_t main(void) {
-    fastio;
-    int t;
-    t = 1;
-    // cin >> t;
-    while (t--) run();
+  fastio;
+  int t;
+  t = 1;
+  // cin >> t;
+  while (t--) run();
 }
