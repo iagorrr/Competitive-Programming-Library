@@ -1,9 +1,9 @@
+
 struct state {
-  int len, link, cnt;
+  int len, link, cnt, firstpos;
   // this can be optimized using a vector with the alphabet size
   map<char, int> next;
 };
-
 struct SuffixAutomaton {
   vector<state> st;
   int sz = 0;
@@ -41,6 +41,7 @@ struct SuffixAutomaton {
   void add_char(char c) {
     int cur = sz++;
     st[cur].len = st[last].len + 1;
+    st[cur].firstpos = st[cur].len - 1;
     int p = last;
     // follow the suffix link until find a transition to c
     while (p != -1 and !st[p].next.count(c)) {
@@ -63,6 +64,7 @@ struct SuffixAutomaton {
       st[clone].len = st[p].len + 1;
       st[clone].next = st[q].next;
       st[clone].link = st[q].link;
+      st[clone].firstpos = st[q].firstpos;
       while (p != -1 and st[p].next[c] == q) {
         st[p].next[c] = clone;
         p = st[p].link;
@@ -96,5 +98,15 @@ struct SuffixAutomaton {
       cur = st[cur].next[c];
     }
     return st[cur].cnt;
+  }
+
+  // find the first index where t appears a substring O(len(t))
+  ll firstOccurence(const string &t) {
+    int cur = 0;
+    for (auto c : t) {
+      if (!st[cur].next.count(c)) return -1;
+      cur = st[cur].next[c];
+    }
+    return st[cur].firstpos - len(t) + 1;
   }
 };
