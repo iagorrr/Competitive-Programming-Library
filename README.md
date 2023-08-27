@@ -43,6 +43,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
 
 - Math
+    - [arithmetic progression sum](/algorithms/math/arithmetic-progression-sum.cpp)
     - [combinatorics with repetitions](/algorithms/math/combinatorics_with_repetitions.cpp)
     - [count divisors memo](/algorithms/math/count_divisors_memo.cpp)
     - [euler phi](/algorithms/math/euler-phi.cpp)
@@ -74,6 +75,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
+    - [suffix automaton](/algorithms/strings/suffix-automaton.cpp)
     - [trie naive](/algorithms/strings/trie-naive.cpp)
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
 
