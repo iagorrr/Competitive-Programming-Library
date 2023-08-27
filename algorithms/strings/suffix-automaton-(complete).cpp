@@ -1,37 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define endl '\n'
-#define fastio                      \
-  ios_base::sync_with_stdio(false); \
-  cin.tie(0);                       \
-  cout.tie(0);
-#define len(__x) (ll) __x.size()
-using ll = long long;
-using vll = vector<ll>;
-using pll = pair<ll, ll>;
-using vll2d = vector<vll>;
-using vi = vector<int>;
-using vi2d = vector<vi>;
-using pii = pair<int, int>;
-using vii = vector<pii>;
-using vc = vector<char>;
-#define all(a) a.begin(), a.end()
-#define snd second
-#define fst first
-#define pb(___x) push_back(___x)
-#define mp(___a, ___b) make_pair(___a, ___b)
-#define eb(___x) emplace_back(___x)
-
-const ll INF = 1e18;
-
-void run() {}
-int32_t main(void) {
-  fastio;
-  int t;
-  t = 1;
-  // cin >> t;
-  while (t--) run();
-}
 struct state {
   int len, link, cnt;
   // this can be optimized using a vector with the alphabet size
@@ -42,13 +8,34 @@ struct SuffixAutomaton {
   vector<state> st;
   int sz = 0;
   int last;
+  vc cloned;
 
-  SuffixAutomaton(const string &s, int maxlen) : st(maxlen * 2) {
+  SuffixAutomaton(const string &s, int maxlen)
+    : st(maxlen * 2), cloned(maxlen * 2) {
     st[0].len = 0;
     st[0].link = -1;
     sz++;
     last = 0;
     for (auto &c : s) add_char(c);
+
+    // precompute for count occurences
+    for (int i = 1; i < sz; i++) {
+      st[i].cnt = !cloned[i];
+    }
+    vector<pair<state, int>> aux;
+    for (int i = 0; i < sz; i++) {
+      aux.push_back({st[i], i});
+    }
+
+    sort(all(aux), [](const pair<state, int> &a, const pair<state, int> &b) {
+      return a.fst.len > b.fst.len;
+    });
+
+    for (auto &[stt, id] : aux) {
+      if (stt.link != -1) {
+        st[stt.link].cnt += st[id].cnt;
+      }
+    }
   }
 
   void add_char(char c) {
@@ -72,10 +59,11 @@ struct SuffixAutomaton {
       st[cur].link = q;
     } else {
       int clone = sz++;
+      cloned[clone] = true;
       st[clone].len = st[p].len + 1;
       st[clone].next = st[q].next;
       st[clone].link = st[q].link;
-      while (p != -1 && st[p].next[c] == q) {
+      while (p != -1 and st[p].next[c] == q) {
         st[p].next[c] = clone;
         p = st[p].link;
       }
@@ -89,14 +77,11 @@ struct SuffixAutomaton {
     for (auto &c : t) {
       if (!st[cur].next.count(c)) return false;
       cur = st[cur].next[c];
+      int cur = 0;
+      for (auto &c : t) {
+        if (!st[cur].next.count(c)) return 0;
+        cur = st[cur].next[c];
+      }
+      return st[cur].cnt;
     }
-    return true;
-  }
-  ll totalSubstrings() {  // distinct, O(len(s))
-    ll tot = 0;
-    for (int i = 1; i < sz; i++) {
-      tot += st[i].len - st[st[i].link].len;
-    }
-    return tot;
-  }
-};
+  };
