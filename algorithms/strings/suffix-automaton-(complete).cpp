@@ -1,5 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+#define fastio                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(0);                       \
+  cout.tie(0);
+#define len(__x) (ll) __x.size()
+using ll = long long;
+using vll = vector<ll>;
+using pll = pair<ll, ll>;
+using vll2d = vector<vll>;
+using vi = vector<int>;
+using vi2d = vector<vi>;
+using pii = pair<int, int>;
+using vii = vector<pii>;
+using vc = vector<char>;
+#define all(a) a.begin(), a.end()
+#define snd second
+#define fst first
+#define pb(___x) push_back(___x)
+#define mp(___a, ___b) make_pair(___a, ___b)
+#define eb(___x) emplace_back(___x)
+
+const ll INF = 1e18;
+
+void run() {}
+int32_t main(void) {
+  fastio;
+  int t;
+  t = 1;
+  // cin >> t;
+  while (t--) run();
+}
 struct state {
-  int len, link;
+  int len, link, cnt;
   // this can be optimized using a vector with the alphabet size
   map<char, int> next;
 };
@@ -50,12 +84,19 @@ struct SuffixAutomaton {
     last = cur;
   }
 
-  bool checkOccurrence(const string &t) {
+  bool checkOccurrence(const string &t) {  // O(len(t))
     int cur = 0;
     for (auto &c : t) {
       if (!st[cur].next.count(c)) return false;
       cur = st[cur].next[c];
     }
     return true;
+  }
+  ll totalSubstrings() {  // distinct, O(len(s))
+    ll tot = 0;
+    for (int i = 1; i < sz; i++) {
+      tot += st[i].len - st[st[i].link].len;
+    }
+    return tot;
   }
 };
