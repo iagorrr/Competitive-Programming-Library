@@ -75,7 +75,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
-    - [suffix automaton](/algorithms/strings/suffix-automaton.cpp)
+    - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
     - [trie naive](/algorithms/strings/trie-naive.cpp)
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
 
