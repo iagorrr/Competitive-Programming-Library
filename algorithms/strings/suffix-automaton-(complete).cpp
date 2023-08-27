@@ -1,8 +1,8 @@
-
 struct state {
   int len, link, cnt, firstpos;
   // this can be optimized using a vector with the alphabet size
   map<char, int> next;
+  vi inv_link;
 };
 struct SuffixAutomaton {
   vector<state> st;
@@ -35,6 +35,11 @@ struct SuffixAutomaton {
       if (stt.link != -1) {
         st[stt.link].cnt += st[id].cnt;
       }
+    }
+
+    // for find every occurende position
+    for (int v = 1; v < sz; v++) {
+      st[st[v].link].inv_link.push_back(v);
     }
   }
 
@@ -108,5 +113,21 @@ struct SuffixAutomaton {
       cur = st[cur].next[c];
     }
     return st[cur].firstpos - len(t) + 1;
+  }
+
+  vi everyOccurence(const string &t) {
+    int cur = 0;
+    for (auto c : t) {
+      if (!st[cur].next.count(c)) return {};
+      cur = st[cur].next[c];
+    }
+    vi ans;
+    getEveryOccurence(cur, len(t), ans);
+    return ans;
+  }
+
+  void getEveryOccurence(int v, int P_length, vi &ans) {
+    if (!cloned[v]) ans.pb(st[v].firstpos - P_length + 1);
+    for (int u : st[v].inv_link) getEveryOccurence(u, P_length, ans);
   }
 };
