@@ -96,7 +96,7 @@ struct SuffixAutomaton {
   }
 
   // count occurences of a given string t
-  ll countOccurences(const string &t) {
+  int countOccurences(const string &t) {
     int cur = 0;
     for (auto &c : t) {
       if (!st[cur].next.count(c)) return 0;
@@ -106,7 +106,7 @@ struct SuffixAutomaton {
   }
 
   // find the first index where t appears a substring O(len(t))
-  ll firstOccurence(const string &t) {
+  int firstOccurence(const string &t) {
     int cur = 0;
     for (auto c : t) {
       if (!st[cur].next.count(c)) return -1;
