@@ -6,6 +6,7 @@ import os
 import subprocess
 import shutil
 import argparse
+from dataclasses import dataclass
 from typing import Tuple, List
 from pathlib import Path
 
@@ -20,8 +21,15 @@ parser.add_argument(
     "--confpath", type=str, default="settings/", help="Path to settings and macros"
 )
 args = parser.parse_args()
-path = Path(args.path)
+ALGO_PATH = Path(args.path)
 confpath = Path(args.confpath)
+
+
+ALGO_SECT_IGNORE = ["ds-c"]
+CMD_GEN_PDF = "pdflatex -interaction=nonstopmode -halt-on-error "
+END_FLUSHLEFT = "\n\\end{flushleft}"
+END_MULTICOLS = "\n\\end{multicols}\n"
+END_DOCUMENT = "\n\\end{document}\n"
 
 
 def cpy_template():
@@ -46,35 +54,44 @@ def remove_aux():
             os.remove(item)
 
 
-ignore_dir = ["ds-c"]
+def valid_algo_section(section_name: str) -> bool:
+    if section_name in ALGO_SECT_IGNORE:
+        return False
+    if not os.path.join(ALGO_PATH, section_name):
+        return False
+
+    return True
 
 
 def get_dir():
-    section_list = os.listdir(path)
+    section_list = os.listdir(ALGO_PATH)
     section = []
     for section_name in section_list:
-        if (
-            not os.path.isdir(os.path.join(path, section_name))
-            or section_name in ignore_dir
-        ):
+        if not valid_algo_section(section_name):
             continue
         print(section_name)
-        subsection: List[Tuple[str, str]] = []
-        section_path = os.path.join(path, section_name)
+        sec_list: List[Tuple[str, str]] = []
+        section_path = ALGO_PATH / section_name
         items = os.listdir(section_path)
         for file_name in items:
             print(file_name)
             if file_name.endswith(".cpp"):
-                subsection.append(
-                    (file_name, (path / section_name / file_name).absolute().__str__())
+                sec_list.append(
+                    (
+                        file_name,
+                        (ALGO_PATH / section_name / file_name).absolute().__str__(),
+                    )
                 )
             elif file_name.endswith(".py"):
-                subsection.append(
-                    (file_name, (path / section_name / file_name).absolute().__str__())
+                sec_list.append(
+                    (
+                        file_name,
+                        (ALGO_PATH / section_name / file_name).absolute().__str__(),
+                    )
                 )
 
-        subsection.sort()
-        section.append((section_name, subsection))
+        sec_list.sort()
+        section.append((section_name, sec_list))
 
     section.sort()
     conf_files: List[Tuple[str, str]] = []
@@ -153,9 +170,9 @@ def create_notebook(section):
 
                 # aux += curinclude
 
-        aux += "\n\\end{flushleft}"
-        aux += "\n\\end{multicols}\n"
-        aux += "\n\\end{document}\n"
+        aux += END_FLUSHLEFT
+        aux += END_MULTICOLS
+        aux += END_DOCUMENT
 
         texfile.write(aux)
 
@@ -167,9 +184,8 @@ if __name__ == "__main__":
     section = get_dir()
     create_notebook(section)
 
-    script_path = Path(__file__).parent.absolute() / "notebook.tex"
-    cmd = ["pdflatex", "-interaction=nonstopmode",
-           "-halt-on-error", script_path]
+    tex_path = Path(__file__).parent.absolute() / "notebook.tex"
+    cmd = (CMD_GEN_PDF + tex_path.__str__()).split()
     with open(os.devnull, "w") as DEVNULL:
         try:
             subprocess.check_call(cmd)
@@ -177,7 +193,7 @@ if __name__ == "__main__":
         except Exception:
             print("Error while converting LaTex to pdf.")
             print("You can run it manually to see the error.")
-            print("pdflatex -interaction=nonstopmode -halt-on-error notebook.tex")
+            print(cmd)
             exit(1)
 
     remove_aux()
