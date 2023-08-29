@@ -1,7 +1,3 @@
-/*
- * Find the maximum sum subarray in a given array.
- * O(N)
- * */
 int kadane(const vi &as) {
   vi s(len(as));
   s[0] = as[0];
