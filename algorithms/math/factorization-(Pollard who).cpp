@@ -1,3 +1,9 @@
+/*
+ * Factorizes a number into its prime factors.
+ * time: O(n^(1/4) * log(n))
+ * memory: just to stroe the prime factors
+ * */
+
 ll mul(ll a, ll b, ll m) {
   ll ret = a * b - (ll)((ld)1 / m * a * b + 0.5) * m;
   return ret < 0 ? ret + m : ret;
@@ -44,11 +50,11 @@ ll rho(ll n) {
   return gcd(prd, n);
 }
 
-vector<ll> fact(ll n) {
+vll fact(ll n) {
   if (n == 1) return {};
   if (prime(n)) return {n};
   ll d = rho(n);
-  vector<ll> l = fact(d), r = fact(n / d);
+  vll l = fact(d), r = fact(n / d);
   l.insert(l.end(), r.begin(), r.end());
   return l;
 }
