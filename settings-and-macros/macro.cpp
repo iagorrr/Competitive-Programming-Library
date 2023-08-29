@@ -5,8 +5,9 @@ using namespace std;
   ios_base::sync_with_stdio(false); \
   cin.tie(0);                       \
   cout.tie(0);
-#define len(__x) (ll) __x.size()
+#define len(__x) (int) __x.size()
 using ll = long long;
+using ld = long double;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
 using vll2d = vector<vll>;
