@@ -50,6 +50,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [factorial](/algorithms/math/factorial.cpp)
     - [factorial factorization](/algorithms/math/factorial-factorization.cpp)
     - [factorization](/algorithms/math/factorization.cpp)
+    - [factorization (Pollard who)](/algorithms/math/factorization-(Pollard who).cpp)
     - [factorization with primes](/algorithms/math/factorization-with-primes.cpp)
     - [fast exp](/algorithms/math/fast_exp.cpp)
     - [fast fourrier transform](/algorithms/math/fast-fourrier-transform.cpp)
