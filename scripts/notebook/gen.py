@@ -63,6 +63,14 @@ def valid_algo_section(section_name: str) -> bool:
     return True
 
 
+def validCode(file_name: str, valid_codes: list[str]):
+    for extension in valid_codes:
+        if file_name.endswith(extension):
+            return True
+
+    return False
+
+
 def get_dir():
     section_list = os.listdir(ALGO_PATH)
     section = []
@@ -75,14 +83,7 @@ def get_dir():
         items = os.listdir(section_path)
         for file_name in items:
             print(file_name)
-            if file_name.endswith(".cpp"):
-                sec_list.append(
-                    (
-                        file_name,
-                        (ALGO_PATH / section_name / file_name).absolute().__str__(),
-                    )
-                )
-            elif file_name.endswith(".py"):
+            if validCode(file_name, [".py", ".cpp"]):
                 sec_list.append(
                     (
                         file_name,
@@ -93,6 +94,7 @@ def get_dir():
         sec_list.sort()
         section.append((section_name, sec_list))
 
+    # Adds settings and macros to notebook
     section.sort()
     conf_files: List[Tuple[str, str]] = []
     for conf in os.listdir(confpath):
@@ -103,21 +105,26 @@ def get_dir():
     return section
 
 
+def getAlgoSectionTex(section: str) -> str:
+    return f"\\section{{{section.replace('-', ' ').capitalize()}}}\n"
+
+
 def create_notebook(section):
     aux = ""
     print("Generating notebook...")
     with open(Path(__file__).parent.absolute() / "notebook.tex", "a") as texfile:
         for item, subsection in section:
             print("item: ", item, " subsection: ", subsection, flush=True)
-            aux += f"\\section{{{item.replace('-', ' ').capitalize()}}}\n"
+            aux += getAlgoSectionTex(item)
             for file, fpath in subsection:
                 file_name = file
                 if item != "Settings and Macros":
+                    # file_name = getName(file)
                     suffix = ""
                     if file.endswith(".py"):
                         suffix = " (Python)"
                     file_name, _ = os.path.splitext(file)
-                    # Remove Segtree/ prefix
+
                     file_name = os.path.split(file_name)[1]
                     if "_" in file_name:
                         spt = "_"
@@ -129,7 +136,6 @@ def create_notebook(section):
                     )
                     file_name += suffix
 
-                # taca essa porra numa funcao depois
                 tex_path = fpath
                 while tex_path[-1] != ".":
                     tex_path = tex_path[:-1]
