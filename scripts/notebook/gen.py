@@ -112,11 +112,46 @@ def create_notebook(section):
                     )
                     file_name += suffix
 
-                print("file_name: ", file_name,
-                      " file_path: ", fpath, flush=True)
+                # taca essa porra numa funcao depois
+                tex_path = fpath
+                while tex_path[-1] != ".":
+                    tex_path = tex_path[:-1]
+                tex_path = tex_path[:-1]
+                tex_path += ".tex"
                 description = ""
-                aux += "\\includes{%s}{%s}{%s}\n" % (
-                    file_name, fpath, description)
+                if os.path.isfile(tex_path):
+                    with open(tex_path) as ftex:
+                        description = ftex.read()
+
+                print(
+                    "file_name: ",
+                    file_name,
+                    " file_path: ",
+                    fpath,
+                    "description:",
+                    description,
+                    "textpath: ",
+                    tex_path,
+                    flush=True,
+                )
+
+                if description is not "":
+                    file_name = ""
+
+                curinclude = "\\includes{%s}{%s}{%s}\n" % (
+                    file_name,
+                    fpath,
+                    description,
+                )
+                if description == "":
+                    description = "\\subsection{%s}\n" % file_name
+
+                code_include = "\\lstinputlisting{%s}\n" % fpath
+
+                aux += description
+                aux += code_include
+
+                # aux += curinclude
 
         aux += "\n\\end{flushleft}"
         aux += "\n\\end{multicols}\n"
