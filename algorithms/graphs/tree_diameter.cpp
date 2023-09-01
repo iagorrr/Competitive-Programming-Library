@@ -44,8 +44,8 @@ ll twoNodesDist(const vector<vll> &adj, ll n, ll a, ll b) {
 }
 ll tree_diameter(const vector<vll> &adj, ll n) {
   // 0 indexed !!!
-  auto [node1, dist1] = mostDistantFrom(adj, n, 0);
-  auto [node2, dist2] = mostDistantFrom(adj, n, node1);
-  auto diameter = twoNodesDist(adj, n, node1, node2);
+  auto [node1, dist1] = mostDistantFrom(adj, n, 0);      // O(V)
+  auto [node2, dist2] = mostDistantFrom(adj, n, node1);  // O(V)
+  auto diameter = twoNodesDist(adj, n, node1, node2);    // O(V)
   return diameter;
 }

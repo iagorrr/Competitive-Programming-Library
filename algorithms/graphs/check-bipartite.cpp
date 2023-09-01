@@ -1,4 +1,3 @@
-// O(V)
 bool checkBipartite(const ll n, const vector<vll> &adj) {
   ll s = 0;
   queue<ll> q;

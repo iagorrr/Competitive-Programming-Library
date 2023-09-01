@@ -1,10 +1,12 @@
 struct SCC {
   ll N;
+  int totscc;
   vll2d adj, tadj;
   vll todo, comps, comp;
   vector<set<ll>> sccadj;
   vchar vis;
-  SCC(ll _N) : N(_N), adj(_N), tadj(_N), comp(_N, -1), sccadj(_N), vis(_N) {}
+  SCC(ll _N)
+    : N(_N), totscc(0), adj(_N), tadj(_N), comp(_N, -1), sccadj(_N), vis(_N) {}
 
   void add_edge(ll x, ll y) { adj[x].eb(y), tadj[y].eb(x); }
 
@@ -27,6 +29,7 @@ struct SCC {
       if (comp[x] == -1) {
         dfs2(x, x);
         comps.pb(x);
+        totscc++;
       }
   }
 

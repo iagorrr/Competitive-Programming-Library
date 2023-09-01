@@ -1,8 +1,3 @@
-/*
- * far[h][i] = the node that 2^h far from node i
- * sometimes is useful invert the order of loops
- * time : O(nlogn)
- * */
 const int maxlog = 20;
 int far[maxlog + 1][n + 1];
 int n;

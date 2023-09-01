@@ -1,12 +1,3 @@
-/*
- * O(V)
- * assumes:
- *      * vertices have index [0, n-1]
- * if is a DAG:
- *     * returns a topological sorting
- * else:
- *    * returns an empty vector
- * */
 enum class state { not_visited, processing, done };
 bool dfs(const vector<vll> &adj, ll s, vector<state> &states, vll &order) {
   states[s] = state::processing;
