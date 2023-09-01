@@ -1,4 +1,4 @@
-all: format readme notebook
+all: format readme notebook opennote
 readme:
 	python scripts/gen-readme.py > README.md
 
@@ -9,7 +9,9 @@ notebook: format
 	python3 scripts/notebook/gen.py \
 		--path ${CURDIR}/algorithms \
 		--confpath ${CURDIR}/settings-and-macros
-	firefox notebook.pdf
 
 notepdf:
 	pdflatex -interaction=nonstopmode -halt-on-error ${CURDIR}/scripts/notebook/notebook.tex 
+
+opennote:
+	firefox notebook.pdf
