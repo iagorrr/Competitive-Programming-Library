@@ -1,9 +1,3 @@
-/*
- * Factorizes a number into its prime factors.
- * time: O(n^(1/4) * log(n))
- * memory: just to stroe the prime factors
- * */
-
 ll mul(ll a, ll b, ll m) {
   ll ret = a * b - (ll)((ld)1 / m * a * b + 0.5) * m;
   return ret < 0 ? ret + m : ret;
