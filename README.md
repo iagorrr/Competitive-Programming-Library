@@ -28,7 +28,11 @@ Here you will find implementation of algorithms and data structures used in comp
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
 
 - Geometry
-    - [point template](/algorithms/geometry/point-template.cpp)
+    - [determinant](/algorithms/geometry/determinant.cpp)
+    - [equals](/algorithms/geometry/equals.cpp)
+    - [line](/algorithms/geometry/line.cpp)
+    - [point](/algorithms/geometry/point.cpp)
+    - [segment](/algorithms/geometry/segment.cpp)
 
 - Graphs
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
