@@ -7,10 +7,11 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
-\usepackage[a4paper, landscape, top=1cm, bottom=0.4cm, left=0.8cm, right=0.4cm]{geometry}
+\usepackage[a4paper, landscape, top=0.5cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
 \setlength{\columnseprule}{0.01cm}
-\setlength{\columnsep}{1em}
+\setlength{\columnsep}{0.5cm}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -18,9 +19,6 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{ballblue}{rgb}{0.0, 0.0, 0.8}
 
-% \title{\textbf{The Reference}}
-% \author{}
-% \date{}
 
 \lstset{
   language=C++,
@@ -34,7 +32,7 @@
   showtabs=false,
   extendedchars=false,
   inputencoding=utf8,
-  basicstyle=\ttfamily\footnotesize, % remove footnotesize for a bigger code size
+  basicstyle=\ttfamily\footnotesize,
   keywordstyle=\color{blue}\ttfamily,
   stringstyle=\color{green}\ttfamily,
   commentstyle=\color{red}\ttfamily,
@@ -52,11 +50,11 @@
 
 \begin{document}
 % \maketitle
-
-\begin{multicols}{3}
+\begin{multicols}{2}
 \tableofcontents
 \end{multicols}
 \newpage
+\footnotesize
 
 \begin{multicols}{2}
 \begin{flushleft}
