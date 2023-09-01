@@ -1,4 +1,5 @@
-template <size_t Dim> struct GaussianElimination {
+template <size_t Dim>
+struct GaussianElimination {
   vector<ll> basis;
   size_t size;
 
@@ -6,8 +7,7 @@ template <size_t Dim> struct GaussianElimination {
 
   void insert(ll x) {
     for (ll i = Dim; i >= 0; i--) {
-      if ((x & 1ll << i) == 0)
-        continue;
+      if ((x & 1ll << i) == 0) continue;
 
       if (!basis[i]) {
         basis[i] = x;
@@ -22,17 +22,14 @@ template <size_t Dim> struct GaussianElimination {
   void normalize() {
     for (ll i = Dim; i >= 0; i--)
       for (ll j = i - 1; j >= 0; j--)
-        if (basis[i] & 1ll << j)
-          basis[i] ^= basis[j];
+        if (basis[i] & 1ll << j) basis[i] ^= basis[j];
   }
 
   bool check(ll x) {
     for (ll i = Dim; i >= 0; i--) {
-      if ((x & 1ll << i) == 0)
-        continue;
+      if ((x & 1ll << i) == 0) continue;
 
-      if (!basis[i])
-        return false;
+      if (!basis[i]) return false;
 
       x ^= basis[i];
     }
@@ -46,16 +43,14 @@ template <size_t Dim> struct GaussianElimination {
     ll ans = 0;
     ll total = 1ll << size;
     for (ll i = Dim; ~i; i--) {
-      if (!basis[i])
-        continue;
+      if (!basis[i]) continue;
 
       ll mid = total >> 1ll;
       if ((mid < k and (ans & 1ll << i) == 0) ||
           (k <= mid and (ans & 1ll << i)))
         ans ^= basis[i];
 
-      if (mid < k)
-        k -= mid;
+      if (mid < k) k -= mid;
 
       total >>= 1ll;
     }
@@ -66,10 +61,8 @@ template <size_t Dim> struct GaussianElimination {
     ll ans = 0;
     k--;
     for (size_t i = 0; i <= Dim; i++) {
-      if (!basis[i])
-        continue;
-      if (k & 1)
-        ans ^= basis[i];
+      if (!basis[i]) continue;
+      if (k & 1) ans ^= basis[i];
       k >>= 1;
     }
     return ans;
