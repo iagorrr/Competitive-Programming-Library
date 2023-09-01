@@ -25,7 +25,7 @@ ALGO_PATH = Path(args.path)
 confpath = Path(args.confpath)
 
 
-ALGO_SECT_IGNORE = ["ds-c"]
+ALGO_SECT_IGNORE = ["ds-c", "extras"]
 CMD_GEN_PDF = "pdflatex -interaction=nonstopmode -halt-on-error "
 END_FLUSHLEFT = "\n\\end{flushleft}"
 END_MULTICOLS = "\n\\end{multicols}\n"
