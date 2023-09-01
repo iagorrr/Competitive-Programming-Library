@@ -1,8 +1,3 @@
-/*
-        Sparse table implementation for rmq.
-        build: O(NlogN)
-        query: O(1)
-*/
 int fastlog2(ll x) {
   ull i = x;
   return i ? __builtin_clzll(1) - __builtin_clzll(i) : -1;
