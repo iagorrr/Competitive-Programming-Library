@@ -1,8 +1,3 @@
-/*
- * ans[i] = a position where p matchs
- * with s perfectly starting
- * O(len(s)+len(p))
- * */
 vi getOccPos(string &s, string &p) {
   // Z-function
   char delim = '#';
