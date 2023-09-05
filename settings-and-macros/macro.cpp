@@ -23,7 +23,7 @@ using vc = vector<char>;
 #define mp(___a, ___b) make_pair(___a, ___b)
 #define eb(___x) emplace_back(___x)
 
-const ll INF = 1e18;
+const ll oo = 1e18;
 
 void run() {}
 int32_t main(void) {
