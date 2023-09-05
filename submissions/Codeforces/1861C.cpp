@@ -5,7 +5,7 @@ using namespace std;
   ios_base::sync_with_stdio(false); \
   cin.tie(0);                       \
   cout.tie(0);
-#define len(__x) (int) __x.size()
+#define len(__x) (int)__x.size()
 using ll = long long;
 using ld = long double;
 using vll = vector<ll>;
@@ -33,59 +33,65 @@ const ll INF = 1e18;
 // possível:
 // partir de um ordenado ou vazio e a query ser ordenado
 bool run() {
-	string s;
-	cin >> s;
+  string s;
+  cin >> s;
 
-	int desordenados = 0;
-	vi cur;
-	int numsei = '?';
-	int ordem = '1';
-	int desordem = '0';
-	int i = 0;
-	for(auto &c : s) {
-		/*
-		cout << "i: " << i << " c: " << c << "  ";
-		for(auto &cur_i : cur) cout << (char)cur_i << ' ';
-		cout << endl;
-		*/
+  int desordenados = 0;
+  vector<pair<char, int>> cur;
+  char numsei = '?';
+  char ordem = '1';
+  char desordem = '0';
+  int i = 0;
+  int sz = 0;
+  for (auto &c : s) {
+    if (c == ordem or c == desordem) {
+      if (c == desordem) {
+        if (sz <= 1) return false;
+        if (cur.back().fst == ordem) return false;
+        if (cur.back().fst == numsei) {
+          if (cur.back().snd == 1)
+            cur.back().fst = desordem;
+          else {
+            cur.back().snd--;
+            cur.emplace_back(desordem, 1);
+          }
 
-		if(c == ordem or c == desordem) {
-			if(c == desordem) {
-				if(len(cur) <= 1) return false;
-				if(cur.back() == ordem) return false;
-				if(cur.back() == numsei) {
-					cur.back() = desordem;
-					desordenados++;
-					continue;
-				}
-			}
-			if(c == ordem) {
-				if(len(cur) <= 1) continue;
-				if(desordenados >= 1){
-				 	return false;
-				}
-				if( cur.back() == desordem){
-					return false;
-				}
-				if(cur.back() == numsei) {
-					cur = vi(len(cur), ordem);
-					cur[0] = '?';
-					continue;
-				}
-			}
-		}
-		else {
-			if(c == '+') {
-				cur.pb(numsei);
-			}
-			else {
-				if(cur.back() == desordem) desordenados--;
-				cur.pop_back();
-			}
-		}
-		i++;
-	}
-	return true;
+          desordenados++;
+          continue;
+        }
+      }
+      if (c == ordem) {
+        if (sz <= 1) continue;
+        if (desordenados >= 1) {
+          return false;
+        }
+        if (cur.back().fst == desordem) {
+          return false;
+        }
+        if (cur.back().fst == numsei) {
+          cur = vector<pair<char, int>>();
+          cur.emplace_back(numsei, 1);
+          if (sz > 1) cur.emplace_back(ordem, sz - 1);
+          continue;
+        }
+      }
+    } else {
+      if (c == '+') {
+        if (sz >= 1 and cur.back().fst == numsei) cur.back().snd++;
+        else cur.emplace_back(numsei, 1);
+        sz++;
+      } else {
+        if (sz >= 1 and cur.back().fst == desordem) desordenados--;
+        if(sz >= 1 and cur.back().snd == 1)
+          cur.pop_back();
+        else
+          cur.back().snd--;
+        sz--;
+      }
+    }
+    i++;
+  }
+  return true;
 }
 int32_t main(void) {
   fastio;
@@ -93,13 +99,11 @@ int32_t main(void) {
   t = 1;
   cin >> t;
   while (t--) {
-
-		if(run())
-			cout << "YES" << endl;
-		else
-			cout << "NO" << endl;
-	}
-
+    if (run())
+      cout << "YES" << endl;
+    else
+      cout << "NO" << endl;
+  }
 }
 
-// AC, implementation
+// AC, data structures, implementation
