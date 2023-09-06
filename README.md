@@ -59,6 +59,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [LCM using factorization](/algorithms/math/LCM-using-factorization.cpp)
     - [arithmetic progression sum](/algorithms/math/arithmetic-progression-sum.cpp)
     - [binomial](/algorithms/math/binomial.cpp)
+    - [binomial mod](/algorithms/math/binomial-mod.cpp)
     - [euler phi](/algorithms/math/euler-phi.cpp)
     - [euler phi (in range)](/algorithms/math/euler-phi-(in-range).cpp)
     - [factorial](/algorithms/math/factorial.cpp)
