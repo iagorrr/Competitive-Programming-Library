@@ -18,7 +18,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [kadane](/algorithms/dynamic-programming/kadane.cpp)
     - [knapsack (value)](/algorithms/dynamic-programming/knapsack-(value).cpp)
     - [knapsack with elements](/algorithms/dynamic-programming/knapsack-with-elements.cpp)
-    - [longest increasing sequence](/algorithms/dynamic-programming/longest-increasing-sequence.cpp)
+    - [longest increasing subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence.cpp)
     - [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
     - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
@@ -28,10 +28,11 @@ Here you will find implementation of algorithms and data structures used in comp
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
 
 - Geometry
+    - [convex hull](/algorithms/geometry/convex-hull.cpp)
     - [determinant](/algorithms/geometry/determinant.cpp)
     - [equals](/algorithms/geometry/equals.cpp)
     - [line](/algorithms/geometry/line.cpp)
-    - [point](/algorithms/geometry/point.cpp)
+    - [point struct and utils (2d)](/algorithms/geometry/point-struct-and-utils-(2d).cpp)
     - [segment](/algorithms/geometry/segment.cpp)
 
 - Graphs
