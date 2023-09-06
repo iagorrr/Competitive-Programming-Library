@@ -80,6 +80,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [ternary search recursive](/algorithms/searching/ternary_search_recursive.cpp)
 
 - Strings
+    - [count distinct anagrams](/algorithms/strings/count-distinct-anagrams.cpp)
     - [hash range query](/algorithms/strings/hash-range-query.cpp)
     - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
