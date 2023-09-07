@@ -1,0 +1,5 @@
+\subsection{Hanoi Tower}
+
+Let $T_n$ be the total of moves to solve a hanoi tower, we know that  $T_n >= 2 \cdot T_{n-1} + 1$, for $n > 0$, and $T_0 = 0$. By induction it's easy to see that $T_n = 2^n - 1$, for $n > 0$.
+
+The following algorithm finds the necessary steps to solve the game for 3 stacks and $n$ disks.
