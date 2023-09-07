@@ -77,6 +77,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [sum of divisors](/algorithms/math/sum-of-divisors.cpp)
 
 - Searching
+    - [meet in the middle](/algorithms/searching/meet-in-the-middle.cpp)
     - [ternary search recursive](/algorithms/searching/ternary_search_recursive.cpp)
 
 - Strings
