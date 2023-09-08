@@ -44,6 +44,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
     - [euler path](/algorithms/graphs/euler_path.cpp)
+    - [find cycle](/algorithms/graphs/find-cycle.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [graph cycle](/algorithms/graphs/graph_cycle.cpp)
     - [kruskal](/algorithms/graphs/kruskal.cpp)
