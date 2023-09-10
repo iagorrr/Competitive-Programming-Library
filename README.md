@@ -48,6 +48,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
     - [euler path](/algorithms/graphs/euler_path.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
+    - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
     - [kruskal](/algorithms/graphs/kruskal.cpp)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
