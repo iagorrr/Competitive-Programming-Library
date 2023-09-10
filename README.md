@@ -38,6 +38,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Graphs
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
+    - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
