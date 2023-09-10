@@ -44,6 +44,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
+    - [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
     - [euler path](/algorithms/graphs/euler_path.cpp)
     - [find cycle](/algorithms/graphs/find-cycle.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
