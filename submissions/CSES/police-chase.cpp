@@ -75,12 +75,35 @@ void dfs(int u, vi2d &g, vll2d &capacity, vc &visited) {
     }
   }
 }
+
+vii mincut(vii &edges, int s, int t, int n, bool directed = false) {
+  vll2d capacity(n, vll(n));
+  vi2d g(n);
+  for (auto &[u, v] : edges) {
+    g[u].eb(v);
+    capacity[u][v] += 1;
+    if (not directed) {
+      g[v].eb(u);
+      capacity[v][u] += 1;
+    }
+  }
+
+  maxflow(0, n - 1, n, g, capacity);
+  vc vis(n);
+  dfs(0, g, capacity, vis);
+
+  vii removed;
+  for (auto &[u, v] : edges) {
+    if ((vis[u] and not vis[v]) or (vis[v] and not vis[u]))
+      removed.emplace_back(u, v);
+  }
+
+  return removed;
+}
+
 void run() {
   int n, m;
   cin >> n >> m;
-
-  vi2d g(n);
-  vll2d capacity(n, vll(n));
 
   vector<pair<int, int>> edges;
   for (int i = 0; i < m; i++) {
@@ -88,22 +111,9 @@ void run() {
     cin >> a >> b;
     a--, b--;
     edges.emplace_back(a, b);
-    g[a].eb(b);
-    g[b].eb(a);
-    capacity[a][b] += 1;
-    capacity[b][a] += 1;
-
   }
-  //  ll maxflow(int s, int t, int n, vi2d &g, vll2d &capacity) {
-  maxflow(0, n - 1, n, g, capacity);
-  vc visited(n);
-  dfs(0, g, capacity, visited);
 
-  vector<pair<int, int>> removed;
-  for (auto &[u, v] : edges) {
-    if ((visited[u] and not visited[v]) or (visited[v] and not visited[u]))
-      removed.emplace_back(u, v);
-  }
+  auto removed = mincut(edges, 0, n - 1, n);
 
   cout << len(removed) << endl;
   for (auto &[u, v] : removed) {
