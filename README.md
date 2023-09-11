@@ -41,6 +41,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
+    - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
     - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
