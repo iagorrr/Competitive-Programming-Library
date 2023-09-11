@@ -54,6 +54,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [kruskal](/algorithms/graphs/kruskal.cpp)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
     - [maximum distances](/algorithms/graphs/maximum-distances.cpp)
+    - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [small to large](/algorithms/graphs/small_to_large.cpp)
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
     - [tree diameter](/algorithms/graphs/tree_diameter.cpp)
