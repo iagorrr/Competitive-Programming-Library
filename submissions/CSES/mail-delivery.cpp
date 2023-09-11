@@ -26,22 +26,31 @@ using vc = vector<char>;
 const ll oo = 1e18;
 
 // Undirected Edges
-vector<int> euler_cycle(vector<set<int>> &g, int u) {
+vector<int> euler_cycle_undirected(vector<vector<int>> &g, int u) {
   vector<int> res;
+  multiset<pair<int, int>> vis;
 
   stack<int> st;
   st.push(u);
   while (!st.empty()) {
     auto cur = st.top();
+
+    while (!g[cur].empty()) {
+      auto it = vis.find(make_pair(cur, g[cur].back()));
+      if (it == vis.end()) break;
+      g[cur].pop_back();
+      vis.erase(it);
+    }
+
     if (g[cur].empty()) {
       res.push_back(cur);
       st.pop();
     } else {
-      auto next = *g[cur].begin();
+      auto next = g[cur].back();
       st.push(next);
 
-      g[cur].erase(next);
-      g[next].erase(cur);
+      vis.emplace(next, cur);
+      g[cur].pop_back();
     }
   }
 
@@ -52,7 +61,7 @@ vector<int> euler_cycle(vector<set<int>> &g, int u) {
 }
 
 // Undirected edges
-vector<int> euler_path(vector<set<int>> &g, int first) {
+vector<int> euler_path_undirected(vector<vector<int>> &g, int first) {
   int n = (int)g.size();
   int v1 = -1, v2 = -1;
   {
@@ -70,13 +79,13 @@ vector<int> euler_path(vector<set<int>> &g, int first) {
     if (bad or (v1 != -1 and v2 == -1)) return {};
   }
 
-  if (v1 != -1) {
+  if (v2 != -1) {
     // insert cycle
-    g[v1].insert(v2);
-    g[v2].insert(v1);
+    g[v1].push_back(v2);
+    g[v2].push_back(v1);
   }
 
-  auto res = euler_cycle(g, first);
+  auto res = euler_cycle_undirected(g, first);
   if (res.empty()) return res;
 
   if (v1 != -1) {
@@ -99,16 +108,16 @@ void run() {
   int n, m;
   cin >> n >> m;
 
-  vector<set<int>> g(n);
+  vector<vector<int>> g(n);
   for (int i = 0; i < m; i++) {
     int a, b;
     cin >> a >> b;
     a--, b--;
-    g[a].insert(b);
-    g[b].insert(a);
+    g[a].eb(b);
+    g[b].eb(a);
   }
-  auto ans = euler_path(g, 0);
-  if (len(ans) < m + 1 or ans.back() != ans.front()) {
+  auto ans = euler_path_undirected(g, 0);
+  if (ans.empty() or ans.back() != ans.front()) {
     cout << "IMPOSSIBLE\n";
   } else {
     for (auto &ai : ans) cout << ai + 1 << ' ';
