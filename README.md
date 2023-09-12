@@ -47,6 +47,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [dijkstra](/algorithms/graphs/dijkstra.cpp)
     - [dijkstra (k shortest paths)](/algorithms/graphs/dijkstra-(k-shortest-paths).cpp)
     - [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
+    - [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
     - [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
     - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
@@ -58,6 +59,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
     - [small to large](/algorithms/graphs/small_to_large.cpp)
+    - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
     - [tree diameter](/algorithms/graphs/tree_diameter.cpp)
 
