@@ -7,6 +7,7 @@ using namespace std;
   cout.tie(0);
 #define len(__x) (int) __x.size()
 using ll = long long;
+using ull = unsigned long long;
 using ld = long double;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
