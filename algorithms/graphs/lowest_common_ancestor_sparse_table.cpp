@@ -1,59 +1,63 @@
-int fastlog2(ll x) {
-  ull i = x;
-  return i ? __builtin_clzll(1) - __builtin_clzll(i) : -1;
-}
 template <typename T>
-class SparseTable {
- public:
-  int N;
-  int K;
-  vector<vector<T>> st;
-  SparseTable(vector<T> vs)
-    : N(len(vs)), K(fastlog2(N) + 1), st(K + 1, vector<T>(N + 1)) {
-    copy(all(vs), st[0].begin());
+struct SparseTable {
+  vector<T> v;
+  int n;
+  static const int b = 30;
+  vi mask, t;
 
-    for (int i = 1; i <= K; ++i)
-      for (int j = 0; j + (1 << i) <= N; ++j)
-        st[i][j] = min(st[i - 1][j], st[i - 1][j + (1 << (i - 1))]);
-  }
+  int op(int x, int y) { return v[x] < v[y] ? x : y; }
+  int msb(int x) { return __builtin_clz(1) - __builtin_clz(x); }
   SparseTable() {}
-  T RMQ(int l, int r) {
-    int i = fastlog2(r - l + 1);
-    return min(st[i][l], st[i][r - (1 << i) + 1]);
+  SparseTable(const vector<T>& v_) : v(v_), n(v.size()), mask(n), t(n) {
+    for (int i = 0, at = 0; i < n; mask[i++] = at |= 1) {
+      at = (at << 1) & ((1 << b) - 1);
+      while (at and op(i, i - msb(at & -at)) == i) at ^= at & -at;
+    }
+    for (int i = 0; i < n / b; i++)
+      t[i] = b * i + b - 1 - msb(mask[b * i + b - 1]);
+    for (int j = 1; (1 << j) <= n / b; j++)
+      for (int i = 0; i + (1 << j) <= n / b; i++)
+        t[n / b * j + i] =
+          op(t[n / b * (j - 1) + i], t[n / b * (j - 1) + i + (1 << (j - 1))]);
+  }
+  int small(int r, int sz = b) { return r - msb(mask[r] & ((1 << sz) - 1)); }
+  T query(int l, int r) {
+    if (r - l + 1 <= b) return small(r, r - l + 1);
+    int ans = op(small(l + b - 1), small(r));
+    int x = l / b + 1, y = r / b - 1;
+    if (x <= y) {
+      int j = msb(y - x + 1);
+      ans = op(ans, op(t[n / b * j + x], t[n / b * j + y - (1 << j) + 1]));
+    }
+    return ans;
   }
 };
-class LCA {
- public:
-  int p;
-  int n;
-  vi first;
-  vc visited;
-  vi vertices;
-  vi height;
-  SparseTable<int> st;
 
-  LCA(const vi2d &g)
-    : p(0), n(len(g)), first(n + 1), visited(n + 1, 0), height(n + 1) {
-    build_dfs(g, 0, 1);
-    st = SparseTable<int>(vertices);
+struct LCA {
+  SparseTable<int> st;
+  int n;
+  vi v, pos, dep;
+
+  LCA(const vi2d& g, int root) : n(len(g)), pos(n) {
+    dfs(root, 0, -1, g);
+    st = SparseTable<int>(vector<int>(all(dep)));
   }
 
-  void build_dfs(const vi2d &g, int u, int hi) {
-    visited[u] = true;
-    height[u] = hi;
-    first[u] = len(vertices);
-    vertices.pb(u);
-    for (auto uv : g[u]) {
-      if (!visited[uv]) {
-        build_dfs(g, uv, hi + 1);
-        vertices.pb(u);
+  void dfs(int i, int d, int p, const vi2d& g) {
+    v.eb(len(dep)) = i, pos[i] = len(dep), dep.eb(d);
+    for (auto j : g[i])
+      if (j != p) {
+        dfs(j, d + 1, i, g);
+        v.eb(len(dep)) = i, dep.eb(d);
       }
-    }
   }
 
   int lca(int a, int b) {
-    int l = min(first[a], first[b]);
-    int r = max(first[a], first[b]);
-    return st.RMQ(l, r);
+    int l = min(pos[a], pos[b]);
+    int r = max(pos[a], pos[b]);
+    return v[st.query(l, r)];
+  }
+  int dist(int a, int b) {
+    return dep[pos[a]] + dep[pos[b]] - 2 * dep[pos[lca(a, b)]];
   }
 };
