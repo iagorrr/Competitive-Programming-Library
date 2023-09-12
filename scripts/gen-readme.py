@@ -100,7 +100,7 @@ def get_submissions_md():
 
 def get_intro() -> str:
     md = "# Competitive Programming Algorithms\n"
-    md += "Here you will find implementation of algorithms and data structures used in competitive programming and submissions to many OJ\n"
+    md += "Here you will find implementation of algorithms and data structures used in competitive programming context, submissions to many OJ problems, and [printable notebook](./notebook.pdf) with the implementations\n"
     md += "\n"
     return md
 
@@ -115,6 +115,8 @@ def get_references() -> str:
 - [USACO Guide](https://usaco.guide/dashboard/)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
 - [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
+- [Competitive Programing Book](https://cpbook.net/details?cp=4)
+- [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
     """
     md += "\n"
 

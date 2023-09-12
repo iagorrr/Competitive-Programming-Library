@@ -12,7 +12,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [segtree rminq rsu](/algorithms/data-structures/segtree_rminq_rsu.cpp)
     - [segtree rsq rsu](/algorithms/data-structures/segtree_rsq_rsu.cpp)
     - [segtree rxorq pau](/algorithms/data-structures/segtree-rxorq-pau.cpp)
-    - [sparse table rminq](/algorithms/data-structures/sparse_table_rminq.cpp)
+    - [sparse table](/algorithms/data-structures/sparse-table.cpp)
 
 - Dynamic Programming
     - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
@@ -130,5 +130,7 @@ Here you will find implementation of algorithms and data structures used in comp
 - [USACO Guide](https://usaco.guide/dashboard/)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
 - [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
+- [Competitive Programing Book](https://cpbook.net/details?cp=4)
+- [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
     
 
