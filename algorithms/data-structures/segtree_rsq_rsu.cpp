@@ -1,14 +1,15 @@
 template <typename T = ll>
 struct SegTree {
   int N;
+  T nu;
+  T nq;
   vector<T> st, lazy;
-  T nu = 0;
-  T nq = 0;
-  SegTree(const vector<T> &xs) : N(len(xs)), st(4 * N, nu), lazy(4 * N, nu) {
+  SegTree(const vector<T> &xs)
+    : N(len(xs)), nu(0), nq(0), st(4 * N, nu), lazy(4 * N, nu) {
     for (int i = 0; i < len(xs); ++i) update(i, i, xs[i]);
   }
 
-  SegTree(int n) : N(n), st(4 * N, nu), lazy(4 * N, nu) {}
+  SegTree(int n) : N(n), nu(0), nq(0), st(4 * N, nu), lazy(4 * N, nu) {}
 
   void update(int l, int r, ll value) { update(1, 0, N - 1, l, r, value); }
 
