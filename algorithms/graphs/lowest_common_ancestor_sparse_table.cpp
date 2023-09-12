@@ -9,8 +9,8 @@ class SparseTable {
   int K;
   vector<vector<T>> st;
   SparseTable(vector<T> vs)
-    : N((int)vs.size()), K(fastlog2(N) + 1), st(K + 1, vector<T>(N + 1)) {
-    copy(vs.begin(), vs.end(), st[0].begin());
+    : N(len(vs)), K(fastlog2(N) + 1), st(K + 1, vector<T>(N + 1)) {
+    copy(all(vs), st[0].begin());
 
     for (int i = 1; i <= K; ++i)
       for (int j = 0; j + (1 << i) <= N; ++j)
@@ -27,26 +27,26 @@ class LCA {
   int p;
   int n;
   vi first;
-  vector<char> visited;
+  vc visited;
   vi vertices;
   vi height;
   SparseTable<int> st;
 
-  LCA(const vector<vi> &g)
-    : p(0), n((int)g.size()), first(n + 1), visited(n + 1, 0), height(n + 1) {
-    build_dfs(g, 1, 1);
+  LCA(const vi2d &g)
+    : p(0), n(len(g)), first(n + 1), visited(n + 1, 0), height(n + 1) {
+    build_dfs(g, 0, 1);
     st = SparseTable<int>(vertices);
   }
 
-  void build_dfs(const vector<vi> &g, int u, int hi) {
+  void build_dfs(const vi2d &g, int u, int hi) {
     visited[u] = true;
     height[u] = hi;
-    first[u] = vertices.size();
-    vertices.push_back(u);
+    first[u] = len(vertices);
+    vertices.pb(u);
     for (auto uv : g[u]) {
       if (!visited[uv]) {
         build_dfs(g, uv, hi + 1);
-        vertices.push_back(u);
+        vertices.pb(u);
       }
     }
   }
