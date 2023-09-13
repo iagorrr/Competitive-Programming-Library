@@ -50,6 +50,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
     - [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
     - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
+    - [find centroid](/algorithms/graphs/find-centroid.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
