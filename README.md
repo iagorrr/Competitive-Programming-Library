@@ -6,6 +6,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
     - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
+    - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
     - [segtree pud rqd](/algorithms/data-structures/segtree-pud-rqd.cpp)
     - [segtree rmaxq rmaxu](/algorithms/data-structures/segtree-rmaxq-rmaxu.cpp)
     - [segtree rminq pau](/algorithms/data-structures/segtree-rminq-pau.cpp)
