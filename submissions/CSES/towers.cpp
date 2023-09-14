@@ -1,55 +1,52 @@
-// iagorrr ;)
 #include <bits/stdc++.h>
-#include <cmath>
 using namespace std;
-#define fastio ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define endl '\n'
+#define fastio                      \
+  ios_base::sync_with_stdio(false); \
+  cin.tie(0);                       \
+  cout.tie(0);
+#define len(__x) (int)__x.size()
 using ll = long long;
+using ull = unsigned long long;
+using ld = long double;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
+using vll2d = vector<vll>;
 using vi = vector<int>;
+using vi2d = vector<vi>;
 using pii = pair<int, int>;
-#define INV(xxxx) for(auto &xxx : xxxx) cin >> xxx;
+using vii = vector<pii>;
+using vc = vector<char>;
 #define all(a) a.begin(), a.end()
-#define ss second
-#define ff first
-#define mp make_pair
+#define snd second
+#define fst first
+#define pb(___x) push_back(___x)
+#define mp(___a, ___b) make_pair(___a, ___b)
+#define eb(___x) emplace_back(___x)
 
-void dbg_out() { cerr << endl; }
-template <typename H, typename... T>
-void dbg_out(H h, T... t) { cerr << ' ' << h; dbg_out(t...); }
-#define dbg(...) { cerr << #__VA_ARGS__ << ':'; dbg_out(__VA_ARGS__); }
+const ll oo = 1e18;
 
-void run(){
-  ll n; cin >> n;
-  vll xs(n);
-  for(int i = 0; i < n; ++i) cin >> xs[i];
-  multiset<ll> top;
-  for(int i = 0; i < n; ++i) {
-    auto pos = top.lower_bound(xs[i]);
-
-    if(top.empty()) {
-      top.insert(xs[i]);
-      continue;
-    }
-    if(pos == top.begin()){
-      if(*pos > xs[i]){
-        top.erase(pos);
-      }
-      top.insert(xs[i]);
-    }
-    else if (pos == top.end()) {
-      if(*prev(pos) > xs[i]) {
-        top.erase(prev(top.end()));
-      }
-      top.insert(xs[i]);
+void run() {
+  int n;
+  cin >> n;
+  multiset<ll> tops;
+  while (n--) {
+    ll x;
+    cin >> x;
+    if (tops.empty() or *tops.rbegin() <= x) {
+      tops.insert(x);
+    } else {
+      auto it = tops.upper_bound(x);
+      tops.erase(it);
+      tops.insert(x);
     }
   }
-
-  cout << top.size() << '\n';
+  cout << len(tops) <<endl;
 }
-int32_t main(void){ fastio;
-  int t; t = 1;
-  
-  while(t--)
-    run();
+int32_t main(void) {
+  fastio;
+  int t;
+  t = 1;
+  // cin >> t;
+  while (t--) run();
 }
