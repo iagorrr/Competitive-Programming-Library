@@ -100,6 +100,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Strings
     - [count distinct anagrams](/algorithms/strings/count-distinct-anagrams.cpp)
+    - [double hash range query](/algorithms/strings/double-hash-range-query.cpp)
     - [hash range query](/algorithms/strings/hash-range-query.cpp)
     - [kth digit in digit string](/algorithms/strings/kth-digit-in-digit-string.cpp)
     - [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
