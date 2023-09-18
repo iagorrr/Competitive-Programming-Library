@@ -24,6 +24,9 @@ using vc = vector<char>;
 #define mp(___a, ___b) make_pair(___a, ___b)
 #define eb(___x) emplace_back(___x)
 
+vector<string> dir({"LU", "U", "RU", "R", "RD", "D", "LD", "L"});
+int dx[] =           {-1,  -1,   -1,   0,    1,   1,    1,   0};
+int dy[] =           {-1,   0,    1,   1,    1,   0,   -1,  -1};
 const ll oo = 1e18;
 
 void run() {}
