@@ -10,6 +10,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
     - [segtree PA](/algorithms/data-structures/segtree-PA.cpp)
     - [segtree pud rqd](/algorithms/data-structures/segtree-pud-rqd.cpp)
+    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-rmaxq-pmaxu-(dynamic).cpp)
     - [segtree rmaxq rmaxu](/algorithms/data-structures/segtree-rmaxq-rmaxu.cpp)
     - [segtree rminq pau](/algorithms/data-structures/segtree-rminq-pau.cpp)
     - [segtree rminq rsu](/algorithms/data-structures/segtree_rminq_rsu.cpp)
