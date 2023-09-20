@@ -14,6 +14,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [segtree rmaxq rmaxu](/algorithms/data-structures/segtree-rmaxq-rmaxu.cpp)
     - [segtree rminq pau](/algorithms/data-structures/segtree-rminq-pau.cpp)
     - [segtree rminq rsu](/algorithms/data-structures/segtree_rminq_rsu.cpp)
+    - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-rsq-psu-(dynamic).cpp)
     - [segtree rsq rsu](/algorithms/data-structures/segtree_rsq_rsu.cpp)
     - [segtree rxorq pau](/algorithms/data-structures/segtree-rxorq-pau.cpp)
     - [sparse table](/algorithms/data-structures/sparse-table.cpp)
