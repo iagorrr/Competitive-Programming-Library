@@ -29,11 +29,11 @@ int dx[] =           {-1,  -1,   -1,   0,    1,   1,    1,   0};
 int dy[] =           {-1,   0,    1,   1,    1,   0,   -1,  -1};
 const ll oo = 1e18;
 
-void run() {}
+auto solve() {}
 int32_t main(void) {
   fastio;
   int t;
   t = 1;
   // cin >> t;
-  while (t--) run();
+  while (t--) solve();
 }
