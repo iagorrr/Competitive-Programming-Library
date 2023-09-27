@@ -114,7 +114,6 @@ Here you will find implementation of algorithms and data structures used in comp
 
 ## Submissions
 - [SPOJ sphere](/submissions/SPOJ-sphere)
-- [icpc](/submissions/icpc)
 - [CodeChef](/submissions/CodeChef)
 - [Becrowd](/submissions/Becrowd)
 - [Codeforces](/submissions/Codeforces)
@@ -122,6 +121,7 @@ Here you will find implementation of algorithms and data structures used in comp
 - [moj](/submissions/moj)
 - [UVA OJ](/submissions/UVA-OJ)
 - [atCoder](/submissions/atCoder)
+- [ICPC](/submissions/ICPC)
 - [kattis](/submissions/kattis)
 - [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
 - [CSES](/submissions/CSES)
