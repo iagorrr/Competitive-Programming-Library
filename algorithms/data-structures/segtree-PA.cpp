@@ -92,28 +92,3 @@ struct SegTree {
   }
   ll query(int l, int r) { return query(l, r, 1, 0, n - 1); }
 };
-void run() {
-  int n, q;
-  cin >> n >> q;
-
-  SegTree st(n);
-  for (int i = 0; i < n; i++) {
-    ll x;
-    cin >> x;
-    st.update_set(i, i, x, 0);
-  }
-
-  while (q--) {
-    int o;
-    cin >> o;
-
-    int a, b;
-    cin >> a >> b;
-    a--, b--;
-    if (o == 1) {
-      st.update_add(a, b, 0, 1);
-    } else {
-      cout << st.query(a, b) << endl;
-    }
-  }
-}
