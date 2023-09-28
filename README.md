@@ -20,11 +20,10 @@ Here you will find implementation of algorithms and data structures used in comp
     - [sparse table](/algorithms/data-structures/sparse-table.cpp)
 
 - Dynamic Programming
-    - [Binary Knapsack (Subset Sum)](/algorithms/dynamic-programming/Binary-Knapsack-(Subset-Sum).cpp)
+    - [Binary Knapsack (bottom up)](/algorithms/dynamic-programming/Binary-Knapsack-(bottom-up).cpp)
+    - [Binary Knapsack (top down)](/algorithms/dynamic-programming/Binary-Knapsack-(top-down).cpp)
     - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
     - [kadane](/algorithms/dynamic-programming/kadane.cpp)
-    - [knapsack (value)](/algorithms/dynamic-programming/knapsack-(value).cpp)
-    - [knapsack with elements](/algorithms/dynamic-programming/knapsack-with-elements.cpp)
     - [longest increasing subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence.cpp)
     - [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
     - [tsp](/algorithms/dynamic-programming/tsp.cpp)

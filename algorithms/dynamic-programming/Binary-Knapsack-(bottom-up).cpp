@@ -1,9 +1,10 @@
 const int MAXN{2010}, MAXM{2010};
 ll st[MAXN][MAXM];
 char ps[MAXN][MAXM];
-
-pair<ll, vi> knapsack(int M, const vii &cs) {
-  int N = len(cs) - 1;
+pair<ll, vi> knapsack(int M, const vll &VS, const vi &WS) {
+  memset(st, 0, sizeof(st));
+  memset(st, 0, sizeof(st));
+  int N = len(VS) - 1;  // ELEMENTS START AT INDEX 1 !
 
   for (int i = 0; i <= N; ++i) st[i][0] = 0;
 
@@ -13,7 +14,8 @@ pair<ll, vi> knapsack(int M, const vii &cs) {
     for (int m = 1; m <= M; ++m) {
       st[i][m] = st[i - 1][m];
       ps[i][m] = 0;
-      auto [w, v] = cs[i];
+      int w = WS[i];
+      ll v = VS[i];
 
       if (w <= m and st[i - 1][m - w] + v > st[i][m]) {
         st[i][m] = st[i - 1][m - w] + v;
@@ -26,13 +28,10 @@ pair<ll, vi> knapsack(int M, const vii &cs) {
   vi is;
   for (int i = N; i >= 1; --i) {
     if (ps[i][m]) {
-      is.push_back(i);
-      m -= cs[i].first;
+      is.emplace_back(i - 1);
+      m -= WS[i];
     }
   }
 
-  reverse(all(is));
-
-  // max value, items
   return {st[N][M], is};
 }
