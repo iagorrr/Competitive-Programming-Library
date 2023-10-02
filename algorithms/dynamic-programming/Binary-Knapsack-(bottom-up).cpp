@@ -3,7 +3,7 @@ ll st[MAXN + 1][MAXM + 1];
 char ps[MAXN + 1][MAXM + 1];
 pair<ll, vi> knapsack(int M, const vll &VS, const vi &WS) {
   memset(st, 0, sizeof(st));
-  memset(st, 0, sizeof(st));
+  memset(ps, 0, sizeof(ps));
   int N = len(VS) - 1;  // ELEMENTS START AT INDEX 1 !
 
   for (int i = 0; i <= N; ++i) st[i][0] = 0;
