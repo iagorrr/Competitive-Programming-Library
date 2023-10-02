@@ -1,6 +1,6 @@
-const int MAXN{2010}, MAXM{2010};
-ll st[MAXN][MAXM];
-char ps[MAXN][MAXM];
+const int MAXN(2010), MAXM(2010);
+ll st[MAXN + 1][MAXM + 1];
+char ps[MAXN + 1][MAXM + 1];
 pair<ll, vi> knapsack(int M, const vll &VS, const vi &WS) {
   memset(st, 0, sizeof(st));
   memset(st, 0, sizeof(st));
