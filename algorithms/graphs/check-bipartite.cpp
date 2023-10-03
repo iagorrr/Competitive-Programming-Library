@@ -1,8 +1,6 @@
-bool checkBipartite(const ll n, const vector<vll> &adj) {
-  ll s = 0;
+bool bfs(const ll n, int s, const vector<vll> &adj, vll &color) {
   queue<ll> q;
   q.push(s);
-  vll color(n, INF);
   color[s] = 0;
   bool isBipartite = true;
   while (!q.empty() && isBipartite) {
@@ -15,6 +13,16 @@ bool checkBipartite(const ll n, const vector<vll> &adj) {
       } else if (color[v] == color[u]) {
         return false;
       }
+    }
+  }
+  return true;
+}
+
+bool checkBipartite(int n, const vll2d &adj) {
+  vll color(n, oo);
+  for (int i = 0; i < n; i++) {
+    if (color[i] != oo) {
+      if (not bfs(n, adj, color)) return false;
     }
   }
   return true;
