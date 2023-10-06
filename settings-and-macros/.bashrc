@@ -1,4 +1,8 @@
 cpp() {
+  g++ -std=c++20 -fsanitize=address,undefined -Wall $1 && time ./a.out
+}
+
+cpp() {
   echo ">> COMPILING <<" 1>&2
   g++ -std=c++17 \
       -O2 \
@@ -22,6 +26,7 @@ cpp() {
 }
 
 prepare() {
+    cp debug.cpp ./
     for i in {a..z}
     do
         cp macro.cpp $i.cpp
