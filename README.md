@@ -3,6 +3,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 ## Algorithms
 - Data Structures
+    - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
@@ -113,6 +114,7 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
+- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
 - [SPOJ sphere](/submissions/SPOJ-sphere)
 - [CodeChef](/submissions/CodeChef)
 - [Becrowd](/submissions/Becrowd)
