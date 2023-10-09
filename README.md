@@ -45,6 +45,7 @@ Here you will find implementation of algorithms and data structures used in comp
 - Graphs
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
     - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
+    - [Minimum Cost Flow](/algorithms/graphs/Minimum-Cost-Flow.cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)

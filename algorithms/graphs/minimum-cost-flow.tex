@@ -1,0 +1,12 @@
+\subsection{Minimum Cost Flow}
+
+Given a network find the minimum cost to achieve a flow of at most $f$.
+
+
+\begin{itemize}
+  \item \textbf{add(u, v, w, c):} adds an edge from $u$ to $v$ with capacity $w$ and cost $c$.
+  \item \textbf{flow(s, t, f):} return a pair $(flow, cost)$ with the maximum flow until $f$ with source at $s$ and sink at $t$, with the minimum cost possible.
+\end{itemize}
+
+Time : $O(N \cdot M + f \cdot m \log{n})$
+
