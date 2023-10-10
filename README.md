@@ -45,7 +45,6 @@ Here you will find implementation of algorithms and data structures used in comp
 - Graphs
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
     - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
-    - [Minimum Cost Flow](/algorithms/graphs/Minimum-Cost-Flow.cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
@@ -57,6 +56,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
     - [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
     - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
+    - [find bridges](/algorithms/graphs/find-bridges.cpp)
     - [find centroid](/algorithms/graphs/find-centroid.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
@@ -65,6 +65,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
     - [maximum distances](/algorithms/graphs/maximum-distances.cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
+    - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
     - [small to large](/algorithms/graphs/small_to_large.cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
