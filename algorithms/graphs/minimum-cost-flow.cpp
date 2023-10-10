@@ -1,9 +1,9 @@
-template <typename T = ll>
+template <typename T>
 struct mcmf {
   struct edge {
-    int to, rev, flow, cap;
-    bool res;  // if is a residual edge
-    T cost;
+    int to, rev, flow, cap; 
+    bool res;                // if it's a reverse edge
+    T cost;                  // cost per unity of flow
     edge() : to(0), rev(0), flow(0), cap(0), cost(0), res(false) {}
     edge(int to_, int rev_, int flow_, int cap_, T cost_, bool res_)
       : to(to_), rev(rev_), flow(flow_), cap(cap_), res(res_), cost(cost_) {}
@@ -14,7 +14,7 @@ struct mcmf {
   T inf;
   vector<T> dist;
 
-  mcmf(int n) : g(n), par_idx(n), par(n), inf(numeric_limits<T>::max() / 4) {}
+  mcmf(int n) : g(n), par_idx(n), par(n), inf(numeric_limits<T>::max() / 3) {}
 
   void add(int u, int v, int w, T cost) {
     edge a = edge(v, g[v].size(), 0, w, cost, false);
@@ -24,7 +24,7 @@ struct mcmf {
     g[v].push_back(b);
   }
 
-  vector<T> spfa(int s) {
+  vector<T> spfa(int s) {  // don't code it if there isn't negative cycles
     deque<int> q;
     vector<bool> is_inside(g.size(), 0);
     dist = vector<T>(g.size(), inf);
@@ -76,9 +76,9 @@ struct mcmf {
     return dist[t] < inf;
   }
 
-  pair<int, T> flow(int s, int t, int flow = inf) {
+  pair<int, T> min_cost_flow(int s, int t, int flow = oo) {
     vector<T> pot(g.size(), 0);
-    pot = dijkstra(s);  // change to spfa has negative cycle
+    pot = spfa(s);  // comment this line if there isn't negative cycles
 
     int f = 0;
     T ret = 0;
@@ -106,13 +106,5 @@ struct mcmf {
     }
 
     return make_pair(f, ret);
-  }
-
-  vector<pair<int, int>> recover() {
-    vector<pair<int, int>> used;
-    for (int i = 0; i < g.size(); i++)
-      for (edge e : g[i])
-        if (e.flow == e.cap && !e.res) used.push_back({i, e.to});
-    return used;
   }
 };
