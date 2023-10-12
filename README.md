@@ -50,7 +50,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
     - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
-    - [dijkstra](/algorithms/graphs/dijkstra.cpp)
     - [dijkstra (k shortest paths)](/algorithms/graphs/dijkstra-(k-shortest-paths).cpp)
     - [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
     - [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
