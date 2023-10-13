@@ -2,6 +2,8 @@
 using namespace std;
 #ifdef LOCAL
 #include "debug.cpp"
+#else
+#define dbg(...) 42
 #endif
 #define endl '\n'
 #define fastio                      \
