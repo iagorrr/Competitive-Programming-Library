@@ -48,4 +48,3 @@ int main() {
 }
 
 // AC, implementation.
-
