@@ -1,9 +1,9 @@
 template <typename T>
 struct mcmf {
   struct edge {
-    int to, rev, flow, cap; 
-    bool res;                // if it's a reverse edge
-    T cost;                  // cost per unity of flow
+    int to, rev, flow, cap;
+    bool res;  // if it's a reverse edge
+    T cost;    // cost per unity of flow
     edge() : to(0), rev(0), flow(0), cap(0), cost(0), res(false) {}
     edge(int to_, int rev_, int flow_, int cap_, T cost_, bool res_)
       : to(to_), rev(rev_), flow(flow_), cap(cap_), res(res_), cost(cost_) {}
