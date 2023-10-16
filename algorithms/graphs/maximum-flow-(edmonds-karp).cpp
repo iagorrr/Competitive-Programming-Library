@@ -9,10 +9,7 @@ struct maxflow {
   void add(int u, int v, ll c, bool set = true) {
     g[u].emplace_back(v);
     g[v].emplace_back(u);
-    if (set)
-      capacity[u][v] = c;
-    else
-      capacity[u][v] += c;
+    capacity[u][v] = capacity[u][v] * set + c;
   }
 
   ll bfs(int s, int t) {
