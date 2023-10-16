@@ -6,7 +6,14 @@ struct BridgeFinder {
   int bridges, lca_iteration;
   vector<int> last_visit;
 
-  BridgeFinder(int n) : parent(n, -1), dsu_2ecc(n), dsu_cc(n), dsu_cc_size(n, 1), bridges(0), lca_iteration(0), last_visit(n) {
+  BridgeFinder(int n)
+    : parent(n, -1),
+      dsu_2ecc(n),
+      dsu_cc(n),
+      dsu_cc_size(n, 1),
+      bridges(0),
+      lca_iteration(0),
+      last_visit(n) {
     for (int i = 0; i < n; i++) {
       dsu_2ecc[i] = i;
       dsu_cc[i] = i;
@@ -45,7 +52,7 @@ struct BridgeFinder {
       if (a != -1) {
         a = find_2ecc(a);
         path_a.push_back(a);
-        if (last_visit[a] == lca_iteration){
+        if (last_visit[a] == lca_iteration) {
           lca = a;
           break;
         }
