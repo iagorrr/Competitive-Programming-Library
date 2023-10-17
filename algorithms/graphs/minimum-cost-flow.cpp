@@ -76,7 +76,7 @@ struct mcmf {
     return dist[t] < inf;
   }
 
-  pair<int, T> min_cost_flow(int s, int t, int flow = oo) {
+  pair<int, T> min_cost_flow(int s, int t, int flow = inf) {
     vector<T> pot(g.size(), 0);
     pot = spfa(s);  // comment this line if there isn't negative cycles
 
