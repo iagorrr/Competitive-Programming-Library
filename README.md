@@ -4,6 +4,7 @@ Here you will find implementation of algorithms and data structures used in comp
 ## Algorithms
 - Data Structures
     - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
+    - [bitree](/algorithms/data-structures/bitree.cpp)
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
@@ -33,6 +34,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [bigint](/algorithms/extras/bigint.cpp)
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
+    - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
+    - [number of elements greater than k](/algorithms/extras/number_of_elements_greater_than_k.cpp)
 
 - Geometry
     - [convex hull](/algorithms/geometry/convex-hull.cpp)
@@ -46,9 +49,10 @@ Here you will find implementation of algorithms and data structures used in comp
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
     - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
     - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
+    - [array cycle](/algorithms/graphs/array_cycle.cpp)
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
-    - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
+    - [block cut tree](/algorithms/graphs/block-cut-tree.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra (k shortest paths)](/algorithms/graphs/dijkstra-(k-shortest-paths).cpp)
     - [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
@@ -57,20 +61,18 @@ Here you will find implementation of algorithms and data structures used in comp
     - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
     - [find articulation points](/algorithms/graphs/find-articulation-points.cpp)
     - [find bridges](/algorithms/graphs/find-bridges.cpp)
+    - [find bridges (online)](/algorithms/graphs/find-bridges-(online).cpp)
     - [find centroid](/algorithms/graphs/find-centroid.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
     - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
+    - [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
     - [kruskal](/algorithms/graphs/kruskal.cpp)
-    - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
-    - [maximum distances](/algorithms/graphs/maximum-distances.cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
-    - [small to large](/algorithms/graphs/small_to_large.cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
-    - [tree diameter](/algorithms/graphs/tree_diameter.cpp)
 
 - Math
     - [GCD](/algorithms/math/GCD.cpp)
@@ -92,6 +94,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [integer mod](/algorithms/math/integer_mod.cpp)
     - [is prime](/algorithms/math/is-prime.cpp)
     - [number of divisors](/algorithms/math/number-of-divisors.cpp)
+    - [number of divisors (sieve)](/algorithms/math/number-of-divisors-(sieve).cpp)
     - [power sum](/algorithms/math/power-sum.cpp)
     - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
     - [sum of divisors](/algorithms/math/sum-of-divisors.cpp)
@@ -108,11 +111,21 @@ Here you will find implementation of algorithms and data structures used in comp
     - [double hash range query](/algorithms/strings/double-hash-range-query.cpp)
     - [hash range query](/algorithms/strings/hash-range-query.cpp)
     - [kth digit in digit string](/algorithms/strings/kth-digit-in-digit-string.cpp)
+    - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
     - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
+
+- Trees
+    - [binary lifting](/algorithms/trees/binary-lifting.cpp)
+    - [binary lifting (struct)](/algorithms/trees/binary-lifting-(struct).cpp)
+    - [lowest common ancestor sparse table](/algorithms/trees/lowest_common_ancestor_sparse_table.cpp)
+    - [maximum distances](/algorithms/trees/maximum-distances.cpp)
+    - [small to large](/algorithms/trees/small_to_large.cpp)
+    - [tree diameter](/algorithms/trees/tree_diameter.cpp)
+    - [tree flatten](/algorithms/trees/tree_flatten.cpp)
 
 
 ## Submissions
