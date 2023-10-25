@@ -3,7 +3,6 @@ const int MAXN(100);
 int N;
 vi2d G;
 int timer;
-char vis[MAXN];
 int tin[MAXN], low[MAXN];
 set<int> cpoints;
 
