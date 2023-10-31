@@ -126,7 +126,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [lowest common ancestor sparse table](/algorithms/trees/lowest_common_ancestor_sparse_table.cpp)
     - [maximum distances](/algorithms/trees/maximum-distances.cpp)
     - [small to large](/algorithms/trees/small_to_large.cpp)
-    - [tree diameter](/algorithms/trees/tree_diameter.cpp)
+    - [tree diameter](/algorithms/trees/tree-diameter.cpp)
     - [tree flatten](/algorithms/trees/tree_flatten.cpp)
 
 
