@@ -1,11 +1,14 @@
-ll memo[19][10][2];
+ll memo[20][30][2];
 ll dp(int p, int d, bool l, const vi &digits) {
   if (p == len(digits)) return 0;
 
-  if (memo[p][d][l] != -1) return memo[p][d][l];
+  if (memo[p][d][l] != -1ll) {
+    return memo[p][d][l];
+  }
 
-  ll tot = 0;
-  ll k = l and d == digits[p] ? digits[p + 1] : 9;
+  ll tot = 0ull;
+
+  int k = l and d == digits[p] ? digits[p + 1ull] : 9ull;
   for (int i = 0; i <= k; i++) {
     if (i == 4) continue;
     if (d == 1 and i == 3) continue;
@@ -19,8 +22,8 @@ vi get_digits(ll x) {
   vi digits;
 
   while (x) {
-    digits.emplace_back(x % 10);
-    x /= 10;
+    digits.emplace_back(x % 10ull);
+    x /= 10ull;
   }
 
   reverse(all(digits));
@@ -31,9 +34,8 @@ ll dp(ll x) {
   auto digits = get_digits(x);
   memset(memo, -1, sizeof memo);
 
-  dbg(x, len(digits) - 1, digits);
-  for (int i = 0; i <= 9; i++) {
-    memo[len(digits) - 1][i][0] = 1;
+  for (ll i = 0; i <= 9; i++) {
+    memo[len(digits) - 1][i][0] = 1ull;
     memo[len(digits) - 1][i][1] = i <= digits.back();
   }
 
@@ -43,5 +45,5 @@ ll dp(ll x) {
     tot += dp(0, i, i == digits[0], digits);
   }
 
-  return tot - 1;
+  return tot - 1ull;
 }
