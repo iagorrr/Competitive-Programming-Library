@@ -1,28 +1,24 @@
-bool bfs(const ll n, int s, const vector<vll> &adj, vll &color) {
-  queue<ll> q;
-  q.push(s);
-  color[s] = 0;
-  bool isBipartite = true;
-  while (!q.empty() && isBipartite) {
-    ll u = q.front();
-    q.pop();
-    for (auto &v : adj[u]) {
-      if (color[v] == INF) {
-        color[v] = 1 - color[u];
-        q.push(v);
-      } else if (color[v] == color[u]) {
-        return false;
-      }
-    }
-  }
-  return true;
-}
+vi2d G;
+int N, M;
 
-bool checkBipartite(int n, const vll2d &adj) {
-  vll color(n, oo);
-  for (int i = 0; i < n; i++) {
-    if (color[i] != oo) {
-      if (not bfs(n, adj, color)) return false;
+bool check() {
+  vi side(N, -1);
+  queue<int> q;
+  for (int st = 0; st < N; st++) {
+    if (side[st] == -1) {
+      q.emplace(st);
+      side[st] = 0;
+      while (not q.empty()) {
+        int u = q.front();
+        q.pop();
+        for (auto v : G[u]) {
+          if (side[v] == -1) {
+            side[v] = side[u] ^ 1;
+            q.push(v);
+          } else if (side[u] == side[v])
+            return false;
+        }
+      }
     }
   }
   return true;
