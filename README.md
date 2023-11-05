@@ -39,12 +39,13 @@ Here you will find implementation of algorithms and data structures used in comp
     - [number of elements greater than k](/algorithms/extras/number_of_elements_greater_than_k.cpp)
 
 - Geometry
+    - [absolute value](/algorithms/geometry/absolute-value.cpp)
     - [convex hull](/algorithms/geometry/convex-hull.cpp)
     - [determinant](/algorithms/geometry/determinant.cpp)
     - [equals](/algorithms/geometry/equals.cpp)
-    - [line](/algorithms/geometry/line.cpp)
-    - [point struct and utils (2d)](/algorithms/geometry/point-struct-and-utils-(2d).cpp)
-    - [segment](/algorithms/geometry/segment.cpp)
+    - [template line](/algorithms/geometry/template-line.cpp)
+    - [template point](/algorithms/geometry/template-point.cpp)
+    - [template segment](/algorithms/geometry/template-segment.cpp)
 
 - Graphs
     - [2 SAT](/algorithms/graphs/2-SAT.cpp)
