@@ -27,9 +27,9 @@ using vc = vector<char>;
 #define mp(___a, ___b) make_pair(___a, ___b)
 #define eb(___x) emplace_back(___x)
 
-// vector<string> dir({"LU", "U", "RU", "R", "RD", "D", "LD", "L"});
-// int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0};
-// int dy[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+// vector<string> dir({"LU", "U", "RU", "R", "RD", "D",
+// "LD", "L"}); int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0}; int
+// dy[] = {-1, 0, 1, 1, 1, 0, -1, -1};
 vector<string> dir({"U", "R", "D", "L"});
 int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, 1, 0, -1};
@@ -37,6 +37,7 @@ int dy[] = {0, 1, 0, -1};
 const ll oo = 1e18;
 
 auto solve() {}
+
 int32_t main(void) {
 #ifndef LOCAL
   fastio;
@@ -44,7 +45,9 @@ int32_t main(void) {
 
   int t;
   t = 1;
+
   // cin >> t;
+
   for (int i = 1; i <= t; i++) {
     solve();
   }
