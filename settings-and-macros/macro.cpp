@@ -35,6 +35,7 @@ int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, 1, 0, -1};
 
 const ll oo = 1e18;
+int T(1);
 
 auto solve() {}
 
@@ -43,12 +44,9 @@ int32_t main(void) {
   fastio;
 #endif
 
-  int t;
-  t = 1;
-
   // cin >> t;
 
-  for (int i = 1; i <= t; i++) {
+  for (int i = 1; i <= T; i++) {
     solve();
   }
 }
