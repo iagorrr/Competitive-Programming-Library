@@ -32,7 +32,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
 - Extras
-    - [bigint](/algorithms/extras/bigint.cpp)
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
     - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
@@ -94,13 +93,17 @@ Here you will find implementation of algorithms and data structures used in comp
     - [fast fourrier transform](/algorithms/math/fast-fourrier-transform.cpp)
     - [fast pow](/algorithms/math/fast-pow.cpp)
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
-    - [integer mod](/algorithms/math/integer_mod.cpp)
     - [is prime](/algorithms/math/is-prime.cpp)
     - [number of divisors](/algorithms/math/number-of-divisors.cpp)
     - [number of divisors (sieve)](/algorithms/math/number-of-divisors-(sieve).cpp)
     - [power sum](/algorithms/math/power-sum.cpp)
     - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
     - [sum of divisors](/algorithms/math/sum-of-divisors.cpp)
+
+- Primitives
+    - [bigint](/algorithms/primitives/bigint.cpp)
+    - [integer mod](/algorithms/primitives/integer_mod.cpp)
+    - [matrix](/algorithms/primitives/matrix.cpp)
 
 - Problems
     - [hanoi tower](/algorithms/problems/hanoi-tower.cpp)
