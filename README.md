@@ -94,6 +94,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [fast pow](/algorithms/math/fast-pow.cpp)
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
     - [is prime](/algorithms/math/is-prime.cpp)
+    - [n elements choose k](/algorithms/math/n-elements-choose-k.cpp)
     - [number of divisors](/algorithms/math/number-of-divisors.cpp)
     - [number of divisors (sieve)](/algorithms/math/number-of-divisors-(sieve).cpp)
     - [power sum](/algorithms/math/power-sum.cpp)
