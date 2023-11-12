@@ -1,4 +1,4 @@
-all: format readme notebook opennote
+all: format readme notebook
 readme:
 	python scripts/gen-readme.py > README.md
 
