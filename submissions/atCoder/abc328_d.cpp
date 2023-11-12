@@ -66,3 +66,5 @@ int32_t main(void) {
     solve();
   }
 }
+
+// AC, strings, stack
