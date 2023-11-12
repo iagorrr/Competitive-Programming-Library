@@ -1,5 +1,6 @@
 using adj = vector<vector<pair<int, ll>>>;
-ll cycleDistances(int u, int n, int s, vc &vis, adj &g, vll &dist) {
+ll cycleDistances(int u, int n, int s, vc &vis, adj &g,
+                  vll &dist) {
   vis[u] = 1;
 
   for (auto [v, d] : g[u]) {

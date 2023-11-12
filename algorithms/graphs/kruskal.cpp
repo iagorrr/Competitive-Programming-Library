@@ -2,11 +2,17 @@ struct UFDS {
   vector<int> ps, sz;
   int components;
 
-  UFDS(int n) : ps(n + 1), sz(n + 1, 1), components(n) { iota(all(ps), 0); }
+  UFDS(int n) : ps(n + 1), sz(n + 1, 1), components(n) {
+    iota(all(ps), 0);
+  }
 
-  int find_set(int x) { return (x == ps[x] ? x : (ps[x] = find_set(ps[x]))); }
+  int find_set(int x) {
+    return (x == ps[x] ? x : (ps[x] = find_set(ps[x])));
+  }
 
-  bool same_set(int x, int y) { return find_set(x) == find_set(y); }
+  bool same_set(int x, int y) {
+    return find_set(x) == find_set(y);
+  }
 
   void union_set(int x, int y) {
     x = find_set(x);
@@ -23,7 +29,8 @@ struct UFDS {
   }
 };
 
-vector<tuple<ll, int, int>> kruskal(int n, vector<tuple<ll, int, int>> &edges) {
+vector<tuple<ll, int, int>> kruskal(
+  int n, vector<tuple<ll, int, int>> &edges) {
   UFDS ufds(n);
   vector<tuple<ll, int, int>> ans;
 

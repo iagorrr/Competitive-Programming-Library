@@ -5,7 +5,12 @@ struct maxflow {
   vi ps;
   vector<vector<char>> isedge;
 
-  maxflow(int _n) : n(_n), g(n), cps(n, vll(n)), ps(n), isedge(n, vc(n)) {}
+  maxflow(int _n)
+    : n(_n),
+      g(n),
+      cps(n, vll(n)),
+      ps(n),
+      isedge(n, vc(n)) {}
 
   void add(int u, int v, ll c, bool set = true) {
     g[u].emplace_back(v);
@@ -59,7 +64,8 @@ struct maxflow {
     vector<pii> used;
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
-        if (isedge[i][j] and cps[i][j] == 0) used.emplace_back(i, j);
+        if (isedge[i][j] and cps[i][j] == 0)
+          used.emplace_back(i, j);
       }
     }
     return used;

@@ -1,4 +1,5 @@
-void dfs(int u, int p, int n, vi2d &g, vi &sz, vi &centroid) {
+void dfs(int u, int p, int n, vi2d &g, vi &sz,
+         vi &centroid) {
   sz[u] = 1;
 
   bool iscentroid = true;

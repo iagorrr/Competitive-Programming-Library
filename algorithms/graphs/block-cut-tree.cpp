@@ -15,21 +15,24 @@ struct BlockCutTree {
 
     tree.resize(blocks.size());
     for (int i = 0; i < (int)g.size(); i++)
-      if (articulation[i]) pos[i] = (int)tree.size(), tree.emplace_back();
+      if (articulation[i])
+        pos[i] = (int)tree.size(), tree.emplace_back();
 
     for (int i = 0; i < (int)blocks.size(); i++) {
       for (auto j : blocks[i]) {
         if (not articulation[j])
           pos[j] = i;
         else
-          tree[i].push_back(pos[j]), tree[pos[j]].push_back(i);
+          tree[i].push_back(pos[j]),
+            tree[pos[j]].push_back(i);
       }
     }
   }
 
  private:
-  int dfs(const vector<vector<int>> &g, int i, int p, int &t, vector<int> &id,
-          stack<int> &s1, stack<pair<int, int>> &s2) {
+  int dfs(const vector<vector<int>> &g, int i, int p,
+          int &t, vector<int> &id, stack<int> &s1,
+          stack<pair<int, int>> &s2) {
     int lo = id[i] = t++;
     s1.push(i);
 
@@ -51,7 +54,9 @@ struct BlockCutTree {
 
             block_edges.emplace_back(1, s2.top());
             s2.pop();
-            for (; block_edges.back().back() != make_pair(j, i); s2.pop())
+            for (; block_edges.back().back() !=
+                   make_pair(j, i);
+                 s2.pop())
               block_edges.back().push_back(s2.top());
           }
         } else {

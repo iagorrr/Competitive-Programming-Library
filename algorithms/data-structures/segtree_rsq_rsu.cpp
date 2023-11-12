@@ -5,17 +5,25 @@ struct SegTree {
   T nq;
   vector<T> st, lazy;
   SegTree(const vector<T> &xs)
-    : N(len(xs)), nu(0), nq(0), st(4 * N, nu), lazy(4 * N, nu) {
+    : N(len(xs)),
+      nu(0),
+      nq(0),
+      st(4 * N, nu),
+      lazy(4 * N, nu) {
     for (int i = 0; i < len(xs); ++i) update(i, i, xs[i]);
   }
 
-  SegTree(int n) : N(n), nu(0), nq(0), st(4 * N, nu), lazy(4 * N, nu) {}
+  SegTree(int n)
+    : N(n), nu(0), nq(0), st(4 * N, nu), lazy(4 * N, nu) {}
 
-  void update(int l, int r, ll value) { update(1, 0, N - 1, l, r, value); }
+  void update(int l, int r, ll value) {
+    update(1, 0, N - 1, l, r, value);
+  }
 
   T query(int l, int r) { return query(1, 0, N - 1, l, r); }
 
-  void update(int node, int nl, int nr, int ql, int qr, ll v) {
+  void update(int node, int nl, int nr, int ql, int qr,
+              ll v) {
     propagation(node, nl, nr);
 
     if (ql > nr or qr < nl) return;

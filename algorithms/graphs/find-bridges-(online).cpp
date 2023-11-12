@@ -22,12 +22,15 @@ struct BridgeFinder {
 
   int find_2ecc(int v) {
     if (v == -1) return -1;
-    return dsu_2ecc[v] == v ? v : dsu_2ecc[v] = find_2ecc(dsu_2ecc[v]);
+    return dsu_2ecc[v] == v
+             ? v
+             : dsu_2ecc[v] = find_2ecc(dsu_2ecc[v]);
   }
 
   int find_cc(int v) {
     v = find_2ecc(v);
-    return dsu_cc[v] == v ? v : dsu_cc[v] = find_cc(dsu_cc[v]);
+    return dsu_cc[v] == v ? v
+                          : dsu_cc[v] = find_cc(dsu_cc[v]);
   }
 
   void make_root(int v) {

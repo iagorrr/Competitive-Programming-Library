@@ -1,5 +1,6 @@
 enum class state { not_visited, processing, done };
-bool dfs(const vector<vll> &adj, ll s, vector<state> &states, vll &order) {
+bool dfs(const vector<vll> &adj, ll s,
+         vector<state> &states, vll &order) {
   states[s] = state::processing;
   for (auto &v : adj[s]) {
     if (states[v] == state::not_visited) {

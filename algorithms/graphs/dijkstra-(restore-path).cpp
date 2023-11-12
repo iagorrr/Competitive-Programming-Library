@@ -1,4 +1,5 @@
-pair<vll, vi> dijkstra(const vector<vector<pll>> &g, int n, int s) {
+pair<vll, vi> dijkstra(const vector<vector<pll>> &g, int n,
+                       int s) {
   priority_queue<pll, vector<pll>, greater<pll>> pq;
   vll dist(n, oo);
   vi p(n, -1);

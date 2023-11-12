@@ -12,11 +12,14 @@ struct SegTree {
     for (int i = 0; i < len(xs); ++i) update(i, i, xs[i]);
   }
 
-  void update(int l, int r, T value) { update(1, 0, N - 1, l, r, value); }
+  void update(int l, int r, T value) {
+    update(1, 0, N - 1, l, r, value);
+  }
 
   T query(int l, int r) { return query(1, 0, N - 1, l, r); }
 
-  void update(int node, int nl, int nr, int ql, int qr, T v) {
+  void update(int node, int nl, int nr, int ql, int qr,
+              T v) {
     propagation(node, nl, nr);
 
     if (ql > nr or qr < nl) return;
@@ -53,8 +56,10 @@ struct SegTree {
       st[node] = max(st[node], lazy[node]);
 
       if (nl < nr) {
-        lazy[left(node)] = max(lazy[left(node)], lazy[node]);
-        lazy[right(node)] = max(lazy[right(node)], lazy[node]);
+        lazy[left(node)] =
+          max(lazy[left(node)], lazy[node]);
+        lazy[right(node)] =
+          max(lazy[right(node)], lazy[node]);
       }
 
       lazy[node] = nu;

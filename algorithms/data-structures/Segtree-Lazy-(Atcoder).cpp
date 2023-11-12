@@ -18,14 +18,18 @@ Node mapping(Lazy a, Node b, int, int) {}
 // how to merge two lazy
 Lazy comp(Lazy a, Lazy b) {}
 
-template <typename T, auto op, typename L, auto mapping, auto composition>
+template <typename T, auto op, typename L, auto mapping,
+          auto composition>
 struct SegTreeLazy {
-  static_assert(is_convertible_v<decltype(op), function<T(T, T)>>,
-                "op must be a function T(T, T)");
   static_assert(
-    is_convertible_v<decltype(mapping), function<T(L, T, int, int)>>,
+    is_convertible_v<decltype(op), function<T(T, T)>>,
+    "op must be a function T(T, T)");
+  static_assert(
+    is_convertible_v<decltype(mapping),
+                     function<T(L, T, int, int)>>,
     "mapping must be a function T(L, T, int, int)");
-  static_assert(is_convertible_v<decltype(composition), function<L(L, L)>>,
+  static_assert(is_convertible_v<decltype(composition),
+                                 function<L(L, L)>>,
                 "composition must be a function L(L, L)");
 
   int N, size, height;
@@ -36,9 +40,11 @@ struct SegTreeLazy {
 
   SegTreeLazy(const T &eT_ = T(), const L &eL_ = L())
     : SegTreeLazy(0, eT_, eL_) {}
-  explicit SegTreeLazy(int n, const T &eT_ = T(), const L &eL_ = L())
+  explicit SegTreeLazy(int n, const T &eT_ = T(),
+                       const L &eL_ = L())
     : SegTreeLazy(vector<T>(n, eT_), eT_, eL_) {}
-  explicit SegTreeLazy(const vector<T> &v, const T &eT_ = T(),
+  explicit SegTreeLazy(const vector<T> &v,
+                       const T &eT_ = T(),
                        const L &eL_ = L())
     : N(int(v.size())), eT(eT_), eL(eL_) {
     size = 1;

@@ -5,9 +5,11 @@ struct Mincut {
   vll2d capacity;
   vi ps, vis;
 
-  Mincut(int _n) : n(_n), g(n), capacity(n, vll(n)), ps(n), vis(n) {}
+  Mincut(int _n)
+    : n(_n), g(n), capacity(n, vll(n)), ps(n), vis(n) {}
 
-  void add(int u, int v, ll c = 1, bool directed = false, bool set = false) {
+  void add(int u, int v, ll c = 1, bool directed = false,
+           bool set = false) {
     edges.emplace_back(u, v);
     g[u].emplace_back(v);
 
@@ -83,7 +85,8 @@ struct Mincut {
 
     vii removed;
     for (auto &[u, v] : edges) {
-      if ((vis[u] and not vis[v]) or (vis[v] and not vis[u]))
+      if ((vis[u] and not vis[v]) or
+          (vis[v] and not vis[u]))
         removed.emplace_back(u, v);
     }
 

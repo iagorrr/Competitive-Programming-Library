@@ -3,8 +3,10 @@ size_t rabin_karp(const string &s, const string &p) {
 
   auto n = s.size(), m = p.size();
   const ll p1 = 31, p2 = 29, q1 = 1e9 + 7, q2 = 1e9 + 9;
-  const ll p1_1 = fpow(p1, q1 - 2, q1), p1_2 = fpow(p1, m - 1, q1);
-  const ll p2_1 = fpow(p2, q2 - 2, q2), p2_2 = fpow(p2, m - 1, q2);
+  const ll p1_1 = fpow(p1, q1 - 2, q1),
+           p1_2 = fpow(p1, m - 1, q1);
+  const ll p2_1 = fpow(p2, q2 - 2, q2),
+           p2_2 = fpow(p2, m - 1, q2);
 
   pair<ll, ll> hs, hp;
   for (int i = (int)m - 1; ~i; --i) {

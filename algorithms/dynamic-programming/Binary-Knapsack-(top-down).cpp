@@ -7,7 +7,8 @@ ll knapSack(int u, int w, vll &VS, vi &WS) {
 
   ll a = 0, b = 0;
   a = knapSack(u - 1, w, VS, WS);
-  if (WS[u] <= w) b = knapSack(u - 1, w - WS[u], VS, WS) + VS[u];
+  if (WS[u] <= w)
+    b = knapSack(u - 1, w - WS[u], VS, WS) + VS[u];
   if (b > a) {
     choosen[u][w] = true;
   }

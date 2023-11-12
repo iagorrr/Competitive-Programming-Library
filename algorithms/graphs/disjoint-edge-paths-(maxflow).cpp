@@ -3,7 +3,8 @@ struct DisjointPaths {
   vi2d g, capacity;
   vector<vc> isedge;
 
-  DisjointPaths(int _n) : n(_n), g(n), capacity(n, vi(n)), isedge(n, vc(n)) {}
+  DisjointPaths(int _n)
+    : n(_n), g(n), capacity(n, vi(n)), isedge(n, vc(n)) {}
 
   void add(int u, int v, int w = 1) {
     g[u].emplace_back(v);
@@ -55,8 +56,10 @@ struct DisjointPaths {
     return flow;
   }
 
-  // build the distinct routes based in the capacity set by maxflow
-  void dfs(int u, int t, vc2d &vis, vi &route, vi2d &routes) {
+  // build the distinct routes based in the capacity set by
+  // maxflow
+  void dfs(int u, int t, vc2d &vis, vi &route,
+           vi2d &routes) {
     route.eb(u);
     if (u == t) {
       routes.emplace_back(route);
@@ -65,7 +68,8 @@ struct DisjointPaths {
     }
 
     for (auto &v : g[u]) {
-      if (capacity[u][v] == 0 and isedge[u][v] and not vis[u][v]) {
+      if (capacity[u][v] == 0 and isedge[u][v] and
+          not vis[u][v]) {
         vis[u][v] = true;
         dfs(v, t, vis, route, routes);
         route.pop_back();
@@ -79,7 +83,8 @@ struct DisjointPaths {
     vi2d routes;
     vi route;
     vc2d vis(n, vc(n));
-    for (int i = 0; i < mf; i++) dfs(s, t, vis, route, routes);
+    for (int i = 0; i < mf; i++)
+      dfs(s, t, vis, route, routes);
     return routes;
   }
 };

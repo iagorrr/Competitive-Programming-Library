@@ -7,7 +7,8 @@ struct DisjointSparseTable {
   Operation f;
   T identity;
 
-  static constexpr int log2_floor(unsigned long long i) noexcept {
+  static constexpr int log2_floor(
+    unsigned long long i) noexcept {
     return i ? __builtin_clzll(1) - __builtin_clzll(i) : -1;
   }
 
@@ -15,9 +16,11 @@ struct DisjointSparseTable {
   DisjointSparseTable(Operation op, const T neutral = T())
     : st(), f(op), identity(neutral) {}
 
-  DisjointSparseTable(vector<T> v) : DisjointSparseTable(v, F(min(a, b))) {}
+  DisjointSparseTable(vector<T> v)
+    : DisjointSparseTable(v, F(min(a, b))) {}
 
-  DisjointSparseTable(vector<T> v, Operation op, const T neutral = T())
+  DisjointSparseTable(vector<T> v, Operation op,
+                      const T neutral = T())
     : st(), f(op), identity(neutral) {
     build(v);
   }

@@ -5,7 +5,8 @@ struct HeavyLightDecomposition {
   static SegT op(SegT a, SegT b) { return max(a, b); }
   SegTree<SegT, op> seg;
 
-  HeavyLightDecomposition(const vector<vector<int>> &g, const vector<int> &v,
+  HeavyLightDecomposition(const vector<vector<int>> &g,
+                          const vector<int> &v,
                           int root = 0)
     : parent(g.size()),
       depth(g.size()),
@@ -49,11 +50,13 @@ struct HeavyLightDecomposition {
         depth[x] = depth[u] + 1;
         dfs(g, x);
         size[u] += size[x];
-        if (size[x] > mx_child_size) mx_child_size = size[x], heavy[u] = x;
+        if (size[x] > mx_child_size)
+          mx_child_size = size[x], heavy[u] = x;
       }
   }
 
-  void decompose(const vector<vector<int>> &g, int u, int h, int &cur_pos) {
+  void decompose(const vector<vector<int>> &g, int u, int h,
+                 int &cur_pos) {
     head[u] = h;
     pos[u] = cur_pos++;
     if (heavy[u] != -1) decompose(g, heavy[u], h, cur_pos);

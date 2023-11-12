@@ -15,11 +15,14 @@ struct SegTree {
 
   SegTree(int n) : n(n), st(4 * n, nu), lazy(4 * n, nu) {}
 
-  void update(int l, int r, ll value) { update(1, 0, n - 1, l, r, value); }
+  void update(int l, int r, ll value) {
+    update(1, 0, n - 1, l, r, value);
+  }
 
   t query(int l, int r) { return query(1, 0, n - 1, l, r); }
 
-  void update(int node, int nl, int nr, int ql, int qr, ll v) {
+  void update(int node, int nl, int nr, int ql, int qr,
+              ll v) {
     propagation(node, nl, nr);
 
     if (ql > nr or qr < nl) return;

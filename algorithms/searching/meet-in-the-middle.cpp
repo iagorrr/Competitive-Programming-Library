@@ -23,9 +23,11 @@ ll count(vll &xs, ll x) {
   ll ans = 0;
   for (ll i : left) {
     auto start_index =
-      lower_bound(right.begin(), right.end(), x - i) - right.begin();
+      lower_bound(right.begin(), right.end(), x - i) -
+      right.begin();
     auto end_index =
-      upper_bound(right.begin(), right.end(), x - i) - right.begin();
+      upper_bound(right.begin(), right.end(), x - i) -
+      right.begin();
     ans += end_index - start_index;
   }
   return ans;

@@ -38,28 +38,51 @@ struct Modular {
     }
     return res;
   }
-  friend Modular inverse(Modular a) { return mexp(a, MOD - 2); }
+  friend Modular inverse(Modular a) {
+    return mexp(a, MOD - 2);
+  }
 
-  Modular& operator/=(Modular const& b) { return *this *= inverse(b); }
-  friend Modular operator+(Modular a, Modular const b) { return a += b; }
-  Modular operator++(int) { return this->value = (this->value + 1) % MOD; }
-  Modular operator++() { return this->value = (this->value + 1) % MOD; }
-  friend Modular operator-(Modular a, Modular const b) { return a -= b; }
-  friend Modular operator-(Modular const a) { return 0 - a; }
+  Modular& operator/=(Modular const& b) {
+    return *this *= inverse(b);
+  }
+  friend Modular operator+(Modular a, Modular const b) {
+    return a += b;
+  }
+  Modular operator++(int) {
+    return this->value = (this->value + 1) % MOD;
+  }
+  Modular operator++() {
+    return this->value = (this->value + 1) % MOD;
+  }
+  friend Modular operator-(Modular a, Modular const b) {
+    return a -= b;
+  }
+  friend Modular operator-(Modular const a) {
+    return 0 - a;
+  }
   Modular operator--(int) {
     return this->value = (this->value - 1 + MOD) % MOD;
   }
 
-  Modular operator--() { return this->value = (this->value - 1 + MOD) % MOD; }
-  friend Modular operator*(Modular a, Modular const b) { return a *= b; }
-  friend Modular operator/(Modular a, Modular const b) { return a /= b; }
-  friend std::ostream& operator<<(std::ostream& os, Modular const& a) {
+  Modular operator--() {
+    return this->value = (this->value - 1 + MOD) % MOD;
+  }
+  friend Modular operator*(Modular a, Modular const b) {
+    return a *= b;
+  }
+  friend Modular operator/(Modular a, Modular const b) {
+    return a /= b;
+  }
+  friend std::ostream& operator<<(std::ostream& os,
+                                  Modular const& a) {
     return os << a.value;
   }
-  friend bool operator==(Modular const& a, Modular const& b) {
+  friend bool operator==(Modular const& a,
+                         Modular const& b) {
     return a.value == b.value;
   }
-  friend bool operator!=(Modular const& a, Modular const& b) {
+  friend bool operator!=(Modular const& a,
+                         Modular const& b) {
     return a.value != b.value;
   }
 };

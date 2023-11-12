@@ -1,7 +1,7 @@
 const ll oo = 1e9 * 1e5 + 1;
 using adj = vector<vector<pll>>;
-vector<priority_queue<ll>> dijkstra(const vector<vector<pll>> &g, int n, int s,
-                                    int k) {
+vector<priority_queue<ll>> dijkstra(
+  const vector<vector<pll>> &g, int n, int s, int k) {
   priority_queue<pll, vector<pll>, greater<pll>> pq;
 
   vector<priority_queue<ll>> dist(n);
@@ -11,7 +11,8 @@ vector<priority_queue<ll>> dijkstra(const vector<vector<pll>> &g, int n, int s,
     auto [d1, v] = pq.top();
     pq.pop();
 
-    if (not dist[v].empty() and dist[v].top() < d1) continue;
+    if (not dist[v].empty() and dist[v].top() < d1)
+      continue;
 
     for (auto [d2, u] : g[v]) {
       if (len(dist[u]) < k) {

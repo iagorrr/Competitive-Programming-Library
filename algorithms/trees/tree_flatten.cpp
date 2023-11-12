@@ -1,5 +1,6 @@
-void tree_flatten(const vector<vector<int>> &g, int u, int p, vector<int> &pre,
-                  vector<int> &pos, int &idx) {
+void tree_flatten(const vector<vector<int>> &g, int u,
+                  int p, vector<int> &pre, vector<int> &pos,
+                  int &idx) {
   ++idx;
   pre.push_back(u);
   for (auto x : g[u])
@@ -7,8 +8,8 @@ void tree_flatten(const vector<vector<int>> &g, int u, int p, vector<int> &pre,
   pos[u] = idx;
 }
 
-pair<vector<int>, vector<int>> tree_flatten(const vector<vector<int>> &g,
-                                            int root = 0) {
+pair<vector<int>, vector<int>> tree_flatten(
+  const vector<vector<int>> &g, int root = 0) {
   vector<int> first(g.size()), last(g.size()), pre;
   int timer = -1;
   tree_flatten(g, root, -1, pre, last, timer);

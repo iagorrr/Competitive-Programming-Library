@@ -1,10 +1,11 @@
-bool dfs(int v, vi2d &adj, vc &visited, vi &parent, vc &color, int &cycle_start,
-         int &cycle_end) {
+bool dfs(int v, vi2d &adj, vc &visited, vi &parent,
+         vc &color, int &cycle_start, int &cycle_end) {
   color[v] = 1;
   for (int u : adj[v]) {
     if (color[u] == 0) {
       parent[u] = v;
-      if (dfs(u, adj, visited, parent, color, cycle_start, cycle_end))
+      if (dfs(u, adj, visited, parent, color, cycle_start,
+              cycle_end))
         return true;
     } else if (color[u] == 1) {
       cycle_end = v;
@@ -26,8 +27,8 @@ vi find_cycle(vi2d &g, int n) {
   cycle_start = -1;
 
   for (int v = 0; v < n; v++) {
-    if (color[v] == 0 &&
-        dfs(v, g, visited, parent, color, cycle_start, cycle_end))
+    if (color[v] == 0 && dfs(v, g, visited, parent, color,
+                             cycle_start, cycle_end))
       break;
   }
 
@@ -36,7 +37,8 @@ vi find_cycle(vi2d &g, int n) {
   } else {
     vector<int> cycle;
     cycle.push_back(cycle_start);
-    for (int v = cycle_end; v != cycle_start; v = parent[v]) cycle.push_back(v);
+    for (int v = cycle_end; v != cycle_start; v = parent[v])
+      cycle.push_back(v);
     cycle.push_back(cycle_start);
     reverse(cycle.begin(), cycle.end());
     return cycle;

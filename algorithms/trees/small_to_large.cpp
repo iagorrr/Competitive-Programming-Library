@@ -5,7 +5,11 @@ struct SmallToLarge {
   set<int> cnt;
 
   SmallToLarge(vi2d &g, vi &v)
-    : tree(g), vis_childs(len(g)), sizes(len(g)), values(v), ans(len(g)) {
+    : tree(g),
+      vis_childs(len(g)),
+      sizes(len(g)),
+      values(v),
+      ans(len(g)) {
     get_size(0);
     dfs(0);
   }

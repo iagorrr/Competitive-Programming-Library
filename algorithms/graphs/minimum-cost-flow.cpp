@@ -4,9 +4,21 @@ struct mcmf {
     int to, rev, flow, cap;
     bool res;  // if it's a reverse edge
     T cost;    // cost per unity of flow
-    edge() : to(0), rev(0), flow(0), cap(0), cost(0), res(false) {}
-    edge(int to_, int rev_, int flow_, int cap_, T cost_, bool res_)
-      : to(to_), rev(rev_), flow(flow_), cap(cap_), res(res_), cost(cost_) {}
+    edge()
+      : to(0),
+        rev(0),
+        flow(0),
+        cap(0),
+        cost(0),
+        res(false) {}
+    edge(int to_, int rev_, int flow_, int cap_, T cost_,
+         bool res_)
+      : to(to_),
+        rev(rev_),
+        flow(flow_),
+        cap(cap_),
+        res(res_),
+        cost(cost_) {}
   };
 
   vector<vector<edge>> g;
@@ -14,7 +26,11 @@ struct mcmf {
   T inf;
   vector<T> dist;
 
-  mcmf(int n) : g(n), par_idx(n), par(n), inf(numeric_limits<T>::max() / 3) {}
+  mcmf(int n)
+    : g(n),
+      par_idx(n),
+      par(n),
+      inf(numeric_limits<T>::max() / 3) {}
 
   void add(int u, int v, int w, T cost) {
     edge a = edge(v, g[v].size(), 0, w, cost, false);
@@ -24,7 +40,8 @@ struct mcmf {
     g[v].push_back(b);
   }
 
-  vector<T> spfa(int s) {  // don't code it if there isn't negative cycles
+  vector<T> spfa(int s) {  // don't code it if there isn't
+                           // negative cycles
     deque<int> q;
     vector<bool> is_inside(g.size(), 0);
     dist = vector<T>(g.size(), inf);
@@ -55,7 +72,9 @@ struct mcmf {
     return dist;
   }
   bool dijkstra(int s, int t, vector<T>& pot) {
-    priority_queue<pair<T, int>, vector<pair<T, int>>, greater<>> q;
+    priority_queue<pair<T, int>, vector<pair<T, int>>,
+                   greater<>>
+      q;
     dist = vector<T>(g.size(), inf);
     dist[s] = 0;
     q.emplace(0, s);
@@ -78,7 +97,8 @@ struct mcmf {
 
   pair<int, T> min_cost_flow(int s, int t, int flow = inf) {
     vector<T> pot(g.size(), 0);
-    pot = spfa(s);  // comment this line if there isn't negative cycles
+    pot = spfa(s);  // comment this line if there isn't
+                    // negative cycles
 
     int f = 0;
     T ret = 0;
@@ -89,7 +109,8 @@ struct mcmf {
       int mn_flow = flow - f, u = t;
       while (u != s) {
         mn_flow =
-          min(mn_flow, g[par[u]][par_idx[u]].cap - g[par[u]][par_idx[u]].flow);
+          min(mn_flow, g[par[u]][par_idx[u]].cap -
+                         g[par[u]][par_idx[u]].flow);
         u = par[u];
       }
 

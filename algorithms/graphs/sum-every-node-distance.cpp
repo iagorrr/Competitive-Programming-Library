@@ -9,7 +9,8 @@ void getRoot(int u, int p, vi2d &g, vll &d, vll &cnt) {
   }
 }
 
-void dfs(int u, int p, vi2d &g, vll &cnt, vll &ansd, int n) {
+void dfs(int u, int p, vi2d &g, vll &cnt, vll &ansd,
+         int n) {
   for (int i = 0; i < len(g[u]); i++) {
     int v = g[u][i];
     if (v == p) continue;

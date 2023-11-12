@@ -4,7 +4,10 @@ struct SegTree {
   T nu, nq;
   vector<T> st;
   SegTree(const vector<T> &v)
-    : n(len(v)), nu(0), nq(numeric_limits<T>::max()), st(n * 4 + 1, nu) {
+    : n(len(v)),
+      nu(0),
+      nq(numeric_limits<T>::max()),
+      st(n * 4 + 1, nu) {
     for (int i = 0; i < n; ++i) update(i, v[i]);
   }
   void update(int p, T v) { update(1, 0, n - 1, p, v); }
@@ -29,8 +32,9 @@ struct SegTree {
     if (nl > qr or nr < ql) return nq;
     if (nl == nr) return st[node];
 
-    return min(query(left(node), nl, mid(nl, nr), ql, qr),
-               query(right(node), mid(nl, nr) + 1, nr, ql, qr));
+    return min(
+      query(left(node), nl, mid(nl, nr), ql, qr),
+      query(right(node), mid(nl, nr) + 1, nr, ql, qr));
   }
 
   int left(int p) { return p << 1; }

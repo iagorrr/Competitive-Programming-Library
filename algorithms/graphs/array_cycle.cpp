@@ -3,7 +3,8 @@ struct ArrayCycle {
   vector<int> path_num, pos;
   vector<char> is_cycle;
 
-  ArrayCycle(const vector<int> &v) : path_num(v.size()), pos(v.size()) {
+  ArrayCycle(const vector<int> &v)
+    : path_num(v.size()), pos(v.size()) {
     paths.reserve(v.size());
     is_cycle.reserve(v.size());
 
@@ -20,7 +21,8 @@ struct ArrayCycle {
 
       {
         int cycle_start = 0;
-        for (; cycle_start < (int)path.size() and path[cycle_start] != cur;
+        for (; cycle_start < (int)path.size() and
+               path[cycle_start] != cur;
              cycle_start++)
           ;
 
@@ -37,7 +39,8 @@ struct ArrayCycle {
 
         if (cycle_start < (int)path.size()) {
           paths.emplace_back();
-          for (int j = cycle_start; j < (int)path.size(); j++) {
+          for (int j = cycle_start; j < (int)path.size();
+               j++) {
             paths.back().push_back(path[j]);
             pos[path[j]] = j - cycle_start;
             path_num[path[j]] = (int)paths.size() - 1;
@@ -48,7 +51,9 @@ struct ArrayCycle {
     }
   }
 
-  const vector<int> &path(int cur) const { return paths[path_num[cur]]; }
+  const vector<int> &path(int cur) const {
+    return paths[path_num[cur]];
+  }
 
   int kth_pos(int cur, ll k) const {
     while (not is_cycle[path_num[cur]]) {
@@ -74,10 +79,12 @@ struct ArrayCycle {
     return {cur, moves};
   }
 
-  void topological_order(const vector<int> &g, vector<char> &vis,
+  void topological_order(const vector<int> &g,
+                         vector<char> &vis,
                          vector<int> &order, int u) {
     vis[u] = true;
-    if (not vis[g[u]]) topological_order(g, vis, order, g[u]);
+    if (not vis[g[u]])
+      topological_order(g, vis, order, g[u]);
     order.push_back(u);
   }
 

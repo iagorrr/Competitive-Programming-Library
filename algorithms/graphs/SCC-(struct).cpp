@@ -6,7 +6,13 @@ struct SCC {
   vector<set<ll>> sccadj;
   vchar vis;
   SCC(ll _N)
-    : N(_N), totscc(0), adj(_N), tadj(_N), comp(_N, -1), sccadj(_N), vis(_N) {}
+    : N(_N),
+      totscc(0),
+      adj(_N),
+      tadj(_N),
+      comp(_N, -1),
+      sccadj(_N),
+      vis(_N) {}
 
   void add_edge(ll x, ll y) { adj[x].eb(y), tadj[y].eb(x); }
 

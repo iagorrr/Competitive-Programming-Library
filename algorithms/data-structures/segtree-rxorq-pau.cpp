@@ -3,7 +3,8 @@ struct SegTree {
   int n;
   T nu, nq;
   vector<T> st;
-  SegTree(const vector<T> &v) : n(len(v)), nu(0), nq(0), st(n * 4 + 1, nu) {
+  SegTree(const vector<T> &v)
+    : n(len(v)), nu(0), nq(0), st(n * 4 + 1, nu) {
     for (int i = 0; i < n; ++i) update(i, v[i]);
   }
   void update(int p, T v) { update(1, 0, n - 1, p, v); }

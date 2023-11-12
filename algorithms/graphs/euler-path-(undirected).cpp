@@ -65,7 +65,8 @@ vector<int> euler_path(vector<vector<int>> &g, int first) {
       if ((res[i] == v1 and res[i + 1] == v2) ||
           (res[i] == v2 and res[i + 1] == v1)) {
         vector<int> res2;
-        for (int j = i + 1; j < (int)res.size(); j++) res2.push_back(res[j]);
+        for (int j = i + 1; j < (int)res.size(); j++)
+          res2.push_back(res[j]);
         for (int j = 1; j <= i; j++) res2.push_back(res[j]);
         res = res2;
         break;

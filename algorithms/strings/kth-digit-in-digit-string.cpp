@@ -9,7 +9,8 @@ void precompute(int maxpow = 18) {
   ull startstr = 1;
   ull endstr = 9;
 
-  for (ull i = 0, j = 1ll; (int)i < maxpow; i++, j *= 10ll) pow10.eb(j);
+  for (ull i = 0, j = 1ll; (int)i < maxpow; i++, j *= 10ll)
+    pow10.eb(j);
 
   for (ull i = 0; i < maxpow - 1ull; i++) {
     memo.push_back({start, end, startstr, endstr});

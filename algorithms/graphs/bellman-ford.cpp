@@ -1,5 +1,5 @@
-bool bellman_ford(const vector<vector<pair<int, ll>>> &g, int s,
-                  vector<ll> &dist) {
+bool bellman_ford(const vector<vector<pair<int, ll>>> &g,
+                  int s, vector<ll> &dist) {
   int n = (int)g.size();
   dist.assign(n, LLONG_MAX);
 

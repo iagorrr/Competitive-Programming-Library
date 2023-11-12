@@ -9,7 +9,8 @@ ll E(ll n, ll p) {
 }
 
 // O(pi(N)*logN)
-map<ll, ll> factorial_factorization(ll n, const vll &primes) {
+map<ll, ll> factorial_factorization(ll n,
+                                    const vll &primes) {
   map<ll, ll> fs;
   for (const auto &p : primes) {
     if (p > n) break;

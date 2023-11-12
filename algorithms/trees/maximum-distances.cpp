@@ -42,15 +42,20 @@ ll twoNodesDist(const vector<vll> &adj, ll n, ll a, ll b) {
   return -1;
 }
 
-tuple<ll, ll, ll> tree_diameter(const vector<vll> &adj, ll n) {
-  // returns two points of the diameter and the diameter itself
-  auto [node1, dist1] = mostDistantFrom(adj, n, 0);      // O(V)
-  auto [node2, dist2] = mostDistantFrom(adj, n, node1);  // O(V)
-  auto diameter = twoNodesDist(adj, n, node1, node2);    // O(V)
+tuple<ll, ll, ll> tree_diameter(const vector<vll> &adj,
+                                ll n) {
+  // returns two points of the diameter and the diameter
+  // itself
+  auto [node1, dist1] = mostDistantFrom(adj, n, 0);  // O(V)
+  auto [node2, dist2] =
+    mostDistantFrom(adj, n, node1);  // O(V)
+  auto diameter =
+    twoNodesDist(adj, n, node1, node2);  // O(V)
   return make_tuple(node1, node2, diameter);
 }
 
-vll everyDistanceFromNode(const vector<vll> &adj, ll n, ll root) {
+vll everyDistanceFromNode(const vector<vll> &adj, ll n,
+                          ll root) {
   // Single Source Shortest Path, from a given root
   queue<pair<ll, ll>> q;
   vll ans(n, -1);
@@ -70,9 +75,12 @@ vll everyDistanceFromNode(const vector<vll> &adj, ll n, ll root) {
 }
 
 vll maxDistances(const vector<vll> &adj, ll n) {
-  auto [node1, node2, diameter] = tree_diameter(adj, n);   // O(3V)
-  auto distances1 = everyDistanceFromNode(adj, n, node1);  // O(V)
-  auto distances2 = everyDistanceFromNode(adj, n, node2);  // O(V)
+  auto [node1, node2, diameter] =
+    tree_diameter(adj, n);  // O(3V)
+  auto distances1 =
+    everyDistanceFromNode(adj, n, node1);  // O(V)
+  auto distances2 =
+    everyDistanceFromNode(adj, n, node2);  // O(V)
   vll ans(n);
   for (int i = 0; i < n; ++i)
     ans[i] = max(distances1[i], distances2[i]);  // O(V)

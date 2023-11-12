@@ -1,6 +1,7 @@
 struct state {
   int len, link, cnt, firstpos;
-  // this can be optimized using a vector with the alphabet size
+  // this can be optimized using a vector with the alphabet
+  // size
   map<char, int> next;
   vi inv_link;
 };
@@ -27,7 +28,8 @@ struct SuffixAutomaton {
       aux.push_back({st[i], i});
     }
 
-    sort(all(aux), [](const pair<state, int> &a, const pair<state, int> &b) {
+    sort(all(aux), [](const pair<state, int> &a,
+                      const pair<state, int> &b) {
       return a.fst.len > b.fst.len;
     });
 
@@ -105,7 +107,8 @@ struct SuffixAutomaton {
     return st[cur].cnt;
   }
 
-  // find the first index where t appears a substring O(len(t))
+  // find the first index where t appears a substring
+  // O(len(t))
   int firstOccurence(const string &t) {
     int cur = 0;
     for (auto c : t) {
@@ -128,6 +131,7 @@ struct SuffixAutomaton {
 
   void getEveryOccurence(int v, int P_length, vi &ans) {
     if (!cloned[v]) ans.pb(st[v].firstpos - P_length + 1);
-    for (int u : st[v].inv_link) getEveryOccurence(u, P_length, ans);
+    for (int u : st[v].inv_link)
+      getEveryOccurence(u, P_length, ans);
   }
 };

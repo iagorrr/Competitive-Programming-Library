@@ -1,13 +1,10 @@
-ll divisors(ll n)
-{
+ll divisors(ll n) {
   ll ans = 1;
-  for (auto p : primes)
-  {
-    if (p*p*p > n) break;
+  for (auto p : primes) {
+    if (p * p * p > n) break;
 
     int count = 1;
-    while (n % p == 0)
-    {
+    while (n % p == 0) {
       n /= p;
       count++;
     }

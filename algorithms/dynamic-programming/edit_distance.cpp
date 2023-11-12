@@ -15,7 +15,8 @@ int edit_distance(const string &a, const string &b) {
     for (int j = 1; j <= m; ++j) {
       int add = dp[i][j - 1] + ADD;
       int del = dp[i - 1][j] + DEL;
-      int chg = dp[i - 1][j - 1] + (a[i - 1] == b[j - 1] ? 0 : 1) * CHG;
+      int chg = dp[i - 1][j - 1] +
+                (a[i - 1] == b[j - 1] ? 0 : 1) * CHG;
       dp[i][j] = min({add, del, chg});
     }
   }

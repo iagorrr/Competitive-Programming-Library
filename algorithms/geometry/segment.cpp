@@ -14,7 +14,8 @@ struct segment {
 template <typename T>
 bool segment<T>::contains(const Point<T> &P) const {
   // verifica se P está contido na reta
-  double dAB = Point<T>::dist(A, B), dAP = Point<T>::dist(A, P),
+  double dAB = Point<T>::dist(A, B),
+         dAP = Point<T>::dist(A, P),
          dPB = Point<T>::dist(P, B);
 
   return equals(dAP + dPB, dAB);
