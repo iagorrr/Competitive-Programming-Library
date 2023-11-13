@@ -127,6 +127,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [rabin karp](/algorithms/strings/rabin-karp.cpp)
     - [string psum](/algorithms/strings/string-psum.cpp)
     - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
+    - [trie](/algorithms/strings/trie.cpp)
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
 
 - Trees
