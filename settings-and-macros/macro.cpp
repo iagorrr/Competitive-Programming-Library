@@ -44,7 +44,7 @@ int32_t main(void) {
   fastio;
 #endif
 
-  // cin >> t;
+  // cin >> T;
 
   for (int i = 1; i <= T; i++) {
     solve();
