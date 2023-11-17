@@ -78,7 +78,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
     - [prim](/algorithms/graphs/prim.cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
-    - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
+    - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
 
 - Math
     - [GCD](/algorithms/math/GCD.cpp)
