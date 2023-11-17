@@ -76,6 +76,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
+    - [prim](/algorithms/graphs/prim.cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
     - [topological sorting](/algorithms/graphs/topological-sorting.cpp)
 
