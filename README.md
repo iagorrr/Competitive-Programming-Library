@@ -143,21 +143,21 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
-- [Neps](/submissions/Neps)
-- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
 - [UVA OJ](/submissions/UVA-OJ)
-- [Becrowd](/submissions/Becrowd)
-- [CSES](/submissions/CSES)
-- [kattis](/submissions/kattis)
-- [OBI](/submissions/OBI)
-- [google](/submissions/google)
-- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [Codeforces](/submissions/Codeforces)
 - [CodeChef](/submissions/CodeChef)
-- [atCoder](/submissions/atCoder)
-- [SPOJ sphere](/submissions/SPOJ-sphere)
 - [leetCode](/submissions/leetCode)
+- [Codeforces](/submissions/Codeforces)
+- [kattis](/submissions/kattis)
+- [Neps](/submissions/Neps)
+- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
+- [OBI](/submissions/OBI)
+- [SPOJ sphere](/submissions/SPOJ-sphere)
+- [CSES](/submissions/CSES)
+- [Becrowd](/submissions/Becrowd)
 - [moj](/submissions/moj)
+- [atCoder](/submissions/atCoder)
+- [google](/submissions/google)
+- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
 - [ICPC](/submissions/ICPC)
 
 ## References & Courses
