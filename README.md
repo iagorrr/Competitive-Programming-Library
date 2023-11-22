@@ -44,6 +44,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [equals](/algorithms/geometry/equals.cpp)
     - [line](/algorithms/geometry/line.cpp)
     - [point struct and utils (2d)](/algorithms/geometry/point-struct-and-utils-(2d).cpp)
+    - [polygon lattice points](/algorithms/geometry/polygon-lattice-points.cpp)
     - [segment](/algorithms/geometry/segment.cpp)
     - [template line](/algorithms/geometry/template-line.cpp)
     - [template point](/algorithms/geometry/template-point.cpp)
