@@ -1,8 +1,8 @@
 struct DSU {
-  vi ps;
-  vi size;
+  vi ps, size;
+
   // vector<unordered_set<int>> sts;
-  DSU(int N) : ps(N + 1), size(N, 1), sts(N) {
+  DSU(int N) : ps(N + 1), size(N, 1) /*, sts(N)*/ {
     iota(all(ps), 0);
     // for (int i = 0; i < N; i++) sts[i].insert(i);
   }
