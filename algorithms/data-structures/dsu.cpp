@@ -1,14 +1,16 @@
 struct DSU {
-  vi ps, size;
+  vi ps, sz;
 
   // vector<unordered_set<int>> sts;
-  DSU(int N) : ps(N + 1), size(N, 1) /*, sts(N)*/ {
+
+  DSU(int N) : ps(N + 1), sz(N, 1) /*, sts(N) */ {
     iota(all(ps), 0);
     // for (int i = 0; i < N; i++) sts[i].insert(i);
   }
   int find_set(int x) {
     return ps[x] == x ? x : ps[x] = find_set(ps[x]);
   }
+  int size(int u) { return sz[find_set(u)]; }
   bool same_set(int x, int y) {
     return find_set(x) == find_set(y);
   }
@@ -18,10 +20,10 @@ struct DSU {
     int px = find_set(x);
     int py = find_set(y);
 
-    if (size[px] < size[py]) swap(px, py);
+    if (sz[px] < sz[py]) swap(px, py);
 
     ps[py] = px;
-    size[px] += size[py];
+    sz[px] += sz[py];
     // sts[px].merge(sts[py]);
   }
 };
