@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'algorithms/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'algorithms/**'
 
 jobs:
   notebook:
