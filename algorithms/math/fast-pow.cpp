@@ -13,4 +13,3 @@ ll fpow(ll a, ll b, ll m) {
   ll ans = fpow2((a * a) % m, b / 2ll, m);
   return b & 1 ? (a * ans) % m : ans;
 }
-
