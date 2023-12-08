@@ -1,6 +1,16 @@
-ll fpow(ll a, int n, ll mod = LLONG_MAX) {
-  if (n == 0) return 1;
-  if (n == 1) return a;
-  ll x = fpow(a, n / 2, mod) % mod;
-  return ((x * x) % mod * (n & 1 ? a : 1ll)) % mod;
+ll fpow(ll a, ll b, ll m) {
+  ll ret = 1;
+  while (b) {
+    if (b & 1) ret = (ret * a) % m;
+    b >>= 1;
+    a = (a * a) % m;
+  }
+  return ret;
 }
+
+ll fpow(ll a, ll b, ll m) {
+  if (!b) return 1;
+  ll ans = fpow2((a * a) % m, b / 2ll, m);
+  return b & 1 ? (a * ans) % m : ans;
+}
+
