@@ -77,6 +77,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
     - [prim](/algorithms/graphs/prim.cpp)
+    - [successor graph (struct) 2](/algorithms/graphs/successor_graph-(struct)_2.cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
     - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
 
