@@ -1,13 +1,17 @@
-/*
- * far[h][i] = the node that 2^h far from node i
- * sometimes is useful invert the order of loops
- * time : O(nlogn)
- * */
-const int maxlog = 20;
-int far[maxlog + 1][n + 1];
-int n;
-for (int h = 1; h <= maxlog; h++) {
-  for (int i = 1; i <= n; i++) {
-    far[h][i] = far[h - 1][far[h - 1][i]];
+const int MAXN(2e5), MAXLOG2(30);
+int bl[MAXN][MAXLOG2 + 1];
+int N;
+
+int kth_pos(int u, ll k) {
+  for (int i = 0; i <= MAXLOG2; i++) {
+		if (k & (1ll<<i)) u  = bl[u][i];
+  }
+	return u;
+}
+void build() {
+  for (int i = 1; i <= MAXLOG2; i++) {
+    for (int j = 0; j < N; j++) {
+      bl[j][i] = bl[bl[j][i - 1]][i - 1];
+    }
   }
 }
