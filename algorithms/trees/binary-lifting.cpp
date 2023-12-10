@@ -4,9 +4,9 @@ int N;
 
 int kth_pos(int u, ll k) {
   for (int i = 0; i <= MAXLOG2; i++) {
-		if (k & (1ll<<i)) u  = bl[u][i];
+    if (k & (1ll << i)) u = bl[u][i];
   }
-	return u;
+  return u;
 }
 void build() {
   for (int i = 1; i <= MAXLOG2; i++) {
