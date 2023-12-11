@@ -57,6 +57,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
     - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
     - [bfs 01](/algorithms/graphs/bfs-01.cpp)
+    - [binary lifting](/algorithms/graphs/binary-lifting.cpp)
     - [block cut tree](/algorithms/graphs/block-cut-tree.cpp)
     - [check bipartite](/algorithms/graphs/check-bipartite.cpp)
     - [dijkstra (k shortest paths)](/algorithms/graphs/dijkstra-(k-shortest-paths).cpp)
@@ -74,13 +75,19 @@ Here you will find implementation of algorithms and data structures used in comp
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
     - [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
     - [kruskal](/algorithms/graphs/kruskal.cpp)
+    - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
     - [prim](/algorithms/graphs/prim.cpp)
-    - [successor graph (struct) 2](/algorithms/graphs/successor_graph-(struct)_2.cpp)
+    - [small to large](/algorithms/graphs/small_to_large.cpp)
+    - [successor graph (struct)](/algorithms/graphs/successor_graph-(struct).cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
     - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
+    - [tree diameter](/algorithms/graphs/tree-diameter.cpp)
+    - [tree flatten](/algorithms/graphs/tree_flatten.cpp)
+    - [tree isomorphism](/algorithms/graphs/tree-isomorphism.cpp)
+    - [tree maximum distances](/algorithms/graphs/tree-maximum-distances.cpp)
 
 - Math
     - [GCD](/algorithms/math/GCD.cpp)
@@ -133,16 +140,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
     - [trie](/algorithms/strings/trie.cpp)
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
-
-- Trees
-    - [binary lifting](/algorithms/trees/binary-lifting.cpp)
-    - [binary lifting (struct)](/algorithms/trees/binary-lifting-(struct).cpp)
-    - [isomorphism](/algorithms/trees/isomorphism.cpp)
-    - [lowest common ancestor sparse table](/algorithms/trees/lowest_common_ancestor_sparse_table.cpp)
-    - [maximum distances](/algorithms/trees/maximum-distances.cpp)
-    - [small to large](/algorithms/trees/small_to_large.cpp)
-    - [tree diameter](/algorithms/trees/tree-diameter.cpp)
-    - [tree flatten](/algorithms/trees/tree_flatten.cpp)
 
 
 ## Submissions
