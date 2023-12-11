@@ -69,6 +69,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [find bridges (online)](/algorithms/graphs/find-bridges-(online).cpp)
     - [find centroid](/algorithms/graphs/find-centroid.cpp)
     - [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
+    - [functional graph](/algorithms/graphs/functional-graph.cpp)
     - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
     - [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
