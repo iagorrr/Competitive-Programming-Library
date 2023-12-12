@@ -63,9 +63,7 @@ auto solve() {
     dp[cur][0] = max(dp[cur][0], 1);
     dp[cur][0] = max(dp[cur][0], dp[cur - 1][0] + 1);
 
-    dp[cur][1] = max(dp[cur][1], 1);
     dp[cur][1] = max(dp[cur][1], dp[cur - 1][1] + 1);
-    dp[cur][1] = max(dp[cur][1], dp[cur - 1][0] + 2);
     if (cur > 1)
       dp[cur][1] = max(dp[cur][1], dp[cur - 2][0] + 2);
   }
