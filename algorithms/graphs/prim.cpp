@@ -14,7 +14,7 @@ ll prim(vi s = vi(1, 0)) {
   }
 
   ll mstcost = 0;
-  while (ingraphcnt < N) {
+  while (ingraphcnt < N and !pq.empty()) {
     ll w;
     int v;
 
