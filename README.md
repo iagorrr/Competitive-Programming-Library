@@ -83,6 +83,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [small to large](/algorithms/graphs/small_to_large.cpp)
     - [successor graph (struct)](/algorithms/graphs/successor_graph-(struct).cpp)
     - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
+    - [topological labelling (kahn)](/algorithms/graphs/topological-labelling-(kahn).cpp)
     - [topological sorting (kahn)](/algorithms/graphs/topological-sorting-(kahn).cpp)
     - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
     - [tree diameter](/algorithms/graphs/tree-diameter.cpp)
