@@ -26,6 +26,9 @@ using vc = vector<char>;
 #define pb(___x) push_back(___x)
 #define mp(___a, ___b) make_pair(___a, ___b)
 #define eb(___x) emplace_back(___x)
+int lg2(ll x) {
+  return __builtin_clzll(1) - __builtin_clzll(x);
+}
 
 // vector<string> dir({"LU", "U", "RU", "R", "RD", "D",
 // "LD", "L"}); int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0}; int
@@ -36,6 +39,7 @@ int dy[] = {0, 1, 0, -1};
 
 const ll oo = 1e18;
 int T(1);
+const int MAXN(1'000'000);
 
 auto solve() {}
 
