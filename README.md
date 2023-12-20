@@ -75,6 +75,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
     - [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
     - [kruskal](/algorithms/graphs/kruskal.cpp)
+    - [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary lifting).cpp)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
