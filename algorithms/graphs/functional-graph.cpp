@@ -1,39 +1,42 @@
-const int MAXLOG2 = 20, MAXN(2'00'000);
+const int MAXN(2'000'000), MAXLOG2(24);
 int N;
-int G[MAXN];
-int depth[MAXN];
-int up[MAXN][MAXLOG2 + 1];
-vi GT[MAXN];
+vi2d succ(MAXN, vi(MAXLOG2 + 1));
+vi dst(MAXN, 0);
 
-void build(int u = 0) {
-  for (int i = 1; i <= MAXLOG2; i++)
-    up[u][i] = up[up[u][i - 1]][i - 1];
-
-  for (int v : GT[u])
-    if (v != up[u][0]) {
-      depth[v] = depth[up[v][0] = u] + 1;
-      build(v);
-    }
+int vis[MAXN];
+void dfsbuild(int u) {
+  if (vis[u]) return;
+  vis[u] = 1;
+  int v = succ[u][0];
+  dfsbuild(v);
+  dst[u] = dst[v] + 1;
 }
 
-int jump(int u, ll k) {
-  for (ll i = 0; i <= MAXLOG2; i++)
-    if (k & (1ll << i)) u = up[u][i];
+void build() {
+  for (int i = 0; i < N; i++) {
+    if (not vis[i]) dfsbuild(i);
+  }
 
+  for (int k = 1; k <= MAXLOG2; k++) {
+    for (int i = 0; i < N; i++) {
+      succ[i][k] = succ[succ[i][k - 1]][k - 1];
+    }
+  }
+}
+
+int kth(int u, ll k) {
+  if (k <= 0) return u;
+  for (int i = 0; i <= MAXLOG2; i++)
+    if ((1ll << i) & k) u = succ[u][i];
   return u;
 }
 
-int lca(int a, int b) {
-  if (depth[a] < depth[b]) swap(a, b);
-
-  a = jump(a, depth[a] - depth[b]);
-
-  if (b == a) return a;
-
-  for (int i = MAXLOG2; i >= 0; i--) {
-    int at = up[a][i], bt = up[b][i];
-    if (at != bt) a = at, b = bt;
-  }
-
-  return up[a][0];
+int dist(int u, int v) {
+  int cu = kth(u, dst[u]);
+  if (kth(u, dst[u] - dst[v]) == v)
+    return dst[u] - dst[v];
+  else if (kth(cu, dst[cu] - dst[v]) == v)
+    return dst[u] + (dst[cu] - dst[v]);
+  else
+    return -1;
 }
