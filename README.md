@@ -89,7 +89,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
     - [tree diameter](/algorithms/graphs/tree-diameter.cpp)
     - [tree flatten](/algorithms/graphs/tree_flatten.cpp)
-    - [tree isomorphism](/algorithms/graphs/tree-isomorphism.cpp)
+    - [tree isomorphism (not rooted)](/algorithms/graphs/tree-isomorphism-(not-rooted).cpp)
+    - [tree isomorphism (rooted)](/algorithms/graphs/tree-isomorphism-(rooted).cpp)
     - [tree maximum distances](/algorithms/graphs/tree-maximum-distances.cpp)
 
 - Math
