@@ -1,15 +1,14 @@
+const int MAXN(1'000'000);
 int tin[MAXN], low[MAXN], timer, N;
-char vis[MAXN];
 vi2d G(MAXN);
 vector<pii> bridges;
 
 void dfs(int u, int p = -1) {
-  vis[u] = true;
   tin[u] = low[u] = timer++;
 
   for (auto v : G[u]) {
     if (v == p) continue;
-    if (vis[v]) {
+    if (tin[v]) {
       low[u] = min(low[u], tin[v]);
     } else {
       dfs(v, u);
@@ -21,13 +20,12 @@ void dfs(int u, int p = -1) {
   }
 }
 void findBridges() {
-  timer = 0;
-  memset(vis, 0, sizeof(vis));
-  memset(tin, -1, sizeof(tin));
-  memset(low, -1, sizeof(low));
+  timer = 1;
   bridges.clear();
+  memset(tin, 0, sizeof(tin));
+  memset(low, 0, sizeof(low));
 
   for (int i = 0; i < N; i++) {
-    if (not vis[i]) dfs(i);
+    if (not tin[i]) dfs(i);
   }
 }
