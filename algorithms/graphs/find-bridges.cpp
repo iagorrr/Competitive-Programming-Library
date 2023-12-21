@@ -1,10 +1,6 @@
-const int MAXN(50);
-vi2d G(MAXN);
-int tin[MAXN];
-int low[MAXN];
+int tin[MAXN], low[MAXN], timer, N;
 char vis[MAXN];
-int timer;
-int N, M;
+vi2d G(MAXN);
 vector<pii> bridges;
 
 void dfs(int u, int p = -1) {
@@ -24,9 +20,8 @@ void dfs(int u, int p = -1) {
     }
   }
 }
-void getBridges() {
+void findBridges() {
   timer = 0;
-
   memset(vis, 0, sizeof(vis));
   memset(tin, -1, sizeof(tin));
   memset(low, -1, sizeof(low));
