@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 using ll = long long;
 
-const int MAXN(2'00'000), oo(1'000'000'001);
-int N, Q;
+const int MAXN(2'00'000);
+int N;
+int ST[MAXN << 1], XS[MAXN];
 
 struct Node {
   ll value;
-  Node() : value(-oo){};  // Neutral element
+  Node() : value(0){};  // Neutral element
   Node(ll v) : value(v){};
 };
 
 Node combine(Node &nl, Node &nr, int l, int r, int ql,
              int qr) {
   Node m;
-  m.value = max(nl.value, nr.value);
+  m.value = nl.value + nr.value;
   return m;
 }
-
 struct SegTree {
   int n;
   vector<Node> st;
@@ -60,53 +59,41 @@ struct SegTree {
     return combine(a, b, nl, nr, l, r);
   }
 };
-
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  cout.tie(0);
-
-  cin >> N >> Q;
-
+  cin >> N;
   SegTree st(N);
   for (int i = 0; i < N; i++) {
-    int x;
-    cin >> x;
-    st.assign(i, x);
+    st.assign(i, 1);
+    cin >> XS[i];
   }
 
-  while (Q--) {
-    int x;
-    cin >> x;
+  for (int i = 0; i < N; i++) {
+    int p;
+    cin >> p;
 
-    int ans = N;
     int l = 0, r = N - 1;
+    int ans = N;
+
     while (l <= r) {
       int mid = midpoint(l, r);
-      int rmq = st.query(0, mid).value;
-      if (rmq >= x) {
+      int sum = st.query(0, mid).value;
+
+      if (sum >= p) {
         ans = min(ans, mid);
         r = mid - 1;
-
-      } else {
+      } else
         l = mid + 1;
-      }
     }
 
-    if (ans == N) {
-      cout << 0 << ' ';
-    } else {
-      cout << ans + 1 << ' ';
-      st.assign(ans, st.query(ans, ans).value - x);
-    }
+    cout << XS[ans] << " \n"[i == N - 1];
+    st.assign(ans, 0);
   }
-
-  cout << '\n';
 }
 
 /*
  * AC
  * Segtree
- * Range Min Query
- * https://cses.fi/problemset/task/1143/
+ * Range sum query
+ * Binary Search
+ * https://cses.fi/problemset/task/1749/
  * */
