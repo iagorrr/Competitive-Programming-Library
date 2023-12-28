@@ -32,7 +32,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
 - Extras
-    - [bigint](/algorithms/extras/bigint.cpp)
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
     - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
