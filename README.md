@@ -8,6 +8,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
+    - [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
     - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
     - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
     - [segtree PA](/algorithms/data-structures/segtree-PA.cpp)
