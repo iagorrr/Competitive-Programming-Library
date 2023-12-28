@@ -1,0 +1,11 @@
+\subsection{Merge Sort Tree}
+
+Like a segment tree but each node $st_i$ stores a sorted subarray
+
+\begin{list}
+\item $inrange(l, r, a, b)$ : counts the number of elements $x$ in the subarray $\left\(l, r \right\)$ such that $ a <= x <= b$.
+\end{list}
+
+Memory: $O(n \log{N})$
+Time: build $O(N \log{N})$, inrange $O(\log{N})$
+
