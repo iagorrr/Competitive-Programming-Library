@@ -41,7 +41,7 @@ const ll oo = 1e18;
 int T(1);
 const int MAXN(1'000'000);
 
-auto solve() {}
+auto run() {}
 
 int32_t main(void) {
 #ifndef LOCAL
@@ -51,6 +51,6 @@ int32_t main(void) {
   // cin >> T;
 
   for (int i = 1; i <= T; i++) {
-    solve();
+    run();
   }
 }
