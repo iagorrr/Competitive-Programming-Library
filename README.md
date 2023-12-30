@@ -36,7 +36,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
     - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
     - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
-    - [number of elements greater than k](/algorithms/extras/number_of_elements_greater_than_k.cpp)
 
 - Geometry
     - [convex hull](/algorithms/geometry/convex-hull.cpp)
