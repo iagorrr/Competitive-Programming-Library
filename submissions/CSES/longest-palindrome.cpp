@@ -28,40 +28,32 @@ using vc = vector<char>;
 
 const ll oo = 1e18;
 vi manacher(const string &s) {
-  string t2;
-  t2.push_back('$');
-  for (auto c : s) {
-    t2.push_back('#');
-    t2.push_back(c);
-  }
-  t2.push_back('#');
-  t2.push_back('^');
-  int n = len(t2) - 2;  // bc of $ and ^
+  int n = len(s) - 2;  // bc of $ and ^
   vi p(n + 2);
   int l = 1, r = 1;
   for (int i = 1; i <= n; i++) {
     p[i] = max(0, min(r - i, p[l + (r - i)]));
-    while (t2[i - p[i]] == t2[i + p[i]]) p[i]++;
+    while (s[i - p[i]] == s[i + p[i]]) p[i]++;
     if (i + p[i] > r) l = i - p[i], r = i + p[i];
     p[i]--;
   }
-  return vi(p.begin() + 1, p.end() - 1);
+  return p;
 }
-string longest_palindrome(const string &s) {
-  vi xs = manacher(s);
 
-  string s2;
-  for (auto c : s) s2.push_back('#'), s2.push_back(c);
-  s2.push_back('#');
+string longest_palindrome(const string &s) {
+  string t("$#");
+  for (auto c : s) t.push_back(c), t.push_back('#');
+  t.push_back('^');
+
+  vi xs = manacher(t);
 
   int mpos = max_element(all(xs)) - xs.begin();
 
-  string ans;
-  int k = xs[mpos];
-  for (int i = mpos - k; i <= mpos + k; i++)
-    if (s2[i] != '#') ans.push_back(s2[i]);
+  string p;
+  for (int k = xs[mpos], i = mpos - k; i <= mpos + k; i++)
+    if (t[i] != '#') p.push_back(t[i]);
 
-  return ans;
+  return p;
 }
 
 void run() {
