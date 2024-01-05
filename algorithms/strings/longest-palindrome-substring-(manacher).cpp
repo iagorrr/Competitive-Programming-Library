@@ -41,9 +41,3 @@ string longest_palindrome(const string &s) {
   }
   return ans;
 }
-void run() {
-  string s;
-  cin >> s;
-  auto ans = longest_palindrome(s);
-  cout << ans << endl;
-}
