@@ -1,4 +1,4 @@
-vi manacher(string s) {
+vi manacher(const string &s) {
   string t2;
   for (auto c : s) t2 += string("#") + c;
   t2 = t2 + '#';
@@ -25,6 +25,7 @@ string longest_palindrome(const string &s) {
   for (auto c : s) s2 += string("#") + c;
   s2 = s2 + '#';
 
+  // refactor this to use cpp max and iterators arithmetic
   int mpos = 0;
   for (int i = 0; i < len(xs); i++) {
     if (xs[i] > xs[mpos]) {
