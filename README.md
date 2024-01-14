@@ -25,7 +25,6 @@ Here you will find implementation of algorithms and data structures used in comp
 - Dynamic Programming
     - [Binary Knapsack (bottom up)](/algorithms/dynamic-programming/Binary-Knapsack-(bottom-up).cpp)
     - [Binary Knapsack (top down)](/algorithms/dynamic-programming/Binary-Knapsack-(top-down).cpp)
-    - [digits](/algorithms/dynamic-programming/digits.cpp)
     - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
     - [kadane](/algorithms/dynamic-programming/kadane.cpp)
     - [longest increasing subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence.cpp)
