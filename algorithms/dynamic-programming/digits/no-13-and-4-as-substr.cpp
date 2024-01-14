@@ -22,7 +22,7 @@ vi get_digits(ll x) {
   vi digits;
 
   while (x) {
-    digits.emplace_back(x % 10ull);
+    digits.emplace_back(x % 10ull),
     x /= 10ull;
   }
 
@@ -30,7 +30,7 @@ vi get_digits(ll x) {
   return digits;
 }
 
-ll dp(ll x) {
+ll solve(ll x) {
   auto digits = get_digits(x);
   memset(memo, -1, sizeof memo);
 
