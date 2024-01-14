@@ -7,7 +7,7 @@ ll call(int pos = 0, int prev = 0, bool lim = true,
   ll &ans = DP[pos][prev][lim][only0];
 
   if (ans != -1) {
-    return DP[pos][prev][lim][only0];
+    return ans;
   }
 
   ans = 0;
