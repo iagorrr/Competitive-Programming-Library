@@ -111,6 +111,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [find multiplicative inverse](/algorithms/math/find-multiplicative-inverse.cpp)
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
     - [integer mod](/algorithms/math/integer_mod.cpp)
+    - [integer partition](/algorithms/math/integer-partition.cpp)
     - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
     - [n elements choose k](/algorithms/math/n-elements-choose-k.cpp)
     - [number of divisors](/algorithms/math/number-of-divisors.cpp)
