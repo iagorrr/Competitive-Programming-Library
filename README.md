@@ -64,6 +64,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
     - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
     - [find articulation points](/algorithms/graphs/find-articulation-points.cpp)
+    - [find bridge tree components](/algorithms/graphs/find-bridge-tree-components.cpp)
     - [find bridges](/algorithms/graphs/find-bridges.cpp)
     - [find bridges (online)](/algorithms/graphs/find-bridges-(online).cpp)
     - [find centroid](/algorithms/graphs/find-centroid.cpp)
