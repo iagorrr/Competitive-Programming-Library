@@ -1,6 +1,5 @@
 const int MAXN(10000), MAXM(100000);
-int N, M, clk, 
-    tin[MAXN], low[MAXN], isBridge[MAXM];
+int N, M, clk, tin[MAXN], low[MAXN], isBridge[MAXM];
 vector<pii> G[MAXN];
 
 void dfs(int u, int p = -1) {
