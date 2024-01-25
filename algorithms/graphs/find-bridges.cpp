@@ -1,12 +1,12 @@
-const int MAXN(1'000'000);
-int tin[MAXN], low[MAXN], timer, N;
-vi2d G(MAXN);
-vector<pii> bridges;
+const int MAXN(10000), MAXM(100000);
+int N, M, clk, 
+    tin[MAXN], low[MAXN], isBridge[MAXM];
+vector<pii> G[MAXN];
 
 void dfs(int u, int p = -1) {
-  tin[u] = low[u] = timer++;
+  tin[u] = low[u] = clk++;
 
-  for (auto v : G[u]) {
+  for (auto [v, i] : G[u]) {
     if (v == p) continue;
     if (tin[v]) {
       low[u] = min(low[u], tin[v]);
@@ -14,18 +14,18 @@ void dfs(int u, int p = -1) {
       dfs(v, u);
       low[u] = min(low[u], low[v]);
       if (low[v] > tin[u]) {
-        bridges.emplace_back(u, v);
+        isBridge[i] = 1;
       }
     }
   }
 }
-void findBridges() {
-  timer = 1;
-  bridges.clear();
-  memset(tin, 0, sizeof(tin));
-  memset(low, 0, sizeof(low));
 
+void findBridges() {
+  fill(tin, tin + N, 0);
+  fill(low, low + N, 0);
+  fill(isBridge, isBridge + M, 0);
+  clk = 1;
   for (int i = 0; i < N; i++) {
-    if (not tin[i]) dfs(i);
+    if (!tin[i]) dfs(i);
   }
 }
