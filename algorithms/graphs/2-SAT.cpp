@@ -1,66 +1,76 @@
-struct SAT2 {
-  ll n;
-  vll2d adj, adj_t;
-  vc used;
-  vll order, comp;
+struct SAT {
+  int n;
+  vi2d g, tg;
+  vi vis;
+  vi order, comp;
   vc assignment;
   bool solvable;
-  SAT2(ll _n)
+  int qtdcomp;
+
+  SAT(int _n)
     : n(2 * _n),
-      adj(n),
-      adj_t(n),
-      used(n),
-      order(n),
+      g(n),
+      tg(n),
+      vis(n),
       comp(n, -1),
       assignment(n / 2) {}
-  void dfs1(int v) {
-    used[v] = true;
-    for (int u : adj[v]) {
-      if (!used[u]) dfs1(u);
+
+  void dfs1(int u) {
+    vis[u] = 1;
+    for (auto v : g[u]) {
+      if (!vis[v]) {
+        dfs1(v);
+      }
     }
-    order.push_back(v);
+    order.emplace_back(u);
   }
 
-  void dfs2(int v, int cl) {
-    comp[v] = cl;
-    for (int u : adj_t[v]) {
-      if (comp[u] == -1) dfs2(u, cl);
+  void dfs2(int u) {
+    comp[u] = qtdcomp;
+    for (auto v : tg[u]) {
+      if (comp[v] == -1) {
+        dfs2(v);
+      }
     }
   }
 
-  bool solve_2SAT() {
-    // find and label each SCC
-    for (int i = 0; i < n; ++i) {
-      if (!used[i]) dfs1(i);
+  bool solve2sat() {
+    for (int i = 0; i < n; i++) {
+      if (!vis[i]) dfs1(i);
     }
+
     reverse(all(order));
-    ll j = 0;
-    for (auto &v : order) {
-      if (comp[v] == -1) dfs2(v, j++);
+    qtdcomp = 0;
+    for (auto u : order) {
+      if (comp[u] == -1) {
+        dfs2(u);
+        qtdcomp++;
+      }
     }
 
     assignment.assign(n / 2, false);
     for (int i = 0; i < n; i += 2) {
-      // x and !x belong to the same SCC
       if (comp[i] == comp[i + 1]) {
         solvable = false;
         return false;
       }
 
-      assignment[i / 2] = comp[i] > comp[i + 1];
+      assignment[i / 2] = comp[i] < comp[i + 1];
     }
-    solvable = true;
-    return true;
+
+    solvable = 1;
+    return solvable;
   }
 
-  void add_disjunction(int a, bool na, int b, bool nb) {
-    a = (2 * a) ^ na;
-    b = (2 * b) ^ nb;
-    int neg_a = a ^ 1;
-    int neg_b = b ^ 1;
-    adj[neg_a].push_back(b);
-    adj[neg_b].push_back(a);
-    adj_t[b].push_back(neg_a);
-    adj_t[a].push_back(neg_b);
+  void add_dis(int a, bool va, int b, bool vb) {
+    va = !va, vb = !vb;
+    a = (2 * a) ^ va, b = (2 * b) ^ vb;
+    int nota = a ^ 1, notb = b ^ 1;
+    g[nota].emplace_back(b), g[notb].emplace_back(a),
+      tg[b].emplace_back(nota), tg[a].emplace_back(notb);
+  }
+
+  void add_impl(int a, bool va, int b, int vb) {
+    add_dis(a, !va, b, vb);
   }
 };
