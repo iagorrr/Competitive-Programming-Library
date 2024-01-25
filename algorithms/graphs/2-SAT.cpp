@@ -62,7 +62,7 @@ struct SAT {
     return solvable;
   }
 
-  void add_dis(int a, bool va, int b, bool vb) {
+  void add_dis(int a, bool va, int b, bool vb) {  // a V b
     va = !va, vb = !vb;
     a = (2 * a) ^ va, b = (2 * b) ^ vb;
     int nota = a ^ 1, notb = b ^ 1;
@@ -70,7 +70,22 @@ struct SAT {
       tg[b].emplace_back(nota), tg[a].emplace_back(notb);
   }
 
-  void add_impl(int a, bool va, int b, int vb) {
+  void add_impl(int a, bool va, int b, int vb) {  // a -> b
     add_dis(a, !va, b, vb);
+  }
+
+  void add_equiv(int a, bool va, int b,
+                 bool vb) {  // a <-> b
+    add_impl(a, 1, b, 1);
+    add_impl(b, 1, a, 1);
+    add_impl(a, 0, b, 0);
+    add_impl(b, 0, a, 0);
+  }
+
+  void add_xor(int a, bool va, int b, bool vb) {  // a xor b
+    add_impl(a, 1, b, 0);
+    add_impl(a, 0, b, 1);
+    add_impl(b, 1, a, 0);
+    add_impl(b, 0, a, 1);
   }
 };
