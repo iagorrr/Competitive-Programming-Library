@@ -6,6 +6,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
     - [bitree](/algorithms/data-structures/bitree.cpp)
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
+    - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
     - [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
