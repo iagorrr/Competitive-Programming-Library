@@ -1,5 +1,12 @@
 #include <bits/stdc++.h>
+
+#include <climits>
 using namespace std;
+#ifdef LOCAL
+#include "debug.cpp"
+#else
+#define dbg(...) 42
+#endif
 #define endl '\n'
 #define fastio                      \
   ios_base::sync_with_stdio(false); \
@@ -7,6 +14,7 @@ using namespace std;
   cout.tie(0);
 #define len(__x) (int)__x.size()
 using ll = long long;
+using ull = unsigned long long;
 using ld = long double;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
@@ -17,170 +25,176 @@ using pii = pair<int, int>;
 using vii = vector<pii>;
 using vc = vector<char>;
 #define all(a) a.begin(), a.end()
-#define snd second
-#define fst first
-#define pb(___x) push_back(___x)
-#define mp(___a, ___b) make_pair(___a, ___b)
-#define eb(___x) emplace_back(___x)
+#define rall(a) a.rbegin(), a.rend()
+#define pb push_back
+#define eb emplace_back
+#define ff first
+#define ss second
 
-const ll oo = 1e18;
+int lg2(ll x) {
+  return __builtin_clzll(1) - __builtin_clzll(x);
+}
 
-template <typename T = ll>
-struct SegTree {
-  int n;
-  T nu, nq;
-  vector<T> st;
-  SegTree(const vector<T> &v)
-    : n(len(v)),
-      nu(numeric_limits<T>::min()),
-      nq(numeric_limits<T>::min()),
-      st(n * 4 + 1, nu) {
-    for (int i = 0; i < n; ++i) update(i, v[i]);
+// vector<string> dir({"LU", "U", "RU", "R", "RD", "D",
+// "LD", "L"}); int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0}; int
+// dy[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+vector<string> dir({"U", "R", "D", "L"});
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, 1, 0, -1};
+
+int T(1);
+const int MAXN(1'000'000);
+
+const ll oo = (LLONG_MAX >> 1);
+using Lnode = ll;
+struct Qnode {
+  ll v;
+  Qnode() : v(-oo) {}
+  Qnode(ll _v) : v(_v) {}
+};
+
+using Unode = ll;
+struct LSegTree {
+  int n, ql, qr;
+  vector<Qnode> st;
+  vector<Lnode> lz;
+
+  /*---------------------------------------------------------------------*/
+  Qnode merge(Qnode lv, Qnode rv, int nl, int nr) {
+    return Qnode(max(lv.v, rv.v));
   }
-  void update(int p, T v) { update(1, 0, n - 1, p, v); }
-  T query(int l, int r) { return query(1, 0, n - 1, l, r); }
 
-  void update(int node, int nl, int nr, int p, T v) {
-    if (p < nl or p > nr) return;
+  void prop(int i, int l, int r) {
+    st[i].v += lz[i];
+    if (l != r) lz[tol(i)] += lz[i], lz[tor(i)] += lz[i];
+    lz[i] = 0;
+  }
 
-    if (nl == nr) {
-      st[node] = v;
+  void applyV(int i, Unode v) { lz[i] += v; }
+
+  /*---------------------------------------------------------------------*/
+
+  LSegTree() {}
+  LSegTree(int _n) : n(_n), st(_n << 2), lz(_n << 2) {}
+  bool disjoint(int l, int r) { return qr < l or r < ql; }
+  bool contains(int l, int r) {
+    return ql <= l and r <= qr;
+  }
+  int tol(int i) { return i << 1; }
+  int tor(int i) { return i << 1 | 1; }
+  void build(vector<Qnode> &v) { build(v, 1, 0, n - 1); }
+  void build(vector<Qnode> &v, int i, int l, int r) {
+    if (l == r) {
+      st[i] = v[l];
       return;
     }
-
-    update(left(node), nl, mid(nl, nr), p, v);
-    update(right(node), mid(nl, nr) + 1, nr, p, v);
-
-    st[node] = max(st[left(node)], st[right(node)]);
+    int m = midpoint(l, r);
+    build(v, tol(i), l, m);
+    build(v, tor(i), m + 1, r);
+    st[i] = merge(st[tol(i)], st[tor(i)], l, r);
+  }
+  void upd(int l, int r, Unode v) {
+    ql = l, qr = r;
+    upd(1, 0, n - 1, v);
+  }
+  void upd(int i, int l, int r, Unode v) {
+    prop(i, l, r);
+    if (disjoint(l, r)) return;
+    if (contains(l, r)) {
+      applyV(i, v);
+      prop(i, l, r);
+      return;
+    }
+    int m = midpoint(l, r);
+    upd(tol(i), l, m, v);
+    upd(tor(i), m + 1, r, v);
+    st[i] = merge(st[tol(i)], st[tor(i)], l, r);
+  }
+  Qnode qry(int l, int r) {
+    ql = l, qr = r;
+    return qry(1, 0, n - 1);
+  }
+  Qnode qry(int i, int l, int r) {
+    prop(i, l, r);
+    if (disjoint(l, r)) return Qnode();
+    if (contains(l, r)) return st[i];
+    int m = midpoint(l, r);
+    return merge(qry(tol(i), l, m), qry(tor(i), m + 1, r),
+                 l, r);
   }
 
-  T query(int node, int nl, int nr, int ql, int qr) {
-    if (ql <= nl and qr >= nr) return st[node];
-    if (nl > qr or nr < ql) return nq;
-    if (nl == nr) return st[node];
-
-    return max(query(left(node), nl, mid(nl, nr), ql, qr),
-               query(right(node), mid(nl, nr) + 1, nr, ql, qr));
-  }
-
-  int left(int p) { return p << 1; }
-  int right(int p) { return (p << 1) + 1; }
-  int mid(int l, int r) { return (r - l) / 2 + l; }
-};
-const int start = 0, endS = 1, cost = 2, profit = 3, quit = 4;
-void dbg(vector<array<ll, 5>> jobs) {
-  for (int i = 0; i < len(jobs); i++) {
-    cout << i << " : ";
-    for (auto &j : jobs[i]) cout << j << ' ';
-    cout << endl;
-  }
-}
-bool comp(const array<ll, 5> &a, const array<ll, 5> &b) {
-  if (a[start] == b[start]) {
-    if (a[quit] == b[quit]) {
-      if (a[endS] == b[endS]) {
-        if (a[cost] == b[cost]) {
-          return a[profit] > b[profit];
-        } else
-          return a[cost] < b[cost];
-      } else
-        return a[endS] < b[endS];
-    } else
-      return a[quit] < a[quit];
-  } else
-    return a[start] < b[start];
-}
-
-int startbefore(const vector<array<ll, 5>> &xs, int i) {
-  int ans = 0;
-  int l = i+1, r = len(xs) - 1;
-  while (l <= r) {
-    int mid = (r - l) / 2 + l;
-    if (xs[mid][start] < xs[i][quit]) {
-      ans = mid;
-      l = mid + 1;
-    } else
-      r = mid - 1;
-  }
-  return ans;
-}
-
-void run() {
-  int n;
-  ll s;
-  cin >> n >> s;
-
-  // start, end, cost, profit, quiting day
-  vector<array<ll, 5>> jobs(n);
-  for (int i = 0; i < n; i++) {
-    cin >> jobs[i][0] >> jobs[i][1] >> jobs[i][2];
-    jobs[i][profit] = (jobs[i][1] - jobs[i][0] + 1) * s - jobs[i][2];
-    jobs[i][quit] = jobs[i][start] + (jobs[i][cost] + s - 1) / s;
-  }
-  sort(all(jobs), comp);
-  // dbg(jobs);
-
-  vll aux(n);
-  for (int i = 0; i < n; i++) {
-    aux[i] = jobs[i][profit];
-  }
-  SegTree<ll> seg(aux);
-
-  int curjob = -1;
-  ll curday = 1;
-  ll ans = 0;
-  for (int i = 0; i < n; i++) {
-    // cout << "curjob : " << curjob << " ans: " << ans << endl;
-    // cout << "i: " << i << endl;
-    // cout << "i: " << i << " profit " << profit << endl;
-    // cout << " lenjobs " << len(jobs) << " lenjobs[i]" << len(jobs[i]) <<endl;
-    if (jobs[i][profit] <= 0) continue;
-    if (curjob == -1) {
-      ll startday = jobs[i][start];
-      ll quitday = jobs[i][quit] - 1;
-      int j = startbefore(jobs, i);
-
-      // ll maxprofit = seg.query(startday, quitday);
-      ll maxprofit = seg.query(i, j);
-
-      if (maxprofit > jobs[i][profit]) continue;
-
-      curjob = i;
-    } else {
-      ll startday = jobs[i][start];
-      ll quitday = jobs[i][quit] - 1;
-
-      int j = startbefore(jobs, i);
-      ll maxprofit = seg.query(i, j);
-
-      if (maxprofit > jobs[i][profit]) continue;
-
-      ll curprofit = jobs[i][profit];
-      ll profitleft = (jobs[curjob][endS] - startday + 1ll) * s;
-      if (curprofit < profitleft) continue;
-      if (curprofit == profitleft and jobs[i][quit] >= jobs[curjob][quit])
-        continue;
-
-      ll curincrease =
-        (jobs[i][start] - jobs[curjob][start]) * s - jobs[curjob][cost];
-      // cout << "curincrease : " << curincrease << endl;
-      ans += max(0ll, curincrease);
-      curjob = i;
+  // optional
+  void print(int l, int r) {
+    for (int i = l; i <= r; i++) {
+      cout << i << " : " << qry(i, i).v << "\n";
     }
   }
+};
 
-  if (curjob != -1) {
-    ll curincrease;
-    curincrease = jobs[curjob][profit];
-    ans += max(0ll, curincrease);
-    // cout << "curincrease: " << curincrease << endl;
+auto run() {
+  ll N, perday;
+  cin >> N >> perday;
+
+  LSegTree segtree(N + 1);
+  vector<array<ll, 3>> jobs(N + 1);
+  for (int i = 1; i <= N; i++) {
+    cin >> jobs[i][0] >> jobs[i][1] >> jobs[i][2];
+    jobs[i][1]++;
   }
-  cout << ans << endl;
+
+  map<ll, vector<ll>> events;
+  for (int i = 1; i <= N; i++) {
+    auto [l, r, c] = jobs[i];
+    events[l].eb(i), events[r].eb(-i);
+  }
+
+  ll ans = 0, topdotop = 0, pt = 1;
+  for (auto &[t, evi] : events) {
+    // update
+    int dt = t - pt;
+    segtree.upd(1, N, dt * perday);
+    ans = max(ans, segtree.qry(1, N).v);
+
+    // open guys
+    for (auto ei : evi) {
+      if (ei > 0) {
+        ll best = -jobs[ei][2];
+        best += ans;
+        segtree.upd(ei, ei, -segtree.qry(ei, ei).v);
+        segtree.upd(ei, ei, best);
+      }
+    }
+
+    // close guys
+    for (auto &ei : evi) {
+      if (ei < 0) {
+        ei = -ei;
+        segtree.upd(ei, ei, -segtree.qry(ei, ei).v);
+        segtree.upd(ei, ei, -oo);
+      }
+    }
+
+    pt = t;
+  }
+
+  cout << ans << '\n';
 }
+
 int32_t main(void) {
+#ifndef LOCAL
   fastio;
-  int t;
-  t = 1;
-  // cin >> t;
-  while (t--) run();
+#endif
+
+  // cin >> T;
+
+  for (int i = 1; i <= T; i++) {
+    run();
+  }
 }
+
+/*
+ * AC
+ * Data strcutres
+ * Seg tree
+ * https://codeforces.com/gym/104555/problem/H
+ * */
