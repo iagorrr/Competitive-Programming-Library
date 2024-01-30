@@ -2,11 +2,11 @@ const ll P = 31;
 const ll MOD = 1e9 + 9;
 const int MAXN(1e6);
 
-ll ppow[MAXN+1];
+ll ppow[MAXN + 1];
 void pre_calc() {
-	ppow[0] = 1;
-	for (int i = 1; i <= MAXN; i++)
-		ppow[i] = (ppow[i-1] * P) % MOD;
+  ppow[0] = 1;
+  for (int i = 1; i <= MAXN; i++)
+    ppow[i] = (ppow[i - 1] * P) % MOD;
 }
 
 struct Hash {
@@ -14,10 +14,11 @@ struct Hash {
   vll h, hi;
   Hash(const string &s) : n(s.size()), h(n), hi(n) {
     h[0] = s[0];
-    hi[n-1] = s[n-1];
-    for (int i = 1; i < n ; i++) {
-      h[i] = (s[i] +  h[i - 1] * P) % MOD;
-      hi[n-i-1] = (s[n-i-1] + hi[n - i - 1] * P) % MOD;
+    hi[n - 1] = s[n - 1];
+    for (int i = 1; i < n; i++) {
+      h[i] = (s[i] + h[i - 1] * P) % MOD;
+      hi[n - i - 1] =
+        (s[n - i - 1] + hi[n - i - 1] * P) % MOD;
     }
   }
 
