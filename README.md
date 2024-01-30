@@ -4,6 +4,7 @@ Here you will find implementation of algorithms and data structures used in comp
 ## Algorithms
 - Data Structures
     - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
+    - [big big hash](/algorithms/data-structures/big-big-hash.cpp)
     - [bitree](/algorithms/data-structures/bitree.cpp)
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
     - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
@@ -149,22 +150,22 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
-- [UVA OJ](/submissions/UVA-OJ)
-- [moj](/submissions/moj)
-- [atCoder](/submissions/atCoder)
-- [Codeforces](/submissions/Codeforces)
 - [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [ICPC](/submissions/ICPC)
 - [CSES](/submissions/CSES)
-- [google](/submissions/google)
-- [Becrowd](/submissions/Becrowd)
+- [CodeChef](/submissions/CodeChef)
+- [moj](/submissions/moj)
 - [SPOJ sphere](/submissions/SPOJ-sphere)
 - [leetCode](/submissions/leetCode)
-- [CodeChef](/submissions/CodeChef)
+- [atCoder](/submissions/atCoder)
+- [google](/submissions/google)
+- [UVA OJ](/submissions/UVA-OJ)
+- [Codeforces](/submissions/Codeforces)
 - [kattis](/submissions/kattis)
-- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
+- [Becrowd](/submissions/Becrowd)
 - [Neps](/submissions/Neps)
 - [OBI](/submissions/OBI)
+- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
+- [ICPC](/submissions/ICPC)
 
 ## References & Courses
 - [TEP](https://github.com/edsomjr/TEP)
