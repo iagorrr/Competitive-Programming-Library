@@ -149,22 +149,22 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
-- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [CSES](/submissions/CSES)
-- [CodeChef](/submissions/CodeChef)
+- [UVA OJ](/submissions/UVA-OJ)
 - [moj](/submissions/moj)
+- [atCoder](/submissions/atCoder)
+- [Codeforces](/submissions/Codeforces)
+- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
+- [ICPC](/submissions/ICPC)
+- [CSES](/submissions/CSES)
+- [google](/submissions/google)
+- [Becrowd](/submissions/Becrowd)
 - [SPOJ sphere](/submissions/SPOJ-sphere)
 - [leetCode](/submissions/leetCode)
-- [atCoder](/submissions/atCoder)
-- [google](/submissions/google)
-- [UVA OJ](/submissions/UVA-OJ)
-- [Codeforces](/submissions/Codeforces)
+- [CodeChef](/submissions/CodeChef)
 - [kattis](/submissions/kattis)
-- [Becrowd](/submissions/Becrowd)
+- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
 - [Neps](/submissions/Neps)
 - [OBI](/submissions/OBI)
-- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
-- [ICPC](/submissions/ICPC)
 
 ## References & Courses
 - [TEP](https://github.com/edsomjr/TEP)
