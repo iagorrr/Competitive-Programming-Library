@@ -109,7 +109,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [factorial factorization](/algorithms/math/factorial-factorization.cpp)
     - [factorization](/algorithms/math/factorization.cpp)
     - [factorization (Pollard)](/algorithms/math/factorization-(Pollard).cpp)
-    - [fast fourrier transform](/algorithms/math/fast-fourrier-transform.cpp)
     - [fast pow](/algorithms/math/fast-pow.cpp)
     - [find multiplicative inverse](/algorithms/math/find-multiplicative-inverse.cpp)
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
