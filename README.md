@@ -118,6 +118,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
     - [n elements choose k](/algorithms/math/n-elements-choose-k.cpp)
     - [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
+    - [ntt int convolution two mods](/algorithms/math/ntt-int-convolution-two-mods.cpp)
     - [number of divisors](/algorithms/math/number-of-divisors.cpp)
     - [number of divisors (sieve)](/algorithms/math/number-of-divisors-(sieve).cpp)
     - [power sum](/algorithms/math/power-sum.cpp)
