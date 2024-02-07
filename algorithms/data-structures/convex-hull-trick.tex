@@ -1,2 +1,10 @@
-\subsection{Convex Hull Trick}
+\subsection{Convex Hull Trick / Line Container}
+
+Container where you can add lines of the form $mx + b$ , and query maximum value at point $x$.
+
+$insert\_line(m, b)$ inserts the line $m \cdot x + b$ in the container.
+
+$eval(x)$ find the highest value among all lines in the point $x$.
+
+both in $O(\log{N})$
 
