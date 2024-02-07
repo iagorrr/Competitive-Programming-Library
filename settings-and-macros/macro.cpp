@@ -6,10 +6,10 @@ using namespace std;
 #define dbg(...) 42
 #endif
 #define endl '\n'
-#define fastio                      \
-  ios_base::sync_with_stdio(false); \
-  cin.tie(0);                       \
-  cout.tie(0);
+#define fastio                  \
+  ios_base::sync_with_stdio(0); \
+  cin.tie(0);
+#define int long long
 #define len(__x) (int)__x.size()
 using ll = long long;
 using ull = unsigned long long;
@@ -23,9 +23,16 @@ using pii = pair<int, int>;
 using vii = vector<pii>;
 using vc = vector<char>;
 #define all(a) a.begin(), a.end()
-#define pb(___x) push_back(___x)
-#define mp(___a, ___b) make_pair(___a, ___b)
-#define eb(___x) emplace_back(___x)
+#define rall(a) a.rbegin(), a.rend()
+#define pb push_back
+#define eb emplace_back
+#define ff first
+#define ss second
+#define rep(i, begin, end)                              \
+  for (__typeof(begin) i = (begin) - ((begin) > (end)); \
+       i != (end) - ((begin) > (end));                  \
+       i += 1 - 2 * ((begin) > (end)))
+
 int lg2(ll x) {
   return __builtin_clzll(1) - __builtin_clzll(x);
 }
