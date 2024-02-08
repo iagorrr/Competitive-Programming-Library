@@ -10,6 +10,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
     - [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
     - [dsu](/algorithms/data-structures/dsu.cpp)
+    - [lichao tree dynamic](/algorithms/data-structures/lichao-tree-dynamic.cpp)
     - [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
     - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
     - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
