@@ -1,12 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+#ifdef LOCAL
+#include "debug.cpp"
+#else
+#define dbg(...) 42
+#endif
 #define endl '\n'
-#define fastio                      \
-  ios_base::sync_with_stdio(false); \
-  cin.tie(0);                       \
-  cout.tie(0);
+#define fastio                  \
+  ios_base::sync_with_stdio(0); \
+  cin.tie(0);
+#define int long long
 #define len(__x) (int)__x.size()
 using ll = long long;
+using ull = unsigned long long;
 using ld = long double;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
@@ -17,43 +23,66 @@ using pii = pair<int, int>;
 using vii = vector<pii>;
 using vc = vector<char>;
 #define all(a) a.begin(), a.end()
-#define snd second
-#define fst first
-#define pb(___x) push_back(___x)
-#define mp(___a, ___b) make_pair(___a, ___b)
-#define eb(___x) emplace_back(___x)
+#define rall(a) a.rbegin(), a.rend()
+#define pb push_back
+#define eb emplace_back
+#define ff first
+#define ss second
+#define rep(i, begin, end)                              \
+  for (__typeof(begin) i = (begin) - ((begin) > (end)); \
+       i != (end) - ((begin) > (end));                  \
+       i += 1 - 2 * ((begin) > (end)))
 
-const ll INF = 1e18;
+int lg2(ll x) {
+  return __builtin_clzll(1) - __builtin_clzll(x);
+}
 
-void run() {
+// vector<string> dir({"LU", "U", "RU", "R", "RD", "D",
+// "LD", "L"}); int dx[] = {-1, -1, -1, 0, 1, 1, 1, 0}; int
+// dy[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+vector<string> dir({"U", "R", "D", "L"});
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, 1, 0, -1};
+
+const ll oo = 1e18;
+int T(1);
+const int MAXN(1'000'000);
+
+auto run() {
   int n;
   cin >> n;
 
-  vi xs(n);
-  for (int i = 0; i < n; i++) cin >> xs[i];
-
-  ll ans, qtd0, qtd1;
-  ans = qtd0 = qtd1 = 0;
-  for (int i = n - 1; i >= 0; i--) {
-    int k = xs[i];
-    if (k) {
-      ll q1 = qtd1;
-      qtd1 = qtd0 + 1ll;
-      qtd0 = q1;
-    } else
-      qtd0++;
-
-    ans += qtd1;
+  vll xs(n);
+  for (auto &xi : xs) {
+    cin >> xi;
   }
 
-  cout << ans << endl;
-}
-int32_t main(void) {
-  fastio;
-  int t;
-  t = 1;
-  // cin >> t;
-  while (t--) run();
+  int odd, even;
+  odd = even = 0;
+  even++;
+
+  int cursum = 0;
+  ll ans = 0;
+  for (int i = 0; i < n; i++) {
+    cursum += xs[i];
+    ans += cursum & 1 ? even : odd;
+    even += !(cursum & 1);
+    odd += cursum & 1;
+  }
+
+  cout << ans << '\n';
 }
 
-// AC, ad-hoc, dp
+int32_t main(void) {
+#ifndef LOCAL
+  fastio;
+#endif
+
+  // cin >> T;
+
+  for (int i = 1; i <= T; i++) {
+    run();
+  }
+}
+
+// AC, ad-hoc, prefix sum
