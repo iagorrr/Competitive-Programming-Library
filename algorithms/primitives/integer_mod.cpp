@@ -1,4 +1,3 @@
-const ll INF = 1e18;
 const ll mod = 998244353;
 template <ll MOD = mod>
 struct Modular {
