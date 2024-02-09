@@ -1,35 +1,35 @@
-const ll mod = 998244353;
-template <ll MOD = mod>
-struct Modular {
+const ll MOD = 1'000'000'000 + 7;
+template <ll _mod = MOD>
+struct mint {
   ll value;
-  static const ll MOD_value = MOD;
+  static const ll MOD_value = _mod;
 
-  Modular(ll v = 0) {
-    value = v % MOD;
-    if (value < 0) value += MOD;
+  mint(ll v = 0) {
+    value = v % _mod;
+    if (value < 0) value += _mod;
   }
-  Modular(ll a, ll b) : value(0) {
+  mint(ll a, ll b) : value(0) {
     *this += a;
     *this /= b;
   }
 
-  Modular& operator+=(Modular const& b) {
+  mint& operator+=(mint const& b) {
     value += b.value;
-    if (value >= MOD) value -= MOD;
+    if (value >= _mod) value -= _mod;
     return *this;
   }
-  Modular& operator-=(Modular const& b) {
+  mint& operator-=(mint const& b) {
     value -= b.value;
-    if (value < 0) value += MOD;
+    if (value < 0) value += _mod;
     return *this;
   }
-  Modular& operator*=(Modular const& b) {
-    value = (ll)value * b.value % MOD;
+  mint& operator*=(mint const& b) {
+    value = (ll)value * b.value % _mod;
     return *this;
   }
 
-  friend Modular mexp(Modular a, ll e) {
-    Modular res = 1;
+  friend mint mexp(mint a, ll e) {
+    mint res = 1;
     while (e) {
       if (e & 1) res *= a;
       a *= a;
@@ -37,51 +37,45 @@ struct Modular {
     }
     return res;
   }
-  friend Modular inverse(Modular a) {
-    return mexp(a, MOD - 2);
-  }
+  friend mint inverse(mint a) { return mexp(a, _mod - 2); }
 
-  Modular& operator/=(Modular const& b) {
+  mint& operator/=(mint const& b) {
     return *this *= inverse(b);
   }
-  friend Modular operator+(Modular a, Modular const b) {
+  friend mint operator+(mint a, mint const b) {
     return a += b;
   }
-  Modular operator++(int) {
-    return this->value = (this->value + 1) % MOD;
+  mint operator++(int) {
+    return this->value = (this->value + 1) % _mod;
   }
-  Modular operator++() {
-    return this->value = (this->value + 1) % MOD;
+  mint operator++() {
+    return this->value = (this->value + 1) % _mod;
   }
-  friend Modular operator-(Modular a, Modular const b) {
+  friend mint operator-(mint a, mint const b) {
     return a -= b;
   }
-  friend Modular operator-(Modular const a) {
-    return 0 - a;
-  }
-  Modular operator--(int) {
-    return this->value = (this->value - 1 + MOD) % MOD;
+  friend mint operator-(mint const a) { return 0 - a; }
+  mint operator--(int) {
+    return this->value = (this->value - 1 + _mod) % _mod;
   }
 
-  Modular operator--() {
-    return this->value = (this->value - 1 + MOD) % MOD;
+  mint operator--() {
+    return this->value = (this->value - 1 + _mod) % _mod;
   }
-  friend Modular operator*(Modular a, Modular const b) {
+  friend mint operator*(mint a, mint const b) {
     return a *= b;
   }
-  friend Modular operator/(Modular a, Modular const b) {
+  friend mint operator/(mint a, mint const b) {
     return a /= b;
   }
   friend std::ostream& operator<<(std::ostream& os,
-                                  Modular const& a) {
+                                  mint const& a) {
     return os << a.value;
   }
-  friend bool operator==(Modular const& a,
-                         Modular const& b) {
+  friend bool operator==(mint const& a, mint const& b) {
     return a.value == b.value;
   }
-  friend bool operator!=(Modular const& a,
-                         Modular const& b) {
+  friend bool operator!=(mint const& a, mint const& b) {
     return a.value != b.value;
   }
 };
