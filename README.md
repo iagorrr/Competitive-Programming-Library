@@ -113,6 +113,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [fast pow](/algorithms/math/fast-pow.cpp)
     - [fft convolution](/algorithms/math/fft-convolution.cpp)
     - [find multiplicative inverse](/algorithms/math/find-multiplicative-inverse.cpp)
+    - [find solution diophantine equation](/algorithms/math/find-solution-diophantine-equation.cpp)
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
     - [integer mod](/algorithms/math/integer_mod.cpp)
     - [integer partition](/algorithms/math/integer-partition.cpp)
