@@ -9,7 +9,7 @@ using namespace std;
 #define fastio                  \
   ios_base::sync_with_stdio(0); \
   cin.tie(0);
-#define int long long
+// #define int long long
 #define len(__x) (int)__x.size()
 using ll = long long;
 using ull = unsigned long long;
