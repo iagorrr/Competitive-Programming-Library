@@ -48,7 +48,69 @@ const ll oo = 1e18;
 int T(1);
 const int MAXN(1'000'000);
 
-auto run() {}
+int N, M;
+int hist[5000];
+
+auto run() {
+  cin >> N >> M;
+  for (int i = 1; i <= N; i++) {
+    string s;
+    cin >> s;
+    for (auto c : s) {
+      hist[(int)c]++;
+    }
+  }
+
+  int m1, m2, m4;
+  m1 = m2 = m4 = 0;
+  for (int i = 0; i < 5000; i++) {
+    if (!hist[i]) continue;
+    ll k = hist[i];
+
+    if (k & 1) m1++, k--;
+
+    if (k % 4) {
+      m2++;
+      k -= 2;
+    }
+
+    m4 += (k / 4);
+  }
+  dbg(m2, m4, m1);
+
+  // solve the fucking middle
+  int mid = (N & 1) and (M & 1);
+  if (mid) {
+    if (m1 != 1) return 0;
+  } else if (m1)
+    return 0;
+
+  // solve the pair to pair cross
+  if ((N & 1) or (M & 1)) {
+    ll blockrand = 0;
+    if (N & 1) blockrand += (M - mid);
+    if (M & 1) blockrand += (N - mid);
+
+    if (blockrand < m2 * 2) return 0;
+
+    blockrand -= (m2 * 2);
+
+    if (blockrand % 4) return 0;
+    if (blockrand / 4 > m4) return 0;
+    m4 -= (blockrand / 4);
+  }
+
+  // the rest fill the rest =D
+  ll block4 = N * M;
+  if (N & 1) block4 -= (M);
+  if (M & 1) block4 -= (N);
+  block4 += mid;
+  dbg(block4, m4 * 4);
+
+  if (block4 != m4 * 4) return 0;
+
+  return 1;
+}
 
 int32_t main(void) {
 #ifndef LOCAL
@@ -58,6 +120,8 @@ int32_t main(void) {
   // cin >> T;
 
   for (int i = 1; i <= T; i++) {
-    run();
+    cout << (run() ? "Yes" : "No") << '\n';
   }
 }
+
+// AC, ad-hoc, palindromes
