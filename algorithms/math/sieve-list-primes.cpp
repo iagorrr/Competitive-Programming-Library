@@ -1,7 +1,7 @@
-const ll MAXN = 1e5;
-vll list_primes(ll n) {
+const ll MAXN = 2e5;
+vll list_primes(ll n = MAXN) {
   vll ps;
-  bitset<MAXN> sieve;
+  bitset<MAXN + 1> sieve;
   sieve.set();
   sieve.reset(1);
   for (ll i = 2; i <= n; ++i) {
