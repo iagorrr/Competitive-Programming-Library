@@ -104,6 +104,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [binomial](/algorithms/math/binomial.cpp)
     - [binomial mod](/algorithms/math/binomial-mod.cpp)
     - [chinese remainder theorem](/algorithms/math/chinese-remainder-theorem.cpp)
+    - [derangement](/algorithms/math/derangement.cpp)
     - [euler phi](/algorithms/math/euler-phi.cpp)
     - [euler phi (in range)](/algorithms/math/euler-phi-(in-range).cpp)
     - [factorial](/algorithms/math/factorial.cpp)
