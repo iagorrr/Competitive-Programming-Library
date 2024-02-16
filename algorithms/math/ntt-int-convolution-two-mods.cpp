@@ -141,6 +141,7 @@ T chinese_remainder_theorem(
   return ans.a;
 }
 
+#define int long long
 template <ll m1, ll m2>
 vll merge_two_mods(const vector<mint<m1>>& a,
                    const vector<mint<m2>>& b) {
@@ -176,4 +177,17 @@ vll convolution_2mods(const vll& a, const vll& b) {
   l2.resize(N);
 
   return merge_two_mods(l, l2);
+}
+
+vll poly_exp(const vll& xs, ll k) {
+  vll ret(len(xs));
+  ret[0] = 1;
+  auto base = xs;
+  while (k) {
+    if (k & 1) ret = convolution_2mods(ret, base);
+    k >>= 1;
+    base = convolution_2mods(base, base);
+  }
+
+  return ret;
 }
