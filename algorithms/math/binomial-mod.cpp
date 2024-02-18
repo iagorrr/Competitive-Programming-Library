@@ -2,7 +2,7 @@ const ll MOD = 1e9 + 7;
 const ll MAXN = 1'00'000;
 ll FACT[MAXN + 1];
 void precompute() {
-  #warning Remember to call precompute before use binommod !
+#warning Remember to call precompute before use binommod !
   FACT[0] = 1;
   for (ll i = 1; i <= MAXN; i++) {
     FACT[i] = (FACT[i - 1] * i) % MOD;
