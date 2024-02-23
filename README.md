@@ -127,6 +127,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [power sum](/algorithms/math/power-sum.cpp)
     - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
     - [sum of divisors](/algorithms/math/sum-of-divisors.cpp)
+    - [to any base](/algorithms/math/to-any-base.cpp)
 
 - Primitives
     - [bigint](/algorithms/primitives/bigint.cpp)

@@ -17,4 +17,3 @@ vll to_otherbase(ll x, ll b) {
   // [msb, ..., lsb]
   return result;
 }
-
