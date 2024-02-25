@@ -87,30 +87,25 @@ auto run() {
   vi XS(N);
   for (auto &xi : XS) cin >> xi;
 
-  if (K == 1) {
-    cout << N << '\n';
-    return;
-  }
-
   map<int, int> lastAppear;
   vi aux(N);
   for (int i = N - 1; i >= 0; i--) {
     aux[i] = lastAppear[XS[i]] ? lastAppear[XS[i]] : oo;
     lastAppear[XS[i]] = i;
   }
+
   MergeSortTree mst(aux);
 
   ll ans = 0;
 
   ans = 0;
   int l = 0, r = 0;
-  while (l <= r) {
-    while (r + 1 < N and
-           mst.inrange(l, r + 1, r + 1 + 1, oo) <= K) {
+  while (l < N) {
+    while (r < N and mst.inrange(l, r, r + 1, oo) <= K) {
       r++;
     }
 
-    ans += r - l + 1;
+    ans += (r - l);
     l++;
   }
 
