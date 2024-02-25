@@ -44,11 +44,14 @@ vector<string> dir({"U", "R", "D", "L"});
 int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, 1, 0, -1};
 
-const ll oo = 1e18;
-int T(1);
-const int MAXN(1'000'000);
+const ll OO = 1e18;
+const int oo = 1e9;
 
-auto run() {}
+int T(1);
+
+auto run() {
+
+}
 
 int32_t main(void) {
 #ifndef LOCAL
@@ -57,7 +60,7 @@ int32_t main(void) {
 
   // cin >> T;
 
-  for (int i = 1; i <= T; i++) {
+  for (int t = 1; t <= T; t++) {
     run();
   }
 }
