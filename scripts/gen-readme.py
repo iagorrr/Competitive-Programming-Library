@@ -111,6 +111,7 @@ def get_references() -> str:
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
+- [KACTL ICPC Code Library](https://github.com/kth-competitive-programming/kactl)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
