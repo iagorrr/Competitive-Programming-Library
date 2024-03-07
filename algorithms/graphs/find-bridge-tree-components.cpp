@@ -1,43 +1,36 @@
 const int maxn(3'00'000);
-int tin[maxn], low[maxn], comp[maxn], qtdcomps, clk;
+int tin[maxn], compId[maxn], qtdComps;
 vi g[maxn], stck;
 int n;
-void dfs(int u, int p = -1) {
-  low[u] = tin[u] = ++clk;
+int dfs(int u, int p = -1) {
+  int low = tin[u] = len(stck);
   stck.emplace_back(u);
 
-  bool flagParent = false;
+  bool multEdge = false;
   for (auto v : g[u]) {
-    if (!tin[v]) {
-      dfs(v, u);
-      low[u] = min(low[u], low[v]);
-    } else {
-      if (v != p)
-        low[u] = min(low[u], tin[v]);
-      else {
-        if (flagParent)
-          low[u] = min(low[u], tin[v]);
-        else
-          flagParent = true;
-      }
+    if (v == p and !multEdge) {
+      multEdge = 1;
+      continue;
     }
+    low = min(low, tin[v] == -1 ? dfs(v, u) : tin[v]);
   }
 
-  if (low[u] == tin[u]) {
-    int v2;
-    do {
-      v2 = stck.back();
-      comp[v2] = qtdcomps;
-      stck.pop_back();
-    } while (v2 != u);
-    qtdcomps++;
+  if (low == tin[u]) {
+    for (int i = tin[u]; i < len(stck); i++)
+      compId[stck[i]] = qtdComps;
+    stck.resize(tin[u]);
+    qtdComps++;
   }
+
+  return low;
 }
 
 void label2CC() {
-  memset(comp, -1, sizeof(int) * n);
+  memset(compId, -1, sizeof(int) * n);
+  memset(tin, -1, sizeof(int) * n);
 
+  stck.reserve(n);
   for (int i = 0; i < n; i++) {
-    if (comp[i] == -1) dfs(i);
+    if (tin[i] == -1) dfs(i);
   }
 }
