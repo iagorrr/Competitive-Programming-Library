@@ -1,27 +1,43 @@
+const int maxn(3'00'000);
+int tin[maxn], low[maxn], comp[maxn], qtdcomps, clk;
+vi g[maxn], stck;
 int n;
-const int MAXN(3'00'000);
-vi g[MAXN], vi stck;
-int tin[MAXN], low[MAXN], comp[MAXN], qtdcomps, clk;
-void dfsb(int u, int p) {
+void dfs(int u, int p = -1) {
   low[u] = tin[u] = ++clk;
   stck.emplace_back(u);
 
+  bool flagParent = false;
   for (auto v : g[u]) {
     if (!tin[v]) {
-      dfsb(v, u);
+      dfs(v, u);
       low[u] = min(low[u], low[v]);
-    } else if (v != p) {
-      low[u] = min(low[u], tin[v]);
+    } else {
+      if (v != p)
+        low[u] = min(low[u], tin[v]);
+      else {
+        if (flagParent)
+          low[u] = min(low[u], tin[v]);
+        else
+          flagParent = true;
+      }
     }
   }
 
   if (low[u] == tin[u]) {
-    qtdcomps++;
     int v2;
     do {
       v2 = stck.back();
       comp[v2] = qtdcomps;
       stck.pop_back();
     } while (v2 != u);
+    qtdcomps++;
+  }
+}
+
+void label2CC() {
+  memset(comp, -1, sizeof(int) * n);
+
+  for (int i = 0; i < n; i++) {
+    if (comp[i] == -1) dfs(i);
   }
 }
