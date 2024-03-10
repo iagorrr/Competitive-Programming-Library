@@ -2,30 +2,25 @@
 using namespace std;
 
 const int maxn(5'00'000);
-int tin[maxn], bcc_cnt, n, timer = 1;
-vector<int> g[maxn], nodes[maxn], stck;
+int tin[maxn], stck[maxn], bcc_cnt, n, top = 0, timer = 1;
+vector<int> g[maxn], nodes[maxn];
 
 int tarjan(int u, int p = -1) {
         int lowu = tin[u] = timer++;
         int son_cnt = 0;
-        stck.emplace_back(u);
-        for (auto x : g[u]) {
-                if (!tin[x]) {
+        stck[++top] = u;
+        for (auto v : g[u]) {
+                if (!tin[v]) {
                         son_cnt++;
-                        int lowx = tarjan(x, u);
+                        int lowx = tarjan(v, u);
                         lowu = min(lowu, lowx);
                         if (lowx >= tin[u]) {
-                                int cur;
-                                nodes[bcc_cnt].emplace_back(u);
-                                do {
-                                        cur = stck.back();
-                                        stck.pop_back();
-                                        nodes[bcc_cnt].emplace_back(cur);
-                                } while (cur != x);
-                                bcc_cnt++;
+                                while (top != -1 && stck[top + 1] != v)
+                                        nodes[bcc_cnt].emplace_back(stck[top--]);
+                                nodes[bcc_cnt++].emplace_back(u);
                         }
                 } else {
-                        lowu = min(lowu, tin[x]);
+                        lowu = min(lowu, tin[v]);
                 }
         }
 
@@ -38,7 +33,7 @@ int tarjan(int u, int p = -1) {
 
 void build_bccs() {
         timer = 1;
-        stck.clear();
+        top = -1;
         memset(tin, 0, sizeof(int) * n);
         for (int i = 0; i < n; i++) nodes[i] = {};
         bcc_cnt = 0;
