@@ -1,39 +1,58 @@
-const int MAXLOG2 = 20, MAXN(2'00'000);
-int N;
-int G[MAXN];
-int depth[MAXN];
-int up[MAXN][MAXLOG2 + 1];
-vi GT[MAXN];
+struct LCA {
+    int n;
+    const int maxlog;
+    vector<vector<int>> up;
+    vector<int> depth;
 
-void build(int u = 0) {
-  for (int i = 1; i <= MAXLOG2; i++)
-    up[u][i] = up[up[u][i - 1]][i - 1];
-
-  for (int v : GT[u])
-    if (v != up[u][0]) {
-      depth[v] = depth[up[v][0] = u] + 1;
-      build(v);
+    LCA(const vector<vector<int>> &tree)
+        : n(tree.size()), maxlog(ceil(log2(n))), up(n, vector<int>(maxlog + 1)), depth(n, -1) {
+        for (int i = 0; i < n; i++) {
+            if (depth[i] == -1) {
+                depth[i] = 0;
+                dfs(i, -1, tree);
+            }
+        }
     }
-}
 
-int jump(int u, ll k) {
-  for (ll i = 0; i <= MAXLOG2; i++)
-    if (k & (1ll << i)) u = up[u][i];
+    void dfs(int u, int p, const vector<vector<int>> &tree) {
+        if (p != -1) {
+            depth[u] = depth[p] + 1;
+            up[u][0] = p;
+            for (int i = 1; i <= maxlog; i++) {
+                up[u][i] = up[up[u][i - 1]][i - 1];
+            }
+        }
+        for (int v : tree[u]) {
+            if (v == p) continue;
+            dfs(v, u, tree);
+        }
+    }
 
-  return u;
-}
+    int kth_jump(int u, int k) {
+        for (int i = maxlog; i >= 0; i--) {
+            if ((1 << i) & k) {
+                u = up[u][i];
+            }
+        }
+        return u;
+    }
 
-int lca(int a, int b) {
-  if (depth[a] < depth[b]) swap(a, b);
+    int lca(int u, int v) {
+        if (depth[u] < depth[v]) swap(u, v);
+        int diff = depth[u] - depth[v];
+        u = kth_jump(u, diff);
+        if (u == v) return u;
+        for (int i = maxlog; i >= 0; i--) {
+            if (up[u][i] != up[v][i]) {
+                u = up[u][i];
+                v = up[v][i];
+            }
+        }
+        return up[u][0];
+    }
 
-  a = jump(a, depth[a] - depth[b]);
-
-  if (b == a) return a;
-
-  for (int i = MAXLOG2; i >= 0; i--) {
-    int at = up[a][i], bt = up[b][i];
-    if (at != bt) a = at, b = bt;
-  }
-
-  return up[a][0];
-}
+    bool on_path(int u, int v, int s) {
+        int uv = lca(u, v), us = lca(u, s), vs = lca(v, s);
+        return (uv == s or (us == uv and vs == s) or (vs == uv and us == s));
+    }
+};
