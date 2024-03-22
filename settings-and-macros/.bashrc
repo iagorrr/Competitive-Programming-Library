@@ -42,6 +42,13 @@ run() {
         time $to_run
 }
 
+# just comp and run your cpp file
+# accpets <in1 >out and everything else
+comprun() {
+        comp $1 "a"
+        run ./a ${@:1}
+}
+
 testall() {
     comp $1 generator
     comp $2 brute
