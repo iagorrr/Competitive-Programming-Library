@@ -22,7 +22,7 @@ comp() {
       -fno-sanitize-recover \
       -D LOCAL \
       -o "${outfile}" \
-      $1
+      "$1"
 
   if [ $? -ne 0 ]; then
       echo ">> FAILED <<" 1>&2
@@ -45,14 +45,14 @@ run() {
 # just comp and run your cpp file
 # accpets <in1 >out and everything else
 comprun() {
-        comp $1 "a"
-        run ./a ${@:1}
+        comp "$1" "a"
+        run ./a ${@:2}
 }
 
 testall() {
-    comp $1 generator
-    comp $2 brute
-    comp $3 main
+    comp "$1" generator
+    comp "$2" brute
+    comp "$3" main
 
     input_counter=1
 
