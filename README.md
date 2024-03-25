@@ -82,6 +82,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [kruskal](/algorithms/graphs/kruskal.cpp)
     - [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary-lifting).cpp)
     - [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
+    - [maximum flow (dinic)](/algorithms/graphs/maximum-flow-(dinic).cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
     - [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
