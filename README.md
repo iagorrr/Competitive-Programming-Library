@@ -4,7 +4,6 @@ Here you will find implementation of algorithms and data structures used in comp
 ## Algorithms
 - Data Structures
     - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
-    - [big big hash](/algorithms/data-structures/big-big-hash.cpp)
     - [bitree](/algorithms/data-structures/bitree.cpp)
     - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
     - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
@@ -148,7 +147,9 @@ Here you will find implementation of algorithms and data structures used in comp
 - Strings
     - [count distinct anagrams](/algorithms/strings/count-distinct-anagrams.cpp)
     - [double hash range query](/algorithms/strings/double-hash-range-query.cpp)
+    - [hash big mod](/algorithms/strings/hash-big-mod.cpp)
     - [hash range query](/algorithms/strings/hash-range-query.cpp)
+    - [hash ull](/algorithms/strings/hash-ull.cpp)
     - [kth digit in digit string](/algorithms/strings/kth-digit-in-digit-string.cpp)
     - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
     - [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
