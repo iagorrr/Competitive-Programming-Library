@@ -40,7 +40,7 @@ struct LazySegTree {
 		int sz = 1 << (lg-1);
 		for (int s = lg; s; s--, sz >>= 1) {
 			int i = p >> s;
-			if (lazy[i]) {
+			if (lazy[i] != l_node()) {
 				apply(i<<1, lazy[i], sz);
 				apply(i<<1|1, lazy[i], sz);
 				lazy[i] = l_node();
@@ -57,7 +57,7 @@ struct LazySegTree {
 	}
 
 	q_node query(int a, int b) {
-		q_node ret = 0;
+		q_node ret = q_node();
 		for (prop(a+=n), prop(b+=n); a <= b; ++a>>=1, --b>>=1) {
 			if (a&1) ret = combine(ret, st[a]);
 			if (!(b&1)) ret = combine(ret, st[b]);
