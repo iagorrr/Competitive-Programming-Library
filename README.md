@@ -40,6 +40,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
 
 - Geometry
+    - [check point inside triangle](/algorithms/geometry/check-point-inside-triangle.cpp)
     - [convex hull](/algorithms/geometry/convex-hull.cpp)
     - [determinant](/algorithms/geometry/determinant.cpp)
     - [equals](/algorithms/geometry/equals.cpp)
@@ -161,24 +162,24 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
-- [leetCode](/submissions/leetCode)
 - [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
-- [kattis](/submissions/kattis)
-- [Library Checker](/submissions/Library Checker)
-- [Neps](/submissions/Neps)
-- [google](/submissions/google)
-- [Codeforces](/submissions/Codeforces)
-- [ICPC](/submissions/ICPC)
-- [OBI](/submissions/OBI)
-- [atCoder](/submissions/atCoder)
 - [Usaco](/submissions/Usaco)
+- [Library Checker](/submissions/Library Checker)
 - [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [UVA OJ](/submissions/UVA-OJ)
-- [moj](/submissions/moj)
+- [Neps](/submissions/Neps)
+- [CSES](/submissions/CSES)
+- [ICPC](/submissions/ICPC)
 - [SPOJ sphere](/submissions/SPOJ-sphere)
 - [Becrowd](/submissions/Becrowd)
 - [CodeChef](/submissions/CodeChef)
-- [CSES](/submissions/CSES)
+- [Codeforces](/submissions/Codeforces)
+- [UVA OJ](/submissions/UVA-OJ)
+- [google](/submissions/google)
+- [atCoder](/submissions/atCoder)
+- [kattis](/submissions/kattis)
+- [leetCode](/submissions/leetCode)
+- [moj](/submissions/moj)
+- [OBI](/submissions/OBI)
 
 ## References & Courses
 - [TEP](https://github.com/edsomjr/TEP)
