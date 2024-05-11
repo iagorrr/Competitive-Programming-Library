@@ -107,6 +107,7 @@ def get_intro() -> str:
 
 def get_references() -> str:
     md = """## References & Courses
+- [Thalisson's Lib](https://github.com/Thalisson-Alves/Competitive-Programming)
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
