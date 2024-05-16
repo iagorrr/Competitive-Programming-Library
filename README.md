@@ -36,7 +36,9 @@ Here you will find implementation of algorithms and data structures used in comp
 
 - Extras
     - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
-    - [get permutation cicles](/algorithms/extras/get-permutation-cicles.cpp)
+    - [closest value greater than](/algorithms/extras/closest_value_greater_than.cpp)
+    - [get permutation cycles](/algorithms/extras/get-permutation-cycles.cpp)
+    - [hanoi tower](/algorithms/extras/hanoi-tower.cpp)
     - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
 
 - Geometry
@@ -138,9 +140,6 @@ Here you will find implementation of algorithms and data structures used in comp
     - [integer mod](/algorithms/primitives/integer_mod.cpp)
     - [matrix](/algorithms/primitives/matrix.cpp)
 
-- Problems
-    - [hanoi tower](/algorithms/problems/hanoi-tower.cpp)
-
 - Searching
     - [meet in the middle](/algorithms/searching/meet-in-the-middle.cpp)
     - [ternary search recursive](/algorithms/searching/ternary_search_recursive.cpp)
@@ -162,26 +161,27 @@ Here you will find implementation of algorithms and data structures used in comp
 
 
 ## Submissions
-- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
+- [kattis](/submissions/kattis)
+- [atCoder](/submissions/atCoder)
 - [Usaco](/submissions/Usaco)
+- [Neps](/submissions/Neps)
+- [leetCode](/submissions/leetCode)
+- [CSES](/submissions/CSES)
+- [OBI](/submissions/OBI)
+- [google](/submissions/google)
 - [Library Checker](/submissions/Library Checker)
 - [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [Neps](/submissions/Neps)
-- [CSES](/submissions/CSES)
-- [ICPC](/submissions/ICPC)
-- [SPOJ sphere](/submissions/SPOJ-sphere)
 - [Becrowd](/submissions/Becrowd)
-- [CodeChef](/submissions/CodeChef)
-- [Codeforces](/submissions/Codeforces)
-- [UVA OJ](/submissions/UVA-OJ)
-- [google](/submissions/google)
-- [atCoder](/submissions/atCoder)
-- [kattis](/submissions/kattis)
-- [leetCode](/submissions/leetCode)
+- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
+- [SPOJ sphere](/submissions/SPOJ-sphere)
 - [moj](/submissions/moj)
-- [OBI](/submissions/OBI)
+- [CodeChef](/submissions/CodeChef)
+- [UVA OJ](/submissions/UVA-OJ)
+- [Codeforces](/submissions/Codeforces)
+- [ICPC](/submissions/ICPC)
 
 ## References & Courses
+- [Thalisson's Lib](https://github.com/Thalisson-Alves/Competitive-Programming)
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Macacário](https://github.com/splucs/Competitive-Programming)
