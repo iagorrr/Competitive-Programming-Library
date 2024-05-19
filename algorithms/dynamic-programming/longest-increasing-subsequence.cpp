@@ -1,18 +1,44 @@
-int LIS(const vi& as) {
-  const ll oo = 1e18;
-  int n = len(as);
-  vll lis(n + 1, oo);
-  lis[0] = -oo;
+template<typename T>
+pair<int, vector<int>> lis(const vector<T> &xs) {
+	int n = xs.size();
 
-  auto ans = 0;
+	vector<T> dp(n+1, numeric_limits<T>::max());
+	dp[0] = numeric_limits<T>::min();
 
-  for (int i = 0; i < n; ++i) {
-    auto it = lower_bound(all(lis), as[i]);
-    auto pos = (int)(it - lis.begin());
+	int sz = 0;
+	vector<int> psx(n);
 
-    ans = max(ans, pos);
-    lis[pos] = as[i];
-  }
+	for (int i = 0; i < n; i++) {
+		auto it = lower_bound(dp.begin(), dp.end(), xs[i]);
+		auto pos = (int)(it - dp.begin());
 
-  return ans;
+		sz = max(sz, pos);
+
+		dp[pos] = xs[i];
+
+		psx[i] = pos;
+	}
+
+	return {sz, psx};
+}
+
+template<typename T>
+vector<int> get_idx(vector<T> xs) {
+	auto [sz1, psx1] = lis(xs);
+
+	reverse(xs.begin(), xs.end());
+	for (auto &xi : xs) xi = -xi;
+
+	auto [sz2, psx2] = lis(xs);
+
+	vector<int> ans;
+	int _n = xs.size();
+	for (int i = 0; i < _n; i++) {
+		int l = psx1[i];
+		int r = psx2[_n-i-1];
+		if (l + r -1 == sz1) ans.push_back(i);
+	}
+
+	return ans;
+
 }
