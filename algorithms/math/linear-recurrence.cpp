@@ -19,7 +19,8 @@ vector<vector<T>> prod(vector<vector<T>> &a,
 }
 
 template <typename T>
-vector<vector<T>> fpow(vector<vector<T>> &xs, ll p, ll mod) {
+vector<vector<T>> fpow(vector<vector<T>> &xs, ll p,
+                       ll mod) {
   vector<vector<T>> ans(xs.size(), vector<T>(xs.size()));
   for (int i = 0; i < (int)xs.size(); i++) ans[i][i] = 1;
 
@@ -29,21 +30,21 @@ vector<vector<T>> fpow(vector<vector<T>> &xs, ll p, ll mod) {
   return ans;
 }
 
-ll linear_req(vector<vector<ll>> rec, vector<ll> first_k, ll n, ll mod) {
-	int k = first_k.size();
-	if (n < k) {
-		return first_k[n];
-	}
+ll linear_req(vector<vector<ll>> rec, vector<ll> first_k,
+              ll n, ll mod) {
+  int k = first_k.size();
+  if (n < k) {
+    return first_k[n];
+  }
 
-	ll n2 = n - k + 1;
-	rec = fpow(rec, n2, mod);
+  ll n2 = n - k + 1;
+  rec = fpow(rec, n2, mod);
 
-	ll ret = 0;
+  ll ret = 0;
 
-	for (int i = 0; i < k; i++) {
-		ret = (ret + (rec.back()[i]*first_k[i]) % mod) % mod;
-	}
+  for (int i = 0; i < k; i++) {
+    ret = (ret + (rec.back()[i] * first_k[i]) % mod) % mod;
+  }
 
-	return ret;
+  return ret;
 }
-
