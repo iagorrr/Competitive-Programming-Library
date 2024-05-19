@@ -124,6 +124,7 @@ Here you will find implementation of algorithms and data structures used in comp
     - [gauss elimination](/algorithms/math/gauss-elimination.cpp)
     - [integer mod](/algorithms/math/integer_mod.cpp)
     - [integer partition](/algorithms/math/integer-partition.cpp)
+    - [linear recurrence](/algorithms/math/linear-recurrence.cpp)
     - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
     - [n elements choose k](/algorithms/math/n-elements-choose-k.cpp)
     - [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
