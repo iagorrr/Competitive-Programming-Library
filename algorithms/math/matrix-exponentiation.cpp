@@ -1,4 +1,4 @@
-ll MOD = 1'000'000'007;
+const ll MOD = 1'000'000'007;
 
 template <typename T>
 vector<vector<T>> prod(vector<vector<T>> &a,
