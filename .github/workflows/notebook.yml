@@ -4,13 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'algorithms/**'
   pull_request:
     branches:
       - main
-    paths:
-      - 'algorithms/**'
 
 jobs:
   notebook:
@@ -31,18 +27,18 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: '*.cpp'
-          commit_message: ':art: cpp files correct indentation'
+          commit_message: 'cpp files correct indentation'
 
       - name: Notebook Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: 'notebook.pdf'
 
-          commit_message: ':memo: updates notebok'
+          commit_message: 'updates notebok'
 
       - name: README Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           file_pattern: 'README.md'
 
-          commit_message: ':memo: update README to match with notebook'
+          commit_message: 'update README to match with notebook'
