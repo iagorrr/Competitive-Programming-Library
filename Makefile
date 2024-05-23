@@ -1,6 +1,7 @@
 all: format readme notebook
+
 readme:
-	python scripts/gen-readme.py > README.md
+	python scripts/gen-readme/gen-readme.py > README.md
 
 format:
 	python3 scripts/format/format-algorithms.py --path ${CURDIR}/algorithms
