@@ -41,7 +41,7 @@ struct CVGT {
     auto vi = st.query(i, i);
     for (int l = 0, r = i - 1; l <= r;) {
       int m = midpoint(l, r);
-      ll vm = st.query(m, i - 1);
+      T vm = st.query(m, i - 1);
       if (vm >= vi) {
         L = max(L, m);
         l = m + 1;
@@ -53,7 +53,7 @@ struct CVGT {
     for (int l = i + 1, r = n - 1; l <= r;) {
       int m = midpoint(l, r);
 
-      ll vm = st.query(i + 1, m);
+      T vm = st.query(i + 1, m);
       if (vm >= vi) {
         r = m - 1;
         R = min(R, m);
