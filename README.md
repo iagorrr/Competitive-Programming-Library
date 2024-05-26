@@ -1,7 +1,23 @@
-# Competitive Programming Algorithms
-Here you will find implementation of algorithms and data structures used in competitive programming context, submissions to many OJ problems, and [printable notebook](./notebook.pdf) with the implementations
+# Competitive Programming Library
+
+My own competitive programming library designed to be used in both presential contests, like [ICPC](https://icpc.global/), or online platforms such as [Codeforces](https://codeforces.com/), [AtCoder](https://atcoder.jp/), etc...
+
+Some notes about the implementations:
+
+- Each implementation should be self-contained, so once you typed or copied there is no need to look for other files, the only "template" you need is :
+
+    ```cpp
+    #include<bits/stdc++.h>
+    using namespace std;
+    ```
+
+- As short as possible, as you may have to type it in a presential contest
+
+You can find a little explanation about each algorithm at the [PDF Notebook](notebook.pdf)
+
 
 ## Algorithms
+
 - Data Structures
     - [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
     - [bitree](/algorithms/data-structures/bitree.cpp)
@@ -163,27 +179,8 @@ Here you will find implementation of algorithms and data structures used in comp
     - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
 
 
-## Submissions
-- [kattis](/submissions/kattis)
-- [atCoder](/submissions/atCoder)
-- [Usaco](/submissions/Usaco)
-- [Neps](/submissions/Neps)
-- [leetCode](/submissions/leetCode)
-- [CSES](/submissions/CSES)
-- [OBI](/submissions/OBI)
-- [google](/submissions/google)
-- [Library Checker](/submissions/Library Checker)
-- [maratonasDF unballoon](/submissions/maratonasDF_unballoon)
-- [Becrowd](/submissions/Becrowd)
-- [Meta Hacker Cup](/submissions/Meta-Hacker-Cup)
-- [SPOJ sphere](/submissions/SPOJ-sphere)
-- [moj](/submissions/moj)
-- [CodeChef](/submissions/CodeChef)
-- [UVA OJ](/submissions/UVA-OJ)
-- [Codeforces](/submissions/Codeforces)
-- [ICPC](/submissions/ICPC)
-
 ## References & Courses
+
 - [Thalisson's Lib](https://github.com/Thalisson-Alves/Competitive-Programming)
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
@@ -197,5 +194,4 @@ Here you will find implementation of algorithms and data structures used in comp
 - [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
 - [Competitive Programing Book](https://cpbook.net/details?cp=4)
 - [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
-    
 
