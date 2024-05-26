@@ -24,7 +24,7 @@ def get_relative_path(entry_path: Path) -> str:
     entry_path = entry_path.__str__()
     i = entry_path.find("/algorithms")
     entry_path = entry_path[i:]
-
+    entry_path = entry_path.replace(' ', '%20')
     return entry_path
 
 def get_section_md(section: Path) -> str:
