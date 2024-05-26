@@ -60,7 +60,7 @@ struct LCA {
             (vs == uv and us == s));
   }
 
-	int dist(int u, int v) {
-					return depth[u] + depth[v] - 2 * depth[lca(u,v)];
-	}
+  int dist(int u, int v) {
+    return depth[u] + depth[v] - 2 * depth[lca(u, v)];
+  }
 };
