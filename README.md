@@ -20,6 +20,10 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 
 #### Data Structures
+- Segtree Dynamic
+    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
+    - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rsq-psu-(dynamic).cpp)
+
 - Segtree Point Update (Bottom Up)
     - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
     - [struct](/algorithms/data-structures/segtree-point-update-(bottom-up)/struct.cpp)
@@ -32,15 +36,14 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
 
 - Segtree Range Update (Bottom Up)
-    - [.cpp](/algorithms/data-structures/segtree-range-update-(bottom-up)/.cpp)
     - [increment update query sum](/algorithms/data-structures/segtree-range-update-(bottom-up)/increment-update-query-sum.cpp)
 
 - Segtree Range Update (Top Down)
     - [struct](/algorithms/data-structures/segtree-range-update-(top-down)/struct.cpp)
     - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
     - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
+    - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
 
-- [Segtree Lazy (Atcoder)](/algorithms/data-structures/Segtree-Lazy-(Atcoder).cpp)
 - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
 - [bitree](/algorithms/data-structures/bitree.cpp)
 - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
@@ -50,15 +53,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
 - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
 - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
-- [segtree PA](/algorithms/data-structures/segtree-PA.cpp)
-- [segtree pud rqd](/algorithms/data-structures/segtree-pud-rqd.cpp)
-- [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-rmaxq-pmaxu-(dynamic).cpp)
-- [segtree rmaxq rmaxu](/algorithms/data-structures/segtree-rmaxq-rmaxu.cpp)
-- [segtree rminq pau](/algorithms/data-structures/segtree-rminq-pau.cpp)
-- [segtree rminq rsu](/algorithms/data-structures/segtree_rminq_rsu.cpp)
-- [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-rsq-psu-(dynamic).cpp)
-- [segtree rsq rsu](/algorithms/data-structures/segtree_rsq_rsu.cpp)
-- [segtree rxorq pau](/algorithms/data-structures/segtree-rxorq-pau.cpp)
 - [sparse table](/algorithms/data-structures/sparse-table.cpp)
 
 
@@ -70,8 +64,8 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [no 13 and 4 as substr](/algorithms/dynamic-programming/digits/no-13-and-4-as-substr.cpp)
     - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
 
-- [Binary Knapsack (bottom up)](/algorithms/dynamic-programming/Binary-Knapsack-(bottom-up).cpp)
-- [Binary Knapsack (top down)](/algorithms/dynamic-programming/Binary-Knapsack-(top-down).cpp)
+- [binary knapsack (bottom up)](/algorithms/dynamic-programming/binary-knapsack-(bottom-up).cpp)
+- [binary knapsack (top down)](/algorithms/dynamic-programming/binary-knapsack-(top-down).cpp)
 - [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
 - [kadane](/algorithms/dynamic-programming/kadane.cpp)
 - [knapsack with quantity (no recover)](/algorithms/dynamic-programming/knapsack-with-quantity-(no-recover).cpp)
@@ -89,6 +83,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [meet in the middle](/algorithms/extras/meet-in-the-middle.cpp)
 - [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
 - [ternary search recursive](/algorithms/extras/ternary_search_recursive.cpp)
+- [to any base](/algorithms/extras/to-any-base.cpp)
 
 
 
@@ -109,6 +104,12 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 
 #### Graphs
+- Flow Problems
+    - [minimum cut (unweighted)](/algorithms/graphs/Flow Problems/minimum-cut-(unweighted).cpp)
+    - [maximum flow (edmonds karp)](/algorithms/graphs/Flow Problems/maximum-flow-(edmonds-karp).cpp)
+    - [minimum cost flow](/algorithms/graphs/Flow Problems/minimum-cost-flow.cpp)
+    - [maximum flow (dinic)](/algorithms/graphs/Flow Problems/maximum-flow-(dinic).cpp)
+
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
 - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
@@ -137,21 +138,15 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
 - [kruskal](/algorithms/graphs/kruskal.cpp)
 - [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary-lifting).cpp)
-- [lowest common ancestor sparse table](/algorithms/graphs/lowest_common_ancestor_sparse_table.cpp)
-- [maximum flow (dinic)](/algorithms/graphs/maximum-flow-(dinic).cpp)
-- [maximum flow (edmonds karp)](/algorithms/graphs/maximum-flow-(edmonds-karp).cpp)
-- [minimum cost flow](/algorithms/graphs/minimum-cost-flow.cpp)
-- [minimum cut (unweighted)](/algorithms/graphs/minimum-cut-(unweighted).cpp)
+- [lowest common ancestor (sparse table)](/algorithms/graphs/lowest-common-ancestor-(sparse-table).cpp)
 - [prim](/algorithms/graphs/prim.cpp)
 - [shortest path with k edges](/algorithms/graphs/shortest-path-with-k-edges.cpp)
 - [small to large](/algorithms/graphs/small_to_large.cpp)
 - [successor graph (struct)](/algorithms/graphs/successor_graph-(struct).cpp)
 - [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
-- [topological labelling (kahn)](/algorithms/graphs/topological-labelling-(kahn).cpp)
 - [topological sorting (kahn)](/algorithms/graphs/topological-sorting-(kahn).cpp)
 - [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
 - [tree diameter (dp)](/algorithms/graphs/tree-diameter-(dp).cpp)
-- [tree flatten](/algorithms/graphs/tree_flatten.cpp)
 - [tree isomorphism (not rooted)](/algorithms/graphs/tree-isomorphism-(not-rooted).cpp)
 - [tree isomorphism (rooted)](/algorithms/graphs/tree-isomorphism-(rooted).cpp)
 - [tree maximum distances](/algorithms/graphs/tree-maximum-distances.cpp)
@@ -159,9 +154,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 
 #### Math
-- [GCD using factorization](/algorithms/math/GCD-using-factorization.cpp)
 - [GCD](/algorithms/math/GCD.cpp)
-- [LCM using factorization](/algorithms/math/LCM-using-factorization.cpp)
 - [LCM](/algorithms/math/LCM.cpp)
 - [arithmetic progression sum](/algorithms/math/arithmetic-progression-sum.cpp)
 - [binomial mod](/algorithms/math/binomial-mod.cpp)
@@ -171,7 +164,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [euler phi (in range)](/algorithms/math/euler-phi-(in-range).cpp)
 - [euler phi](/algorithms/math/euler-phi.cpp)
 - [factorial factorization](/algorithms/math/factorial-factorization.cpp)
-- [factorial](/algorithms/math/factorial.cpp)
 - [factorization (Pollard)](/algorithms/math/factorization-(Pollard).cpp)
 - [factorization](/algorithms/math/factorization.cpp)
 - [fast pow](/algorithms/math/fast-pow.cpp)
@@ -182,16 +174,12 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [integer mod](/algorithms/math/integer_mod.cpp)
 - [integer partition](/algorithms/math/integer-partition.cpp)
 - [linear recurrence](/algorithms/math/linear-recurrence.cpp)
+- [list n elements choose k](/algorithms/math/list-n-elements-choose-k.cpp)
 - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
-- [n elements choose k](/algorithms/math/n-elements-choose-k.cpp)
 - [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
 - [ntt int convolution two mods](/algorithms/math/ntt-int-convolution-two-mods.cpp)
-- [number of divisors (sieve)](/algorithms/math/number-of-divisors-(sieve).cpp)
-- [number of divisors](/algorithms/math/number-of-divisors.cpp)
 - [power sum](/algorithms/math/power-sum.cpp)
 - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
-- [sum of divisors](/algorithms/math/sum-of-divisors.cpp)
-- [to any base](/algorithms/math/to-any-base.cpp)
 
 
 
@@ -212,7 +200,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
 - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
 - [rabin karp](/algorithms/strings/rabin-karp.cpp)
-- [string psum](/algorithms/strings/string-psum.cpp)
 - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
 - [trie](/algorithms/strings/trie.cpp)
 - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
