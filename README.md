@@ -105,10 +105,10 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Graphs
 - Flow Problems
-    - [minimum cut (unweighted)](/algorithms/graphs/Flow Problems/minimum-cut-(unweighted).cpp)
-    - [maximum flow (edmonds karp)](/algorithms/graphs/Flow Problems/maximum-flow-(edmonds-karp).cpp)
-    - [minimum cost flow](/algorithms/graphs/Flow Problems/minimum-cost-flow.cpp)
-    - [maximum flow (dinic)](/algorithms/graphs/Flow Problems/maximum-flow-(dinic).cpp)
+    - [minimum cut (unweighted)](/algorithms/graphs/Flow%20Problems/minimum-cut-(unweighted).cpp)
+    - [maximum flow (edmonds karp)](/algorithms/graphs/Flow%20Problems/maximum-flow-(edmonds-karp).cpp)
+    - [minimum cost flow](/algorithms/graphs/Flow%20Problems/minimum-cost-flow.cpp)
+    - [maximum flow (dinic)](/algorithms/graphs/Flow%20Problems/maximum-flow-(dinic).cpp)
 
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
