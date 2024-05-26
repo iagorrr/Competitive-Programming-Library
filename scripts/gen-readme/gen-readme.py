@@ -1,19 +1,23 @@
-import os
 from pathlib import Path
+from dataclasses import dataclass, asdict
 
-def get_section_name(section: Path) -> str:
-    return section.name.__str__().replace("-", " ").title()
+@dataclass
+class Entry:
+    path: Path
+    md: str
 
+@dataclass
+class AlgorithmEntry(Entry):
+    pass
+    
+@dataclass
+class SubsectionEntry(Entry):
+    algorithms_entries: list[AlgorithmEntry]
 
-def valid_file(file: Path) -> bool:
-    return file.is_file() and file.name.endswith((".py", ".cpp"))
-
-def get_algorithm_name(algorithm: str) -> str:
-    name, _ = algorithm.split(".")
-    name = name.replace("-", " ")
-    name = name.replace("_", " ")
-
-    return name
+@dataclass
+class SectionEntry(Entry):
+    algorithms_entries: list[AlgorithmEntry]
+    subsections_entries: list[SubsectionEntry]
 
 
 def get_relative_path(entry_path: Path) -> str:
@@ -23,40 +27,96 @@ def get_relative_path(entry_path: Path) -> str:
 
     return entry_path
 
+def get_section_md(section: Path) -> str:
+    return "#### " + section.name.__str__().replace("-", " ").title()
+
+def get_subsection_md(section: Path) -> str:
+    return "- " + section.name.__str__().replace("-", " ").title()
+
+
+def valid_file(file: Path) -> bool:
+    return file.is_file() and file.name.endswith((".py", ".cpp"))
+
+def get_algorithm_name(algorithm_path: Path) -> str:
+    return  algorithm_path.stem.replace("-", " ").replace("_", " ")
+
+def get_algorithm_md(algorithm_path: Path, is_under_sub: bool) -> str:
+    name: str = algorithm_path.stem.replace("-", " ").replace("_", " ")
+    relative_path: str = get_relative_path(algorithm_path)
+    ident: int = 0 if not is_under_sub else 4
+    md: str = ident * " " + "- " + f"[{name}]({relative_path})"
+    return md
+
+
 
 def get_algorithms_md() -> str:
-    algorithms_folder_path = Path(__file__).parent.parent.parent / "algorithms"
-    output = list()
-    for section in algorithms_folder_path.iterdir():
-        if section.is_dir():
-            current = {"name": get_section_name(section), "algorithms": list()}
-            for algorithm in os.listdir(algorithms_folder_path / section):
-                filePath = algorithms_folder_path / section / algorithm
-                if valid_file(filePath):
-                    current["algorithms"].append(
-                        {
-                            "name": get_algorithm_name(algorithm),
-                            "path": get_relative_path(filePath),
-                        }
+    ALGORITHMS_FOLDER_PATH:Path = Path(__file__).parent.parent.parent / "algorithms"
+
+    all: list[SectionEntry] = list()
+
+    for section_path in ALGORITHMS_FOLDER_PATH.iterdir():
+        if not section_path.is_dir():
+            continue
+
+        current_section: SectionEntry = SectionEntry(
+                path=section_path,
+                md=get_section_md(section_path),
+                algorithms_entries=list(),
+                subsections_entries=list()
+        )
+
+        for entry_path in section_path.iterdir():
+            if entry_path.is_dir():
+                current_subsection: SubsectionEntry = SubsectionEntry(
+                    path=entry_path,
+                    md=get_subsection_md(entry_path),
+                    algorithms_entries=list()
+                )
+
+                for algorithm_entry in entry_path.iterdir():
+                    if not valid_file(algorithm_entry):
+                        continue
+
+                    current_algorithm: AlgorithmEntry = AlgorithmEntry(
+                        path = algorithm_entry,
+                        md = get_algorithm_md(algorithm_entry, True),
                     )
-            current["algorithms"] = sorted(
-                current["algorithms"], key=lambda x: x["name"]
-            )
-            output.append(current)
 
-    output = sorted(output, key=lambda x: x["name"])
+                    current_subsection.algorithms_entries.append(current_algorithm)
 
-    md = "## Algorithms\n\n"
-    for section in output:
-        md += f"- {section['name']}\n"
-        for algorithm in section["algorithms"]:
-            name:str = algorithm['name']
-            link:str = algorithm['path'].__str__().replace(" ", "%20")
-            md += f"    - [{name}]({link})\n"
+                current_section.subsections_entries.append(current_subsection)
+            else:
+                if valid_file(entry_path):
+                    current_algorithm: AlgorithmEntry = AlgorithmEntry(
+                        path = entry_path,
+                        md = get_algorithm_md(entry_path, False),
+                    )
+                    current_section.algorithms_entries.append(current_algorithm)
 
-        md += "\n"
 
-    md += "\n"
+        
+        all.append(current_section)
+
+
+    all.sort(key= lambda x: x.md)
+    md = "## Algorithms\n\n\n"
+
+    for section in all:
+        md += section.md + "\n"
+
+        section.subsections_entries.sort(key=lambda x: x.md)
+        for subsection in section.subsections_entries:
+            md += subsection.md + "\n"
+            for algorithm in subsection.algorithms_entries:
+                md += algorithm.md + "\n"
+            md += "\n" * 1
+
+        section.algorithms_entries.sort(key=lambda x: x.md)
+        for algorithm in section.algorithms_entries:
+            md += algorithm.md + "\n"
+
+        md += "\n" * 3
+
     return md
 
 def get_md_file(file_name: str) -> str:

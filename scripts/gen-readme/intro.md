@@ -11,7 +11,7 @@ Some notes about the implementations:
     using namespace std;
     ```
 
-- As short as possible, as you may have to type it in a presential contest
+- Should be as short as possible, as you may have to type it in a presential contest
 
 You can find a little explanation about each algorithm at the [PDF Notebook](notebook.pdf)
 
