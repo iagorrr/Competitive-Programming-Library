@@ -63,6 +63,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [no consecutive equal](/algorithms/dynamic-programming/digits/no-consecutive-equal.cpp)
     - [no 13 and 4 as substr](/algorithms/dynamic-programming/digits/no-13-and-4-as-substr.cpp)
     - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
+    - [product of digits less equal than k](/algorithms/dynamic-programming/digits/product-of-digits-less-equal-than-k.cpp)
 
 - [binary knapsack (bottom up)](/algorithms/dynamic-programming/binary-knapsack-(bottom-up).cpp)
 - [binary knapsack (top down)](/algorithms/dynamic-programming/binary-knapsack-(top-down).cpp)
