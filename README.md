@@ -21,14 +21,14 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Data Structures
 - Segtree Dynamic
-    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
     - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rsq-psu-(dynamic).cpp)
+    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
 
 - Segtree Point Update (Bottom Up)
-    - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
+    - [query max subarray sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-max-subarray-sum.cpp)
     - [struct](/algorithms/data-structures/segtree-point-update-(bottom-up)/struct.cpp)
     - [query sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-sum.cpp)
-    - [query max subarray sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-max-subarray-sum.cpp)
+    - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
 
 - Segtree Point Update (Top Down)
     - [struct](/algorithms/data-structures/segtree-point-update-(top-down)/struct.cpp)
@@ -39,9 +39,9 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [increment update query sum](/algorithms/data-structures/segtree-range-update-(bottom-up)/increment-update-query-sum.cpp)
 
 - Segtree Range Update (Top Down)
+    - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
     - [struct](/algorithms/data-structures/segtree-range-update-(top-down)/struct.cpp)
     - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
-    - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
     - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
 
 - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
@@ -59,12 +59,12 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Dynamic Programming
 - Digits
-    - [sum digits divisible by d](/algorithms/dynamic-programming/digits/sum-digits-divisible-by-d.cpp)
     - [no consecutive equal](/algorithms/dynamic-programming/digits/no-consecutive-equal.cpp)
     - [no 13 and 4 as substr](/algorithms/dynamic-programming/digits/no-13-and-4-as-substr.cpp)
-    - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
-    - [longest increasing subsequence](/algorithms/dynamic-programming/digits/longest-increasing-subsequence.cpp)
     - [product of digits less equal than k](/algorithms/dynamic-programming/digits/product-of-digits-less-equal-than-k.cpp)
+    - [longest increasing subsequence](/algorithms/dynamic-programming/digits/longest-increasing-subsequence.cpp)
+    - [sum digits divisible by d](/algorithms/dynamic-programming/digits/sum-digits-divisible-by-d.cpp)
+    - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
 
 - [binary knapsack (bottom up)](/algorithms/dynamic-programming/binary-knapsack-(bottom-up).cpp)
 - [binary knapsack (top down)](/algorithms/dynamic-programming/binary-knapsack-(top-down).cpp)
@@ -107,10 +107,10 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Graphs
 - Flow Problems
-    - [minimum cut (unweighted)](/algorithms/graphs/Flow%20Problems/minimum-cut-(unweighted).cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/Flow%20Problems/maximum-flow-(edmonds-karp).cpp)
-    - [minimum cost flow](/algorithms/graphs/Flow%20Problems/minimum-cost-flow.cpp)
     - [maximum flow (dinic)](/algorithms/graphs/Flow%20Problems/maximum-flow-(dinic).cpp)
+    - [minimum cost flow](/algorithms/graphs/Flow%20Problems/minimum-cost-flow.cpp)
+    - [minimum cut (unweighted)](/algorithms/graphs/Flow%20Problems/minimum-cut-(unweighted).cpp)
 
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
@@ -180,6 +180,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
 - [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
 - [ntt int convolution two mods](/algorithms/math/ntt-int-convolution-two-mods.cpp)
+- [polyminoes](/algorithms/math/polyminoes.cpp)
 - [power sum](/algorithms/math/power-sum.cpp)
 - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
 
