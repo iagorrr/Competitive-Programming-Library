@@ -211,17 +211,20 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 ## References & Courses
 
-- [Thalisson's Lib](https://github.com/Thalisson-Alves/Competitive-Programming)
+- [Thalisson's Library](https://github.com/Thalisson-Alves/Competitive-Programming)
+- [Macacário](https://github.com/splucs/Competitive-Programming)
+- [KACTL ICPC Code Library](https://github.com/kth-competitive-programming/kactl)
+- [PauloMiranda98's Library](https://github.com/PauloMiranda98/Competitive-Programming-Notebook)
+- [SSRS lib](https://ssrs-cp.github.io/cp_library/)
+- [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
+- [UFMG Library](https://github.com/brunomaletta/Biblioteca)
+
 - [TEP](https://github.com/edsomjr/TEP)
 - [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
-- [Macacário](https://github.com/splucs/Competitive-Programming)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
-- [KACTL ICPC Code Library](https://github.com/kth-competitive-programming/kactl)
-- [SSRS lib](https://ssrs-cp.github.io/cp_library/)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
-- [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
-- [UFMG Lib](https://github.com/brunomaletta/Biblioteca)
 - [Competitive Programing Book](https://cpbook.net/details?cp=4)
 - [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
+
 
