@@ -180,7 +180,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
 - [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
 - [ntt int convolution two mods](/algorithms/math/ntt-int-convolution-two-mods.cpp)
-- [polyminoes](/algorithms/math/polyminoes.cpp)
+- [polyominoes](/algorithms/math/polyominoes.cpp)
 - [power sum](/algorithms/math/power-sum.cpp)
 - [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
 
