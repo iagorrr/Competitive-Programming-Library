@@ -24,7 +24,8 @@ struct Polyominoes {
   void normalize() {
     int mnx = 100, mny = 100;
     for (int i = 0; i < n; i++)
-      mnx = min(mnx, v[i].first), mny = min(mny, v[i].second);
+      mnx = min(mnx, v[i].first),
+      mny = min(mny, v[i].second);
     id = 0;
     for (int i = 0; i < n; i++) {
       v[i].first -= mnx, v[i].second -= mny;
@@ -34,10 +35,9 @@ struct Polyominoes {
 };
 vector<Polyominoes> polyominoes[MAXP + 1];
 void buildPolyominoes(int mxN = 10) {
-
-  vector<pair<int, int>> dt({{1, 0}, {-1, 0}, {0, -1}, {0, 1}});
-  for (int i = 0; i <= mxN; i++)
-    polyominoes[i].clear();
+  vector<pair<int, int>> dt(
+    {{1, 0}, {-1, 0}, {0, -1}, {0, 1}});
+  for (int i = 0; i <= mxN; i++) polyominoes[i].clear();
   Polyominoes init;
   queue<Polyominoes> q;
   unordered_set<int64_t> used;
@@ -47,12 +47,12 @@ void buildPolyominoes(int mxN = 10) {
     Polyominoes u = q.front();
     q.pop();
     polyominoes[u.n].push_back(u);
-    if (u.n == mxN)
-      continue;
+    if (u.n == mxN) continue;
     for (int i = 0; i < u.n; i++) {
       for (auto [dx, dy] : dt) {
         Polyominoes to = u;
-        bool ok = to.add(to[i].first + dx, to[i].second + dy);
+        bool ok =
+          to.add(to[i].first + dx, to[i].second + dy);
         if (ok and !used.count(to.id)) {
           q.push(to);
           used.insert(to.id);
