@@ -203,6 +203,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
 - [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
 - [rabin karp](/algorithms/strings/rabin-karp.cpp)
+- [suffix array](/algorithms/strings/suffix-array.cpp)
 - [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
 - [trie](/algorithms/strings/trie.cpp)
 - [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
