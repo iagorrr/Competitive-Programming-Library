@@ -1,3 +1,6 @@
+using ll = long long;
+using ld = long double;
+
 ll mul(ll a, ll b, ll m) {
   ll ret = a * b - (ll)((ld)1 / m * a * b + 0.5) * m;
   return ret < 0 ? ret + m : ret;
@@ -45,11 +48,11 @@ ll rho(ll n) {
   return gcd(prd, n);
 }
 
-vll fact(ll n) {
+vector<ll> fact(ll n) {
   if (n == 1) return {};
   if (prime(n)) return {n};
   ll d = rho(n);
-  vll l = fact(d), r = fact(n / d);
+  vector<ll> l = fact(d), r = fact(n / d);
   l.insert(l.end(), r.begin(), r.end());
   return l;
 }
