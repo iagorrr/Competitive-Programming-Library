@@ -44,6 +44,9 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
     - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
 
+- Sqrt_Decomposition
+    - [two sequence queries](/algorithms/data-structures/sqrt_decomposition/two-sequence-queries.cpp)
+
 - [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
 - [bitree](/algorithms/data-structures/bitree.cpp)
 - [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
