@@ -1,3 +1,4 @@
+using ll = long long;
 const ll MOD = 1e9 + 7;
 const ll MAXN = 1'00'000;
 ll FACT[MAXN + 1];
