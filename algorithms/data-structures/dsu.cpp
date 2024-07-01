@@ -1,10 +1,10 @@
 struct DSU {
-  vi ps, sz;
+  vector<int> ps, sz;
 
   // vector<unordered_set<int>> sts;
 
   DSU(int N) : ps(N + 1), sz(N, 1) /*, sts(N) */ {
-    iota(all(ps), 0);
+    iota(ps.begin(), ps.end(), 0);
     // for (int i = 0; i < N; i++) sts[i].insert(i);
   }
   int find_set(int x) {
