@@ -14,3 +14,6 @@ notepdf: notebook
 
 opennote:
 	firefox notebook.pdf
+
+clean:
+	rm notebook.log rm notebook.out notebook.toc notebook.aux

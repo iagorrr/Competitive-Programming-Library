@@ -21,7 +21,7 @@ jobs:
         with:
           image: mateusvrs/cp-notebook:v1.0 # Thank you mateusvrs
           options: -w /usr/src/app -v ${{ github.workspace }}:/usr/src/app
-          run: make notepdf
+          run: make notebook
 
       - name: Notebook Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
