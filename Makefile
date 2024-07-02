@@ -1,5 +1,3 @@
-all: format readme notebook
-
 readme:
 	python scripts/gen-readme/gen-readme.py > README.md
 
@@ -11,7 +9,7 @@ notebook: format
 		--path ${CURDIR}/algorithms \
 		--confpath ${CURDIR}/settings-and-macros
 
-notepdf:
+notepdf: notebook
 	pdflatex -interaction=nonstopmode -halt-on-error ${CURDIR}/scripts/notebook/notebook.tex 
 
 opennote:
