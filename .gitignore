@@ -7,24 +7,6 @@ upsolving/
 
 launch.json
 
-# inputs.
-*.in
-*.txt
-in1
-in2
-in3
-in4
-in5
-in6
-in7
-in8
-moj/in1
-moj/in2
-moj/in3
-moj/in4
-
-test.cpp
-
 algorithms/ds-c/test.c
 # Prerequisites
 *.d
