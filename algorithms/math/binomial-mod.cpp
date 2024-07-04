@@ -1,27 +1,19 @@
 using ll = long long;
-const ll MOD = 1e9 + 7;
-const ll MAXN = 1'00'000;
-ll FACT[MAXN + 1];
-void precompute() {
-#warning Remember to call precompute before use binommod !
-  FACT[0] = 1;
-  for (ll i = 1; i <= MAXN; i++) {
-    FACT[i] = (FACT[i - 1] * i) % MOD;
-  }
-}
+const int MOD = 998244353;
+ll binom(ll n, ll k){
+	const int BINMAX = 5'00'000;
+	static ll FAC[BINMAX+1], FINV[BINMAX+1], INV[BINMAX+1];
+	static bool done = false;
+	if (!done) {
+		FAC[0] = FAC[1] = INV[1] = FINV[0] = FINV[1] = 1;
+		for(int i=2; i <= BINMAX; i++){
+			FAC[i] = FAC[i-1]*i%MOD;
+			INV[i] = MOD-MOD/i*INV[MOD%i]%MOD;
+			FINV[i] = FINV[i-1]*INV[i]%MOD;
+		}
+		done = true;
+	}
 
-ll fpow(ll a, ll k) {
-  ll ret = 1;
-  while (k) {
-    if (k & 1) ret = (ret * a) % MOD;
-    a = (a * a) % MOD;
-    k >>= 1;
-  }
-  return ret;
-}
-
-ll binommod(ll n, ll k) {
-  ll upper = FACT[n];
-  ll lower = (FACT[k] * FACT[n - k]) % MOD;
-  return (upper * fpow(lower, MOD - 2ll)) % MOD;
+	if(n<k or n<0 or k<0) return 0;
+	return FAC[n]*FINV[k]%MOD*FINV[n-k]%MOD;
 }
