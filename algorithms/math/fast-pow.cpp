@@ -1,3 +1,5 @@
+using ll = long long;
+
 ll fpow(ll a, ll b, ll m) {
   ll ret = 1;
   while (b) {
