@@ -145,6 +145,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [kruskal](/algorithms/graphs/kruskal.cpp)
 - [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary-lifting).cpp)
 - [lowest common ancestor (sparse table)](/algorithms/graphs/lowest-common-ancestor-(sparse-table).cpp)
+- [minimum vertex cover (already divided)](/algorithms/graphs/minimum-vertex-cover-(already-divided).cpp)
 - [prim](/algorithms/graphs/prim.cpp)
 - [shortest path with k edges](/algorithms/graphs/shortest-path-with-k-edges.cpp)
 - [small to large](/algorithms/graphs/small_to_large.cpp)
