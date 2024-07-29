@@ -76,6 +76,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [kadane](/algorithms/dynamic-programming/kadane.cpp)
 - [knapsack with quantity (no recover)](/algorithms/dynamic-programming/knapsack-with-quantity-(no-recover).cpp)
 - [longest increasing subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence.cpp)
+- [min cost to make subsequence of substring a palindrome with size k](/algorithms/dynamic-programming/min-cost-to-make-subsequence-of-substring-a-palindrome-with-size-k.cpp)
 - [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
 - [tsp](/algorithms/dynamic-programming/tsp.cpp)
 
