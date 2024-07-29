@@ -1,0 +1,7 @@
+\subsection{Min cost to make a subsequence of a substring a palindrome}
+
+Given a string $S$ where you can change any character by paying $1$, $DP[l][r][k]$ will tell you the minimum cost to have a palindrome subsequence with size $k$ of the substring $S_{l..r}$, or $\infty$ if isn't possible.
+
+\hl{Remember to call precomp with the string and the maximum palindrome size you are intrested}
+
+time and memory for precomp: $O(N^2 \cdot MXK)$
