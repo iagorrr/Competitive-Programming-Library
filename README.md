@@ -54,6 +54,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [dsu](/algorithms/data-structures/dsu.cpp)
 - [lichao tree dynamic](/algorithms/data-structures/lichao-tree-dynamic.cpp)
 - [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
+- [mex](/algorithms/data-structures/mex.cpp)
 - [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
 - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
 - [sparse table](/algorithms/data-structures/sparse-table.cpp)
