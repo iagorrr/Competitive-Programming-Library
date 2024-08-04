@@ -17,7 +17,15 @@
  * Time: O(N+E), where N is the number of boolean variables, and E is the number of clauses.
  * Status: stress-tested
  */
-#pragma once
+#include <bits/stdc++.h>
+using namespace std;
+
+#define rep(i, a, b) for (common_type_t<decltype(a), decltype(b)> i = a; i != b; (a < b) ? ++i : --i)
+#define sz(x) (int)x.size()
+#define pb push_back
+#define eb emplace_back 
+
+using vi = vector<int>;
 
 struct TwoSat {
 	int N;
@@ -27,16 +35,16 @@ struct TwoSat {
 	TwoSat(int n = 0) : N(n), gr(2*n) {}
 
 	int addVar() { // (optional)
-		gr.emplace_back();
-		gr.emplace_back();
+		gr.eb();
+		gr.eb();
 		return N++;
 	}
 
 	void either(int f, int j) {
 		f = max(2*f, -1-2*f);
 		j = max(2*j, -1-2*j);
-		gr[f].push_back(j^1);
-		gr[j].push_back(f^1);
+		gr[f].pb(j^1);
+		gr[j].pb(f^1);
 	}
 	void setValue(int x) { either(x, x); }
 
@@ -55,7 +63,7 @@ struct TwoSat {
 
 	vi val, comp, z; int time = 0;
 	int dfs(int i) {
-		int low = val[i] = ++time, x; z.push_back(i);
+		int low = val[i] = ++time, x; z.pb(i);
 		for(int e : gr[i]) if (!comp[e])
 			low = min(low, val[e] ?: dfs(e));
 		if (low == val[i]) do {
