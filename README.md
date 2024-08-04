@@ -59,6 +59,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
 - [sparse table](/algorithms/data-structures/sparse-table.cpp)
 - [venice set](/algorithms/data-structures/venice-set.cpp)
+- [wavlet tree](/algorithms/data-structures/wavlet-tree.cpp)
 
 
 
