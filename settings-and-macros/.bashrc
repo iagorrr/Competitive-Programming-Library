@@ -78,4 +78,19 @@ testall() {
     done
 }
 
+# Creates a contest with hame $2
+# Copies the macro and debug file from $1
+# Already creates files a...z .cpp and .py
+prepare_contest() {
+	mkdir "$2"
+	cd "$2"
 
+	cp "$1"/debug.cpp .
+	cp "$1"/macro.cpp .
+
+	for i in {a..z}
+	do
+		cp macro.cpp "$i".cpp
+		cp macro.cpp "$i".py
+	done
+}
