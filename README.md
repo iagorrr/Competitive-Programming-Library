@@ -27,8 +27,8 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - Segtree Point Update (Bottom Up)
     - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
     - [query sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-sum.cpp)
-    - [struct](/algorithms/data-structures/segtree-point-update-(bottom-up)/struct.cpp)
     - [query max subarray sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-max-subarray-sum.cpp)
+    - [query gcd](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-gcd.cpp)
 
 - Segtree Point Update (Top Down)
     - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
