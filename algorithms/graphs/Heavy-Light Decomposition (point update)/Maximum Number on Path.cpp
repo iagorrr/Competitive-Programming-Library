@@ -4,9 +4,11 @@
              i != b; (a < b) ? ++i : --i)
 
 #define _sz(x) (int)x.size()
+#define _eb emplace_back
 
 using ll = long long;
 using vi = vector<int>;
+using pii = pair<int,int>;
 using vi2d = vector<vi>;
 
 struct Node {
@@ -91,20 +93,27 @@ struct HeavyLightDecomposition {
                 _rep(i, 0, n) seg.set(pos[i], v[i]);
         }
 
-        SegT query_path(int u, int v) {
-                SegT res;
+	vector<pii> disjoint_ranges(int u, int v) {
+		vector<pii> ret;
                 for (; head[u] != head[v];
                      v = ps[head[v]]) {
                         if (ds[head[u]] > ds[head[v]])
                                 swap(u, v);
 
-                        res = SegOp(res,
-                                    seg.query(pos[head[v]],
-                                              pos[v]));
+
+			ret._eb(pos[head[v]], pos[v]);
                 }
                 if (ds[u] > ds[v]) swap(u, v);
-                return SegOp(res,
-                             seg.query(pos[u], pos[v]));
+		ret._eb(pos[u], pos[v]);
+                return ret;
+	}
+
+        SegT query_path(int u, int v) {
+                SegT res;
+                for (auto [l, r]  : disjoint_ranges(u, v)) {
+                        res = SegOp(res, seg.query(l, r));
+                }
+                return res;
         }
 
         SegT query_subtree(int u) const {
