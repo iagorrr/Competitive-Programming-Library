@@ -119,6 +119,9 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [maximum flow (edmonds karp)](/algorithms/graphs/Flow%20Problems/maximum-flow-(edmonds-karp).cpp)
     - [Maximum Flow (Dinic)](/algorithms/graphs/Flow%20Problems/Maximum%20Flow%20(Dinic).cpp)
 
+- Heavy Light Decomposition (Point Update)
+    - [Maximum Number on Path](/algorithms/graphs/Heavy-Light%20Decomposition%20(point%20update)/Maximum%20Number%20on%20Path.cpp)
+
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
 - [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
@@ -144,7 +147,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [functional graph](/algorithms/graphs/functional-graph.cpp)
 - [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
 - [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
-- [heavy light decomposition](/algorithms/graphs/heavy-light-decomposition.cpp)
 - [kruskal](/algorithms/graphs/kruskal.cpp)
 - [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary-lifting).cpp)
 - [lowest common ancestor (sparse table)](/algorithms/graphs/lowest-common-ancestor-(sparse-table).cpp)
