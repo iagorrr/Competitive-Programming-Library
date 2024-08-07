@@ -15,39 +15,44 @@ using namespace std;
 
 #define int long long
 
-#define All(a) a.begin(), a.end()
-#define Rall(a) a.rbegin(), a.rend()
-#define For(i, a, b) for (common_type_t<decltype(a), decltype(b)> i = a; i != b; (a < b) ? ++i : --i)
-#define Sz(x) (int)x.size()
-#define Pb push_back
-#define Eb emplace_back 
+#define all(a) a.begin(), a.end()
+#define rall(a) a.rbegin(), a.rend()
+#define rep(i, a, b) for (common_type_t<decltype(a), decltype(b)> i = a; i != b; (a < b) ? ++i : --i)
+#define len(x) (int)x.size()
+#define pb push_back
+#define eb emplace_back 
 
-using Ll = long long;
-using Ull = unsigned long long;
-using Ld = long double;
-using Vll = vector<ll>;
-using Pll = pair<ll, ll>;
-using Vll2d = vector<vll>;
-using Vi = vector<int>;
-using Vi2d = vector<vi>;
-using Pii = pair<int, int>;
-using Vii = vector<pii>;
-using Vc = vector<char>;
+using ll = long long;
+using ull = unsigned long long;
+using ld = long double;
+using vll = vector<ll>;
+using pll = pair<ll, ll>;
+using vll2d = vector<vll>;
+using vi = vector<int>;
+using vi2d = vector<vi>;
+using pii = pair<int, int>;
+using vii = vector<pii>;
+using vc = vector<char>;
 
 int T = 1;
 
 auto run() {
-
 }
 
 int32_t main() {
 #ifndef LOCAL
-  fastio;
+	fastio;
 #endif
 
-  // cin >> T;
+	// cin >> T;
 
-  for (int t = 1; t <= T; t++) {
-    run();
-  }
+	rep(t, 0, T) {
+                dbg(t);
+		run();
+  	}
 }
+
+
+/*
+	
+ */
