@@ -21,28 +21,28 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Data Structures
 - Segtree Dynamic
-    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
     - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rsq-psu-(dynamic).cpp)
+    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
 
 - Segtree Point Update (Bottom Up)
-    - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
-    - [query sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-sum.cpp)
     - [query max subarray sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-max-subarray-sum.cpp)
     - [query gcd](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-gcd.cpp)
+    - [query sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-sum.cpp)
+    - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
 
 - Segtree Point Update (Top Down)
-    - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
     - [query sum](/algorithms/data-structures/segtree-point-update-(top-down)/query-sum.cpp)
     - [struct](/algorithms/data-structures/segtree-point-update-(top-down)/struct.cpp)
+    - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
 
 - Segtree Range Update (Bottom Up)
     - [increment update query sum](/algorithms/data-structures/segtree-range-update-(bottom-up)/increment-update-query-sum.cpp)
 
 - Segtree Range Update (Top Down)
-    - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
-    - [struct](/algorithms/data-structures/segtree-range-update-(top-down)/struct.cpp)
-    - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
     - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
+    - [struct](/algorithms/data-structures/segtree-range-update-(top-down)/struct.cpp)
+    - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
+    - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
 
 - Sqrt_Decomposition
     - [two sequence queries](/algorithms/data-structures/sqrt_decomposition/two-sequence-queries.cpp)
@@ -65,12 +65,12 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 #### Dynamic Programming
 - Digits
+    - [longest increasing subsequence](/algorithms/dynamic-programming/digits/longest-increasing-subsequence.cpp)
     - [sum digits divisible by d](/algorithms/dynamic-programming/digits/sum-digits-divisible-by-d.cpp)
     - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
     - [product of digits less equal than k](/algorithms/dynamic-programming/digits/product-of-digits-less-equal-than-k.cpp)
-    - [longest increasing subsequence](/algorithms/dynamic-programming/digits/longest-increasing-subsequence.cpp)
-    - [no consecutive equal](/algorithms/dynamic-programming/digits/no-consecutive-equal.cpp)
     - [no 13 and 4 as substr](/algorithms/dynamic-programming/digits/no-13-and-4-as-substr.cpp)
+    - [no consecutive equal](/algorithms/dynamic-programming/digits/no-consecutive-equal.cpp)
 
 - [binary knapsack (bottom up)](/algorithms/dynamic-programming/binary-knapsack-(bottom-up).cpp)
 - [binary knapsack (top down)](/algorithms/dynamic-programming/binary-knapsack-(top-down).cpp)
@@ -115,9 +115,9 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 #### Graphs
 - Flow Problems
     - [minimum cost flow](/algorithms/graphs/Flow%20Problems/minimum-cost-flow.cpp)
+    - [Maximum Flow (Dinic)](/algorithms/graphs/Flow%20Problems/Maximum%20Flow%20(Dinic).cpp)
     - [minimum cut (unweighted)](/algorithms/graphs/Flow%20Problems/minimum-cut-(unweighted).cpp)
     - [maximum flow (edmonds karp)](/algorithms/graphs/Flow%20Problems/maximum-flow-(edmonds-karp).cpp)
-    - [Maximum Flow (Dinic)](/algorithms/graphs/Flow%20Problems/Maximum%20Flow%20(Dinic).cpp)
 
 - Heavy Light Decomposition (Point Update)
     - [Maximum Number on Path](/algorithms/graphs/Heavy-Light%20Decomposition%20(point%20update)/Maximum%20Number%20on%20Path.cpp)
