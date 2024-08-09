@@ -124,6 +124,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
+- [Extra edges to make directed graph fully connected](/algorithms/graphs/Extra%20edges%20to%20make%20directed%20graph%20fully%20connected.cpp)
 - [Strongly Connected Components](/algorithms/graphs/Strongly%20Connected%20Components.cpp)
 - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
 - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
@@ -137,7 +138,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 - [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
 - [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
 - [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
-- [extra edges to make digraph fully strongly connected](/algorithms/graphs/extra-edges-to-make-digraph-fully-strongly-connected.cpp)
 - [find articulation points](/algorithms/graphs/find-articulation-points.cpp)
 - [find bridge tree components](/algorithms/graphs/find-bridge-tree-components.cpp)
 - [find bridges (online)](/algorithms/graphs/find-bridges-(online).cpp)
