@@ -124,7 +124,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 - [2 SAT](/algorithms/graphs/2-SAT.cpp)
 - [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
-- [SCC (struct)](/algorithms/graphs/SCC-(struct).cpp)
+- [Strongly Connected Components](/algorithms/graphs/Strongly%20Connected%20Components.cpp)
 - [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
 - [bellman ford](/algorithms/graphs/bellman-ford.cpp)
 - [bfs 01](/algorithms/graphs/bfs-01.cpp)
