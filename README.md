@@ -85,6 +85,7 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 
 #### Extras
+- [Max Check](/algorithms/extras/Max%20Check.cpp)
 - [binary to gray](/algorithms/extras/binary_to_gray.cpp)
 - [closest value greater than](/algorithms/extras/closest_value_greater_than.cpp)
 - [get permutation cycles](/algorithms/extras/get-permutation-cycles.cpp)
