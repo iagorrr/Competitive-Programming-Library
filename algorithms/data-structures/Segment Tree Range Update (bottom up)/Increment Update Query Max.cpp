@@ -15,6 +15,7 @@ inline QueryT combine(QueryT ln, QueryT rn, pii lr1, pii lr2){
 using LazyT=SegT;
 
 inline QueryT applyLazyInQuery(QueryT q, LazyT l, pii lr){
+  if(q.v==QueryT().v)q.v=0;
 	q.v+=l;
 	return q;
 }
@@ -26,6 +27,7 @@ inline LazyT applyLazyInLazy(LazyT a,LazyT b){
 using UpdateT=SegT;
 
 inline QueryT applyUpdateInQuery(QueryT q,UpdateT u, pii lr){
+  if(q.v==QueryT().v)q.v=0;
 	q.v+=u;
 	return q;
 }
