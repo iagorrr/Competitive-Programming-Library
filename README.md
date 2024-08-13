@@ -20,6 +20,9 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
 
 
 #### Data Structures
+- Segment Tree Range Update (Bottom Up)
+    - [Increment Update Query Max](/algorithms/data-structures/Segment%20Tree%20Range%20Update%20(bottom%20up)/Increment%20Update%20Query%20Max.cpp)
+
 - Segtree Dynamic
     - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rsq-psu-(dynamic).cpp)
     - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
@@ -34,9 +37,6 @@ You can find a little explanation about each algorithm at the [PDF Notebook](not
     - [query sum](/algorithms/data-structures/segtree-point-update-(top-down)/query-sum.cpp)
     - [struct](/algorithms/data-structures/segtree-point-update-(top-down)/struct.cpp)
     - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
-
-- Segtree Range Update (Bottom Up)
-    - [increment update query sum](/algorithms/data-structures/segtree-range-update-(bottom-up)/increment-update-query-sum.cpp)
 
 - Segtree Range Update (Top Down)
     - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
