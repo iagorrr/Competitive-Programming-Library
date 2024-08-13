@@ -29,9 +29,9 @@ AlignConsecutiveMacros:
   AlignCompound: false
   PadOperators: false
 AlignEscapedNewlines: Left
-AlignOperands: Align
-AlignTrailingComments: true
-AllowAllArgumentsOnNextLine: true
+AlignOperands: DontAlign
+AlignTrailingComments: false 
+AllowAllArgumentsOnNextLine: false 
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortEnumsOnASingleLine: true
 AllowShortBlocksOnASingleLine: Never
@@ -81,8 +81,8 @@ ColumnLimit: 80
 CommentPragmas: '^ IWYU pragma:'
 QualifierAlignment: Leave
 CompactNamespaces: false
-ConstructorInitializerIndentWidth: 4
-ContinuationIndentWidth: 4
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
 Cpp11BracedListStyle: true
 DeriveLineEnding: true
 DerivePointerAlignment: true
@@ -142,9 +142,9 @@ MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
 ObjCBinPackProtocolList: Never
 ObjCBlockIndentWidth: 2
-ObjCBreakBeforeNestedBlockParam: true
+ObjCBreakBeforeNestedBlockParam: false
 ObjCSpaceAfterProperty: false
-ObjCSpaceBeforeProtocolList: true
+ObjCSpaceBeforeProtocolList: false
 PenaltyBreakAssignment: 2
 PenaltyBreakBeforeFirstCallParameter: 1
 PenaltyBreakComment: 300
@@ -204,7 +204,7 @@ SpaceBeforeCaseColon: false
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: false
 SpaceBeforeInheritanceColon: false
-SpaceBeforeParens: ControlStatements
+SpaceBeforeParens: Never 
 SpaceBeforeParensOptions:
   AfterControlStatements: false
   AfterForeachMacros: false
