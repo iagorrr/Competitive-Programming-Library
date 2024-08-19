@@ -1,4 +1,0 @@
-[submodule "scripts/notebook-generator"]
-	path = scripts/notebook-generator
-	url = https://github.com/iagorrr/Competitive-Programming
-	branch = notebook-generator

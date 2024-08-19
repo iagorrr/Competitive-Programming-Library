@@ -1,244 +1,187 @@
 # Competitive Programming Library
 
-My own competitive programming library designed to be used in both presential contests, like [ICPC](https://icpc.global/), or online platforms such as [Codeforces](https://codeforces.com/), [AtCoder](https://atcoder.jp/), etc...
-
-Some notes about the implementations:
-
-- Each implementation should be self-contained, so once you typed or copied there is no need to look for other files, the only "template" you need is :
-
-    ```cpp
-    #include<bits/stdc++.h>
-    using namespace std;
-    ```
-
-- Should be as short as possible, as you may have to type it in a presential contest
-
-You can find a little explanation about each algorithm at the [PDF Notebook](notebook.pdf)
-
-
+[PDF Version](./notebook.pdf)
 ## Algorithms
 
 
+#### Contest
+- [bash config](/content/Contest/bash%20config.sh)
+- [debug](/content/Contest/debug.cpp)
+- [run](/content/Contest/run.cpp)
+- [short template](/content/Contest/short-template.cpp)
+- [template](/content/Contest/template.cpp)
+- [vim config](/content/Contest/vim%20config.vim)
+
+
+
 #### Data Structures
-- Segment Tree Range Update (Bottom Up)
-    - [Increment Update Query Max](/algorithms/data-structures/Segment%20Tree%20Range%20Update%20(bottom%20up)/Increment%20Update%20Query%20Max.cpp)
+- Segment Tree (Dynamic)
+    - [Range query sum point sum update](/content/Data%20Structures/Segment%20tree%20(dynamic)/Range%20query%20sum%20point%20sum%20update.cpp)
+    - [Range query max point max assign](/content/Data%20Structures/Segment%20tree%20(dynamic)/Range%20query%20max%20point%20max%20assign.cpp)
 
-- Segtree Dynamic
-    - [segtree rsq psu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rsq-psu-(dynamic).cpp)
-    - [segtree rmaxq pmaxu (dynamic)](/algorithms/data-structures/segtree-dynamic/segtree-rmaxq-pmaxu-(dynamic).cpp)
+- Segment Tree Point Update Range Query
+    - [Query GCD (bottom up)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20GCD%20(bottom%20up).cpp)
+    - [Query sum (bottom up)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20sum%20(bottom%20up).cpp)
+    - [Query min (bottom up)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20min%20(bottom%20up).cpp)
+    - [Query hash (top down)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20hash%20(top%20down).cpp)
+    - [Query max subarray sum (bottom up)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20max%20subarray%20sum%20(bottom%20up).cpp)
 
-- Segtree Point Update (Bottom Up)
-    - [query max subarray sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-max-subarray-sum.cpp)
-    - [query gcd](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-gcd.cpp)
-    - [query sum](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-sum.cpp)
-    - [query min](/algorithms/data-structures/segtree-point-update-(bottom-up)/query-min.cpp)
+- Segment Tree Range Update Range Query
+    - [Increment update query max (bottom up)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20query%20max%20(bottom%20up).cpp)
+    - [Increment update sum query (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20sum%20query%20(top%20down).cpp)
+    - [Arithmetic progression sum update query sum (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Arithmetic%20progression%20sum%20update%20query%20sum%20(top%20down).cpp)
 
-- Segtree Point Update (Top Down)
-    - [query sum](/algorithms/data-structures/segtree-point-update-(top-down)/query-sum.cpp)
-    - [struct](/algorithms/data-structures/segtree-point-update-(top-down)/struct.cpp)
-    - [query hash](/algorithms/data-structures/segtree-point-update-(top-down)/query-hash.cpp)
+- Sqrt Decomposition
+    - [two sequence queries](/content/Data%20Structures/SQRT%20decomposition/two-sequence-queries.cpp)
 
-- Segtree Range Update (Top Down)
-    - [segtree PA](/algorithms/data-structures/segtree-range-update-(top-down)/segtree-PA.cpp)
-    - [struct](/algorithms/data-structures/segtree-range-update-(top-down)/struct.cpp)
-    - [set and increment update sum query](/algorithms/data-structures/segtree-range-update-(top-down)/set-and-increment-update-sum-query.cpp)
-    - [increment update max query](/algorithms/data-structures/segtree-range-update-(top-down)/increment-update-max-query.cpp)
-
-- Sqrt_Decomposition
-    - [two sequence queries](/algorithms/data-structures/sqrt_decomposition/two-sequence-queries.cpp)
-
-- [bitree 2d](/algorithms/data-structures/bitree-2d.cpp)
-- [bitree](/algorithms/data-structures/bitree.cpp)
-- [convex hull trick](/algorithms/data-structures/convex-hull-trick.cpp)
-- [disjoint sparse table](/algorithms/data-structures/disjoint_sparse_table.cpp)
-- [dsu](/algorithms/data-structures/dsu.cpp)
-- [lichao tree dynamic](/algorithms/data-structures/lichao-tree-dynamic.cpp)
-- [merge sort tree](/algorithms/data-structures/merge-sort-tree.cpp)
-- [mex](/algorithms/data-structures/mex.cpp)
-- [ordered set gnu pbds](/algorithms/data-structures/ordered_set_gnu_pbds.cpp)
-- [prefix sum 2d](/algorithms/data-structures/prefix-sum-2d.cpp)
-- [sparse table](/algorithms/data-structures/sparse-table.cpp)
-- [venice set](/algorithms/data-structures/venice-set.cpp)
-- [wavlet tree](/algorithms/data-structures/wavlet-tree.cpp)
+- [Bitree 2D](/content/Data%20Structures/Bitree%202D.cpp)
+- [Convex hull trick](/content/Data%20Structures/Convex%20hull%20trick.cpp)
+- [DSU](/content/Data%20Structures/DSU.cpp)
+- [Lichao tree dynamic](/content/Data%20Structures/Lichao%20tree%20dynamic.cpp)
+- [Merge sort tree](/content/Data%20Structures/Merge%20sort%20tree.cpp)
+- [Mex with update](/content/Data%20Structures/Mex%20with%20update.cpp)
+- [Ordered set (GNU PBDS)](/content/Data%20Structures/Ordered%20set%20(GNU%20PBDS).cpp)
+- [Prefix sum 2D](/content/Data%20Structures/Prefix%20sum%202D.cpp)
+- [Venice set](/content/Data%20Structures/Venice%20set.cpp)
+- [Wavelet tree](/content/Data%20Structures/Wavelet%20tree.cpp)
 
 
 
 #### Dynamic Programming
-- Digits
-    - [longest increasing subsequence](/algorithms/dynamic-programming/digits/longest-increasing-subsequence.cpp)
-    - [sum digits divisible by d](/algorithms/dynamic-programming/digits/sum-digits-divisible-by-d.cpp)
-    - [number divisible by sum of digits](/algorithms/dynamic-programming/digits/number-divisible-by-sum-of-digits.cpp)
-    - [product of digits less equal than k](/algorithms/dynamic-programming/digits/product-of-digits-less-equal-than-k.cpp)
-    - [no 13 and 4 as substr](/algorithms/dynamic-programming/digits/no-13-and-4-as-substr.cpp)
-    - [no consecutive equal](/algorithms/dynamic-programming/digits/no-consecutive-equal.cpp)
-
-- [binary knapsack (bottom up)](/algorithms/dynamic-programming/binary-knapsack-(bottom-up).cpp)
-- [binary knapsack (top down)](/algorithms/dynamic-programming/binary-knapsack-(top-down).cpp)
-- [edit distance](/algorithms/dynamic-programming/edit_distance.cpp)
-- [kadane](/algorithms/dynamic-programming/kadane.cpp)
-- [knapsack with quantity (no recover)](/algorithms/dynamic-programming/knapsack-with-quantity-(no-recover).cpp)
-- [longest increasing subsequence](/algorithms/dynamic-programming/longest-increasing-subsequence.cpp)
-- [min cost to make subsequence of substring a palindrome with size k](/algorithms/dynamic-programming/min-cost-to-make-subsequence-of-substring-a-palindrome-with-size-k.cpp)
-- [money sum bottom up](/algorithms/dynamic-programming/money_sum_bottom_up.cpp)
-- [tsp](/algorithms/dynamic-programming/tsp.cpp)
+- [Binary knapsack](/content/Dynamic%20Programming/Binary%20knapsack.cpp)
+- [Edit distance](/content/Dynamic%20Programming/Edit%20distance.cpp)
+- [Knapsack](/content/Dynamic%20Programming/Knapsack.cpp)
+- [Longest increasing subsequence](/content/Dynamic%20Programming/Longest%20increasing%20subsequence.cpp)
+- [Money sum](/content/Dynamic%20Programming/Money%20sum.cpp)
+- [Travelling salesman problem](/content/Dynamic%20Programming/Travelling%20salesman%20problem.cpp)
 
 
 
 #### Extras
-- [Max Check](/algorithms/extras/Max%20Check.cpp)
-- [binary to gray](/algorithms/extras/binary_to_gray.cpp)
-- [closest value greater than](/algorithms/extras/closest_value_greater_than.cpp)
-- [get permutation cycles](/algorithms/extras/get-permutation-cycles.cpp)
-- [hanoi tower](/algorithms/extras/hanoi-tower.cpp)
-- [meet in the middle](/algorithms/extras/meet-in-the-middle.cpp)
-- [mos algorithm](/algorithms/extras/mos_algorithm.cpp)
-- [ternary search recursive](/algorithms/extras/ternary_search_recursive.cpp)
-- [to any base](/algorithms/extras/to-any-base.cpp)
+- [  int128t stream](/content/Extras/__int128t%20stream.cpp)
+- [Binary to gray](/content/Extras/Binary%20to%20gray.cpp)
+- [Get permutation cycles](/content/Extras/Get%20permutation%20cycles.cpp)
+- [Max & min check](/content/Extras/Max%20&%20min%20check.cpp)
+- [Mo's algorithm](/content/Extras/Mo's%20algorithm.cpp)
 
 
 
 #### Geometry
-- [check point inside triangle](/algorithms/geometry/check-point-inside-triangle.cpp)
-- [convex hull](/algorithms/geometry/convex-hull.cpp)
-- [determinant](/algorithms/geometry/determinant.cpp)
-- [equals](/algorithms/geometry/equals.cpp)
-- [line](/algorithms/geometry/line.cpp)
-- [point struct and utils (2d)](/algorithms/geometry/point-struct-and-utils-(2d).cpp)
-- [polygon lattice points](/algorithms/geometry/polygon-lattice-points.cpp)
-- [segment intersection](/algorithms/geometry/segment-intersection.cpp)
-- [segment](/algorithms/geometry/segment.cpp)
-- [template line](/algorithms/geometry/template-line.cpp)
-- [template point](/algorithms/geometry/template-point.cpp)
-- [template segment](/algorithms/geometry/template-segment.cpp)
+- [Check if a point belong to line segment](/content/Geometry/Check%20if%20a%20point%20belong%20to%20line%20segment.cpp)
+- [Check if point is inside triangle](/content/Geometry/Check%20if%20point%20is%20inside%20triangle.cpp)
+- [Convex hull](/content/Geometry/Convex%20hull.cpp)
+- [Polygon lattice points](/content/Geometry/Polygon%20lattice%20points.cpp)
+- [Segment intersection](/content/Geometry/Segment%20intersection.cpp)
 
 
 
 #### Graphs
-- Flow Problems
-    - [minimum cost flow](/algorithms/graphs/Flow%20Problems/minimum-cost-flow.cpp)
-    - [Maximum Flow (Dinic)](/algorithms/graphs/Flow%20Problems/Maximum%20Flow%20(Dinic).cpp)
-    - [minimum cut (unweighted)](/algorithms/graphs/Flow%20Problems/minimum-cut-(unweighted).cpp)
-    - [maximum flow (edmonds karp)](/algorithms/graphs/Flow%20Problems/maximum-flow-(edmonds-karp).cpp)
-
 - Heavy Light Decomposition (Point Update)
-    - [Maximum Number on Path](/algorithms/graphs/Heavy-Light%20Decomposition%20(point%20update)/Maximum%20Number%20on%20Path.cpp)
+    - [Maximum number on path](/content/Graphs/Heavy-Light%20Decomposition%20(point%20update)/Maximum%20number%20on%20path.cpp)
 
-- [2 SAT](/algorithms/graphs/2-SAT.cpp)
-- [Cycle Distances](/algorithms/graphs/Cycle-Distances.cpp)
-- [D'Esopo Pape](/algorithms/graphs/D'Esopo-Pape.cpp)
-- [Extra edges to make directed graph fully connected](/algorithms/graphs/Extra%20edges%20to%20make%20directed%20graph%20fully%20connected.cpp)
-- [Strongly Connected Components](/algorithms/graphs/Strongly%20Connected%20Components.cpp)
-- [bellman ford (find negative cycle)](/algorithms/graphs/bellman-ford-(find-negative-cycle).cpp)
-- [bellman ford](/algorithms/graphs/bellman-ford.cpp)
-- [bfs 01](/algorithms/graphs/bfs-01.cpp)
-- [biconnected components](/algorithms/graphs/biconnected-components.cpp)
-- [binary lifting](/algorithms/graphs/binary-lifting.cpp)
-- [block cut tree](/algorithms/graphs/block-cut-tree.cpp)
-- [check bipartite](/algorithms/graphs/check-bipartite.cpp)
-- [dijkstra (k shortest paths)](/algorithms/graphs/dijkstra-(k-shortest-paths).cpp)
-- [dijkstra (restore path)](/algorithms/graphs/dijkstra-(restore-path).cpp)
-- [disjoint edge paths (maxflow)](/algorithms/graphs/disjoint-edge-paths-(maxflow).cpp)
-- [euler path (directed)](/algorithms/graphs/euler-path-(directed).cpp)
-- [euler path (undirected)](/algorithms/graphs/euler-path-(undirected).cpp)
-- [find articulation points](/algorithms/graphs/find-articulation-points.cpp)
-- [find bridge tree components](/algorithms/graphs/find-bridge-tree-components.cpp)
-- [find bridges (online)](/algorithms/graphs/find-bridges-(online).cpp)
-- [find bridges](/algorithms/graphs/find-bridges.cpp)
-- [find centroid](/algorithms/graphs/find-centroid.cpp)
-- [floyd warshall](/algorithms/graphs/floyd_warshall.cpp)
-- [functional graph](/algorithms/graphs/functional-graph.cpp)
-- [graph cycle (directed)](/algorithms/graphs/graph-cycle-(directed).cpp)
-- [graph cycle (undirected)](/algorithms/graphs/graph_cycle-(undirected).cpp)
-- [kruskal](/algorithms/graphs/kruskal.cpp)
-- [lowest common ancestor (binary lifting)](/algorithms/graphs/lowest-common-ancestor-(binary-lifting).cpp)
-- [lowest common ancestor (sparse table)](/algorithms/graphs/lowest-common-ancestor-(sparse-table).cpp)
-- [minimum vertex cover (already divided)](/algorithms/graphs/minimum-vertex-cover-(already-divided).cpp)
-- [prim](/algorithms/graphs/prim.cpp)
-- [shortest path with k edges](/algorithms/graphs/shortest-path-with-k-edges.cpp)
-- [small to large](/algorithms/graphs/small_to_large.cpp)
-- [successor graph (struct)](/algorithms/graphs/successor_graph-(struct).cpp)
-- [sum every node distance](/algorithms/graphs/sum-every-node-distance.cpp)
-- [topological sorting (kahn)](/algorithms/graphs/topological-sorting-(kahn).cpp)
-- [topological sorting (tarjan)](/algorithms/graphs/topological-sorting-(tarjan).cpp)
-- [tree diameter (dp)](/algorithms/graphs/tree-diameter-(dp).cpp)
-- [tree isomorphism (not rooted)](/algorithms/graphs/tree-isomorphism-(not-rooted).cpp)
-- [tree isomorphism (rooted)](/algorithms/graphs/tree-isomorphism-(rooted).cpp)
-- [tree maximum distances](/algorithms/graphs/tree-maximum-distances.cpp)
+- [2 SAT](/content/Graphs/2-SAT.cpp)
+- [BFS 01](/content/Graphs/BFS-01.cpp)
+- [Bellman Ford (find negative cycle)](/content/Graphs/Bellman%20Ford%20(find%20negative%20cycle).cpp)
+- [Bellman Ford](/content/Graphs/Bellman%20Ford.cpp)
+- [Biconnected components](/content/Graphs/Biconnected%20components.cpp)
+- [Binary lifting](/content/Graphs/Binary%20lifting.cpp)
+- [Block Cut tree](/content/Graphs/Block-Cut%20tree.cpp)
+- [Check bipartite](/content/Graphs/Check%20bipartite.cpp)
+- [D'Esopo Pape](/content/Graphs/D'Esopo-Pape.cpp)
+- [Dijkstra (K shortest pahts)](/content/Graphs/Dijkstra%20(K-shortest%20pahts).cpp)
+- [Dijkstra](/content/Graphs/Dijkstra.cpp)
+- [Extra edges to make directed graph fully connected](/content/Graphs/Extra%20edges%20to%20make%20directed%20graph%20fully%20connected.cpp)
+- [Find Bridges](/content/Graphs/Find%20Bridges.cpp)
+- [Find articulation points](/content/Graphs/Find%20articulation%20points.cpp)
+- [Find bridge tree components](/content/Graphs/Find%20bridge-tree%20components.cpp)
+- [Find bridges (online)](/content/Graphs/Find%20bridges%20(online).cpp)
+- [Find centroid](/content/Graphs/Find%20centroid.cpp)
+- [Floyd Warshall](/content/Graphs/Floyd%20Warshall.cpp)
+- [Function graph](/content/Graphs/Function%20graph.cpp)
+- [Kruskal](/content/Graphs/Kruskal.cpp)
+- [Lowest common ancestor (binary lifting)](/content/Graphs/Lowest%20common%20ancestor%20(binary-lifting).cpp)
+- [Lowest common ancestor (sparse table)](/content/Graphs/Lowest%20common%20ancestor%20(sparse%20table).cpp)
+- [Maximum flow (Dinic)](/content/Graphs/Maximum%20flow%20(Dinic).cpp)
+- [Minimum cost flow](/content/Graphs/Minimum%20cost%20flow.cpp)
+- [Minimum vertex cover (already divided)](/content/Graphs/Minimum%20vertex%20cover%20(already%20divided).cpp)
+- [Prim](/content/Graphs/Prim.cpp)
+- [Shortest path with K edges](/content/Graphs/Shortest%20path%20with%20K%20edges.cpp)
+- [Strongly connected components](/content/Graphs/Strongly%20connected%20components.cpp)
+- [Topological sorting (Kahn)](/content/Graphs/Topological%20sorting%20(Kahn).cpp)
+- [Topological sorting (Tarjan)](/content/Graphs/Topological%20sorting%20(Tarjan).cpp)
+- [Tree diameter (DP)](/content/Graphs/Tree%20diameter%20(DP).cpp)
+- [Tree isomorphism (non rooted)](/content/Graphs/Tree%20isomorphism%20(non%20rooted).cpp)
+- [Tree isomorphism (rooted)](/content/Graphs/Tree%20isomorphism%20(rooted).cpp)
 
 
 
 #### Math
-- [GCD](/algorithms/math/GCD.cpp)
-- [LCM](/algorithms/math/LCM.cpp)
-- [arithmetic progression sum](/algorithms/math/arithmetic-progression-sum.cpp)
-- [binomial mod](/algorithms/math/binomial-mod.cpp)
-- [binomial](/algorithms/math/binomial.cpp)
-- [chinese remainder theorem](/algorithms/math/chinese-remainder-theorem.cpp)
-- [derangement](/algorithms/math/derangement.cpp)
-- [euler phi (in range)](/algorithms/math/euler-phi-(in-range).cpp)
-- [euler phi](/algorithms/math/euler-phi.cpp)
-- [factorial factorization](/algorithms/math/factorial-factorization.cpp)
-- [factorization (Pollard)](/algorithms/math/factorization-(Pollard).cpp)
-- [factorization](/algorithms/math/factorization.cpp)
-- [fast pow](/algorithms/math/fast-pow.cpp)
-- [fft convolution](/algorithms/math/fft-convolution.cpp)
-- [find multiplicative inverse](/algorithms/math/find-multiplicative-inverse.cpp)
-- [find solution diophantine equation](/algorithms/math/find-solution-diophantine-equation.cpp)
-- [gauss elimination](/algorithms/math/gauss-elimination.cpp)
-- [gauss xor](/algorithms/math/gauss-xor.cpp)
-- [integer mod](/algorithms/math/integer_mod.cpp)
-- [integer partition](/algorithms/math/integer-partition.cpp)
-- [linear recurrence](/algorithms/math/linear-recurrence.cpp)
-- [list n elements choose k](/algorithms/math/list-n-elements-choose-k.cpp)
-- [matrix exponentiation](/algorithms/math/matrix-exponentiation.cpp)
-- [ntt int convolution and exp](/algorithms/math/ntt-int-convolution-and-exp.cpp)
-- [ntt int convolution two mods](/algorithms/math/ntt-int-convolution-two-mods.cpp)
-- [polyominoes](/algorithms/math/polyominoes.cpp)
-- [power sum](/algorithms/math/power-sum.cpp)
-- [sieve list primes](/algorithms/math/sieve-list-primes.cpp)
+- [Arithmetic progression sum](/content/Math/Arithmetic%20progression%20sum.cpp)
+- [Binomial mod](/content/Math/Binomial%20mod.cpp)
+- [Binomial](/content/Math/Binomial.cpp)
+- [Chinese remainder theorem](/content/Math/Chinese%20remainder%20theorem.cpp)
+- [Derangement](/content/Math/Derangement.cpp)
+- [Euler phi (in range)](/content/Math/Euler%20phi%20(in%20range).cpp)
+- [Euler phi](/content/Math/Euler%20phi.cpp)
+- [FFT convolution and exponentiation](/content/Math/FFT%20convolution%20and%20exponentiation.cpp)
+- [Factorial factorization](/content/Math/Factorial%20factorization.cpp)
+- [Factorization (Pollard's rho)](/content/Math/Factorization%20(Pollard's%20rho).cpp)
+- [Factorization](/content/Math/Factorization.cpp)
+- [Fast pow](/content/Math/Fast%20pow.cpp)
+- [Find diophantine equation solution](/content/Math/Find%20diophantine%20equation%20solution.cpp)
+- [Find multiplicatinve inverse](/content/Math/Find%20multiplicatinve%20inverse.cpp)
+- [GCD](/content/Math/GCD.cpp)
+- [Gauss XOR](/content/Math/Gauss%20XOR.cpp)
+- [Integer partition](/content/Math/Integer%20partition.cpp)
+- [LCM](/content/Math/LCM.cpp)
+- [Linear recurrence](/content/Math/Linear%20recurrence.cpp)
+- [List N elements choose K](/content/Math/List%20N%20elements%20choose%20K.cpp)
+- [List primes (Sieve of Eratosthenes)](/content/Math/List%20primes%20(Sieve%20of%20Eratosthenes).cpp)
+- [Matrix exponentiation](/content/Math/Matrix%20exponentiation.cpp)
+- [NTT convolution and exponentiation (2 mods)](/content/Math/NTT%20convolution%20and%20exponentiation%20(2%20mods).cpp)
+- [NTT convolution and exponentiation](/content/Math/NTT%20convolution%20and%20exponentiation.cpp)
+- [Polyominoes](/content/Math/Polyominoes.cpp)
 
 
 
 #### Primitives
-- [bigint](/algorithms/primitives/bigint.cpp)
-- [integer mod](/algorithms/primitives/integer_mod.cpp)
-- [matrix](/algorithms/primitives/matrix.cpp)
+- [Bigint](/content/Primitives/Bigint.cpp)
+- [Integer Mod](/content/Primitives/Integer%20Mod.cpp)
+- [Matrix](/content/Primitives/Matrix.cpp)
 
 
 
 #### Strings
-- [count distinct anagrams](/algorithms/strings/count-distinct-anagrams.cpp)
-- [double hash range query](/algorithms/strings/double-hash-range-query.cpp)
-- [hash big mod](/algorithms/strings/hash-big-mod.cpp)
-- [hash range query](/algorithms/strings/hash-range-query.cpp)
-- [hash ull](/algorithms/strings/hash-ull.cpp)
-- [kth digit in digit string](/algorithms/strings/kth-digit-in-digit-string.cpp)
-- [longest palindrome substring (manacher)](/algorithms/strings/longest-palindrome-substring-(manacher).cpp)
-- [longest palindrome](/algorithms/strings/longest-palindrome.cpp)
-- [rabin karp](/algorithms/strings/rabin-karp.cpp)
-- [suffix array](/algorithms/strings/suffix-array.cpp)
-- [suffix automaton (complete)](/algorithms/strings/suffix-automaton-(complete).cpp)
-- [trie](/algorithms/strings/trie.cpp)
-- [z function get occurence positions](/algorithms/strings/z-function-get-occurence-positions.cpp)
+- [Count distinct anagrams](/content/Strings/Count%20distinct%20anagrams.cpp)
+- [Double hash range query](/content/Strings/Double%20hash%20range%20query.cpp)
+- [Hash range query](/content/Strings/Hash%20range%20query.cpp)
+- [Hash unsigned long long](/content/Strings/Hash%20unsigned%20long%20long.cpp)
+- [K th digit in digit string](/content/Strings/K-th%20digit%20in%20digit%20string.cpp)
+- [Longest palindrome substring (Manacher)](/content/Strings/Longest%20palindrome%20substring%20(Manacher).cpp)
+- [Longest palindrome](/content/Strings/Longest%20palindrome.cpp)
+- [Rabin Karp](/content/Strings/Rabin-Karp.cpp)
+- [Suffix array](/content/Strings/Suffix%20array.cpp)
+- [Suffix automaton](/content/Strings/Suffix%20automaton.cpp)
+- [Trie](/content/Strings/Trie.cpp)
+- [Z function](/content/Strings/Z-function.cpp)
 
 
 
 ## References & Courses
 
-- [Thalisson's Library](https://github.com/Thalisson-Alves/Competitive-Programming)
-- [Macacário](https://github.com/splucs/Competitive-Programming)
 - [KACTL ICPC Code Library](https://github.com/kth-competitive-programming/kactl)
 - [PauloMiranda98's Library](https://github.com/PauloMiranda98/Competitive-Programming-Notebook)
-- [SSRS lib](https://ssrs-cp.github.io/cp_library/)
+- [Thalisson's Library](https://github.com/Thalisson-Alves/Competitive-Programming)
 - [IME algoritmos](https://www.ime.usp.br/~pf/algoritmos/idx.html)
 - [UFMG Library](https://github.com/brunomaletta/Biblioteca)
+- [SSRS lib](https://ssrs-cp.github.io/cp_library/)
+- [Macacário](https://github.com/splucs/Competitive-Programming)
 
-- [TEP](https://github.com/edsomjr/TEP)
-- [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
+- [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
+- [Competitive Programing Book](https://cpbook.net/details?cp=4)
+- [UnBalloon](https://github.com/UnBalloon/programacao-competitiva)
 - [Neps Academy](https://neps.academy/br/courses)
 - [USACO Guide](https://usaco.guide/dashboard/)
-- [Competitive Programing Book](https://cpbook.net/details?cp=4)
-- [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
-
+- [TEP](https://github.com/edsomjr/TEP)
 

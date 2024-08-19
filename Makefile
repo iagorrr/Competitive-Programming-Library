@@ -1,19 +1,23 @@
 readme:
-	python scripts/gen-readme/gen-readme.py > README.md
+	@python scripts/gen-readme/gen-readme.py > README.md
 
 format:
-	python3 scripts/format/format-algorithms.py --path ${CURDIR}/algorithms
+	@python3 scripts/format/main.py --content ${CURDIR}/content
 
-notebook: format
-	python3 scripts/notebook/gen.py \
-		--path ${CURDIR}/algorithms \
-		--confpath ${CURDIR}/settings-and-macros
+notebook-tex:
+	@python3 scripts/notebook/main.py \
+		--content ${CURDIR}/content \
 
-notepdf: notebook
-	pdflatex -interaction=nonstopmode -halt-on-error ${CURDIR}/scripts/notebook/notebook.tex 
+notebook-pdf:
+	# Yeah you have to run it twice to work :P
+	@pdflatex  notebook.tex
+	@pdflatex  notebook.tex
 
-opennote:
-	firefox notebook.pdf
 
 clean:
-	rm notebook.log rm notebook.out notebook.toc notebook.aux
+	@rm -f notebook.log notebook.out notebook.toc notebook.aux notebook.tex
+
+notebook: format notebook-tex notebook-pdf clean
+
+test-all:
+	@bash scripts/test-all/script.sh ./tests

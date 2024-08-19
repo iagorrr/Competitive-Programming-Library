@@ -21,18 +21,18 @@ jobs:
         with:
           image: mateusvrs/cp-notebook:v1.0 # Thank you mateusvrs
           options: -w /usr/src/app -v ${{ github.workspace }}:/usr/src/app
-          run: make notebook readme
+          run: apt-get update && apt-get install -y asymptote texlive-full && make notebook readme
 
       - name: Notebook Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: 'notebook.pdf'
+          file_pattern: "notebook.pdf"
 
-          commit_message: 'updates notebok'
+          commit_message: "updates notebok"
 
       - name: README Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: 'README.md'
+          file_pattern: "README.md"
 
-          commit_message: 'update README to match with notebook'
+          commit_message: "update README to match with notebook"
