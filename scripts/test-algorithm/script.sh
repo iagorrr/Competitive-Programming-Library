@@ -15,7 +15,7 @@ do
 
 		if ! diff -q  out.txt "$entry"/out/$filename &>/dev/null; then
 			>&2 echo  " ERR"
-			diff out.txt "$entry"/out/$filename 
+			# diff out.txt "$entry"/out/$filename 
 			break
 		fi
 		echo -e " OK"
