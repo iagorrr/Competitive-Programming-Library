@@ -21,7 +21,7 @@ jobs:
         with:
           image: mateusvrs/cp-notebook:v1.0 # Thank you mateusvrs
           options: -w /usr/src/app -v ${{ github.workspace }}:/usr/src/app
-          run: sudo apt-get update && sudo apt-get install -y texlive-full && make notebook readme
+          run: apt-get update && apt-get install -y texlive-full && make notebook readme
 
       - name: Notebook Update - Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v5
