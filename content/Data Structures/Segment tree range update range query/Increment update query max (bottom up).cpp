@@ -83,7 +83,7 @@ struct LazySegmentTree {
 
   void set(int p, Qt v) {
     ts[p + n] = v;
-    build(p);
+    build(p + n);
   }
 
   void upd(int l, int r, Ut v) {
