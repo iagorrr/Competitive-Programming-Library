@@ -1,12 +1,15 @@
 #include "../../../content/Contest/template.cpp"
-#include "../../../content/Data Structures/Segment tree range update range query/Increment update query max (bottom up).cpp"
+#include "../../../content/Data Structures/Segment tree range update range query/Increment update query min & max (bottom up).cpp"
 
 auto run() {
   int n, q;
   cin >> n >> q;
-  vector<QueryT> xs(n);
-  for (auto& xi : xs) cin >> xi.v;
-  LazySegmentTree st(xs);
+  LazySegmentTree st(n);
+  rep(i, 0, n) {
+    int x;
+    cin >> x;
+    st.set(i, QueryT(x));
+  }
   rep(i, 0, q) {
     int o;
     cin >> o;
@@ -19,7 +22,7 @@ auto run() {
       int k;
       cin >> k;
       k--;
-      cout << st.qry(k, k).v << endl;
+      cout << st.qry(k, k).mx << endl;
     }
   }
 }

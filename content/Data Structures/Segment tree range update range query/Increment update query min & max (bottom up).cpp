@@ -1,28 +1,27 @@
-/*8<
-  @Title:
-
-    Increment update, range query max
->8*/
-
 using SegT = ll;
 
 struct QueryT {
-  SegT v;
-  QueryT() : v(numeric_limits<SegT>::min()) {}
-  QueryT(SegT _v) : v(_v) {}
+  SegT mx, mn;
+  QueryT()
+      : mx(numeric_limits<SegT>::min()),
+        mn(numeric_limits<SegT>::max()) {}
+  QueryT(SegT _v) : mx(_v), mn(_v) {}
 };
 
 inline QueryT combine(QueryT ln, QueryT rn,
                       pii lr1, pii lr2) {
-  return QueryT(max(ln.v, rn.v));
+  chmax(ln.mx, rn.mx);
+  chmin(ln.mn, rn.mn);
+  return ln;
 }
 
 using LazyT = SegT;
 
 inline QueryT applyLazyInQuery(QueryT q, LazyT l,
                                pii lr) {
-  if (q.v == QueryT().v) q.v = 0;
-  q.v += l;
+  if (q.mx == QueryT().mx) q.mx = SegT();
+  if (q.mn == QueryT().mn) q.mn = SegT();
+  q.mx += l, q.mn += l;
   return q;
 }
 
@@ -35,8 +34,9 @@ using UpdateT = SegT;
 inline QueryT applyUpdateInQuery(QueryT q,
                                  UpdateT u,
                                  pii lr) {
-  if (q.v == QueryT().v) q.v = 0;
-  q.v += u;
+  if (q.mx == QueryT().mx) q.mx = SegT();
+  if (q.mn == QueryT().mn) q.mn = SegT();
+  q.mx += u, q.mn += u;
   return q;
 }
 
