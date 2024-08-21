@@ -63,7 +63,7 @@ class Entry:
             per_tag[tag] = extract_by_tag(content=content, tag=tag)
 
         if per_tag[Tag.TITLE] is None:
-            per_tag[Tag.TITLE] = entry_path.stem.replace("_", "\\_")
+            per_tag[Tag.TITLE] = entry_path.stem.replace("_", "\\_").replace("&", "\\&")
 
         source: str = extract_scissors(content=content)
 
