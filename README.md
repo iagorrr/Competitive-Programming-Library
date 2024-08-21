@@ -27,7 +27,7 @@
     - [Query max subarray sum (bottom up)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query/Query%20max%20subarray%20sum%20(bottom%20up).cpp)
 
 - Segment Tree Range Update Range Query
-    - [Increment update query max (bottom up)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20query%20max%20(bottom%20up).cpp)
+    - [Increment update query min & max (bottom up)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20query%20min%20&%20max%20(bottom%20up).cpp)
     - [Increment update sum query (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20sum%20query%20(top%20down).cpp)
     - [Arithmetic progression sum update query sum (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Arithmetic%20progression%20sum%20update%20query%20sum%20(top%20down).cpp)
 
@@ -86,7 +86,6 @@
 - [Biconnected components](/content/Graphs/Biconnected%20components.cpp)
 - [Binary lifting](/content/Graphs/Binary%20lifting.cpp)
 - [Block Cut tree](/content/Graphs/Block-Cut%20tree.cpp)
-- [Check bipartite](/content/Graphs/Check%20bipartite.cpp)
 - [D'Esopo Pape](/content/Graphs/D'Esopo-Pape.cpp)
 - [Dijkstra (K shortest pahts)](/content/Graphs/Dijkstra%20(K-shortest%20pahts).cpp)
 - [Dijkstra](/content/Graphs/Dijkstra.cpp)
