@@ -1,42 +1,39 @@
 /*8<
-  @Title:
+  @Title: Max \& Min Check
 
-    Max \& Min Check
+  @Description: Returns the min/max value in range
+  [l, r] that satisfies the lambda function check,
+  if there is no such value the 'nullopt' is
+  returned.
 
-  @Description:
+  @Usage: check must be a function that receives
+  an integer and return a boolean.
 
-    Returns the min/max value in range [l, r] that
-    satisfies the lambda function check, if there
-    is no such value the max/min possible value
-    for that type will be returned.
-
-  @Time:
-
-    $O(\log{l-r+1})$
+  @Time: $O(\log{l-r+1})$
 >8*/
 
 template <typename T>
-T maxCheck(T l, T r, function<bool(T)> check) {
-  T best = numeric_limits<T>::min();
+optional<T> maxCheck(T l, T r, auto check) {
+  optional<T> ret;
   while (l <= r) {
     T m = midpoint(l, r);
     if (check(m))
-      chmax(best, m), l = m + 1;
+      ret ? chmax(ret, m) : ret = m, l = m + 1;
     else
       r = m - 1;
   }
-  return best;
+  return ret;
 }
 
 template <typename T>
-T minCheck(T l, T r, function<bool(T)> check) {
-  T best = numeric_limits<T>::max();
+optional<T> minCheck(T l, T r, auto check) {
+  optional<T> ret;
   while (l <= r) {
     T m = midpoint(l, r);
     if (check(m))
-      chmin(best, m), r = m - 1;
+      ret ? chmin(ret, m) : ret = m, r = m - 1;
     else
       l = m + 1;
   }
-  return best;
+  return ret;
 }
