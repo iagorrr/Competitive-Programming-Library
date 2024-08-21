@@ -85,6 +85,7 @@
 - [Bellman Ford](/content/Graphs/Bellman%20Ford.cpp)
 - [Biconnected components](/content/Graphs/Biconnected%20components.cpp)
 - [Binary lifting](/content/Graphs/Binary%20lifting.cpp)
+- [Bipartite  Graph](/content/Graphs/Bipartite%20%20Graph.cpp)
 - [Block Cut tree](/content/Graphs/Block-Cut%20tree.cpp)
 - [D'Esopo Pape](/content/Graphs/D'Esopo-Pape.cpp)
 - [Dijkstra (K shortest pahts)](/content/Graphs/Dijkstra%20(K-shortest%20pahts).cpp)
