@@ -9,7 +9,7 @@
   @Usage: check must be a function that receives
   an integer and return a boolean.
 
-  @Time: $O(\log{l-r+1})$
+  @Time: $O(\log{r-l+1})$
 >8*/
 
 template <typename T>
