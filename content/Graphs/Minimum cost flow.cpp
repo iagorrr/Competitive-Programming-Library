@@ -1,8 +1,6 @@
 /*8<
 
-  @Title:
-
-    Minimum Cost Flow
+  @Title: Minimum Cost Flow
 
   @Description:
 
@@ -14,11 +12,11 @@
   @Usage:
 
     \begin{compactitem}
-      \item \textbf{add(u, v, w, c):} adds an
-      edge from $u$ to $v$ with capacity $w$
-      and cost $c$.
+      \item \textbf{add(u, v, c, w):} adds an
+      edge from $u$ to $v$ with capacity $c$
+      and cost $w$.
 
-      \item \textbf{flow(s, t, f):} return a pair
+      \item \textbf{flow(f):} return a pair
       $(flow, cost)$ with the maximum flow
       until $f$ with source at $s$ and sink at
       $t$, with the minimum cost possible.
@@ -28,150 +26,144 @@
 
     $O(N \cdot M + f \cdot m \log{n})$
 >8*/
+
 template <typename T>
-struct mcmf {
-  struct edge {
-    int to, rev, flow, cap;
-    bool res;  // if it's a reverse edge
-    T cost;    // cost per unity of flow
-    edge()
-        : to(0),
-          rev(0),
-          flow(0),
-          cap(0),
-          cost(0),
-          res(false) {}
-    edge(int to_, int rev_, int flow_, int cap_,
-         T cost_, bool res_)
-        : to(to_),
-          rev(rev_),
-          flow(flow_),
-          cap(cap_),
-          res(res_),
-          cost(cost_) {}
+struct MinCostFlow {
+  struct Edge {
+    int to;
+    ll c, rc;  // capcity, residual capacity
+    T w;       // cost
   };
-
-  vector<vector<edge>> g;
-  vector<int> par_idx, par;
-  T inf;
+  int n, s, t;
+  vector<Edge> edges;
+  vi2d g;
   vector<T> dist;
+  vi pre;
 
-  mcmf(int n)
-      : g(n),
-        par_idx(n),
-        par(n),
-        inf(numeric_limits<T>::max() / 3) {}
+  MinCostFlow() {}
+  MinCostFlow(int n_, int _s, int _t)
+      : n(n_), s(_s), t(_t), g(n) {}
 
-  void add(int u, int v, int w, T cost) {
-    edge a = edge(v, (int)g[v].size(), 0, w, cost,
-                  false);
-    edge b = edge(u, (int)g[u].size(), 0, 0,
-                  -cost, true);
-
-    g[u].emplace_back(a);
-    g[v].emplace_back(b);
+  void addEdge(int u, int v, ll c, T w) {
+    g[u].pb(len(edges));
+    edges.eb(v, c, 0, w);
+    g[v].pb(len(edges));
+    edges.eb(u, 0, 0, -w);
   }
 
-  /* don't code this if there isn't negative cyles
-   * ! */
-  vector<T> spfa(int s) {
-    deque<int> q;
-    vector<char> is_inside(g.size(), 0);
-    dist = vector<T>(g.size(), inf);
+  // {flow, cost}
+  pair<ll, T> flow(ll flow_limit = LLONG_MAX) {
+    ll flow = 0;
+    T cost = 0;
+    while (flow < flow_limit and dijkstra(s, t)) {
+      ll aug = LLONG_MAX;
+      for (int i = t; i != s;
+           i = edges[pre[i] ^ 1].to) {
+        aug = min({flow_limit - flow, aug,
+                   edges[pre[i]].c});
+      }
+      for (int i = t; i != s;
+           i = edges[pre[i] ^ 1].to) {
+        edges[pre[i]].c -= aug;
+        edges[pre[i] ^ 1].c += aug;
 
-    dist[s] = 0;
-    q.push_back(s);
-    is_inside[s] = true;
+        edges[pre[i]].rc += aug;
+        edges[pre[i] ^ 1].rc -= aug;
+      }
+      flow += aug;
+      cost += (T)aug * dist[t];
+    }
+    return {flow, cost};
+  }
 
-    while (!q.empty()) {
-      int v = q.front();
-      q.pop_front();
-      is_inside[v] = false;
-
-      for (int i = 0; i < (int)g[v].size(); i++) {
-        auto [to, rev, flow, cap, res, cost] =
-            g[v][i];
-        if (flow < cap and
-            dist[v] + cost < dist[to]) {
-          dist[to] = dist[v] + cost;
-
-          if (is_inside[to]) continue;
-          if (!q.empty() and
-              dist[to] > dist[q.front()])
-            q.push_back(to);
-          else
-            q.push_front(to);
-          is_inside[to] = true;
+  // Needs to be called after flow method
+  vi2d paths() {
+    vi2d p;
+    for (;;) {
+      int cur = s;
+      auto &res = p.eb();
+      res.pb(cur);
+      while (cur != t) {
+        bool found = false;
+        for (auto i : g[cur]) {
+          auto &[v, _, c, cost] = edges[i];
+          if (c > 0) {
+            --c;
+            res.pb(cur = v);
+            found = true;
+            break;
+          }
         }
+
+        if (!found) break;
+      }
+
+      if (cur != t) {
+        p.ppb();
+        break;
       }
     }
-    return dist;
+
+    return p;
   }
 
-  bool dijkstra(int s, int t, vector<T> &pot) {
-    priority_queue<pair<T, int>,
-                   vector<pair<T, int>>,
-                   greater<>>
-        q;
-    dist = vector<T>(g.size(), inf);
+ private:
+  bool bellman_ford(int s, int t) {
+    dist.assign(n, numeric_limits<T>::max());
+    pre.assign(n, -1);
+
+    vc inq(n, false);
+    queue<int> q;
+
     dist[s] = 0;
-    q.emplace(0, s);
-    while (q.size()) {
-      auto [d, v] = q.top();
+    q.push(s);
+
+    while (len(q)) {
+      int u = q.front();
       q.pop();
-      if (dist[v] < d) continue;
-      for (int i = 0; i < (int)g[v].size(); i++) {
-        auto [to, rev, flow, cap, res, cost] =
-            g[v][i];
-        cost += pot[v] - pot[to];
-        if (flow < cap and
-            dist[v] + cost < dist[to]) {
-          dist[to] = dist[v] + cost;
-          q.emplace(dist[to], to);
-          par_idx[to] = i, par[to] = v;
+      inq[u] = false;
+
+      for (int i : g[u]) {
+        auto [v, c, w, _] = edges[i];
+        auto new_dist = dist[u] + w;
+        if (c > 0 and dist[v] > new_dist) {
+          dist[v] = new_dist;
+          pre[v] = i;
+          if (not inq[v]) {
+            inq[v] = true;
+            q.push(v);
+          }
         }
       }
     }
 
-    return dist[t] < inf;
+    return dist[t] != numeric_limits<T>::max();
   }
 
-  pair<int, T> min_cost_flow(int s, int t,
-                             int flow) {
-    vector<T> pot((int)g.size(), 0);
+  bool dijkstra(int s, int t) {
+    dist.assign(n, numeric_limits<T>::max());
+    pre.assign(n, -1);
+    dist[s] = 0;
 
-    /* comment or remove this line if there isn't
-     * negative cyles*/
-    // pot = spfa(s);
+    using PQ = pair<T, int>;
+    pqmn<PQ> pq;
+    pq.emp(0, s);
+    while (len(pq)) {
+      auto [cost, u] = pq.top();
+      pq.pop();
+      if (cost != dist[u]) continue;
 
-    int f = 0;
-    T ret = 0;
-    while (f < flow and dijkstra(s, t, pot)) {
-      for (int i = 0; i < (int)g.size(); i++)
-        if (dist[i] < inf) pot[i] += dist[i];
-
-      int mn_flow = flow - f, u = t;
-      while (u != s) {
-        mn_flow =
-            min(mn_flow,
-                g[par[u]][par_idx[u]].cap -
-                    g[par[u]][par_idx[u]].flow);
-        u = par[u];
+      for (int i : g[u]) {
+        auto [v, c, _, w] = edges[i];
+        auto new_dist = dist[u] + w;
+        if (c > 0 and dist[v] > new_dist) {
+          dist[v] = new_dist;
+          pre[v] = i;
+          pq.emp(new_dist, v);
+        }
       }
-
-      ret += pot[t] * mn_flow;
-
-      u = t;
-      while (u != s) {
-        g[par[u]][par_idx[u]].flow += mn_flow;
-        g[u][g[par[u]][par_idx[u]].rev].flow -=
-            mn_flow;
-        u = par[u];
-      }
-
-      f += mn_flow;
     }
 
-    return make_pair(f, ret);
+    return dist[t] != numeric_limits<T>::max();
   }
 };
