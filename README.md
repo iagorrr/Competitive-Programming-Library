@@ -53,6 +53,7 @@
 - [Knapsack](/content/Dynamic%20Programming/Knapsack.cpp)
 - [Longest increasing subsequence](/content/Dynamic%20Programming/Longest%20increasing%20subsequence.cpp)
 - [Money sum](/content/Dynamic%20Programming/Money%20sum.cpp)
+- [SOS](/content/Dynamic%20Programming/SOS.cpp)
 - [Travelling salesman problem](/content/Dynamic%20Programming/Travelling%20salesman%20problem.cpp)
 
 
