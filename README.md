@@ -42,6 +42,7 @@
 - [Mex with update](/content/Data%20Structures/Mex%20with%20update.cpp)
 - [Ordered set (GNU PBDS)](/content/Data%20Structures/Ordered%20set%20(GNU%20PBDS).cpp)
 - [Prefix sum 2D](/content/Data%20Structures/Prefix%20sum%202D.cpp)
+- [Venice set (complete)](/content/Data%20Structures/Venice%20set%20(complete).cpp)
 - [Venice set](/content/Data%20Structures/Venice%20set.cpp)
 - [Wavelet tree](/content/Data%20Structures/Wavelet%20tree.cpp)
 
