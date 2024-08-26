@@ -16,13 +16,15 @@ using namespace std;
 #define len(j) (int)j.size()
 #define rep(i, a, b)                           \
   for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                              \
+           i = (a);                            \
        i < (b); i++)
 #define rrep(i, a, b)                          \
   for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                              \
+           i = (a);                            \
        i > (b); i--)
-#define trav(a,x) for (auto& a : x)
+#define trav(xi, xs) for (auto &xi : xs)
+#define rtrav(xi, xs) \
+  for (auto &xi : ranges::views::reverse(xs))
 #define pb push_back
 #define pf push_front
 #define ppb pop_back
@@ -30,9 +32,11 @@ using namespace std;
 #define eb emplace_back
 #define lb lower_bound
 #define ub upper_bound
+#define fi first
+#define se second
 #define emp emplace
 #define ins insert
-#define divc(a,b) ((a)+(b)-1ll)/(b)
+#define divc(a, b) ((a) + (b)-1ll) / (b)
 using str = string;
 using ll = long long;
 using ull = unsigned long long;
@@ -46,6 +50,8 @@ using pii = pair<int, int>;
 using vpii = vector<pii>;
 using vc = vector<char>;
 using vs = vector<str>;
+template <typename T, typename T2>
+using umap = unordered_map<T, T2>;
 template <typename T>
 using pqmn =
     priority_queue<T, vector<T>, greater<T>>;
@@ -59,5 +65,4 @@ template <typename T, typename U>
 inline bool chmin(T &a, U const &b) {
   return (a > b ? a = b, 1 : 0);
 }
-
 /*8<============~ END TEMPLATE ~============}>8*/
