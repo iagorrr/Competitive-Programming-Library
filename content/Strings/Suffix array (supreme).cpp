@@ -1,10 +1,50 @@
+template <typename T = ll,
+          auto cmp =
+              [](T &src1, T &src2, T &dst) {
+                dst = min(src1, src2);
+              }>
+class SparseTable {
+ private:
+  int sz;
+  vi logs;
+  vector<vector<T>> st;
+
+ public:
+  SparseTable() {}
+  SparseTable(const vector<T> &v)
+      : sz(len(v)), logs(sz + 1) {
+    rep(i, 2, sz + 1) logs[i] = logs[i >> 1] + 1;
+    st.resize(logs[sz] + 1, vector<T>(sz));
+    rep(i, 0, sz) st[0][i] = v[i];
+    for (int k = 1; (1 << k) <= sz; k++) {
+      for (int i = 0; i + (1 << k) <= sz; i++) {
+        cmp(st[k - 1][i],
+            st[k - 1][i + (1 << (k - 1))],
+            st[k][i]);
+      }
+    }
+  }
+  T query(int l, int r) {
+    r++;
+    const int k = logs[r - l];
+    T ret;
+    cmp(st[k][l], st[k][r - (1 << k)], ret);
+    return ret;
+  }
+};
+
+template <typename T>
+using RMQ = SparseTable<T, [](T &a, T &b, T &c) {
+  c = min(a, b);
+}>;
+
 // Créditos: ShahjalalShohag
 // O(N)
 struct SA {
-  int n;
   string s;
+  int n;
   vector<int> sa, lcp, pos;
-  // RMQ<int> rmq;
+  RMQ<int> rmq;
 
   void induced_sort(vector<int> &vec, int val,
                     vector<int> &sa,
@@ -120,11 +160,11 @@ struct SA {
 
   SA() {}
 
-  SA(string s) : s(s), n((int)s.size()), pos(n) {
+  SA(string _s) : s(_s), n(len(s)), pos(n) {
     sa = suffix_array();
     lcp = build_lcp();
-    // //rmq = RMQ(lcp);
-    // for(int i=0; i<n; i++) pos[sa[i]]=i;
+    rmq = RMQ<int>(lcp);
+    for (int i = 0; i < n; i++) pos[sa[i]] = i;
   }
 
   int get_lcp(
@@ -136,20 +176,35 @@ struct SA {
 
     if (l > r) swap(l, r);
 
-    // return rmq.query_min(l, r);
+    return rmq.query(l, r);
   }
 
   // string s = a + '+' + b;
-  pair<int, int> lcs(
-      int m) {  // m é o tamanho da string a
-    int maior = 0, pos = -1;
-    for (int i = 2; i < n; i++) {
-      if ((sa[i] < m) != (sa[i - 1] < m)) {
-        if (lcp[i - 1] > maior)
-          maior = lcp[i - 1], pos = sa[i];
+  tuple<int, int, int> lcs(
+      int n) {  // m é o tamanho da string a
+    int m = len(s) - n - 1;
+    int best_len = 0;
+    int index_s = 0;
+    int index_t = 0;
+    for (int i = 0; i < n + m; ++i) {
+      if ((sa[i] < n && sa[i + 1] >= n + 1) ||
+          (sa[i] >= n + 1 && sa[i + 1] < n)) {
+        if (lcp[i] > best_len) {
+          best_len = lcp[i];
+          index_s = min(sa[i], sa[i + 1]);
+          index_t = max(sa[i], sa[i + 1]) - n - 1;
+        }
       }
     }
-    return {maior, pos};
+    /*int maior = 0, pos = -1;*/
+    /*for (int i = 2; i < n; i++) {*/
+    /*  if ((sa[i] < n) != (sa[i - 1] < n)) {*/
+    /*    if (lcp[i - 1] > maior)*/
+    /*      maior = lcp[i - 1], pos = sa[i];*/
+    /*  }*/
+    /*}*/
+    /*return {maior, pos};*/
+    return {best_len, index_s, index_t};
   }
 
   ll distinct_subs() {  // n*(n+1)/2 - sum(lcp[i])
