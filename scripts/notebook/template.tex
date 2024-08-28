@@ -13,11 +13,17 @@
 \usepackage{soul}
 \usepackage{setspace}
 \usepackage{paralist}
-\usepackage[a4paper,  landscape, top=1cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
+\usepackage[a4paper,  portrait, top=1cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
 \setlength{\columnsep}{0.5cm}
 \setlength{\columnseprule}{0.01cm}
 \singlespacing
 \setstretch{0.2}
+\makeatletter
+\newcommand\BeraMonottfamily{%
+  \def\fvm@Scale{1.0}% scales the font down
+  \fontfamily{fvm}\selectfont% selects the Bera Mono font
+}
+\makeatother
 
 \lstdefinestyle{genericstyle}{
   tabsize=2,
@@ -30,10 +36,10 @@
   showtabs=false,
   extendedchars=false,
   inputencoding=utf8,
-  basicstyle=\small\ttfamily,
-  keywordstyle=\small\ttfamily,
-  stringstyle=\small\ttfamily,
-  commentstyle=\small\ttfamily,
+  basicstyle=\BeraMonottfamily,
+  keywordstyle=\BeraMonottfamily,
+  stringstyle=\BeraMonottfamily,
+  commentstyle=\BeraMonottfamily,
 }
 
 \lstdefinestyle{cppstyle}{
@@ -48,20 +54,34 @@
   showtabs=true,
   extendedchars=false,
   inputencoding=utf8,
-  basicstyle=\small\ttfamily,
-  keywordstyle=\small\ttfamily,
-  stringstyle=\small\ttfamily,
-  commentstyle=\small\ttfamily,
+  basicstyle=\BeraMonottfamily,
+  keywordstyle=\BeraMonottfamily,
+  stringstyle=\BeraMonottfamily,
+  commentstyle=\BeraMonottfamily,
 }
 
 
 \begin{document}
-% \maketitle
-\begin{multicols}{3}
+\begin{titlepage}\centering
+{\Huge\textbf{Teorema do chinês viajante}}\\[2mm]
+{\LARGE Brazil subregional 2024}\\[2mm] 
+  \includegraphics[width=0.8\textwidth]{./CHINSE-TRAVELLING.jpg}\\[1mm]
+  \vspace*{\fill}
+  \includegraphics[width=0.3\textwidth]{./GAMA.png}\\[10mm]
+  {\LARGE Universidade de Brasília, faculdade do gama}\\[1mm]
+  {\LARGE \textbf{Coach}}\\[1mm]
+  {\LARGE Edson Alves (edsomrjr)}\\[1mm]
+  {\LARGE \textbf{Team}}\\[1mm]
+  {\LARGE André Macedo (andre\_rei)}\\[1mm]
+  {\LARGE Iago Rocha (iagorrr)}\\[1mm]
+  {\LARGE  Thalisson Alves (Thalisson\_Alves)}\\[8mm]
+  {\large \today}\\ % Manually insert the date at the bottomj
+\end{titlepage}
+\begin{multicols}{2}
 \tableofcontents
 \newpage
 \end{multicols}
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{flushleft}
 
 

@@ -1,11 +1,12 @@
 /*8<
-    @Title: Find linear recurrence (Berlekamp-Massey)
+    @Title: Find linear recurrence
+(Berlekamp-Massey)
     @Description:
-        Given the first $N$ terms of a linear 
+        Given the first $N$ terms of a linear
         recurrence finds the smallest recurrence
         that matches the sequence.
     @Time: $O(N^2)$
-    @Warning: 
+    @Warning:
         Works faster if the $mod$ is const but
         can be also be a parameter.
 

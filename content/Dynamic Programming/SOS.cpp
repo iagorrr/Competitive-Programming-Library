@@ -7,7 +7,11 @@
     Call $build$ with the $masks$ then it returns
     a vector of bool $V$ where $V_X$ says if $X$
     is a super mask of any of the initial maks
-  @Time: $O(LOG^2 \cdot 2^{LOG})$
+
+    You can change it to count how many submasks
+    of each mask exsists, by changing the bitwise
+    or by a plus sign...
+  @Time: $O(LOG \cdot 2^{LOG})$
   @Memory: $O(LOG^2 \cdot 2^{LOG})$
   @Warning:
     Remember to set $LOG$ with the highest

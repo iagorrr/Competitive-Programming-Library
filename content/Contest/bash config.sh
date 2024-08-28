@@ -78,7 +78,7 @@ testall() {
 }
 
 touch_macro() {
-	cat "$1"/template.cpp >>"$2"
+	cat "$1"/template.cpp >"$2"
 	cat "$1"/run.cpp >>"$2"
 	cp "$1"/debug.cpp .
 }

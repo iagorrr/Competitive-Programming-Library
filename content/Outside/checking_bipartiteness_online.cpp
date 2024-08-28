@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef pair<int, int> pii;
 const int N = 500010;
 pii parent[N];
 int rk[N];
