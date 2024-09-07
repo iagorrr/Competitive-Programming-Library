@@ -166,6 +166,66 @@ struct LineSegment {
 
 /*============================================================================*/
 
+template <typename T>
+struct Circle {
+  Point<T> c;
+  T r;
+  Circle(Point<T> _c, T _r) : c(_c), r(_r) {}
+  Circle(T _r) : Circle(Point<T>(0, 0), _r) {}
+  ld area() const { return PI * r * r; }
+  ld perimeter() const { return 2.0 * PI * r; }
+  ld arc(ld theta) const { return theta * r; }
+  ld chord(ld theta) const { return 2.0 * r * sin(theta / 2.0); }
+  ld sector(ld theta) const { return (theta * r * r) / 2.0; }
+  ld segment(ld theta) const { return ((theta - sin(theta)) * r * r) / 2.0; }
+  PointPosition position(const Point<T>& p) const {
+    auto d = c.dist(p);
+    return equals(d, r) ? ON : (d < r ? IN : OUT);
+  }
+};
+
+/*============================================================================*/
+
+template <typename T>
+struct Rectangle {
+  Point<T> P, Q;
+  T b, h;
+  Rectangle(const Point<T>& p, const Point<T>& q) : P(P), Q(q) {
+    assert(P != Q);
+    b = max(P.x, Q.x) - min(P.x, Q.x);
+    h = max(P.y, Q.y) - min(P.y, Q.y);
+  }
+  Rectangle(T base, T height) : P(0, 0), Q(base, height), b(base), h(height) {}
+  T perimeter() const { return 2 * b + 2 * h; }
+  T area() const { return b * h; }
+  optional<Rectangle> intersection(const Rectangle& r) const {
+    using pt = pair<T, T>;
+    auto i = pt(min(P.x, Q.x), max(P.x, Q.x));
+    auto u = pt(min(r.P.x, r.Q.x), max(r.P.x, r.Q.x));
+    auto a = max(i.first, u.first);
+    auto b = min(i.second, u.second);
+
+    i = pt(min(P.y, Q.y), max(P.y, Q.y));
+    u = pt(min(r.P.y, r.Q.y), max(r.P.y, r.Q.y));
+    auto c = max(i.first, u.first);
+    auto d = max(i.second, u.first);
+
+    if (d < c or b < a) return nullopt;
+
+    return {{a, c}, {b, d}};
+  }
+};
+
+/*============================================================================*/
+
+template <typename T>
+struct Trapezium {
+  T B, b, h;
+  T area() const { return ((b + B) * h) / 2; }
+};
+
+/*============================================================================*/
+
 template <class Point>
 vector<Point> segInter(Point a, Point b, Point c, Point d) {
   auto oa = c.cross(d, a), ob = c.cross(d, b), oc = a.cross(b, c),
@@ -200,6 +260,148 @@ double angle(const Point<T>& P, const Point<T>& Q, const Point<T>& R,
   // pontos são iguais. Neste caso, o ângulo não está definido
 
   return acos(num / den);
+}
+
+/*============================================================================*/
+
+struct pt {
+  double x, y;
+  int id;
+};
+
+int orientation(pt a, pt b, pt c) {
+  double v = a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y);
+  if (v < 0) return -1;  // clockwise
+  if (v > 0) return +1;  // counter-clockwise
+  return 0;
+}
+
+bool cw(pt a, pt b, pt c, bool include_collinear) {
+  int o = orientation(a, b, c);
+  return o < 0 || (include_collinear && o == 0);
+}
+bool collinear(pt a, pt b, pt c) { return orientation(a, b, c) == 0; }
+
+void convex_hull(vector<pt>& pts, bool include_collinear = false) {
+  pt p0 = *min_element(all(pts), [](pt a, pt b) {
+    return make_pair(a.y, a.x) < make_pair(b.y, b.x);
+  });
+  sort(all(pts), [&p0](const pt& a, const pt& b) {
+    int o = orientation(p0, a, b);
+    if (o == 0)
+      return (p0.x - a.x) * (p0.x - a.x) + (p0.y - a.y) * (p0.y - a.y) <
+             (p0.x - b.x) * (p0.x - b.x) + (p0.y - b.y) * (p0.y - b.y);
+    return o < 0;
+  });
+  if (include_collinear) {
+    int i = len(pts) - 1;
+    while (i >= 0 && collinear(p0, pts[i], pts.back())) i--;
+    reverse(pts.begin() + i + 1, pts.end());
+  }
+
+  vector<pt> st;
+  for (int i = 0; i < len(pts); i++) {
+    while (st.size() > 1 &&
+           !cw(st[len(st) - 2], st.back(), pts[i], include_collinear))
+      st.pop_back();
+    st.push_back(pts[i]);
+  }
+
+  pts = st;
+}
+
+/*============================================================================*/
+
+/*8<
+  @Time: $O(N)$
+>8*/
+template <typename T>
+double ccRadius(const Point<T>& A, const Point<T>& B, const Point<T>& C) {
+  return (B - A).dist() * (C - B).dist() * (A - C).dist() /
+         abs((B - A).cross(C - A)) / 2;
+}
+
+template <typename T>
+Point<T> ccCenter(const Point<T>& A, const Point<T>& B, const Point<T>& C) {
+  Point<T> b = C - A, c = B - A;
+  return A + (b * c.dist2() - c * b.dist2()).perp() / b.cross(c) / 2;
+}
+
+template <typename T>
+pair<Point<T>, double> mec(vector<Point<T>> ps) {
+  shuffle(all(ps), mt19937(time(0)));
+  Point<T> o = ps[0];
+  double r = 0, EPS = 1 + 1e-8;
+  rep(i, 0, len(ps)) if ((o - ps[i]).dist() > r * EPS) {
+    o = ps[i], r = 0;
+    rep(j, 0, i) if ((o - ps[j]).dist() > r * EPS) {
+      o = (ps[i] + ps[j]) / 2;
+      r = (o - ps[i]).dist();
+      rep(k, 0, j) if ((o - ps[k]).dist() > r * EPS) {
+        o = ccCenter(ps[i], ps[j], ps[k]);
+        r = (o - ps[i]).dist();
+      }
+    }
+  }
+  return {o, r};
+}
+
+/*============================================================================*/
+
+template <typename T>
+Line<T> perpendicular_bisector(const Point<T>& P, const Point<T>& Q) {
+  auto a = 2 * (Q.x - P.x);
+  auto b = 2 * (Q.y - P.y);
+  auto c = (P.x * P.x + P.y * P.y) - (Q.x * Q.x + Q.y * Q.y);
+
+  return {a, b, c};
+}
+
+/*============================================================================*/
+
+ll cross(ll x1, ll y1, ll x2, ll y2) { return x1 * y2 - x2 * y1; }
+
+ll polygonArea(vector<pll>& pts) {
+  ll ats = 0;
+  for (int i = 2; i < len(pts); i++)
+    ats += cross(pts[i].first - pts[0].first, pts[i].second - pts[0].second,
+                 pts[i - 1].first - pts[0].first,
+                 pts[i - 1].second - pts[0].second);
+  return abs(ats / 2ll);
+}
+
+ll boundary(vector<pll>& pts) {
+  ll ats = pts.size();
+  for (int i = 0; i < len(pts); i++) {
+    ll deltax = (pts[i].first - pts[(i + 1) % pts.size()].first);
+    ll deltay = (pts[i].second - pts[(i + 1) % pts.size()].second);
+    ats += abs(__gcd(deltax, deltay)) - 1;
+  }
+  return ats;
+}
+
+pll latticePoints(vector<pll>& pts) {
+  ll bounds = boundary(pts);
+  ll area = polygonArea(pts);
+  ll inside = area + 1ll - bounds / 2ll;
+
+  return {inside, bounds};
+}
+
+/*============================================================================*/
+
+template <typename T>
+bool contains(const Point<T>& A, const Point<T>& B, const Point<T>& P) {
+  // Verifica se P está na região retangular
+  auto xmin = min(A.x, B.x);
+  auto xmax = max(A.x, B.x);
+  auto ymin = min(A.y, B.y);
+  auto ymax = max(A.y, B.y);
+
+  if (P.x < xmin || P.x > xmax || P.y < ymin || P.y > ymax) return false;
+
+  // Verifica relação de semelhança no triângulo
+  return equals((P.y - A.y) * (B.x - A.x), (P.x - A.x) * (B.y - A.y));
 }
 
 /*============================================================================*/
