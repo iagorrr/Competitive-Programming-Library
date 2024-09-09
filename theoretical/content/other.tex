@@ -1,0 +1,88 @@
+\section{Others}
+
+\subsection{Critérios de divisibilidade}
+
+
+\subsubsection{7}
+
+Para verificar a divisibilidade de um número por 7, siga a seguinte regra:
+
+\begin{enumerate}
+  \item Pegue o número em questão.
+  \item Remova o último dígito (unidade) do número.
+  \item Dobre o valor removido no passo anterior.
+  \item Subtraia o valor dobrado do número restante.
+  \item Se o resultado da subtração for divisível por 7, o número original é divisível por 7.
+\end{enumerate}
+
+Exemplo:
+
+Suponha que desejamos verificar a divisibilidade do número 413 por 7.
+
+\begin{enumerate}
+  \item Remova o último dígito (3) e dobre-o, obtendo 6.
+  \item Subtraia 6 do número restante (41 - 6 = 35).
+\end{enumerate}
+
+\subsubsection{11}
+
+\[
+n \text{ é divisível por 11} \iff \sum_{i=1}^{k} a_{2i-1} - \sum_{i=1}^{j} a_{2i} \text{ é divisível por 11}
+\]
+
+onde \(a_{i}\) é o \(i\)-ésimo dígito do número \(n\), \(k\) é a quantidade de dígitos ímpares, \(j\) é a quantidade de dígitos pares.
+
+Exemplo:
+
+Suponha que desejamos verificar a divisibilidade do número \(n = 7923\) por 11.
+
+\[
+k = 2, \quad j = 2
+\]
+
+\[
+\text{Soma dos dígitos ímpares: } 7 + 3 = 10
+\]
+
+\[
+\text{Soma dos dígitos pares: } 9 + 2 = 11
+\]
+
+\[
+\text{Subtração: } 10 - 11 = -1
+\]
+
+Como \(-1\) não é divisível por 11, o número \(7923\) não é divisível por 11.
+
+\subsubsection{13}
+
+\begin{equation}
+    13 | x \equiv 13 | 4 \cdot (x\%10) + \lfloor x/10 \rfloor
+\end{equation}
+
+Em outras palavras 13 divide $x$ se o quádruplo do último algarismo somado com o número sem este algarismo for divisível por 13.
+
+\subsubsection{17}
+
+\begin{equation}
+    17 | x \equiv 17 |  \lfloor x/10 \rfloor - 5 \cdot (x \% 10)
+\end{equation}
+
+Em outras palavras 17 divide $x$ se o a diferença entre o quíntuplo do último algarismo e o número sem este algarísmo for divisível por 17.
+
+\subsubsection{19}
+
+\begin{equation}
+    19 | x \equiv 19 | \lfloor x / 10 \rfloor + 2 \cdot (x \mod 10)
+\end{equation}
+
+Em outras palavras 19 divide x se o dobro do último algarismo de x somado a o número restante de x é divisível por 19.
+
+\subsubsection{23}
+
+\begin{equation}
+    %23 | x \equiv 23 | \lfloor x / 10 \lflor + 7 \cdot (x \mod 10)  
+    23 | x \equiv 23 |  x / 10  + 7 \cdot (x \mod 10)  
+\end{equation}
+
+

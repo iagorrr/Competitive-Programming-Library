@@ -1,0 +1,60 @@
+\documentclass[10pt, twocolumn]{article}
+\usepackage[utf8x]{inputenc}
+%Gummi|065|=)
+\title{\vspace{-2cm}\textbf{The Reference}}
+\author{}
+\date{}
+
+\usepackage[english]{babel}
+\usepackage{lscape}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{rotating}
+\usepackage{ragged2e}
+\usepackage[a4paper, landscape, margin=0.8in]{geometry}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor,colortbl}
+\usepackage{tabu}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{diagbox}
+\usepackage{caption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{fontspec}
+\usepackage{hyperref}
+
+%color celula da tabela
+\usepackage{xcolor,colortbl}
+
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{3em}
+\graphicspath{ {img/} }
+\restylefloat{table}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+
+\newcommand{\stirlingfirst}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand{\stirlingsecond}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+
+\pagestyle{fancy}
+
+\usepackage{amsfonts} % for "\mathbb" macro
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\setmainfont{DejaVu Sans}

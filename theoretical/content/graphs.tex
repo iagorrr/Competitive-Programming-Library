@@ -1,0 +1,112 @@
+\section{Graphs}
+
+\subsubsection{Bipartite Graph}
+
+Bipartite Graph is a special graph with the following characteristics: the set of vertices V can be partitioned into two disjoint sets V1 and V2 and all undirected edges (u, v) $\in$ E have the property that u $\in$ V1 and v $\in$ V2 . This makes a Bipartite Graph free from odd-length cycle.
+Not that by this definition is possible to have isolated vertices.
+
+\subsection{2-SAT}
+
+In order for a 2-SAT problem to have a solution, it is necessary and sufficient that for any variable $x$ the vertices $x$ and $\lnot x$ are in different strongly connected components of the strong connection of the implication graph.
+
+
+
+This criterion can be verified in $O(n + m)$ time by finding all strongly connected components.
+
+\subsection{Topological Sorting}
+
+\textbf{Definition:} You are given a \textbf{directed} graph with $n$ vertices and $m$ edges. You have to find an order of the vertices, so that every edge leads from the vertex with a smaller index to a vertex with a larger one.
+
+Topological order can be non-unique !
+
+A Topological order \textbf{may not exist} at all. It only exists, if the directed graph \textbf{contains no cycles}. Otherwise because there is a contradiction: if there is a cycle containing the vertices $a$ and $b$, then $a$ needs to have a smaller index than $b$ (since you can reach $b$ from $a$) and also a bigger one (as you can reach $a$ from $b$). Every acyclic directed graph contains at least one topological order.
+
+\subsection{Strongly Connected Components}
+
+You are given a directed graph $G$ with vertices $V$ and edges $E$. It is possible that there are loops and multiple edges. Let's denote $n$ as number of vertices and $m$ as number of edges in $G$.
+
+Strongly connected component is a maximal subset of vertices
+$C$ such that any two vertices of this subset are reachable from each other, i.e. for any $u, v \in C$:
+
+$$u \mapsto v, v \mapsto u$$
+
+where $\mapsto$ means reachability, i.e. existence of the path from first vertex to the second.
+
+The most important property of the condensation graph is that it is a \textbf{DAG}. Indeed, suppose that there is an edge between $C$ and $C'$, let's prove that there is no edge from $C'$ to $C$. Suppose that $C' \mapsto C$. Then there are two vertices  $u' \in C$  and  $v' \in C'$  such that  $v' \mapsto u'$ . But since  $u$  and  $u'$  are in the same strongly connected component then there is a path between them; the same for  $v$  and  $v'$ . As a result, if we join these paths we have that  $v \mapsto u$  and at the same time  $u \mapsto v$ . Therefore  $u$  and  $v$  should be at the same strongly connected component, so this is contradiction. This completes the proof.
+
+\subsection{Minimum spanning tree}
+
+\subsubsection{Propeties}
+
+\begin{itemize}
+    \item A minimum spanning tree of a graph is unique, if the weight of all the edges are distinct. Otherwise, there may be multiple minimum spanning trees. (Specific algorithms typically output one of the possible minimum spanning trees).
+
+    \item Minimum spanning tree is also the tree with minimum product of weights of edges. (It can be easily proved by replacing the weights of all edges with their logarithms)
+\end{itemize}
+
+\subsection{Eulerian path}
+
+A Eulerian path is a path in a graph that passes through all of its edges exactly once. A Eulerian cycle is a Eulerian path that is a cycle.
+
+An Eulerian cycle exists if and only if the degrees of all vertices are even
+
+And an Eulerian path exists if and only if the number of vertices with odd degrees is two (or zero, in the case of the existence of a Eulerian cycle).
+
+\subsection{Network}
+
+A \textbf{network}is a directed graph $G$ with vertice $V$ and edges $E$ combined with a function $c$, which assigns each edge $e \in E$ a non-negative integer value, the $capacity$ of $e$. 
+
+\subsection{Flow network}
+
+Is a \textbf{network} with two vertices labeled as \textbf{source} and \textbf{sink}.
+
+\subsubsection{Propeties}
+\begin{itemize}
+    \item The flow of an edge cannot exceed the capacity $$ f(e) <= c(e) $$
+    \item And the sum of the incoming flow of a vertex $u$ has to be equal to the sum of the outgoing flow of $u$ except in the source and sink vertices.
+    \item The source vertex $s$ only has an outgoing flow, and the sink vertex $t$ has only incoming flow.
+\end{itemize}
+
+\subsection{Prufer Code}
+
+The Prüfer code is a way of encoding a labeled tree with  
+$n$  vertices using a sequence of  $n - 2$  integers in the interval  $[0; n-1]$ . This encoding also acts as a bijection between all spanning trees of a complete graph and the numerical sequences.
+
+
+
+The Prüfer code is constructed as follows. We will repeat the following procedure  
+$n - 2$  times: we select the leaf of the tree with the smallest number, remove it from the tree, and write down the number of the vertex that was connected to it. After  $n - 2$  iterations there will only remain  
+
+$2$  vertices, and the algorithm ends.
+
+Thus the Prüfer code for a given tree is a sequence of  
+$n - 2$  numbers, where each number is the number of the connected vertex, i.e. this number is in the interval  
+
+$[0, n-1]$ .
+
+The algorithm for computing the Prüfer code can be implemented easily with  
+$O(n \log n)$ time complexity, simply by using a data structure to extract the minimum (for instance set or priority\_queue in C++), which contains a list of all the current leafs.
+
+After constructing the Prüfer code two vertices will remain. One of them is the highest vertex  $n-1$ , but nothing else can be said about the other one.
+
+Each vertex appears in the Prüfer code exactly a fixed number of times - its degree minus one. This can be easily checked, since the degree will get smaller every time we record its label in the code, and we remove it once the degree is  
+$1$ . For the two remaining vertices this fact is also true.
+
+\subsection{Prüfer's Sequence}
+The Prüfer sequence is a bijection between labeled trees with $n$ vertices and sequences with $n-2$ numbers from 1 to $n$.
+
+To get the sequence from the tree:
+
+\begin{itemize}
+    \item While there are more than 2 vertices, remove the leaf with smallest label and append it's neighbour to the end of the sequence.
+\end{itemize}
+
+To get the tree from the sequence:
+
+\begin{itemize}
+    \item The degree of each vertex is 1 more than the number of occurrences of that vertex in the sequence. Compute the degree $d$, then do the following: for every value $x$ in the sequence (in order), find the vertex with smallest label $y$ such that $d(y) = 1$ and add an edge between $x$ and $y$, and also decrease their degrees by 1. At the end of this procedure, there will be two vertices left with degree 1; add an edge between them.
+\end{itemize}
+
+
+
+

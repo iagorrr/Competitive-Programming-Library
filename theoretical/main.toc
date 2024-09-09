@@ -1,0 +1,70 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Identities}{2}{section.1}%
+\contentsline {section}{\numberline {2}Number Theory}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Fundamental theorem of arithmetic}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}LCM and GCD}{2}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Fermat's Theorems}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Goldbach's Conjecture}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Taking modulo at the exponent}{2}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Geometry}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Convex and Concave Polygons}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Dot product}{2}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Magnitude}{2}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Equação reduzida da reta}{3}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Equação geral da reta}{3}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Equação geral da reta a partir de dois pontos}{3}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Inclinação da reta a partir de dois pontos}{3}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Pertecimento de ponto a reta}{3}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Distância entre dois pontos (euclidiana)}{3}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Distância entre ponto e reta}{3}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Trapezium}{3}{subsection.3.11}%
+\contentsline {subsubsection}{\numberline {3.11.1}Area}{3}{subsubsection.3.11.1}%
+\contentsline {section}{\numberline {4}Probability}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Expected Value}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Linearity of EV}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Polynomial}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Bhaskara}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Pascal's Triangle}{4}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}N-th first terms of P-th column in Pascal Triangle}{4}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Number of odd numbers in the N-th line of pascal triangle}{4}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Graphs}{4}{section.6}%
+\contentsline {subsubsection}{\numberline {6.0.1}Bipartite Graph}{4}{subsubsection.6.0.1}%
+\contentsline {subsection}{\numberline {6.1}2-SAT}{4}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Topological Sorting}{4}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Strongly Connected Components}{5}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Minimum spanning tree}{5}{subsection.6.4}%
+\contentsline {subsubsection}{\numberline {6.4.1}Propeties}{5}{subsubsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.5}Eulerian path}{5}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Network}{5}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Flow network}{5}{subsection.6.7}%
+\contentsline {subsubsection}{\numberline {6.7.1}Propeties}{5}{subsubsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.8}Prufer Code}{5}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Prüfer's Sequence}{6}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Trees}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Heavy-Light Decomposition}{6}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Combinatorics}{6}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Binomial Coefficients}{6}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Odd numbers in the i-th line}{7}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Properties}{7}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}4 fundamental problems of distribution}{7}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}$N$ equal balls in $K$ equal boxes}{7}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}$N$ equal balls in $K$ distinct boxes}{7}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}$N$ distinct balls in $K$ equal boxes}{7}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}$N$ distinct balls in $K$ distinct boxes}{7}{subsubsection.8.2.4}%
+\contentsline {section}{\numberline {9}Bitwise}{7}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Binary to gray code}{7}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Gray code to binary}{8}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Game Theory}{8}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Impartial Games}{8}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Sprague-Grundy Theorem}{8}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Nim variation Subtract game}{8}{subsection.10.3}%
+\contentsline {section}{\numberline {11}Algebra}{8}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Negative numeric bases}{8}{subsection.11.1}%
+\contentsline {section}{\numberline {12}Others}{9}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Critérios de divisibilidade}{9}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}7}{9}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}11}{9}{subsubsection.12.1.2}%
+\contentsline {subsubsection}{\numberline {12.1.3}13}{9}{subsubsection.12.1.3}%
+\contentsline {subsubsection}{\numberline {12.1.4}17}{9}{subsubsection.12.1.4}%
+\contentsline {subsubsection}{\numberline {12.1.5}19}{9}{subsubsection.12.1.5}%
+\contentsline {subsubsection}{\numberline {12.1.6}23}{9}{subsubsection.12.1.6}%
