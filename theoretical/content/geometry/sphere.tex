@@ -1,0 +1,39 @@
+\subsection{Sphere}
+
+\subsubsection{Equation}
+
+    \[
+        (x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2
+    \]
+
+\subsubsection{Equation in spherical coordinate system}
+  $r$ is the radius, $\theta$ is an angle that goes from $0$ to $2\pi$, and $\varphi$ is an angle that goes from $0$ to  $\pi$.
+  \[
+    \begin{array}{l}
+        x = x_0 + r\cos \theta\sin \varphi \\
+        y = y_0 + r\sin \theta\sin \varphi \\
+        z = z_0 + r\cos \varphi \\
+    \end{array}
+  \]
+
+
+\subsubsection{Area}
+
+  $A = 4\pi r^2$, where $r$ is the radius, comes from :
+
+  \[
+      A = \int_0^\pi \int_0^{2\pi} r^2\sin(\varphi)\ d\theta d\varphi
+  \]
+\subsubsection{Volume}
+
+        \[
+            V = \frac{4}{3}\pi r^3
+        \]
+        comes from :
+
+        \[
+            V = \int_0^R \int_0^\pi \int_0^{2\pi} r^2\sin(\varphi)\ d\theta d\varphi dR
+        \]
+
+
+

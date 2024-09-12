@@ -1247,15 +1247,15 @@ e
 *geometry* detected driver: luatex
 *geometry* verbose mode - [ preamble ] result:
 * driver: luatex
-* paper: a4paper
+* paper: a5paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: landscape 
-* h-part:(L,W,R)=(57.81621pt, 729.41443pt, 57.81621pt)
+* modes: 
+* h-part:(L,W,R)=(57.81621pt, 305.46837pt, 57.81621pt)
 * v-part:(T,H,B)=(57.81621pt, 481.87546pt, 57.81621pt)
-* \paperwidth=845.04684pt
+* \paperwidth=421.10078pt
 * \paperheight=597.50787pt
-* \textwidth=729.41443pt
+* \textwidth=305.46837pt
 * \textheight=481.87546pt
 * \oddsidemargin=-14.45378pt
 * \evensidemargin=-14.45378pt
@@ -1264,14 +1264,14 @@ e
 * \headsep=25.0pt
 * \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
 * \columnsep=30.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumntrue
+* \@twocolumnfalse
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
@@ -1361,49 +1361,45 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Font shape `TU/DejaVuSans(0)/m/sl' in size <10> not availab
 le
 (Font)              Font shape `TU/DejaVuSans(0)/m/it' tried instead on input l
-ine 70.
+ine 39.
  [1{/nix/store/hhr2v8xhx559bv72v5lqpb5qyy0hyyd9-texlive-2023-env/share/texmf-var
 /fonts/map/pdftex/updmap/pdftex.map}
 
-])
+] [2])
 \tf@toc=\write5
 
 \openout5 = main.toc
 
-(./content/identities.tex) (./content/number_theory.tex)
+(./content/identities.tex [3]) (./content/number_theory.tex [4])
 (./content/geometry/main.tex (./content/geometry/polygons.tex
-<media/Convex-Polygon.jpg, id=385, 602.25pt x 454.69875pt>
+<media/Convex-Polygon.jpg, id=536, 602.25pt x 454.69875pt>
 File: media/Convex-Polygon.jpg Graphic file (type jpg)
 <use media/Convex-Polygon.jpg>
 Package luatex.def Info: media/Convex-Polygon.jpg  used on input line 8.
-(luatex.def)             Requested size: 182.3536pt x 137.67342pt.
-<media/Concave-Polygon.jpg, id=386, 602.25pt x 421.575pt>
+(luatex.def)             Requested size: 76.36708pt x 57.6559pt.
+<media/Concave-Polygon.jpg, id=537, 602.25pt x 421.575pt>
 File: media/Concave-Polygon.jpg Graphic file (type jpg)
 <use media/Concave-Polygon.jpg>
 Package luatex.def Info: media/Concave-Polygon.jpg  used on input line 13.
-(luatex.def)             Requested size: 182.3536pt x 127.64423pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 6--16
- [][][] 
- []
-
-
-Underfull \vbox (badness 1521) has occurred while \output is active []
-
- [2])
-(./content/geometry/trapezium.tex
-Underfull \vbox (badness 3792) has occurred while \output is active []
-
- [3<./media/Convex-Polygon.jpg><./media/Concave-Polygon.jpg>]) [4])
-(./content/probability.tex) (./content/polynomial.tex) (./content/graphs.tex
+(luatex.def)             Requested size: 76.36708pt x 53.4558pt.
+ [5<./media/Convex-Polygon.jpg><./media/Concave-Polygon.jpg>] [6])
+(./content/geometry/trapezium.tex [7]) (./content/geometry/sphere.tex [8])
+(./content/geometry/cube.tex [9]) (./content/geometry/parallelepiped.tex)
+(./content/geometry/cilinder.tex [10]) (./content/geometry/cone.tex)
+(./content/geometry/truncated_cone.tex [11]) [12] [13])
+(./content/probability.tex) (./content/polynomial.tex [14])
+(./content/graphs.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 3.
 
-[5] [6]) (./content/trees.tex) (./content/combinatorics.tex
-Underfull \vbox (badness 2088) has occurred while \output is active []
+[15] [16] [17] [18]) (./content/trees.tex [19]) (./content/combinatorics.tex
+Overfull \hbox (18.14015pt too wide) detected at line 9
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cm
+r/m/n/10 )[] = []\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 a[]b \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 a[]b[] \OT1/cmr/m/n/10 + [] + []\OML/cmm/m/it/10 a[]b[] \OT1/cmr/m/n/10 + [] + []\OML/cmm/m/it/10 b[]
+ []
 
- [7]
+[20] [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 64.
@@ -1436,7 +1432,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 66.
 
-[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 74.
@@ -1469,29 +1464,27 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 76.
 
-) (./content/bitwise.tex) (./content/game_theory.tex [9])
-(./content/algebra.tex) (./content/other.tex [10]) [11
-
-] (./main.aux)
+) (./content/bitwise.tex) (./content/game_theory.tex [22] [23])
+(./content/algebra.tex) (./content/other.tex [24] [25]) [26] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 92405199B86BF66E5DFB1360D9764587;11693.
+(rerunfilecheck)             Checksum: BC592DE43A03EC3C3A74F03A1E4DEEC6;14915.
 )
 
 Here is how much of LuaTeX's memory you used:
- 29005 strings out of 476447
+ 29187 strings out of 476447
  125024,1977958 words of node,token memory allocated
- 2679 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 701 attribute, 74 glue_spe
-c, 352 attribute_list, 2 write nodes
-   avail lists: 1:1,2:1402,3:1040,4:357,5:1100,6:288,7:8425,8:114,9:1729,10:20,1
-1:475
- 50169 multiletter control sequences out of 65536+600000
+ 2811 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 743 attribute, 74 glue_spe
+c, 373 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:1,2:859,3:598,4:223,5:675,6:167,7:4378,8:114,9:1067,10:18,11:2
+50
+ 50271 multiletter control sequences out of 65536+600000
  57 fonts using 23166815 bytes
- 92i,12n,92p,789b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,12n,92p,789b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-fonts-2.37/share/fonts/truet
 ype/DejaVuSans.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-fonts-2.3
 7/share/fonts/truetype/DejaVuSans-Bold.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0
@@ -1511,10 +1504,10 @@ c3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts
 mfdist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/vxkzh9wc3f38n6yj9ryf
 76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on main.pdf (11 pages, 363011 bytes).
+Output written on main.pdf (26 pages, 388499 bytes).
 
-PDF statistics: 533 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 121 named destinations out of 1000 (max. 131072)
- 600 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 729 PDF objects out of 1000 (max. 8388607)
+ 673 compressed objects within 7 object streams
+ 165 named destinations out of 1000 (max. 131072)
+ 800 words of extra memory for PDF output out of 10000 (max. 100000000)
 

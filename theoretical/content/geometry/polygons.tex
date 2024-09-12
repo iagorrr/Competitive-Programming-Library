@@ -16,11 +16,12 @@
     \caption{Two Types of Polygons}
 \end{figure}
 
-\subsection{Regular polygon circumradius}
+\subsubsection{Regular polygon circumradius}
 
     \def\R{3}
 
     \begin{figure}[H]
+        \centering
         \begin{tikzpicture}
             \draw (0:\R) -- (60:\R) -- node[anchor=north] { $s$ } (120:\R) -- (180:\R) -- (240:\R) -- (300:\R) -- (360:\R) -- (0:\R);
             \draw (0, 0) circle [radius=\R];
@@ -34,11 +35,12 @@
         R = \frac{s}{2}\csc\frac{\pi}{n}
     \]
 
-\subsection{Regular polygon inscribed circle radius}
+\subsubsection{Regular polygon inscribed circle radius}
 
     \def\R{3}
 
     \begin{figure}[H]
+        \centering
         \begin{tikzpicture}
             \draw (0:\R) -- (60:\R) -- node[anchor=south] { $s$ } (120:\R) -- (180:\R) -- (240:\R) -- (300:\R) -- (360:\R) -- (0:\R);
             \draw (0, 0) circle [radius=2.6];
@@ -54,7 +56,7 @@
 
 
 
-\subsection{Area of regular polygons}
+\subsubsection{Area of regular polygons}
 
     \begin{itemize}
         \item Let $n$ be the number of sides of the regular polygon, the area can be found using one of the values below:
@@ -71,3 +73,5 @@
     \end{itemize}
 
 
+\subsubsection{Sum of internal angle of a regular polygon}
+A regular polygon with $n$ sides have $(n-2)180$ degrees as sum of it's internal angle.

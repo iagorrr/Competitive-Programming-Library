@@ -1,0 +1,29 @@
+\subsection{Cilinder}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,0) ellipse (1.25 and 0.5);
+        \draw (-1.25,0) -- (-1.25,-3.5);
+        \draw (-1.25,-3.5) arc (180:360:1.25 and 0.5);
+        \draw [dashed] (-1.25,-3.5) arc (180:360:1.25 and -0.5);
+        \draw (1.25,-3.5) -- node[anchor=west] { $h$ } (1.25,0);  
+        \draw (0, -3.5) -- node[anchor=south] { $r$ } (1.25, -3.5);
+        \fill (0, -3.5) circle [radius=1pt];
+    \end{tikzpicture}
+\end{figure}
+
+
+\subsubsection{Area}
+
+\[
+    A = 2\pi rh + 2\pi r^2 = 2\pi r(h + r),
+\]
+
+
+\subsubsection{Volume}
+
+\[
+    A = \pi r^2 h
+\]
+
