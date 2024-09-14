@@ -1,7 +1,8 @@
-/*============================================================================*/
+#include <iterator>
 
-#pragma once
 #include "../Contest/template.cpp"
+
+/*============================================================================*/
 
 const double EPS{1e-4};
 const ld PI = acos(-1);
@@ -226,6 +227,110 @@ struct Trapezium {
 
 /*============================================================================*/
 
+template <typename T>
+struct Triangle {
+  Point<T> A, B, C;
+  enum SidesClass { EQUILATERAL, ISOCELES, SCALENE };
+  SidesClass classification_by_sides() const {
+    auto a = A.distanceTo(B);
+    auto b = B.distanceTo(C);
+    auto c = C.distanceTo(A);
+    if (equals(a, b) && equals(b, c)) return EQUILATERAL;
+    if (equals(a, b) or equals(a, c) or equals(b, c)) return ISOCELES;
+    return SCALENE;
+  }
+
+  enum AnglesClass { RIGHT, ACUTE, OBTUSE };
+
+  AnglesClass classification_by_angles() const {
+    auto a = dist(A, B);
+    auto b = dist(B, C);
+    auto c = dist(C, A);
+
+    auto alpha = acos((a * a - b * b - c * c) / (-2 * b * c));
+    auto beta = acos((b * b - a * a - c * c) / (-2 * a * c));
+    auto gamma = acos((c * c - a * a - b * b) / (-2 * a * b));
+
+    auto right = PI / 2.0;
+
+    if (equals(alpha, right) || equals(beta, right) || equals(gamma, right))
+      return RIGHT;
+
+    if (alpha > right || beta > right || gamma > right) return OBTUSE;
+
+    return ACUTE;
+  }
+
+  double perimeter() const {
+    auto a = dist(A, B), b = dist(B, C), c = dist(C, A);
+
+    return a + b + c;
+  }
+  double area() const {
+    Line<T> r(A, B);
+
+    auto b = dist(A, B);
+    auto h = r.distance(C);
+
+    return (b * h) / 2;
+  }
+};
+
+template <typename T>
+Point<T> triangleBarycenter(const Point<T>& a, const Point<T>& b,
+                            const Point<T>& c) {
+  return Point<T>((a.x + b.x + c.x) / 3.0, (a.y + b.y + c.y) / 3.0);
+}
+
+template <typename T>
+Point<T> triangleOrthocenter(const Point<T>& a, const Point<T>& b,
+                             const Point<T>& c) {
+  Line<T> r(a, b), s(a, c);
+  Line<T> u{r.b, -r.a, -(c.x * r.b - c.y * r.a)};
+  Line<T> v{s.b, -s.a, -(b.x * s.b - b.y * s.a)};
+  auto det = u.a * v.b - u.b * v.a;
+  auto x = (-u.c * v.b + v.c * u.b) / det;
+  auto y = (-v.c * u.a + u.c * v.a) / det;
+  return {x, y};
+}
+
+template <typename T>
+Point<double> triangleIncenter(const Point<T>& a, const Point<T>& b,
+                               const Point<T>& c) {
+  auto dab = distance(a, b);
+  auto dbc = distance(b, c);
+  auto dca = distance(c, a);
+  auto p = dab + dbc + dca;
+  auto x = (a.x * dab + b.x * dbc + b.x * dca) / (p);
+  auto y = (a.y * dab + b.y * dbc + b.y * dca) / (p);
+  return Point<double>(x, y);
+}
+
+template <typename T>
+Point<T> triangleCircumcenter(const Point<T>& A, const Point<T>& B,
+                              const Point<T>& C) {
+  auto D = 2 * (A.x * (B.y - C.y) + B.x * (C.y - A.y) + C.x * (A.y - B.y));
+
+  auto A2 = A.x * A.x + A.y * A.y;
+  auto B2 = B.x * B.x + B.y * B.y;
+  auto C2 = C.x * C.x + C.y * C.y;
+
+  auto x = (A2 * (B.y - C.y) + B2 * (C.y - A.y) + C2 * (A.y - B.y)) / D;
+  auto y = (A2 * (C.x - B.x) + B2 * (A.x - C.x) + C2 * (B.x - A.x)) / D;
+
+  return {x, y};
+}
+template <typename T>
+Point<T> triangleCircumradius(const Point<T>& a, const Point<T>& b,
+                              const Point<T>& c) {
+  auto dab = distance(a, b);
+  auto dbc = distance(b, c);
+  auto dca = distance(c, a);
+  return (dab + dbc + dca) / triangleArea(a, b, c);
+}
+
+/*============================================================================*/
+
 template <class Point>
 vector<Point> segInter(Point a, Point b, Point c, Point d) {
   auto oa = c.cross(d, a), ob = c.cross(d, b), oc = a.cross(b, c),
@@ -405,3 +510,28 @@ bool contains(const Point<T>& A, const Point<T>& B, const Point<T>& P) {
 }
 
 /*============================================================================*/
+// the polygon area of a intersection between a circle and a ccw polygon
+template <typename T>
+#define arg(p, q) atan2(p.cross(q), p.dot(q))
+double circlePoly(Point<T> c, double r, vector<Point<T>> ps) {
+  auto tri = [&](Point<T> p, Point<T> q) {
+    auto r2 = r * r / 2;
+    Point<T> d = q - p;
+    auto a = d.dot(p) / d.dist2(), b = (p.dist2() - r * r) / d.dist2();
+    auto det = a * a - b;
+    if (det <= 0) return arg(p, q) * r2;
+    auto s = max(0., -a - sqrt(det)), t = min(1., -a + sqrt(det));
+    if (t < 0 || 1 <= s) return arg(p, q) * r2;
+    Point<T> u = p + d * s, v = p + d * t;
+    return arg(p, u) * r2 + u.cross(v) / 2 + arg(v, q) * r2;
+  };
+  auto sum = 0.0;
+  rep(i, 0, len(ps)) sum += tri(ps[i] - c, ps[(i + 1) % len(ps)] - c);
+  return sum;
+}
+
+/*============================================================================*/
+
+bool checkIfPolygonIsConvex(vector < Point<T>) {
+  if (n < 3) return false;
+}

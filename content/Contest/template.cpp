@@ -1,3 +1,4 @@
+#pragma once
 /*8<{==========~ BEGIN TEMPLATE ~============>8*/
 #include <bits/stdc++.h>
 using namespace std;
@@ -10,7 +11,6 @@ using namespace std;
 #define fastio                  \
   ios_base::sync_with_stdio(0); \
   cin.tie(0);
-#define int long long
 #define all(j) j.begin(), j.end()
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
@@ -25,6 +25,8 @@ using namespace std;
 #define trav(xi, xs) for (auto &xi : xs)
 #define rtrav(xi, xs) \
   for (auto &xi : ranges::views::reverse(xs))
+using ll = long long;
+#define inte ll
 #define pb push_back
 #define pf push_front
 #define ppb pop_back
@@ -38,7 +40,6 @@ using namespace std;
 #define ins insert
 #define divc(a, b) ((a) + (b)-1ll) / (b)
 using str = string;
-using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
 using vll = vector<ll>;
@@ -66,4 +67,3 @@ inline bool chmin(T &a, U const &b) {
   return (a > b ? a = b, 1 : 0);
 }
 /*8<============~ END TEMPLATE ~============}>8*/
-/*==============================================*/
