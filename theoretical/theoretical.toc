@@ -1,0 +1,101 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Identities}{3}{section.1}%
+\contentsline {section}{\numberline {2}Linear Algebra}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Matrix Multiplication}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Number Theory}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Fundamental theorem of arithmetic}{4}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}LCM and GCD}{4}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Fermat's Theorems}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Goldbach's Conjecture}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Taking modulo at the exponent}{5}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Geometry}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Line}{5}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}General equation}{5}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}General equation from two points}{6}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Line inclination from two points}{6}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Check if a point belongs to the line}{6}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}Distance from a point to a line}{6}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}Convex and Concave Polygons}{7}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Regular polygon circumradius}{7}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Regular polygon inscribed circle radius}{8}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Area of regular polygons}{8}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Sum of internal angle of a regular polygon}{8}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Trapezium}{9}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Area, knowing base and height}{9}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Area knowing only sides}{9}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Sphere}{9}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Equation}{9}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Equation in spherical coordinate system}{10}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Area}{10}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Volume}{10}{subsubsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.5}Cube}{10}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Facial \& Body diagonal}{10}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Area}{11}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Volume}{11}{subsubsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.4}Circumscribed sphere}{11}{subsubsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.5}Inscribed Sphere}{11}{subsubsection.4.5.5}%
+\contentsline {subsubsection}{\numberline {4.5.6}Tangent Sphere}{11}{subsubsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.6}Parallelepiped}{12}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Area delimited by two vectors}{12}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Volume}{12}{subsubsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.7}Cilinder}{12}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Area}{12}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Volume}{13}{subsubsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.8}Cone}{13}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Area}{13}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Volume}{13}{subsubsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.9}Truncated Cone}{13}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Area}{13}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}Volume}{14}{subsubsection.4.9.2}%
+\contentsline {subsection}{\numberline {4.10}Dot product}{14}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Magnitude}{14}{subsection.4.11}%
+\contentsline {section}{\numberline {5}Probability}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Expected Value}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Linearity of EV}{14}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Polynomial}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Bhaskara}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Pascal's Triangle}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}N-th first terms of P-th column in Pascal Triangle}{15}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Number of odd numbers in the N-th line of pascal triangle}{15}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Graphs}{15}{section.7}%
+\contentsline {subsubsection}{\numberline {7.0.1}Bipartite Graph}{15}{subsubsection.7.0.1}%
+\contentsline {subsection}{\numberline {7.1}2-SAT}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Topological Sorting}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Strongly Connected Components}{16}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Minimum spanning tree}{17}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Propeties}{17}{subsubsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.5}Eulerian path}{17}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Network}{17}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Flow network}{18}{subsection.7.7}%
+\contentsline {subsubsection}{\numberline {7.7.1}Propeties}{18}{subsubsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.8}Prufer Code}{18}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Prüfer's Sequence}{19}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Trees}{19}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Heavy-Light Decomposition}{19}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Combinatorics}{20}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Binomial Coefficients}{20}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Odd numbers in the i-th line}{20}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Properties}{21}{subsubsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.2}4 fundamental problems of distribution}{22}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}$N$ equal balls in $K$ equal boxes}{22}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}$N$ equal balls in $K$ distinct boxes}{22}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}$N$ distinct balls in $K$ equal boxes}{22}{subsubsection.9.2.3}%
+\contentsline {subsubsection}{\numberline {9.2.4}$N$ distinct balls in $K$ distinct boxes}{22}{subsubsection.9.2.4}%
+\contentsline {section}{\numberline {10}Bitwise}{22}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Binary to gray code}{22}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Gray code to binary}{22}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Game Theory}{23}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Impartial Games}{23}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Sprague-Grundy Theorem}{23}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Nim variation Subtract game}{24}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Algebra}{24}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Negative numeric bases}{24}{subsection.12.1}%
+\contentsline {section}{\numberline {13}Others}{25}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Unimodal Functions}{25}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Critérios de divisibilidade}{25}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}7}{25}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}11}{26}{subsubsection.13.2.2}%
+\contentsline {subsubsection}{\numberline {13.2.3}13}{27}{subsubsection.13.2.3}%
+\contentsline {subsubsection}{\numberline {13.2.4}17}{27}{subsubsection.13.2.4}%
+\contentsline {subsubsection}{\numberline {13.2.5}19}{27}{subsubsection.13.2.5}%
+\contentsline {subsubsection}{\numberline {13.2.6}23}{27}{subsubsection.13.2.6}%
