@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/nixos.org)  (format=lualatex 1980.1.1)  19 SEP 2024 12:38
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/nixos.org)  (format=lualatex 1980.1.1)  26 SEP 2024 12:19
  restricted system commands enabled.
 **theoretical.tex
 (./theoretical.tex
@@ -1290,7 +1290,41 @@ File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 eric/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-\@float@every@table=\toks55
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/unicode-math/unicode-math.sty
+Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/unicode-math/unicode-math-luatex.sty
+Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaL
+aTeX
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2024-02-18 LaTeX2e option processing using LaTeX3 keys
+)
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lua
+latex/lualatex-math/lualatex-math.sty
+Package: lualatex-math 2022/01/01 v1.12 Patches for mathematics typesetting wit
+h LuaLaTeX
+Lua module: lualatex-math 2013/08/03 1.3 Patches for mathematics typesetting wit
+h LuaLaTeX)
+\g__um_fam_int=\count368
+\g__um_fonts_used_int=\count369
+\l__um_primecount_int=\count370
+\g__um_primekern_muskip=\muskip18
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/unicode-math/unicode-math-table.tex)))
 luaotfload | cache : Lookup cache loaded from /home/iagorrr/.texlive2023/texmf-v
 ar/luatex-cache/generic/names/luaotfload-lookup-cache.luc.
 luaotfload | aux : font no 24 (nil) does not define feature smcp for script latn
@@ -1325,6 +1359,241 @@ t;+tlig;"
 lt;+tlig;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
+luaotfload | aux : font no 34 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 35 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 36 (nil) does not define feature smcp for script latn
+ with language dflt
+luaotfload | aux : font no 37 (nil) does not define feature smcp for script latn
+ with language dflt
+
+Package fontspec Info: Font family 'DejaVuSans(1)' created for font 'DejaVu
+(fontspec)             Sans' with options [Renderer=Basic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"name:DejaVuSans:mode=base;script=latn;language=dflt;
+"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"name:DejaVuSans/B:mode=base;script=latn;language=dfl
+t;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"name:DejaVuSans/I:mode=base;script=latn;language=dfl
+t;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"name:DejaVuSans/BI:mode=base;script=latn;language=df
+lt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/DejaVuSans(1)/m/n on input line 38.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/DejaVuSans(1)/m/it on input line 38
+.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/DejaVuSans(1)/b/n on input line 38.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Could not resolve font "FiraMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Font family 'FiraMath(0)' created for font 'Fira Math'
+(fontspec)             with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,RawFeature={mathfontdimen=xetex},Scale={MatchUppercase}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.102705384192903]"name:FiraMath:mode=base;script=
+math;language=dflt;mathfontdimen=xetex;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/FiraMath(0)/m/n' will be
+(Font)              scaled to size 11.02707pt on input line 38.
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Could not resolve font "FiraMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Font family 'FiraMath(1)' created for font 'Fira Math'
+(fontspec)             with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=8.6-},{Size=6.5-8.6,Font=Fira
+(fontspec)             Math,Style=MathScript},{Size=-6.5,Font=Fira
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex},Scale={MatchUppercase}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.6->s*[1.102705384192903]"name:FiraMath:mode=base;scri
+pt=math;language=dflt;mathfontdimen=xetex;"<6.5-8.6>s*[1.102705384192903]"name:
+FiraMath:mode=base;script=math;language=dflt;mathfontdimen=xetex;+ssty=0;"<-6.5
+>s*[1.102705384192903]"name:FiraMath:mode=base;script=math;language=dflt;mathfo
+ntdimen=xetex;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/FiraMath(1)/m/n' will be
+(Font)              scaled to size 11.02707pt on input line 38.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 38.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/FiraMath(1)/m/n on input line 38.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 38.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/FiraMath(1)/b/n on input line 38.
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Could not resolve font "FiraMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Font family 'FiraMath(2)' created for font 'Fira Math'
+(fontspec)             with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=8.6-},{Size=6.5-8.6,Font=Fira
+(fontspec)             Math,Style=MathScript},{Size=-6.5,Font=Fira
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex},Scale={MatchUppercase},RawFeature={mathfontdimen=tex2}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.6->s*[1.102705384192903]"name:FiraMath:mode=base;scri
+pt=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;"<6.5-8.6>s*[1.102
+705384192903]"name:FiraMath:mode=base;script=math;language=dflt;mathfontdimen=x
+etex;mathfontdimen=tex2;+ssty=0;"<-6.5>s*[1.102705384192903]"name:FiraMath:mode
+=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex2;+ssty=1;
+"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 38.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> TU/FiraMath(2)/m/n on input line 38.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 38.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> TU/FiraMath(2)/b/n on input line 38.
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Could not resolve font "FiraMath/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: FiraMath scale = 1.102705384192903.
+
+
+Package fontspec Info: Font family 'FiraMath(3)' created for font 'Fira Math'
+(fontspec)             with options
+(fontspec)             [Renderer=Basic,BoldItalicFont={},ItalicFont={},SmallCap
+sFont={},Script=Math,SizeFeatures={{Size=8.6-},{Size=6.5-8.6,Font=Fira
+(fontspec)             Math,Style=MathScript},{Size=-6.5,Font=Fira
+(fontspec)             Math,Style=MathScriptScript}},RawFeature={mathfontdimen=
+xetex},Scale={MatchUppercase},RawFeature={mathfontdimen=tex3}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.6->s*[1.102705384192903]"name:FiraMath:mode=base;scri
+pt=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;"<6.5-8.6>s*[1.102
+705384192903]"name:FiraMath:mode=base;script=math;language=dflt;mathfontdimen=x
+etex;mathfontdimen=tex3;+ssty=0;"<-6.5>s*[1.102705384192903]"name:FiraMath:mode
+=base;script=math;language=dflt;mathfontdimen=xetex;mathfontdimen=tex3;+ssty=1;
+"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 3
+8.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> TU/FiraMath(3)/m/n on input line 38.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 38.
+
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> TU/FiraMath(3)/b/n on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(1)/m/n' will be
+(Font)              scaled to size 7.93948pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(1)/m/n' will be
+(Font)              scaled to size 6.39569pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 11.02707pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 7.93948pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(2)/m/n' will be
+(Font)              scaled to size 6.39569pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 11.02707pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 7.93948pt on input line 38.
+LaTeX Font Info:    Font shape `TU/FiraMath(3)/m/n' will be
+(Font)              scaled to size 6.39569pt on input line 38.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+
+
+(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
+ex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+\@float@every@table=\toks55
 ) (./theoretical.aux)
 \openout1 = theoretical.aux
 
@@ -1337,13 +1606,6 @@ LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-.
-
-(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
-ex/base/ts1cmr.fd
-File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -1359,16 +1621,16 @@ LaTeX Font Info:    ... okay on input line 3.
 (/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/con
 text/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count368
+\scratchcounter=\count371
 \scratchdimen=\dimen346
 \scratchbox=\box81
-\nofMPsegments=\count369
-\nofMParguments=\count370
+\nofMPsegments=\count372
+\nofMParguments=\count373
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count371
+\MPscratchCnt=\count374
 \MPscratchDim=\dimen347
-\MPnumerator=\count372
-\makeMPintoPDFobject=\count373
+\MPnumerator=\count375
+\makeMPintoPDFobject=\count376
 \everyMPtoPDFconversion=\toks57
 )
 (/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
@@ -1405,7 +1667,7 @@ e
 * \footskip=30.0pt
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
-* \columnsep=30.0pt
+* \columnsep=10.0pt
 * \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -1419,66 +1681,6 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
-(fontspec)             this).
-
-\symlegacymaths=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 3.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 3.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 3.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 3.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 3.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 3.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 3.
-LaTeX Font Info:    Redeclaring math accent \check on input line 3.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 3.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 3.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 3.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 3.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 3.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 3.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/DejaVuSans(0)/m/n on input line 3.
-LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 3.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/DejaVuSans(0)/m/n on input line 3.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/DejaVuSans(0)/m/n --> TU/DejaVuSans(0)/m/n on input 
-line 3.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/DejaVuSans(0)/m/it on input line 3.
-
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/DejaVuSans(0)/b/n on input line 3.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 3.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 3.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/DejaVuSans(0)/m/n --> TU/DejaVuSans(0)/b/n on input 
-line 3.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/DejaVuSans(0)/b/it on input line 3
-.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 3.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 3.
 Package hyperref Info: Link coloring OFF on input line 3.
 (./theoretical.out) (./theoretical.out)
 \@outlinefile=\write4
@@ -1488,23 +1690,37 @@ Package hyperref Info: Link coloring OFF on input line 3.
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 3.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 3.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 3.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 3.
+
+Package unicode-math Warning: Using \overbracket and \underbracket from
+(unicode-math)                `mathtools' package.
+(unicode-math)                 
+(unicode-math)                 Use \Uoverbracket and \Uunderbracket for
+(unicode-math)                original `unicode-math' definition.
+
+
+Package unicode-math Warning: I'm going to overwrite the following commands
+(unicode-math)                from the `mathtools' package: 
+(unicode-math)                 
+(unicode-math)                     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+(unicode-math)                
+(unicode-math)                 
+(unicode-math)                 Note that since I won't overwrite the other
+(unicode-math)                colon-like commands, using them will lead to
+(unicode-math)                inconsistencies.
+
 (./theoretical.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
-
-(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
-ex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
-
-(/nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/tex/lat
-ex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 LaTeX Font Info:    Font shape `TU/DejaVuSans(0)/m/sl' in size <10> not availab
 le
 (Font)              Font shape `TU/DejaVuSans(0)/m/it' tried instead on input l
-ine 38.
+ine 37.
  [1{/nix/store/hhr2v8xhx559bv72v5lqpb5qyy0hyyd9-texlive-2023-env/share/texmf-var
 /fonts/map/pdftex/updmap/pdftex.map}
 
@@ -1513,37 +1729,33 @@ ine 38.
 
 \openout5 = theoretical.toc
 
-(./content/identities.tex [3]) (./content/linear_algebra/main.tex
+(./content/algebra/main.tex (./content/algebra/absolute_value.tex [3]))
+(./content/identities.tex [4]) (./content/linear_algebra/main.tex
 (./content/linear_algebra/matrix_multiplication.tex))
-(./content/number_theory.tex [4]) (./content/geometry/main.tex
-(./content/geometry/line.tex [5] [6]) (./content/geometry/polygons.tex
-<media/Convex-Polygon.jpg, id=558, 602.25pt x 454.69875pt>
+(./content/number_theory.tex [5] [6]) (./content/geometry/main.tex
+(./content/geometry/line.tex [7]) (./content/geometry/polygons.tex
+<media/Convex-Polygon.jpg, id=576, 602.25pt x 454.69875pt>
 File: media/Convex-Polygon.jpg Graphic file (type jpg)
 <use media/Convex-Polygon.jpg>
 Package luatex.def Info: media/Convex-Polygon.jpg  used on input line 8.
 (luatex.def)             Requested size: 76.36708pt x 57.6559pt.
-<media/Concave-Polygon.jpg, id=559, 602.25pt x 421.575pt>
+<media/Concave-Polygon.jpg, id=577, 602.25pt x 421.575pt>
 File: media/Concave-Polygon.jpg Graphic file (type jpg)
 <use media/Concave-Polygon.jpg>
 Package luatex.def Info: media/Concave-Polygon.jpg  used on input line 13.
 (luatex.def)             Requested size: 76.36708pt x 53.4558pt.
- [7<./media/Convex-Polygon.jpg><./media/Concave-Polygon.jpg>])
-(./content/geometry/trapezium.tex [8]) (./content/geometry/sphere.tex [9])
-(./content/geometry/cube.tex [10]) (./content/geometry/parallelepiped.tex
-[11]) (./content/geometry/cilinder.tex [12]) (./content/geometry/cone.tex)
-(./content/geometry/truncated_cone.tex [13])) (./content/probability.tex)
-(./content/polynomial.tex [14]) (./content/graphs.tex
+ [8<./media/Convex-Polygon.jpg><./media/Concave-Polygon.jpg>] [9])
+(./content/geometry/trapezium.tex [10]) (./content/geometry/sphere.tex [11])
+(./content/geometry/cube.tex [12]) (./content/geometry/parallelepiped.tex)
+(./content/geometry/cilinder.tex [13]) (./content/geometry/cone.tex)
+(./content/geometry/truncated_cone.tex [14])) (./content/probability.tex
+[15]) (./content/polynomial.tex) (./content/graphs.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 3.
 
-[15] [16] [17] [18]) (./content/trees.tex [19]) (./content/combinatorics.tex
-Overfull \hbox (18.14015pt too wide) detected at line 9
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cm
-r/m/n/10 )[] = []\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 a[]b \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 a[]b[] \OT1/cmr/m/n/10 + [] + []\OML/cmm/m/it/10 a[]b[] \OT1/cmr/m/n/10 + [] + []\OML/cmm/m/it/10 b[]
- []
-
-[20] [21]
+[16] [17] [18] [19] [20]) (./content/trees.tex) (./content/combinatorics.tex
+[21] [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 64.
@@ -1608,52 +1820,43 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 76.
 
-) (./content/bitwise.tex) (./content/game_theory.tex [22] [23])
-(./content/algebra.tex) (./content/others/main.tex
-(./content/others/unimodal.tex [24]) (./content/others/other.tex [25] [26]))
-[27] (./theoretical.aux)
+) (./content/bitwise.tex [23]) (./content/game_theory.tex [24])
+(./content/others/main.tex (./content/others/unimodal.tex [25])
+(./content/others/other.tex [26] [27])) [28] (./theoretical.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `theoretical.out' has not changed.
-(rerunfilecheck)             Checksum: 3BDA876C40DC9CF3F80DAB19E04B60D6;14889.
+(rerunfilecheck)             Checksum: 77096A2B7619240B67649D04C9BAF293;15169.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39973 strings out of 476447
+ 44168 strings out of 476447
  125024,1977958 words of node,token memory allocated
- 2799 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 739 attribute, 74 glue_spe
-c, 371 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:2953,3:1199,4:211,5:641,6:163,7:4628,8:114,9:1067,10:19,11:266
-
- 60781 multiletter control sequences out of 65536+600000
- 57 fonts using 23166815 bytes
- 92i,19n,92p,796b,2451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 2924 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 779 attribute, 75 glue_spe
+c, 391 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 2:2926,3:1194,4:199,5:623,6:159,7:4526,8:108,9:956,10:19,11:278
+ 64927 multiletter control sequences out of 65536+600000
+ 75 fonts using 40409579 bytes
+ 92i,19n,124p,796b,2451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-fonts-2.37/share/fonts/truet
-ype/DejaVuSans.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-fonts-2.3
-7/share/fonts/truetype/DejaVuSans-Bold.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0
-mqqg3vw-dejavu-fonts-2.37/share/fonts/truetype/DejaVuSans-Oblique.ttf></nix/stor
-e/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public
-/amsfonts/cm/cmex10.pfb></nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-202
-3-env-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/vxkzh9wc3f
-38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb></nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdi
-st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/vxkzh9wc3f38n6yj9ryf76wk
-5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></n
-ix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1
-/public/amsfonts/cm/cmr5.pfb></nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texliv
-e-2023-env-texmfdist/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/store/vxkzh9w
-c3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-tex
-mfdist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/vxkzh9wc3f38n6yj9ryf
-76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on theoretical.pdf (27 pages, 391756 bytes).
+ype/DejaVuSans-Bold.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-font
+s-2.37/share/fonts/truetype/DejaVuSans.ttf></nix/store/vxkzh9wc3f38n6yj9ryf76wk5
+wf9rak0-texlive-2023-env-texmfdist/fonts/opentype/public/firamath/FiraMath-Regul
+ar.otf></nix/store/vxkzh9wc3f38n6yj9ryf76wk5wf9rak0-texlive-2023-env-texmfdist/f
+onts/opentype/public/firamath/FiraMath-Regular.otf></nix/store/vxkzh9wc3f38n6yj9
+ryf76wk5wf9rak0-texlive-2023-env-texmfdist/fonts/opentype/public/firamath/FiraMa
+th-Regular.otf></nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-dejavu-fonts-2.37/sh
+are/fonts/truetype/DejaVuSans.ttf></nix/store/iivr3nlmgwnpfd54c0l420xj0mqqg3vw-d
+ejavu-fonts-2.37/share/fonts/truetype/DejaVuSans-Bold.ttf></nix/store/iivr3nlmgw
+npfd54c0l420xj0mqqg3vw-dejavu-fonts-2.37/share/fonts/truetype/DejaVuSans-Oblique
+.ttf>
+Output written on theoretical.pdf (28 pages, 332840 bytes).
 
-PDF statistics: 741 PDF objects out of 1000 (max. 8388607)
- 684 compressed objects within 7 object streams
- 166 named destinations out of 1000 (max. 131072)
- 816 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 760 PDF objects out of 1000 (max. 8388607)
+ 697 compressed objects within 7 object streams
+ 179 named destinations out of 1000 (max. 131072)
+ 832 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -1,10 +1,7 @@
 \documentclass[10pt]{article}
 \usepackage[utf8x]{inputenc}
-%Gummi|065|=)
-\title{\vspace{-2cm}\textbf{The Reference}}
-\author{}
+\author{@iagorrr}
 \date{}
-
 \usepackage[english]{babel}
 \usepackage{lscape}
 \usepackage{tikz}
@@ -34,12 +31,14 @@
 \usepackage{fontspec}
 \usepackage{hyperref}
 \usepackage{pgfplots}
-
-%color celula da tabela
 \usepackage{xcolor,colortbl}
+\usepackage{unicode-math}
 
-\setlength{\columnseprule}{0.4pt}
-\setlength{\columnsep}{3em}
+\setmainfont{DejaVu Sans}
+\setmathfont{Fira Math}[Scale=MatchUppercase] 
+
+%\setlength{\columnseprule}{0.4pt}
+%\setlength{\columnsep}{3em}
 \graphicspath{ {img/} }
 \restylefloat{table}
 
@@ -58,6 +57,5 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
-\setmainfont{DejaVu Sans}
 
 \pgfplotsset{compat=1.18}
