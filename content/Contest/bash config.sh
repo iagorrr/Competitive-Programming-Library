@@ -94,3 +94,7 @@ prepare_contest() {
 		touch_macro $1 $i.cpp
 	done
 }
+get_file_hash() {
+	local hash=$(cpp -dD -P -fpreprocessed "$1" | tr -d '[:space:]' | md5sum | cut -c-6)
+	echo "$hash"
+}
