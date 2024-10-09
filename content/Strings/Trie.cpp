@@ -18,15 +18,12 @@ struct trie {
   int sigma;
   char norm;
 
-  trie(int sigma_ = 26, char norm_ = 'a')
-      : sigma(sigma_), norm(norm_) {
+  trie(int sigma_ = 26, char norm_ = 'a') : sigma(sigma_), norm(norm_) {
     to = {vector<int>(sigma)};
     end = {0}, pref = {0};
   }
 
-  int next(int node, char key) {
-    return to[node][key - norm];
-  }
+  int next(int node, char key) { return to[node][key - norm]; }
 
   void insert(const string &s) {
     int x = 0;

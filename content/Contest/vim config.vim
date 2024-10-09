@@ -1,4 +1,4 @@
-set sta nu rnu sc cindent
+set sta nu rnu sc cindent noswapfile
 set ts=2 sw=2
 set bg=dark ruler clipboard=unnamed,unnamedplus, timeoutlen=100
 colorscheme default

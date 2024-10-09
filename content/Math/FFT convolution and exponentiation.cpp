@@ -8,19 +8,12 @@ struct num {
   num(ld na) : a{na} {}
   num(ld na, ld nb) : a{na}, b{nb} {}
 
-  const num operator+(const num &c) const {
-    return num(a + c.a, b + c.b);
-  }
-  const num operator-(const num &c) const {
-    return num(a - c.a, b - c.b);
-  }
+  const num operator+(const num &c) const { return num(a + c.a, b + c.b); }
+  const num operator-(const num &c) const { return num(a - c.a, b - c.b); }
   const num operator*(const num &c) const {
-    return num(a * c.a - b * c.b,
-               a * c.b + b * c.a);
+    return num(a * c.a - b * c.b, a * c.b + b * c.a);
   }
-  const num operator/(const ll &c) const {
-    return num(a / c, b / c);
-  }
+  const num operator/(const ll &c) const { return num(a / c, b / c); }
 };
 
 void fft(vector<num> &a, bool invert) {
@@ -37,8 +30,7 @@ void fft(vector<num> &a, bool invert) {
     for (int i = 0; i < n; i += sz) {
       num w(1);
       rep(j, 0, sz / 2) {
-        num u = a[i + j],
-            v = a[i + j + sz / 2] * w;
+        num u = a[i + j], v = a[i + j + sz / 2] * w;
         a[i + j] = u + v;
         a[i + j + sz / 2] = u - v;
         w = w * wsz;
@@ -62,8 +54,7 @@ vi conv(vi const a, vi const b) {
   fft(fa, true);
   vi result(n);
   rep(i, 0, n) result[i] = round(fa[i].a);
-  while (len(result) and result.back() == 0)
-    result.pop_back();
+  while (len(result) and result.back() == 0) result.pop_back();
 
   /* Unconment this line if you want a boolean
    * convolution*/

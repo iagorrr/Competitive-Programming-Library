@@ -24,9 +24,7 @@ struct Dinic {
   struct Edge {
     int to, rev;
     ll c, oc;
-    ll flow() {
-      return max(oc - c, 0LL);
-    }  // if you need flows
+    ll flow() { return max(oc - c, 0LL); }  // if you need flows
   };
 
   vi lvl, ptr, q;
@@ -64,12 +62,10 @@ struct Dinic {
           int v = q[qi++];
           for (Edge e : adj[v])
             if (!lvl[e.to] && e.c >> (30 - L))
-              q[qe++] = e.to,
-              lvl[e.to] = lvl[v] + 1;
+              q[qe++] = e.to, lvl[e.to] = lvl[v] + 1;
         }
 
-        while (ll p = dfs(s, t, LLONG_MAX))
-          flow += p;
+        while (ll p = dfs(s, t, LLONG_MAX)) flow += p;
       } while (lvl[t]);
     }
     return flow;

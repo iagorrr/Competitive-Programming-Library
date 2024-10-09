@@ -4,17 +4,11 @@ struct Matrix {
 
   Matrix() : Matrix(0) {}
   Matrix(int n) : Matrix(n, n) {}
-  Matrix(int n, int m)
-      : Matrix(
-            vector<vector<T>>(n, vector<T>(m))) {}
+  Matrix(int n, int m) : Matrix(vector<vector<T>>(n, vector<T>(m))) {}
   Matrix(const vector<vector<T>> &v) : d(v) {}
 
-  constexpr int n() const {
-    return (int)d.size();
-  }
-  constexpr int m() const {
-    return n() ? (int)d[0].size() : 0;
-  }
+  constexpr int n() const { return (int)d.size(); }
+  constexpr int m() const { return n() ? (int)d[0].size() : 0; }
 
   void rotate() { *this = rotated(); }
 
@@ -41,8 +35,7 @@ struct Matrix {
     return res;
   }
 
-  Matrix<T> submatrix(int start_i, int start_j,
-                      int rows = INT_MAX,
+  Matrix<T> submatrix(int start_i, int start_j, int rows = INT_MAX,
                       int cols = INT_MAX) const {
     rows = min(rows, n() - start_i);
     cols = min(cols, m() - start_j);
@@ -50,8 +43,7 @@ struct Matrix {
 
     Matrix<T> res(rows, cols);
     for (int i = 0; i < rows; i++)
-      for (int j = 0; j < cols; j++)
-        res[i][j] = d[i + start_i][j + start_j];
+      for (int j = 0; j < cols; j++) res[i][j] = d[i + start_i][j + start_j];
     return res;
   }
 
@@ -59,9 +51,7 @@ struct Matrix {
     Matrix<T> res(n(), m());
     for (int i = 0; i < n(); i++) {
       for (int j = 0; j < m(); j++) {
-        if (i + x < 0 or i + x >= n() or
-            j + y < 0 or j + y >= m())
-          continue;
+        if (i + x < 0 or i + x >= n() or j + y < 0 or j + y >= m()) continue;
         res[i + x][j + y] = d[i][j];
       }
     }
@@ -75,9 +65,7 @@ struct Matrix {
   }
 
   vector<T> &operator[](int i) { return d[i]; }
-  const vector<T> &operator[](int i) const {
-    return d[i];
-  }
+  const vector<T> &operator[](int i) const { return d[i]; }
   Matrix<T> &operator+=(T value) {
     for (auto &row : d) {
       for (auto &x : row) x += value;
@@ -186,14 +174,12 @@ struct Matrix {
     return res;
   }
 
-  friend istream &operator>>(istream &is,
-                             Matrix<T> &mat) {
+  friend istream &operator>>(istream &is, Matrix<T> &mat) {
     for (auto &row : mat)
       for (auto &x : row) is >> x;
     return is;
   }
-  friend ostream &operator<<(
-      ostream &os, const Matrix<T> &mat) {
+  friend ostream &operator<<(ostream &os, const Matrix<T> &mat) {
     bool frow = 1;
     for (auto &row : mat) {
       if (not frow) os << '\n';

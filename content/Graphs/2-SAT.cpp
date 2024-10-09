@@ -22,6 +22,10 @@
     variables, and E is the number of clauses.
 
 >8*/
+//*8<
+#pragma once
+#include "../Contest/template.cpp"
+//>8*/
 
 struct TwoSat {
   int N;
@@ -44,10 +48,12 @@ struct TwoSat {
   }
   void setValue(int x) { either(x, x); }
 
+  void implies(int f, int j) { either(~f, j); }  // (optional)
+
   void atMostOne(const vi &li) {  // (optional)
-    if (sz(li) <= 1) return;
+    if (len(li) <= 1) return;
     int cur = ~li[0];
-    rep(i, 2, sz(li)) {
+    rep(i, 2, len(li)) {
       int next = addVar();
       either(cur, ~li[i]);
       either(cur, next);
@@ -63,14 +69,12 @@ struct TwoSat {
     int low = val[i] = ++time, x;
     z.pb(i);
     for (int e : gr[i])
-      if (!comp[e])
-        low = min(low, val[e] ?: dfs(e));
+      if (!comp[e]) low = min(low, val[e] ?: dfs(e));
     if (low == val[i]) do {
         x = z.back();
-        z.pop_back();
+        z.ppb();
         comp[x] = low;
-        if (values[x >> 1] == -1)
-          values[x >> 1] = x & 1;
+        if (values[x >> 1] == -1) values[x >> 1] = x & 1;
       } while (x != i);
     return val[i] = low;
   }
@@ -80,8 +84,7 @@ struct TwoSat {
     val.assign(2 * N, 0);
     comp = val;
     rep(i, 0, 2 * N) if (!comp[i]) dfs(i);
-    rep(i, 0, N) if (comp[2 * i] ==
-                     comp[2 * i + 1]) return 0;
+    rep(i, 0, N) if (comp[2 * i] == comp[2 * i + 1]) return 0;
     return 1;
   }
 };

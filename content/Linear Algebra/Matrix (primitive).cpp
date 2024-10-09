@@ -4,8 +4,7 @@ struct Matrix {
   int n, m;
   valarray<valarray<T>> v;
 
-  Matrix(int _n, int _m, int id = 0)
-      : n(_n), m(_m), v(valarray<T>(m), n) {
+  Matrix(int _n, int _m, int id = 0) : n(_n), m(_m), v(valarray<T>(m), n) {
     if (id) {
       for (int i = 0; i < n; i++) v[i][i] = 1;
     }
@@ -17,8 +16,7 @@ struct Matrix {
     Matrix newv(m, n);
 
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++)
-        newv[j][i] = (*this)[i][j];
+      for (int j = 0; j < m; j++) newv[j][i] = (*this)[i][j];
 
     return newv;
   }
@@ -28,24 +26,19 @@ struct Matrix {
     return ret.v += b.v;
   }
 
-  Matrix& operator+=(Matrix& b) {
-    return v += b.v;
-  }
+  Matrix& operator+=(Matrix& b) { return v += b.v; }
 
   Matrix operator*(Matrix b) {
     Matrix ret(n, b.m);
 
     for (int i = 0; i < n; i++)
       for (int j = 0; j < m; j++)
-        for (int k = 0; k < b.m; k++)
-          ret[i][k] += v[i][j] * b.v[j][k];
+        for (int k = 0; k < b.m; k++) ret[i][k] += v[i][j] * b.v[j][k];
 
     return ret;
   }
 
-  Matrix& operator*=(Matrix b) {
-    return *this = *this * b;
-  }
+  Matrix& operator*=(Matrix b) { return *this = *this * b; }
 
   Matrix power(ll exp) {
     Matrix in = *this;
@@ -76,8 +69,7 @@ struct Matrix {
     int line = 0;
     for (int col = 0; col < m; col++) {
       int pivot = line;
-      while (pivot < n && v[pivot][col] == T(0))
-        pivot++;
+      while (pivot < n && v[pivot][col] == T(0)) pivot++;
 
       if (pivot >= n) continue;
 
@@ -110,13 +102,11 @@ struct Matrix {
   {possible solution, number of solutions (2 if
   infinite solutions)}
   */
-  pair<vector<T>, int> solve_system(
-      vector<T> results) {
+  pair<vector<T>, int> solve_system(vector<T> results) {
     Matrix aux(n, m + 1);
 
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++)
-        aux[i][j] = v[i][j];
+      for (int j = 0; j < m; j++) aux[i][j] = v[i][j];
       aux[i][m] = results[i];
     }
 
@@ -127,8 +117,7 @@ struct Matrix {
 
     for (int i = n - 1; i >= 0; i--) {
       int pivot = 0;
-      while (pivot < n && aux[i][pivot] == T(0))
-        pivot++;
+      while (pivot < n && aux[i][pivot] == T(0)) pivot++;
 
       if (pivot == n) {
         if (aux[i][m] != T(0)) ret = 0;
@@ -137,16 +126,13 @@ struct Matrix {
     }
 
     for (int i = n - 1; i >= 0; i--) {
-      for (int j = i + 1; j < n; j++)
-        aux[i][m] -= aux[i][j] * aux[j][m];
+      for (int j = i + 1; j < n; j++) aux[i][m] -= aux[i][j] * aux[j][m];
     }
 
-    for (int i = 0; i < n; i++)
-      results[i] = aux[i][m];
+    for (int i = 0; i < n; i++) results[i] = aux[i][m];
 
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++)
-        v[i][j] = aux[i][j];
+      for (int j = 0; j < m; j++) v[i][j] = aux[i][j];
     }
 
     return {results, ret};
@@ -162,8 +148,7 @@ struct Matrix {
     Matrix<T> aug(n, 2 * n);
 
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++)
-        aug[i][j] = v[i][j];
+      for (int j = 0; j < n; j++) aug[i][j] = v[i][j];
 
     for (int i = 0; i < n; i++) aug[i][n + i] = 1;
 
@@ -171,8 +156,7 @@ struct Matrix {
 
     Matrix<T> ret(n, n);
     for (int i = 0; i < n; i++) {
-      ret[i] =
-          valarray<T>(aug[i][slice(n, n, 1)]);
+      ret[i] = valarray<T>(aug[i][slice(n, n, 1)]);
     }
 
     return {ret, det != T(0)};
@@ -188,8 +172,7 @@ struct Matrix {
 
     int resp = 0;
 
-    for (int i = 0; i < n; i++)
-      resp += (aux[i] != valarray<T>(m)).sum();
+    for (int i = 0; i < n; i++) resp += (aux[i] != valarray<T>(m)).sum();
 
     return resp;
   }

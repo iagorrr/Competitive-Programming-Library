@@ -1,6 +1,6 @@
 /*8<
-    @Title: Find linear recurrence
-(Berlekamp-Massey)
+    @Title:
+      Find linear recurrence (Berlekamp-Massey)
     @Description:
         Given the first $N$ terms of a linear
         recurrence finds the smallest recurrence
@@ -31,13 +31,11 @@ vl berlekampMassey(vll s) {
   rep(i, 0, n) {
     ++m;
     ll d = s[i] % mod;
-    rep(j, 1, L + 1) d =
-        (d + C[j] * s[i - j]) % mod;
+    rep(j, 1, L + 1) d = (d + C[j] * s[i - j]) % mod;
     if (!d) continue;
     T = C;
     ll coef = d * modpow(b, mod - 2) % mod;
-    rep(j, m, n) C[j] =
-        (C[j] - coef * B[j - m]) % mod;
+    rep(j, m, n) C[j] = (C[j] - coef * B[j - m]) % mod;
     if (2 * L > i) continue;
     L = i + 1 - L;
     B = T;

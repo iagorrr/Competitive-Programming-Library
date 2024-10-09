@@ -5,8 +5,7 @@
   @Time: $O(N^{(\frac{1}{4})} * \log (N))$.
 >8*/
 ll mul(ll a, ll b, ll m) {
-  ll ret =
-      a * b - (ll)((ld)1 / m * a * b + 0.5) * m;
+  ll ret = a * b - (ll)((ld)1 / m * a * b + 0.5) * m;
   return ret < 0 ? ret + m : ret;
 }
 
@@ -24,11 +23,9 @@ bool prime(ll n) {
   if (n % 2 == 0) return 0;
 
   ll r = __builtin_ctzll(n - 1), d = n >> r;
-  for (int a : {2, 325, 9375, 28178, 450775,
-                9780504, 795265022}) {
+  for (int a : {2, 325, 9375, 28178, 450775, 9780504, 795265022}) {
     ll x = pow(a, d, n);
-    if (x == 1 or x == n - 1 or a % n == 0)
-      continue;
+    if (x == 1 or x == n - 1 or a % n == 0) continue;
 
     for (int j = 0; j < r - 1; j++) {
       x = mul(x, x, n);

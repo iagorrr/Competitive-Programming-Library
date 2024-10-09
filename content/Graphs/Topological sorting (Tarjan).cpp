@@ -41,9 +41,7 @@ vi topo_sort() {
   memset(state, 0, sizeof state);
 
   for (int u = 0; u < n; u++) {
-    if (state[u] == not_found and
-        not dfs(u, order))
-      return {};
+    if (state[u] == not_found and not dfs(u, order)) return {};
   }
 
   reverse(all(order));

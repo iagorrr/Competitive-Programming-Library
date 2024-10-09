@@ -31,9 +31,7 @@ ll fastpow(ll a, ll p, ll m) {
   return ret;
 }
 
-ll divmod(ll a, ll b) {
-  return (a * fastpow(b, MOD - 2, MOD)) % MOD;
-}
+ll divmod(ll a, ll b) { return (a * fastpow(b, MOD - 2, MOD)) % MOD; }
 
 ll derangement(const ll n) {
   ll ans = fats[n];

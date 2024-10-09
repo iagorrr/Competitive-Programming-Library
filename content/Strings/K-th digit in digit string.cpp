@@ -17,13 +17,10 @@ void precompute(int maxpow = 18) {
   ull startstr = 1;
   ull endstr = 9;
 
-  for (ull i = 0, j = 1ll; (int)i < maxpow;
-       i++, j *= 10ll)
-    pow10.eb(j);
+  for (ull i = 0, j = 1ll; (int)i < maxpow; i++, j *= 10ll) pow10.eb(j);
 
   for (ull i = 0; i < maxpow - 1ull; i++) {
-    memo.push_back(
-        {start, end, startstr, endstr});
+    memo.push_back({start, end, startstr, endstr});
 
     start = end + 1ll;
     end = end + (9ll * pow10[qtd]);
@@ -31,8 +28,7 @@ void precompute(int maxpow = 18) {
 
     qtd++;
     startstr = endstr + 1ull;
-    endstr =
-        (endstr + 1ull) + (curlenght)*qtd - 1ull;
+    endstr = (endstr + 1ull) + (curlenght)*qtd - 1ull;
   }
 }
 char kthDigit(ull k) {
@@ -44,8 +40,7 @@ char kthDigit(ull k) {
       ull nmr = s + index;
       int i = k - ss - qtd * index;
 
-      return ((nmr / pow10[qtd - i - 1]) % 10) +
-             '0';
+      return ((nmr / pow10[qtd - i - 1]) % 10) + '0';
     }
     qtd++;
   }

@@ -13,8 +13,7 @@
     complement is a maximum independent set.
 >8*/
 
-vector<int> min_vertex_cover(
-    vector<vector<int>> &g, int n, int m) {
+vector<int> min_vertex_cover(vector<vector<int>> &g, int n, int m) {
   vector<int> match(m, -1), vis;
 
   auto find = [&](auto &&self, int j) -> bool {
@@ -39,9 +38,7 @@ vector<int> min_vertex_cover(
     }
   }
 
-  int res =
-      (int)match.size() -
-      (int)count(match.begin(), match.end(), -1);
+  int res = (int)match.size() - (int)count(match.begin(), match.end(), -1);
 
   vector<char> lfound(n, true), seen(m);
   for (int it : match)

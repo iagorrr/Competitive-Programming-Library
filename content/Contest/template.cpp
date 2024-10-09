@@ -7,24 +7,18 @@ using namespace std;
 #else
 #define dbg(...)
 #endif
-#define endl '\n'
 #define fastio                  \
   ios_base::sync_with_stdio(0); \
   cin.tie(0);
 #define all(j) j.begin(), j.end()
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
-#define rep(i, a, b)                           \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i < (b); i++)
-#define rrep(i, a, b)                          \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i > (b); i--)
+#define rep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i < (b); i++)
+#define rrep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i > (b); i--)
 #define trav(xi, xs) for (auto &xi : xs)
-#define rtrav(xi, xs) \
-  for (auto &xi : ranges::views::reverse(xs))
+#define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
 using ll = long long;
 #define inte ll
 #define pb push_back
@@ -54,8 +48,7 @@ using vs = vector<str>;
 template <typename T, typename T2>
 using umap = unordered_map<T, T2>;
 template <typename T>
-using pqmn =
-    priority_queue<T, vector<T>, greater<T>>;
+using pqmn = priority_queue<T, vector<T>, greater<T>>;
 template <typename T>
 using pqmx = priority_queue<T, vector<T>>;
 template <typename T, typename U>

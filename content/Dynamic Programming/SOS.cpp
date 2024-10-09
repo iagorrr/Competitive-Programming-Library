@@ -23,8 +23,7 @@ vc build(const vi &masks) {
   trav(mi, masks) ret[mi] = 1;
   rep(b, 0, LOG) {
     rep(mask, 0, (1 << LOG)) {
-      if (mask & (1 << b))
-        ret[mask] |= ret[mask ^ (1 << b)];
+      if (mask & (1 << b)) ret[mask] |= ret[mask ^ (1 << b)];
     }
   }
   return ret;

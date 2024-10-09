@@ -11,8 +11,7 @@
 
     $O(N*M)$
 >8*/
-int edit_distance(const string &a,
-                  const string &b) {
+int edit_distance(const string &a, const string &b) {
   int n = a.size();
   int m = b.size();
   vector<vi> dp(n + 1, vi(m + 1, 0));
@@ -29,9 +28,7 @@ int edit_distance(const string &a,
     for (int j = 1; j <= m; ++j) {
       int add = dp[i][j - 1] + ADD;
       int del = dp[i - 1][j] + DEL;
-      int chg =
-          dp[i - 1][j - 1] +
-          (a[i - 1] == b[j - 1] ? 0 : 1) * CHG;
+      int chg = dp[i - 1][j - 1] + (a[i - 1] == b[j - 1] ? 0 : 1) * CHG;
       dp[i][j] = min({add, del, chg});
     }
   }

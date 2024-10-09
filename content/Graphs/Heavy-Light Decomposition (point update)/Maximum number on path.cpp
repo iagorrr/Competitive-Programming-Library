@@ -1,9 +1,8 @@
 struct Node {
   ll value;
   Node()
-      : value(numeric_limits<
-              ll>::min()){};  // Neutral
-                              // element
+      : value(numeric_limits<ll>::min()){};  // Neutral
+                                             // element
   Node(ll v) : value(v){};
 };
 
@@ -20,14 +19,12 @@ struct SegTree {
   SegTree(int _n) : n(_n), st(n << 1) {}
 
   void set(int p, const T &k) {
-    for (st[p += n] = k; p >>= 1;)
-      st[p] = F(st[p << 1], st[p << 1 | 1]);
+    for (st[p += n] = k; p >>= 1;) st[p] = F(st[p << 1], st[p << 1 | 1]);
   }
 
   T query(int l, int r) {
     T ansl, ansr;
-    for (l += n, r += n + 1; l < r;
-         l >>= 1, r >>= 1) {
+    for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
       if (l & 1) ansl = F(ansl, st[l++]);
       if (r & 1) ansr = F(st[--r], ansr);
     }
@@ -35,16 +32,13 @@ struct SegTree {
   }
 };
 
-template <typename SegT = Node,
-          auto SegOp = combine>
+template <typename SegT = Node, auto SegOp = combine>
 struct HeavyLightDecomposition {
   int n;
   vi ps, ds, sz, heavy, head, pos;
   SegTree<SegT, SegOp> seg;
 
-  HeavyLightDecomposition(const vi2d &g,
-                          const vector<SegT> &v,
-                          int root = 0)
+  HeavyLightDecomposition(const vi2d &g, const vector<SegT> &v, int root = 0)
       : n(len(g)), seg(n) {
     ps = ds = sz = heavy = head = pos = vi(n, -1);
 
@@ -57,8 +51,7 @@ struct HeavyLightDecomposition {
           ds[x] = ds[u] + 1;
           self(self, x);
           sz[u] += sz[x];
-          if (sz[x] > mx)
-            mx = sz[x], heavy[u] = x;
+          if (sz[x] > mx) mx = sz[x], heavy[u] = x;
         }
     };
 

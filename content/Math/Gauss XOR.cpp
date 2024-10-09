@@ -50,8 +50,7 @@ struct GaussXor {
         }
         acum ^= x[j];
       }
-      if (acum != B[i])
-        return {false, Equation()};
+      if (acum != B[i]) return {false, Equation()};
     }
     return {true, x};
   }

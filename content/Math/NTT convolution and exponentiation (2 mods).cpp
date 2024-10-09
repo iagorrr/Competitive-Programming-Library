@@ -71,9 +71,7 @@ struct mint {
     a = m(val);
     return in;
   }
-  friend ostream &operator<<(ostream &out, m a) {
-    return out << a.v;
-  }
+  friend ostream &operator<<(ostream &out, m a) { return out << a.v; }
   friend m operator+(m a, m b) { return a += b; }
   friend m operator-(m a, m b) { return a -= b; }
   friend m operator*(m a, m b) { return a *= b; }
@@ -95,12 +93,10 @@ void ntt(vector<mint<_mod>> &a, bool rev) {
   if (rev) g = 1 / g;
 
   for (int step = n / 2; step; step /= 2) {
-    mint<_mod> w = g ^ (_mod / (n / step)),
-               wn = 1;
+    mint<_mod> w = g ^ (_mod / (n / step)), wn = 1;
     for (int i = 0; i < n / 2; i += step) {
       for (int j = 0; j < step; j++) {
-        auto u = a[2 * i + j],
-             v = wn * a[2 * i + j + step];
+        auto u = a[2 * i + j], v = wn * a[2 * i + j + step];
         b[i + j] = u + v;
         b[i + n / 2 + j] = u - v;
       }
@@ -131,8 +127,7 @@ struct crt {
     if ((a - C.a) % g != 0) a = -1;
     if (a == -1 or C.a == -1) return crt(-1, 0);
     T lcm = m / g * C.m;
-    T ans =
-        a + (x * (C.a - a) / g % (C.m / g)) * m;
+    T ans = a + (x * (C.a - a) / g % (C.m / g)) * m;
     return crt((ans % lcm + lcm) % lcm, lcm);
   }
 };
@@ -143,8 +138,7 @@ struct Congruence {
 };
 
 template <typename T = ll>
-T chinese_remainder_theorem(
-    const vector<Congruence<T>> &equations) {
+T chinese_remainder_theorem(const vector<Congruence<T>> &equations) {
   crt<T> ans;
 
   for (auto &[a_, m_] : equations) {
@@ -156,8 +150,7 @@ T chinese_remainder_theorem(
 
 #define int long long
 template <ll m1, ll m2>
-vll merge_two_mods(const vector<mint<m1>> &a,
-                   const vector<mint<m2>> &b) {
+vll merge_two_mods(const vector<mint<m1>> &a, const vector<mint<m2>> &b) {
   int n = len(a);
   vll ans(n);
   for (int i = 0; i < n; i++) {
@@ -172,8 +165,7 @@ vll merge_two_mods(const vector<mint<m1>> &a,
   return ans;
 }
 
-vll convolution_2mods(const vll &a,
-                      const vll &b) {
+vll convolution_2mods(const vll &a, const vll &b) {
   vector<mint<MOD1>> l(all(a)), r(all(b));
   int N = len(l) + len(r) - 1, n = 1;
   while (n <= N) n *= 2;

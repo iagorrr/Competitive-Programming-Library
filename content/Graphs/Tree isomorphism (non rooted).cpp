@@ -36,8 +36,7 @@ struct Tree {
         sz[v] += sz[u];
         cent &= not(sz[u] > n / 2);
       }
-    if (cent and n - sz[v] <= n / 2)
-      cs.push_back(v);
+    if (cent and n - sz[v] <= n / 2) cs.push_back(v);
   }
 
   int fhash(int v, int p) {
@@ -45,8 +44,7 @@ struct Tree {
     for (int u : g[v])
       if (u != p) h.push_back(fhash(u, v));
     sort(all(h));
-    if (!mphash.count(h))
-      mphash[h] = mphash.size();
+    if (!mphash.count(h)) mphash[h] = mphash.size();
     return mphash[h];
   }
 
@@ -54,8 +52,7 @@ struct Tree {
     cs.clear();
     dfs_centroid(0, -1);
     if (cs.size() == 1) return fhash(cs[0], -1);
-    ll h1 = fhash(cs[0], cs[1]),
-       h2 = fhash(cs[1], cs[0]);
+    ll h1 = fhash(cs[0], cs[1]), h2 = fhash(cs[1], cs[0]);
     return (min(h1, h2) << 30ll) + max(h1, h2);
   }
 };

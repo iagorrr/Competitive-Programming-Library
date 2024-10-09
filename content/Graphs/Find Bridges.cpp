@@ -14,10 +14,8 @@
     second is the id of the edge !
 >8*/
 
-Time : $O(N + M) $ const int MAXN(10000),
-       MAXM(100000);
-int N, M, clk, tin[MAXN], low[MAXN],
-    isBridge[MAXM];
+Time : $O(N + M) $ const int MAXN(10000), MAXM(100000);
+int N, M, clk, tin[MAXN], low[MAXN], isBridge[MAXM];
 vector<pii> G[MAXN];
 
 void dfs(int u, int p = -1) {

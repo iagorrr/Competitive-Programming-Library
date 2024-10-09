@@ -18,8 +18,7 @@
     $O(N+M)$
 >8*/
 const int maxn(5 '00' 000);
-int tin[maxn], stck[maxn], bcc_cnt, n, top = 0,
-                                       timer = 1;
+int tin[maxn], stck[maxn], bcc_cnt, n, top = 0, timer = 1;
 vector<int> g[maxn], nodes[maxn];
 
 int tarjan(int u, int p = -1) {
@@ -33,8 +32,7 @@ int tarjan(int u, int p = -1) {
       lowu = min(lowu, lowx);
       if (lowx >= tin[u]) {
         while (top != -1 && stck[top + 1] != v)
-          nodes[bcc_cnt].emplace_back(
-              stck[top--]);
+          nodes[bcc_cnt].emplace_back(stck[top--]);
         nodes[bcc_cnt++].emplace_back(u);
       }
     } else {

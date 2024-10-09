@@ -37,53 +37,26 @@ struct mint {
     }
     return res;
   }
-  friend mint inverse(mint a) {
-    return mexp(a, _mod - 2);
-  }
+  friend mint inverse(mint a) { return mexp(a, _mod - 2); }
 
-  mint &operator/=(mint const &b) {
-    return *this *= inverse(b);
-  }
-  friend mint operator+(mint a, mint const b) {
-    return a += b;
-  }
-  mint operator++(int) {
-    return this->value = (this->value + 1) % _mod;
-  }
-  mint operator++() {
-    return this->value = (this->value + 1) % _mod;
-  }
-  friend mint operator-(mint a, mint const b) {
-    return a -= b;
-  }
-  friend mint operator-(mint const a) {
-    return 0 - a;
-  }
-  mint operator--(int) {
-    return this->value =
-               (this->value - 1 + _mod) % _mod;
-  }
+  mint &operator/=(mint const &b) { return *this *= inverse(b); }
+  friend mint operator+(mint a, mint const b) { return a += b; }
+  mint operator++(int) { return this->value = (this->value + 1) % _mod; }
+  mint operator++() { return this->value = (this->value + 1) % _mod; }
+  friend mint operator-(mint a, mint const b) { return a -= b; }
+  friend mint operator-(mint const a) { return 0 - a; }
+  mint operator--(int) { return this->value = (this->value - 1 + _mod) % _mod; }
 
-  mint operator--() {
-    return this->value =
-               (this->value - 1 + _mod) % _mod;
-  }
-  friend mint operator*(mint a, mint const b) {
-    return a *= b;
-  }
-  friend mint operator/(mint a, mint const b) {
-    return a /= b;
-  }
-  friend std::ostream &operator<<(
-      std::ostream &os, mint const &a) {
+  mint operator--() { return this->value = (this->value - 1 + _mod) % _mod; }
+  friend mint operator*(mint a, mint const b) { return a *= b; }
+  friend mint operator/(mint a, mint const b) { return a /= b; }
+  friend std::ostream &operator<<(std::ostream &os, mint const &a) {
     return os << a.value;
   }
-  friend bool operator==(mint const &a,
-                         mint const &b) {
+  friend bool operator==(mint const &a, mint const &b) {
     return a.value == b.value;
   }
-  friend bool operator!=(mint const &a,
-                         mint const &b) {
+  friend bool operator!=(mint const &a, mint const &b) {
     return a.value != b.value;
   }
 };

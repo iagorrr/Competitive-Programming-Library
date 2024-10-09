@@ -13,10 +13,7 @@ struct LSegTree {
   vector<Lnode> lz;
 
   /*--------------------------------------------*/
-  Qnode merge(Qnode lv, Qnode rv, int nl,
-              int nr) {
-    return lv + rv;
-  }
+  Qnode merge(Qnode lv, Qnode rv, int nl, int nr) { return lv + rv; }
 
   void prop(int i, int l, int r) {
     if (lz[i].assign) {
@@ -24,9 +21,7 @@ struct LSegTree {
       if (l != r) lz[tol(i)] = lz[tor(i)] = lz[i];
     } else {
       st[i] += lz[i].v * (r - l + 1);
-      if (l != r)
-        lz[tol(i)].v += lz[i].v,
-            lz[tor(i)].v += lz[i].v;
+      if (l != r) lz[tol(i)].v += lz[i].v, lz[tor(i)].v += lz[i].v;
     }
     lz[i] = Lnode();
   }
@@ -41,21 +36,13 @@ struct LSegTree {
   /*--------------------------------------------*/
 
   LSegTree() {}
-  LSegTree(int _n)
-      : n(_n), st(_n << 2), lz(_n << 2) {}
-  bool disjoint(int l, int r) {
-    return qr < l or r < ql;
-  }
-  bool contains(int l, int r) {
-    return ql <= l and r <= qr;
-  }
+  LSegTree(int _n) : n(_n), st(_n << 2), lz(_n << 2) {}
+  bool disjoint(int l, int r) { return qr < l or r < ql; }
+  bool contains(int l, int r) { return ql <= l and r <= qr; }
   int tol(int i) { return i << 1; }
   int tor(int i) { return i << 1 | 1; }
-  void build(vector<Qnode> &v) {
-    build(v, 1, 0, n - 1);
-  }
-  void build(vector<Qnode> &v, int i, int l,
-             int r) {
+  void build(vector<Qnode> &v) { build(v, 1, 0, n - 1); }
+  void build(vector<Qnode> &v, int i, int l, int r) {
     if (l == r) {
       st[i] = v[l];
       return;
@@ -91,7 +78,6 @@ struct LSegTree {
     if (disjoint(l, r)) return Qnode();
     if (contains(l, r)) return st[i];
     int m = midpoint(l, r);
-    return merge(qry(tol(i), l, m),
-                 qry(tor(i), m + 1, r), l, r);
+    return merge(qry(tol(i), l, m), qry(tor(i), m + 1, r), l, r);
   }
 };

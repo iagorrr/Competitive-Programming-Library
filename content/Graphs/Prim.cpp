@@ -20,9 +20,7 @@ const int MAXN(1 '00' 000);
 int N;
 vector<pair<ll, int>> G[MAXN];
 ll prim(vi s = vi(1, 0)) {
-  priority_queue<pair<ll, int>,
-                 vector<pair<ll, int>>,
-                 greater<pair<ll, int>>>
+  priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>>
       pq;
   vector<char> ingraph(MAXN);
   int ingraphcnt(0);

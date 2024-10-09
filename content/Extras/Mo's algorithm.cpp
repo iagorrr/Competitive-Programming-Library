@@ -4,14 +4,10 @@ struct Mo {
     int l, r, idx, block;
 
     Query(int _l, int _r, int _idx, int _block)
-        : l(_l),
-          r(_r),
-          idx(_idx),
-          block(_block) {}
+        : l(_l), r(_r), idx(_idx), block(_block) {}
 
     bool operator<(const Query &q) const {
-      if (block != q.block)
-        return block < q.block;
+      if (block != q.block) return block < q.block;
       return (block & 1 ? (r < q.r) : (r > q.r));
     }
   };
@@ -20,13 +16,10 @@ struct Mo {
   vector<Query> qs;
   const int block_size;
 
-  Mo(const vector<T> &a)
-      : vs(a),
-        block_size((int)ceil(sqrt(a.size()))) {}
+  Mo(const vector<T> &a) : vs(a), block_size((int)ceil(sqrt(a.size()))) {}
 
   void add_query(int l, int r) {
-    qs.emplace_back(l, r, qs.size(),
-                    l / block_size);
+    qs.emplace_back(l, r, qs.size(), l / block_size);
   }
 
   auto solve() {

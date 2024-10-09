@@ -17,8 +17,7 @@ inline ll binom(ll n, ll k) {
   static bool done = false;
   if (!done) {
     vll INV(BINMAX + 1);
-    FAC[0] = FAC[1] = INV[1] = FINV[0] = FINV[1] =
-        1;
+    FAC[0] = FAC[1] = INV[1] = FINV[0] = FINV[1] = 1;
     for (int i = 2; i <= BINMAX; i++) {
       FAC[i] = FAC[i - 1] * i % MOD;
       INV[i] = MOD - MOD / i * INV[MOD % i] % MOD;
@@ -28,6 +27,5 @@ inline ll binom(ll n, ll k) {
   }
 
   if (n < k || n < 0 || k < 0) return 0;
-  return FAC[n] * FINV[k] % MOD * FINV[n - k] %
-         MOD;
+  return FAC[n] * FINV[k] % MOD * FINV[n - k] % MOD;
 }

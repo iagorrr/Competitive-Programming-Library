@@ -1,6 +1,5 @@
 template <typename T>
-T steinerCost(const vector<vector<T>> &adj,
-              const vi ks,
+T steinerCost(const vector<vector<T>> &adj, const vi ks,
               T inf = numeric_limits<T>::max()) {
   int k = len(ks), n = len(adj);
   vector<vector<T>> dp(n, vector<T>(1 << k, inf));
@@ -17,17 +16,14 @@ T steinerCost(const vector<vector<T>> &adj,
   rep(mask, 2, (1 << k)) {
     rep(i, 0, n) {
       if (inks[i]) continue;
-      for (int mask2 = (mask - 1) & mask;
-           mask2 >= 1;
+      for (int mask2 = (mask - 1) & mask; mask2 >= 1;
            mask2 = (mask2 - 1) & mask) {
         int mask3 = mask ^ mask2;
-        chmin(dp[i][mask],
-              dp[i][mask2] + dp[i][mask3]);
+        chmin(dp[i][mask], dp[i][mask2] + dp[i][mask3]);
       }
       rep(j, 0, n) {
         if (inks[j]) continue;
-        chmin(dp[j][mask],
-              dp[i][mask] + adj[i][j]);
+        chmin(dp[j][mask], dp[i][mask] + adj[i][j]);
       }
     }
   }

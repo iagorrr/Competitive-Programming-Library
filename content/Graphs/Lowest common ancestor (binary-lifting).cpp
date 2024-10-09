@@ -41,8 +41,7 @@ struct LCA {
     }
   }
 
-  void dfs(int u, int p,
-           const vector<vector<int>> &tree) {
+  void dfs(int u, int p, const vector<vector<int>> &tree) {
     if (p != -1) {
       depth[u] = depth[p] + 1;
       up[u][0] = p;
@@ -80,14 +79,9 @@ struct LCA {
   }
 
   bool on_path(int u, int v, int s) {
-    int uv = lca(u, v), us = lca(u, s),
-        vs = lca(v, s);
-    return (uv == s or (us == uv and vs == s) or
-            (vs == uv and us == s));
+    int uv = lca(u, v), us = lca(u, s), vs = lca(v, s);
+    return (uv == s or (us == uv and vs == s) or (vs == uv and us == s));
   }
 
-  int dist(int u, int v) {
-    return depth[u] + depth[v] -
-           2 * depth[lca(u, v)];
-  }
+  int dist(int u, int v) { return depth[u] + depth[v] - 2 * depth[lca(u, v)]; }
 };

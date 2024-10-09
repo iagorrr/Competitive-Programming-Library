@@ -13,8 +13,7 @@ ll E(ll n, ll p) {
   return k;
 }
 
-map<ll, ll> factorial_factorization(
-    ll n, const vll &primes) {
+map<ll, ll> factorial_factorization(ll n, const vll &primes) {
   map<ll, ll> fs;
   for (const auto &p : primes) {
     if (p > n) break;

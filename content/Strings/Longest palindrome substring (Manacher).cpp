@@ -22,14 +22,12 @@ vi manacher(const string &s) {
 }
 string longest_palindrome(const string &s) {
   string t("$#");
-  for (auto c : s)
-    t.push_back(c), t.push_back('#');
+  for (auto c : s) t.push_back(c), t.push_back('#');
   t.push_back('^');
   vi xs = manacher(t);
   int mpos = max_element(all(xs)) - xs.begin();
   string p;
-  for (int k = xs[mpos], i = mpos - k;
-       i <= mpos + k; i++)
+  for (int k = xs[mpos], i = mpos - k; i <= mpos + k; i++)
     if (t[i] != '#') p.push_back(t[i]);
   return p;
 }

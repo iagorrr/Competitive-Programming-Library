@@ -14,13 +14,10 @@ struct RollbackUF {
   vector<pii> st;
   RollbackUF(int n) : e(n, -1) {}
   int size(int x) { return -e[find(x)]; }
-  int find(int x) {
-    return e[x] < 0 ? x : find(e[x]);
-  }
+  int find(int x) { return e[x] < 0 ? x : find(e[x]); }
   int time() { return len(st); }
   void rollback(int t) {
-    for (int i = time(); i-- > t;)
-      e[st[i].first] = st[i].second;
+    for (int i = time(); i-- > t;) e[st[i].first] = st[i].second;
     st.resize(t);
   }
   bool join(int a, int b) {

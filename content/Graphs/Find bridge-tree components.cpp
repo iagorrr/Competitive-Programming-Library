@@ -28,13 +28,11 @@ int dfs(int u, int p = -1) {
       multEdge = 1;
       continue;
     }
-    low = min(low,
-              tin[v] == -1 ? dfs(v, u) : tin[v]);
+    low = min(low, tin[v] == -1 ? dfs(v, u) : tin[v]);
   }
 
   if (low == tin[u]) {
-    for (int i = tin[u]; i < len(stck); i++)
-      compId[stck[i]] = qtdComps;
+    for (int i = tin[u]; i < len(stck); i++) compId[stck[i]] = qtdComps;
     stck.resize(tin[u]);
     qtdComps++;
   }

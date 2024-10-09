@@ -9,8 +9,7 @@
 >8*/
 void process(vi &index) {
   for (int i = 0; i < len(index); i++) {
-    if (index[i])
-      cout << i << " \n"[i == len(index) - 1];
+    if (index[i]) cout << i << " \n"[i == len(index) - 1];
   }
 }
 

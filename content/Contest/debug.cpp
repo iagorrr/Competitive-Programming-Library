@@ -1,8 +1,6 @@
 template <typename T>
 concept Printable = requires(T t) {
-  {
-    std::cout << t
-  } -> std::same_as<std::ostream &>;
+  { std::cout << t } -> std::same_as<std::ostream &>;
 };
 template <Printable T>
 void __print(const T &x) {
@@ -46,9 +44,7 @@ void __print(const tuple<A...> &t) {
   cerr << '(';
   apply(
       [&first](const auto &...args) {
-        ((cerr << (first ? "" : ","),
-          __print(args), first = false),
-         ...);
+        ((cerr << (first ? "" : ","), __print(args), first = false), ...);
       },
       t);
   cerr << ')';

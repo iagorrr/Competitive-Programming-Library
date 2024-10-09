@@ -86,8 +86,7 @@ struct VeniceSet {
   ll erase(ll e) {
     e -= acc;
     auto it = st.lb({e, LLONG_MIN});
-    if (it == end(st) || (*it).first != e)
-      return 0;
+    if (it == end(st) || (*it).first != e) return 0;
     ll ret = (*it).second;
     st.erase(it);
     return ret;
@@ -96,8 +95,7 @@ struct VeniceSet {
   ll count(ll x) {
     x -= acc;
     auto it = st.lb({x, LLONG_MIN});
-    if (it == end(st) || (*it).first != x)
-      return 0;
+    if (it == end(st) || (*it).first != x) return 0;
     return (*it).second;
   }
 

@@ -5,8 +5,7 @@ using Edge = pair<ll, int>;  // { weigth, node}
 using Adj = vector<vector<Edge>>;
 
 template <typename T>
-using min_heap =
-    priority_queue<T, vector<T>, greater<T>>;
+using min_heap = priority_queue<T, vector<T>, greater<T>>;
 pair<vll, vi> dijkstra(const Adj &g, int s) {
   int n = len(g);
   min_heap<Edge> pq;
@@ -31,8 +30,7 @@ pair<vll, vi> dijkstra(const Adj &g, int s) {
   }
 
   // optional !
-  vi recover_path(int source, int ending,
-                  const vi &ps) {
+  vi recover_path(int source, int ending, const vi &ps) {
     if (ps[ending] == -1) return {};
     int cur = ending;
     vi ans;

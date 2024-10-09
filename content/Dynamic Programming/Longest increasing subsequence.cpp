@@ -28,8 +28,7 @@ pair<int, vi> lis(const vector<T> &xs, int n) {
   vi psx(n);
 
   rep(i, 0, n) {
-    int pos =
-        lower_bound(all(dp), xs[i]) - dp.begin();
+    int pos = lower_bound(all(dp), xs[i]) - dp.begin();
 
     sz = max(sz, pos);
 
@@ -47,8 +46,7 @@ vi get_idx(vector<T> xs) {
 
   auto [sz1, psx1] = lis(xs, n);
 
-  transform(rall(xs), xs.begin(),
-            [](T x) { return -x; });
+  transform(rall(xs), xs.begin(), [](T x) { return -x; });
 
   auto [sz2, psx2] = lis(xs, n);
 

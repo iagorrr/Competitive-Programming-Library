@@ -28,6 +28,5 @@ done
 if [ -f "$algo_path"/main.cpp ]; then
 	g++ -std=c++20 -O2 "$algo_path"/main.cpp -o main
 	./main
-	rm out.txt
 	rm main
 fi

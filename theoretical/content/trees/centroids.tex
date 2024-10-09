@@ -1,0 +1,22 @@
+\subsection{Centroid}
+
+A  centroid of a tree is defined as a node such that when the tree is rooted at it, no other nodes have a subtree of size greater than $\frac{N}{2}$.
+
+Every tree have a centroid.
+
+\subsection{Centroid decomposition}
+
+The centroid decomposition of a tree is another tree defined recursively as:
+
+\begin{itemize}
+  \item Its root is the centroid of the original tree.
+  \item Its children are the centroid of each tree resulting from the removal of the centroid from the original tree.
+\end{itemize}
+
+Properties:
+
+\begin{itemize}
+  \item A vertex belongs to the component of all its ancestors.
+\end{itemize}
+
+

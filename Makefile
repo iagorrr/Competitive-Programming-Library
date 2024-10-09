@@ -10,8 +10,8 @@ notebook-tex:
 
 notebook-pdf:
 	# Yeah you have to run it twice to work :P
-	@pdflatex  notebook.tex
-	@pdflatex  notebook.tex
+	@lualatex  notebook.tex
+	@lualatex  notebook.tex
 
 
 clean:

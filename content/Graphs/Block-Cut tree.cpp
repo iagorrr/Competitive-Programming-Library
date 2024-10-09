@@ -3,11 +3,7 @@ struct block_cut_tree {
   vector<int> id, is_cutpoint, tin, low, stk;
   vector<vector<int>> comps, tree;
   block_cut_tree(vector<vector<int>> &g)
-      : n(g.size()),
-        id(n),
-        is_cutpoint(n),
-        tin(n),
-        low(n) {
+      : n(g.size()), id(n), is_cutpoint(n), tin(n), low(n) {
     // build comps
     for (int i = 0; i < n; i++) {
       if (!tin[i]) {
@@ -38,8 +34,7 @@ struct block_cut_tree {
     }
   }
 
-  void dfs(int u, int p, int &timer,
-           vector<vector<int>> &g) {
+  void dfs(int u, int p, int &timer, vector<vector<int>> &g) {
     tin[u] = low[u] = ++timer;
     stk.emplace_back(u);
 
@@ -49,8 +44,7 @@ struct block_cut_tree {
         dfs(v, u, timer, g);
         low[u] = min(low[u], low[v]);
         if (low[v] >= tin[u]) {
-          is_cutpoint[u] =
-              (tin[u] > 1 or tin[v] > 2);
+          is_cutpoint[u] = (tin[u] > 1 or tin[v] > 2);
           comps.push_back({u});
           while (comps.back().back() != v) {
             comps.back().emplace_back(stk.back());

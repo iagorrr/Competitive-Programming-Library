@@ -47,8 +47,7 @@ struct node {
     }
 
     extend();
-    return max(left->query(l, r),
-               right->query(l, r));
+    return max(left->query(l, r), right->query(l, r));
   }
 
   void update(int p, ll newVal) {
@@ -58,8 +57,7 @@ struct node {
     }
 
     extend();
-    (p <= left->rv ? left : right)
-        ->update(p, newVal);
+    (p <= left->rv ? left : right)->update(p, newVal);
     val = max(left->val, right->val);
   }
 };
@@ -79,8 +77,6 @@ struct SegTree {
     root = newNode();
     root->init(0, n);
   }
-  ll query(int l, int r) {
-    return root->query(l, r);
-  }
+  ll query(int l, int r) { return root->query(l, r); }
   void update(int p, ll v) { root->update(p, v); }
 };

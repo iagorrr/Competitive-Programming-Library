@@ -14,17 +14,12 @@ using namespace std;
 #define all(j) j.begin(), j.end()
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
-#define rep(i, a, b)                           \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i < (b); i++)
-#define rrep(i, a, b)                          \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i > (b); i--)
+#define rep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i < (b); i++)
+#define rrep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i > (b); i--)
 #define trav(xi, xs) for (auto &xi : xs)
-#define rtrav(xi, xs) \
-  for (auto &xi : ranges::views::reverse(xs))
+#define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
 #define pb push_back
 #define pf push_front
 #define ppb pop_back
@@ -53,8 +48,7 @@ using vs = vector<str>;
 template <typename T, typename T2>
 using umap = unordered_map<T, T2>;
 template <typename T>
-using pqmn =
-    priority_queue<T, vector<T>, greater<T>>;
+using pqmn = priority_queue<T, vector<T>, greater<T>>;
 template <typename T>
 using pqmx = priority_queue<T, vector<T>>;
 template <typename T, typename U>
@@ -97,8 +91,7 @@ struct SuffixAutomaton {
       aux.push_back({st[i], i});
     }
 
-    sort(all(aux), [](const pair<state, int> &a,
-                      const pair<state, int> &b) {
+    sort(all(aux), [](const pair<state, int> &a, const pair<state, int> &b) {
       return a.fi.len > b.fi.len;
     });
 
@@ -152,8 +145,7 @@ struct SuffixAutomaton {
     last = cur;
   }
 
-  bool checkOccurrence(
-      const string &t) {  // O(len(t))
+  bool checkOccurrence(const string &t) {  // O(len(t))
     int cur = 0;
     for (auto &c : t) {
       if (!st[cur].next.count(c)) return false;
@@ -201,12 +193,9 @@ struct SuffixAutomaton {
     return ans;
   }
 
-  void getEveryOccurence(int v, int P_length,
-                         vi &ans) {
-    if (!cloned[v])
-      ans.pb(st[v].firstpos - P_length + 1);
-    for (int u : st[v].inv_link)
-      getEveryOccurence(u, P_length, ans);
+  void getEveryOccurence(int v, int P_length, vi &ans) {
+    if (!cloned[v]) ans.pb(st[v].firstpos - P_length + 1);
+    for (int u : st[v].inv_link) getEveryOccurence(u, P_length, ans);
   }
 };
 void run();

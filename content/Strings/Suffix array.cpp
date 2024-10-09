@@ -14,17 +14,12 @@ using namespace std;
 #define all(j) j.begin(), j.end()
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
-#define rep(i, a, b)                           \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i < (b); i++)
-#define rrep(i, a, b)                          \
-  for (common_type_t<decltype(a), decltype(b)> \
-           i = (a);                            \
-       i > (b); i--)
+#define rep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i < (b); i++)
+#define rrep(i, a, b) \
+  for (common_type_t<decltype(a), decltype(b)> i = (a); i > (b); i--)
 #define trav(xi, xs) for (auto &xi : xs)
-#define rtrav(xi, xs) \
-  for (auto &xi : ranges::views::reverse(xs))
+#define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
 #define pb push_back
 #define pf push_front
 #define ppb pop_back
@@ -53,8 +48,7 @@ using vs = vector<str>;
 template <typename T, typename T2>
 using umap = unordered_map<T, T2>;
 template <typename T>
-using pqmn =
-    priority_queue<T, vector<T>, greater<T>>;
+using pqmn = priority_queue<T, vector<T>, greater<T>>;
 template <typename T>
 using pqmx = priority_queue<T, vector<T>>;
 template <typename T, typename U>
@@ -71,11 +65,9 @@ vector<int> sort_cyclic_shifts(string const &s) {
   int n = s.size();
   const int alphabet = 128;
 
-  vector<int> p(n), c(n),
-      cnt(max(alphabet, n), 0);
+  vector<int> p(n), c(n), cnt(max(alphabet, n), 0);
   for (int i = 0; i < n; i++) cnt[s[i]]++;
-  for (int i = 1; i < alphabet; i++)
-    cnt[i] += cnt[i - 1];
+  for (int i = 1; i < alphabet; i++) cnt[i] += cnt[i - 1];
   for (int i = 0; i < n; i++) p[--cnt[s[i]]] = i;
   c[p[0]] = 0;
   int classes = 1;
@@ -92,18 +84,13 @@ vector<int> sort_cyclic_shifts(string const &s) {
     }
     fill(cnt.begin(), cnt.begin() + classes, 0);
     for (int i = 0; i < n; i++) cnt[c[pn[i]]]++;
-    for (int i = 1; i < classes; i++)
-      cnt[i] += cnt[i - 1];
-    for (int i = n - 1; i >= 0; i--)
-      p[--cnt[c[pn[i]]]] = pn[i];
+    for (int i = 1; i < classes; i++) cnt[i] += cnt[i - 1];
+    for (int i = n - 1; i >= 0; i--) p[--cnt[c[pn[i]]]] = pn[i];
     cn[p[0]] = 0;
     classes = 1;
     for (int i = 1; i < n; i++) {
-      pair<int, int> cur = {
-          c[p[i]], c[(p[i] + (1 << h)) % n]};
-      pair<int, int> prev = {
-          c[p[i - 1]],
-          c[(p[i - 1] + (1 << h)) % n]};
+      pair<int, int> cur = {c[p[i]], c[(p[i] + (1 << h)) % n]};
+      pair<int, int> prev = {c[p[i - 1]], c[(p[i - 1] + (1 << h)) % n]};
       if (cur != prev) ++classes;
       cn[p[i]] = classes - 1;
     }
@@ -120,38 +107,28 @@ vector<int> suffix_array(string s) {
   return p;
 }
 
-vector<int> longestCommonPrefix(
-    const string &s, const vector<int> &suf) {
+vector<int> longestCommonPrefix(const string &s, const vector<int> &suf) {
   int n = s.size();
   vector<int> isuf(n), res(n - 1);
   for (int i = 0; i < n; ++i) isuf[suf[i]] = i;
   int k = 0;
   for (; isuf[k] != n - 1; ++k) {
     int cmp_i = suf[isuf[k] + 1];
-    int r = k == 0 ? 0
-                   : max(res[isuf[k - 1]] - 1,
-                         (int)0);
-    while (k + r < n && cmp_i + r < n &&
-           s[k + r] == s[cmp_i + r])
-      ++r;
+    int r = k == 0 ? 0 : max(res[isuf[k - 1]] - 1, (int)0);
+    while (k + r < n && cmp_i + r < n && s[k + r] == s[cmp_i + r]) ++r;
     res[isuf[k]] = r;
   }
   ++k;
   for (int i = k; i < n; ++i) {
     int cmp_i = suf[isuf[i] + 1];
-    int r = i == k ? 0
-                   : max(res[isuf[i - 1]] - 1,
-                         (int)0);
-    while (i + r < n && cmp_i + r < n &&
-           s[i + r] == s[cmp_i + r])
-      ++r;
+    int r = i == k ? 0 : max(res[isuf[i - 1]] - 1, (int)0);
+    while (i + r < n && cmp_i + r < n && s[i + r] == s[cmp_i + r]) ++r;
     res[isuf[i]] = r;
   }
   return res;
 }
 
-ll distinct_substrings(const string &s,
-                       const vi &sa) {
+ll distinct_substrings(const string &s, const vi &sa) {
   int n = len(s);
   vi lcp = longestCommonPrefix(s, sa);
   ll ans = n - sa[0];

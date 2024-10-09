@@ -5,15 +5,22 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{multicol}
+\usepackage{fontspec}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
+%\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{soul}
 \usepackage{setspace}
 \usepackage{paralist}
+\usepackage{unicode-math}
 \usepackage[a4paper,  portrait, top=1cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
+
+\title{Competitive Programming Library}
+\author{@iagorrr}
+
 \setlength{\columnsep}{0.5cm}
 \setlength{\columnseprule}{0.01cm}
 \singlespacing
@@ -60,23 +67,14 @@
   commentstyle=\BeraMonottfamily,
 }
 
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
 
 \begin{document}
-\begin{titlepage}\centering
-{\Huge\textbf{Teorema do chinês viajante}}\\[2mm]
-{\LARGE Brazil subregional 2024}\\[2mm] 
-  \includegraphics[width=0.8\textwidth]{./CHINSE-TRAVELLING.jpg}\\[1mm]
-  \vspace*{\fill}
-  \includegraphics[width=0.3\textwidth]{./GAMA.png}\\[10mm]
-  {\LARGE Universidade de Brasília, faculdade do gama}\\[1mm]
-  {\LARGE \textbf{Coach}}\\[1mm]
-  {\LARGE Edson Alves (edsomrjr)}\\[1mm]
-  {\LARGE \textbf{Team}}\\[1mm]
-  {\LARGE André Macedo (andre\_rei)}\\[1mm]
-  {\LARGE Iago Rocha (iagorrr)}\\[1mm]
-  {\LARGE  Thalisson Alves (Thalisson\_Alves)}\\[8mm]
-  {\large \today}\\ % Manually insert the date at the bottomj
-\end{titlepage}
+\begin{titlingpage}
+\maketitle
+\end{titlingpage}
 \begin{multicols}{2}
 \tableofcontents
 \newpage

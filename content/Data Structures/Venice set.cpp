@@ -31,9 +31,7 @@ struct VeniceSet {
   T acc;
   VeniceSet() : acc() {}
 
-  void add_element(const T &e, const ll q) {
-    pq.emplace(e - acc, q);
-  }
+  void add_element(const T &e, const ll q) { pq.emplace(e - acc, q); }
 
   void update_all(const T &x) { acc += x; }
 

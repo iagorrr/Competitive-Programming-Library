@@ -68,8 +68,7 @@ struct Mex {
     Optional, you can just create with size
     len(xs) add N elements :D
   */
-  Mex(const vi &xs, int _mx_sz = -1)
-      : Mex(~_mx_sz ? _mx_sz : len(xs)) {
+  Mex(const vi &xs, int _mx_sz = -1) : Mex(~_mx_sz ? _mx_sz : len(xs)) {
     for (auto xi : xs) add(xi);
   }
 };

@@ -41,8 +41,7 @@ struct MinCostFlow {
   vi pre;
 
   MinCostFlow() {}
-  MinCostFlow(int n_, int _s, int _t)
-      : n(n_), s(_s), t(_t), g(n) {}
+  MinCostFlow(int n_, int _s, int _t) : n(n_), s(_s), t(_t), g(n) {}
 
   void addEdge(int u, int v, ll c, T w) {
     g[u].pb(len(edges));
@@ -57,13 +56,10 @@ struct MinCostFlow {
     T cost = 0;
     while (flow < flow_limit and dijkstra(s, t)) {
       ll aug = LLONG_MAX;
-      for (int i = t; i != s;
-           i = edges[pre[i] ^ 1].to) {
-        aug = min({flow_limit - flow, aug,
-                   edges[pre[i]].c});
+      for (int i = t; i != s; i = edges[pre[i] ^ 1].to) {
+        aug = min({flow_limit - flow, aug, edges[pre[i]].c});
       }
-      for (int i = t; i != s;
-           i = edges[pre[i] ^ 1].to) {
+      for (int i = t; i != s; i = edges[pre[i] ^ 1].to) {
         edges[pre[i]].c -= aug;
         edges[pre[i] ^ 1].c += aug;
 

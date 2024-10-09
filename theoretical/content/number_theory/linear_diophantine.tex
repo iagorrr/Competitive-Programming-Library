@@ -1,0 +1,48 @@
+\subsection{Linear Diophantine Equations}
+
+A Linear Diophantine Equation (in two variables) is an equation of the general form:
+ 
+$$ax + by = c$$ 
+
+Where  $a$ ,  $b$ ,  $c$  are given integers, and  $x$ ,  $y$  are unknown integers.
+
+If $ a = b = 0 $, we have infinite solutions if $ c = 0 $, and $0$ otherwise. 
+
+\subsubsection{Solution(s)}
+
+Let $g = gcd(a,b)$ such that $a x_g + b y_g = g$, then we only have a solution if and only if $g \mid c$, and if it have a solution it have infinite.
+
+The solutions will be of the form :
+ 
+\begin{equation}
+  \begin{array}{c}
+    x_0 = x_g \cdot \frac{c}{g},
+ 
+    y_0 = y_g \cdot \frac{c}{g}. \\
+
+    a \cdot x_0  + b \cdot y_0 = c 
+  \end{array}
+\end{equation}
+
+With the initial solution, we can can find every solution, with : 
+
+\begin{equation}
+  \begin{array}{c}
+    x = x_0 + k \cdot \frac{b}{g}, y = y_0 - k \cdot \frac{a}{g}
+  \end{array}
+\end{equation}
+
+To find the solution that minimize $x + y$ we use the fact that: 
+
+$$x' = x + k \cdot \frac{b}{g},$$ 
+ 
+$$y' = y - k \cdot \frac{a}{g}.$$ 
+
+Note that  
+
+$x + y$  change as follows:
+ 
+$$x' + y' = x + y + k \cdot \left(\frac{b}{g} - \frac{a}{g}\right) = x + y + k \cdot \frac{b-a}{g}$$ 
+
+If  
+$a < b$ , we need to select smallest possible value of  $k$ . If  $a > b$ , we need to select the largest possible value of  $k$ . If  $a = b$ , all solution will have the same sum  $x + y$ .

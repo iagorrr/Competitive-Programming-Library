@@ -21,8 +21,7 @@
 
 >8*/
 
-ll knapsack(const vi &weight, const vll &value,
-            const vi &qtd, int maxCost) {
+ll knapsack(const vi &weight, const vll &value, const vi &qtd, int maxCost) {
   vi costs;
   vll values;
   for (int i = 0; i < len(weight); i++) {
@@ -40,9 +39,7 @@ ll knapsack(const vi &weight, const vll &value,
   vll dp(maxCost + 1);
   for (int i = 0; i < len(values); i++) {
     for (int j = maxCost; j > 0; j--) {
-      if (j >= costs[i])
-        dp[j] = max(dp[j],
-                    values[i] + dp[j - costs[i]]);
+      if (j >= costs[i]) dp[j] = max(dp[j], values[i] + dp[j - costs[i]]);
     }
   }
   return dp[maxCost];

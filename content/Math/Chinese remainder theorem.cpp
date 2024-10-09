@@ -36,8 +36,7 @@ struct crt {
     if ((a - C.a) % g != 0) a = -1;
     if (a == -1 or C.a == -1) return crt(-1, 0);
     T lcm = m / g * C.m;
-    T ans =
-        a + (x * (C.a - a) / g % (C.m / g)) * m;
+    T ans = a + (x * (C.a - a) / g % (C.m / g)) * m;
     return crt((ans % lcm + lcm) % lcm, lcm);
   }
 };
@@ -48,8 +47,7 @@ struct Congruence {
 };
 
 template <typename T = ll>
-T chinese_remainder_theorem(
-    const vector<Congruence<T>> &equations) {
+T chinese_remainder_theorem(const vector<Congruence<T>> &equations) {
   crt<T> ans;
 
   for (auto &[a_, m_] : equations) {

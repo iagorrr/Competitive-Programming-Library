@@ -2,14 +2,11 @@ using SegT = ll;
 
 struct QueryT {
   SegT mx, mn;
-  QueryT()
-      : mx(numeric_limits<SegT>::min()),
-        mn(numeric_limits<SegT>::max()) {}
+  QueryT() : mx(numeric_limits<SegT>::min()), mn(numeric_limits<SegT>::max()) {}
   QueryT(SegT _v) : mx(_v), mn(_v) {}
 };
 
-inline QueryT combine(QueryT ln, QueryT rn,
-                      pii lr1, pii lr2) {
+inline QueryT combine(QueryT ln, QueryT rn, pii lr1, pii lr2) {
   chmax(ln.mx, rn.mx);
   chmin(ln.mn, rn.mn);
   return ln;
@@ -17,40 +14,29 @@ inline QueryT combine(QueryT ln, QueryT rn,
 
 using LazyT = SegT;
 
-inline QueryT applyLazyInQuery(QueryT q, LazyT l,
-                               pii lr) {
+inline QueryT applyLazyInQuery(QueryT q, LazyT l, pii lr) {
   if (q.mx == QueryT().mx) q.mx = SegT();
   if (q.mn == QueryT().mn) q.mn = SegT();
   q.mx += l, q.mn += l;
   return q;
 }
 
-inline LazyT applyLazyInLazy(LazyT a, LazyT b) {
-  return a + b;
-}
+inline LazyT applyLazyInLazy(LazyT a, LazyT b) { return a + b; }
 
 using UpdateT = SegT;
 
-inline QueryT applyUpdateInQuery(QueryT q,
-                                 UpdateT u,
-                                 pii lr) {
+inline QueryT applyUpdateInQuery(QueryT q, UpdateT u, pii lr) {
   if (q.mx == QueryT().mx) q.mx = SegT();
   if (q.mn == QueryT().mn) q.mn = SegT();
   q.mx += u, q.mn += u;
   return q;
 }
 
-inline LazyT applyUpdateInLazy(LazyT l, UpdateT u,
-                               pii lr) {
-  return l + u;
-}
+inline LazyT applyUpdateInLazy(LazyT l, UpdateT u, pii lr) { return l + u; }
 
-template <typename Qt = QueryT,
-          typename Lt = LazyT,
-          typename Ut = UpdateT, auto C = combine,
-          auto ALQ = applyLazyInQuery,
-          auto ALL = applyLazyInLazy,
-          auto AUQ = applyUpdateInQuery,
+template <typename Qt = QueryT, typename Lt = LazyT, typename Ut = UpdateT,
+          auto C = combine, auto ALQ = applyLazyInQuery,
+          auto ALL = applyLazyInLazy, auto AUQ = applyUpdateInQuery,
           auto AUL = applyUpdateInLazy>
 struct LazySegmentTree {
   int n, h;
@@ -65,19 +51,14 @@ struct LazySegmentTree {
         ds(n),
         lrs(n << 1) {
     rep(i, 0, n) lrs[i + n] = {i, i};
-    rrep(i, n - 1, 0) {
-      lrs[i] = {lrs[i << 1].first,
-                lrs[i << 1 | 1].second};
-    }
+    rrep(i, n - 1, 0) { lrs[i] = {lrs[i << 1].first, lrs[i << 1 | 1].second}; }
   }
 
-  LazySegmentTree(const vector<Qt> &xs)
-      : LazySegmentTree(len(xs)) {
+  LazySegmentTree(const vector<Qt> &xs) : LazySegmentTree(len(xs)) {
     copy(all(xs), ts.begin() + n);
     rep(i, 0, n) lrs[i + n] = {i, i};
     rrep(i, n - 1, 0) {
-      ts[i] = C(ts[i << 1], ts[i << 1 | 1],
-                lrs[i << 1], lrs[i << 1 | 1]);
+      ts[i] = C(ts[i << 1], ts[i << 1 | 1], lrs[i << 1], lrs[i << 1 | 1]);
     }
   }
 
@@ -102,10 +83,8 @@ struct LazySegmentTree {
     Qt resl = Qt(), resr = Qt();
     pii lr1 = {l, l}, lr2 = {r, r};
     for (; l < r; l >>= 1, r >>= 1) {
-      if (l & 1)
-        resl = C(resl, ts[l], lr1, lrs[l]), l++;
-      if (r & 1)
-        r--, resr = C(ts[r], resr, lrs[r], lr2);
+      if (l & 1) resl = C(resl, ts[l], lr1, lrs[l]), l++;
+      if (r & 1) r--, resr = C(ts[r], resr, lrs[r], lr2);
     }
     return C(resl, resr, lr1, lr2);
   }
@@ -113,8 +92,7 @@ struct LazySegmentTree {
   void build(int p) {
     while (p > 1) {
       p >>= 1;
-      ts[p] = ALQ(C(ts[p << 1], ts[p << 1 | 1],
-                    lrs[p << 1], lrs[p << 1 | 1]),
+      ts[p] = ALQ(C(ts[p << 1], ts[p << 1 | 1], lrs[p << 1], lrs[p << 1 | 1]),
                   ds[p], lrs[p]);
     }
   }
@@ -123,8 +101,7 @@ struct LazySegmentTree {
     rrep(s, h, 0) {
       int i = p >> s;
       if (ds[i] != Lt()) {
-        apply(i << 1, ds[i]),
-            apply(i << 1 | 1, ds[i]);
+        apply(i << 1, ds[i]), apply(i << 1 | 1, ds[i]);
         ds[i] = Lt();
       }
     }

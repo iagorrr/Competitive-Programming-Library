@@ -1,5 +1,5 @@
 using SegT = ll;
-const SegT eSeg=1e9;
+const SegT eSeg = 1e9;
 
 struct QueryT {
   SegT q, v;
@@ -8,24 +8,22 @@ struct QueryT {
 };
 
 inline QueryT combine(QueryT ln, QueryT rn, pii lr1, pii lr2) {
-	QueryT ret;
-	if(ln.v<rn.v)
-		ret = ln;
-	if(rn.v<ln.v)
-		ret = rn;
-	if(rn.v==ln.v){
-		ret.v=ln.v;
-		ret.q=ln.q+rn.q;
-	}
-	return ret;
+  QueryT ret;
+  if (ln.v < rn.v) ret = ln;
+  if (rn.v < ln.v) ret = rn;
+  if (rn.v == ln.v) {
+    ret.v = ln.v;
+    ret.q = ln.q + rn.q;
+  }
+  return ret;
 }
 
 using LazyT = SegT;
 
 inline QueryT applyLazyInQuery(QueryT q, LazyT l, pii lr) {
-	if(l==LazyT())return q;
-	if(q.v==eSeg)q.v=0,q.q=1;
-	q.v+=l;
+  if (l == LazyT()) return q;
+  if (q.v == eSeg) q.v = 0, q.q = 1;
+  q.v += l;
   return q;
 }
 
@@ -34,7 +32,7 @@ inline LazyT applyLazyInLazy(LazyT a, LazyT b) { return a + b; }
 using UpdateT = SegT;
 
 inline QueryT applyUpdateInQuery(QueryT q, UpdateT u, pii lr) {
-	return applyLazyInQuery(q,u,lr);
+  return applyLazyInQuery(q, u, lr);
 }
 
 inline LazyT applyUpdateInLazy(LazyT l, UpdateT u, pii lr) { return l + u; }
@@ -119,8 +117,7 @@ struct LazySegmentTree {
 };
 
 ll areaOfRectanglesUnion(
-    const vector<pair<Point<int>, Point<int>>>
-        &rectangles) {
+    const vector<pair<Point<int>, Point<int>>> &rectangles) {
   if (!size(rectangles)) return 0;
   int maxy = INT_MIN;
   for (auto &[p1, p2] : rectangles) {
@@ -135,18 +132,17 @@ ll areaOfRectanglesUnion(
   }
   sort(sl.begin(), sl.end());
 
-	vector<QueryT> aux(maxy, QueryT(0));
-	LazySegmentTree seg(aux);
-  //memset(seg_vec, 0, sizeof(ll) * maxy);
-  //seg::build(maxy, seg_vec);
+  vector<QueryT> aux(maxy, QueryT(0));
+  LazySegmentTree seg(aux);
+  // memset(seg_vec, 0, sizeof(ll) * maxy);
+  // seg::build(maxy, seg_vec);
 
   int prevx = get<0>(sl.front());
   ll ans = 0;
   for (auto &[curx, ys, yf, inc] : sl) {
-    auto [q, v] = seg.qry(0,maxy-1);
-    //auto [q, v] = seg::query(0, maxy - 1);
-    ans += (ll)(curx - prevx) *
-           (v ? maxy : maxy - q);
+    auto [q, v] = seg.qry(0, maxy - 1);
+    // auto [q, v] = seg::query(0, maxy - 1);
+    ans += (ll)(curx - prevx) * (v ? maxy : maxy - q);
     seg.upd(ys, yf, inc);
     prevx = curx;
   }

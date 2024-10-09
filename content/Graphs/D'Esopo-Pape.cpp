@@ -25,8 +25,7 @@
 using Edge = pair<ll, int>;
 using Adj = vector<vector<Edge>>;
 
-pair<vll, vi> desopo_pape(int s, int n,
-                          const Adj &adj) {
+pair<vll, vi> desopo_pape(int s, int n, const Adj &adj) {
   vll ds(n, LLONG_MAX), ps(n, -1);
   ds[s] = 0;
   vi ms(n, 2);

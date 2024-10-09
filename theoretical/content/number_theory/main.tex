@@ -1,0 +1,35 @@
+\section{Number Theory}
+
+\input{content/number_theory/fermat.tex}
+
+\input{content/number_theory/goldbach.tex}
+
+\input{content/number_theory/linear_diophantine.tex}
+
+\subsection{Fundamental theorem of arithmetic}
+
+Every integer greater than 1 can be represented uniquely as a product of prime numbers, up to the order of the factors.
+
+\begin{equation}
+    n = p_1^{\alpha_1} p_2^{\alpha_2} ... p_k^{\alpha_k}
+\end{equation}
+
+\subsubsection{LCM and GCD}
+
+\begin{equation}
+\begin{aligned}
+    & a = p_1^{\alpha_1} p_2^{\alpha_2} ... p_k^{\alpha_k}  \\
+    & b = p_1^{\beta_1} p_2^{\beta_2} ... p_k^{\beta_k} \\
+    & (a,b) = p_1^{\min{{\alpha_1, \beta_1}}} p_2^{\min{{\alpha_2, \beta_2}}} ... p_k^{\min{{\alpha_k, \beta_k}}} \\
+    & [a,b] = p_1^{\max{{\alpha_1, \beta_1}}} p_2^{\max{{\alpha_2, \beta_2}}} ... p_k^{\max{{\alpha_k, \beta_k}}}
+\end{aligned}
+\end{equation}
+
+
+\subsection{Taking modulo at the exponent}
+
+If $gcd(a,m) = 1$ then:
+
+\begin{equation}
+    a^{m} \equiv a^{n \mod \varphi(m)} \pmod{m}
+\end{equation}

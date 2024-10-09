@@ -67,9 +67,7 @@ struct mint {
     a = m(val);
     return in;
   }
-  friend ostream &operator<<(ostream &out, m a) {
-    return out << a.v;
-  }
+  friend ostream &operator<<(ostream &out, m a) { return out << a.v; }
   friend m operator+(m a, m b) { return a += b; }
   friend m operator-(m a, m b) { return a -= b; }
   friend m operator*(m a, m b) { return a *= b; }
@@ -91,12 +89,10 @@ void ntt(vector<mint<_mod>> &a, bool rev) {
   if (rev) g = 1 / g;
 
   for (int step = n / 2; step; step /= 2) {
-    mint<_mod> w = g ^ (_mod / (n / step)),
-               wn = 1;
+    mint<_mod> w = g ^ (_mod / (n / step)), wn = 1;
     for (int i = 0; i < n / 2; i += step) {
       for (int j = 0; j < step; j++) {
-        auto u = a[2 * i + j],
-             v = wn * a[2 * i + j + step];
+        auto u = a[2 * i + j], v = wn * a[2 * i + j + step];
         b[i + j] = u + v;
         b[i + n / 2 + j] = u - v;
       }
@@ -111,9 +107,8 @@ void ntt(vector<mint<_mod>> &a, bool rev) {
 }
 
 template <ll _mod>
-vector<mint<_mod>> convolution(
-    const vector<mint<_mod>> &a,
-    const vector<mint<_mod>> &b) {
+vector<mint<_mod>> convolution(const vector<mint<_mod>> &a,
+                               const vector<mint<_mod>> &b) {
   vector<mint<_mod>> l(all(a)), r(all(b));
   int N = len(l) + len(r) - 1, n = 1;
   while (n <= N) n *= 2;
@@ -135,8 +130,7 @@ vector<mint<_mod>> convolution(
 }
 
 template <ll _mod>
-vector<mint<_mod>> poly_exp(
-    vector<mint<_mod>> &ps, int k) {
+vector<mint<_mod>> poly_exp(vector<mint<_mod>> &ps, int k) {
   vector<mint<_mod>> ret(len(ps));
   auto base = ps;
   ret[0] = 1;
