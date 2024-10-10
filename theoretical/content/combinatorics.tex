@@ -65,10 +65,27 @@ Binomial coefficients have many different properties. Here are the simplest of t
 
 \subsubsection{$N$ equal balls in $K$ distinct boxes}
 
-Assuming that there can be some boxes empty:
+Equivalent to count the number of solutions for the equation: 
+
+\begin{equation}
+    \begin{array}{c}
+        x_1 + \ldots + x_K = N \\
+        \text{where $x_i > 0$,  $i \in \left[1,K\right]$, N > 0}
+    \end{array}
+\end{equation}
+
+It's given by the formula:
+
+\begin{equation}
+    \begin{array}{c}
+        \binom{N+1}{K-1}
+    \end{array}
+\end{equation}
+
+If some boxes may be \textbf{empty} ($xi \geq 0$), then it's given by:
 
 $$
-\binom{N + K -1}{N}
+    \binom{N + K - 1}{N}
 $$
 
 \subsubsection{$N$ distinct balls in $K$ equal boxes}
