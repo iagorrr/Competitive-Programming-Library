@@ -1,0 +1,96 @@
+\section{Combinatorics}
+
+\subsection{Binomial Coefficients}
+
+Binomial coefficients $\binom n k$ are the number of ways to select a set of $k$ elements from $n$ different elements without taking into account the order of arrangement of these elements (i.e., the number of unordered sets).
+
+Binomial coefficients are also the coefficients in the expansion of $(a + b) ^ n$ (so-called binomial theorem):
+
+$$ (a+b)^n = \binom n 0 a^n + \binom n 1 a^{n-1} b + \binom n 2 a^{n-2} b^2 + \cdots + \binom n k a^{n-k} b^k + \cdots + \binom n n b^n $$
+
+$$ \binom n k = \frac {n!} {k!(n-k)!} $$
+
+\textbf{Recurrence} formula** (which is associated with the famous "Pascal's Triangle"):
+
+$$ \binom n k = \binom {n-1} {k-1} + \binom {n-1} k $$
+
+\subsubsection{Odd numbers in the i-th line}
+
+O número de elementos ímpares na n-śeima linha do triangulo de pascal é $2^{c}$, onde $c$ é o número de bits
+na representação binária de $n$.
+
+\subsubsection{Properties}
+
+Binomial coefficients have many different properties. Here are the simplest of them:
+
+
+\begin{itemize}
+    \item Symmetry rule:
+
+    \[ \binom n k = \binom n {n-k} \]
+
+    \item Factoring in:
+
+    \[ \binom n k = \frac n k \binom {n-1} {k-1} \]
+
+    \item Sum over $k$:
+
+    \[ \sum_{k = 0}^n \binom n k = 2 ^ n \]
+
+    \item Sum over $n$:
+
+    \[ \sum_{m = 0}^n \binom m k = \binom {n + 1} {k + 1} \]
+
+    \item Sum over $n$ and $k$:
+
+    \[ \sum_{k = 0}^m  \binom {n + k} k = \binom {n + m + 1} m \]
+
+    \item Sum of the squares:
+
+    \[ {\binom n 0}^2 + {\binom n 1}^2 + \cdots + {\binom n n}^2 = \binom {2n} n \]
+
+    \item Weighted sum:
+
+    \[ 1 \binom n 1 + 2 \binom n 2 + \cdots + n \binom n n = n 2^{n-1} \]
+
+    \item Connection with the [Fibonacci numbers](../algebra/fibonacci-numbers.md):
+
+    \[ \binom n 0 + \binom {n-1} 1 + \cdots + \binom {n-k} k + \cdots + \binom 0 n = F_{n+1} \]
+
+\end{itemize}
+
+\input{content/combinatorics/partition.tex}
+
+\subsection{4 fundamental problems of distribution}
+
+\subsubsection{$N$ equal balls in $K$ equal boxes}
+
+\subsubsection{$N$ equal balls in $K$ distinct boxes}
+
+Equivalent to count the number of solutions for the equation: 
+
+\begin{equation}
+    \begin{array}{c}
+        x_1 + \ldots + x_K = N \\
+        \text{where $x_i > 0$,  $i \in \left[1,K\right]$, N > 0}
+    \end{array}
+\end{equation}
+
+It's given by the formula:
+
+\begin{equation}
+    \begin{array}{c}
+        \binom{N+1}{K-1}
+    \end{array}
+\end{equation}
+
+If some boxes may be \textbf{empty} ($xi \geq 0$), then it's given by:
+
+$$
+    \binom{N + K - 1}{N}
+$$
+
+\subsubsection{$N$ distinct balls in $K$ equal boxes}
+
+\subsubsection{$N$ distinct balls in $K$ distinct boxes}
+

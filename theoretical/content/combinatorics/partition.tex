@@ -1,0 +1,48 @@
+\subsection{Partition}
+
+In number theory and combinatorics, a partition of a non-negative integer $n$, also called an integer partition, is a way of writing $n$ as a sum of positive integers. Two sums that differ only in the order of their summands are considered the same partition. (If order matters, the sum becomes a composition.) For example, 4 can be partitioned in five distinct ways:
+
+\[
+    \begin{array}{c}
+      4 \\
+      3 + 1 \\
+      2 + 2 \\
+      2 + 1 + 1 \\
+      1 + 1 + 1 + 1 \\
+    \end{array}
+\]
+
+The only partition of zero is the empty sum, having no parts.
+
+
+An individual summand in a partition is called a $part$. The number of partitions of $n$ is given by the partition function $p(n)$. So $p(4) = 5$. The notation $\lambda \vdash n$ means that $\lambda$ is a partition of $n$.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{@{}cccc@{}}
+        \midrule
+        1      & 1      & 2      & 3      \\
+        5      & 7      & 11     & 15     \\
+        22     & 30     & 42     & 56     \\
+        77     & 101    & 135    & 176    \\
+        231    & 297    & 385    & 490    \\
+        627    & 792    & 1002   & 1255   \\
+        1575   & 1958   & 2436   & 3010   \\
+        3718   & 4565   & 5604   & 6842   \\
+        8349   & 10143  & 12310  & 14883  \\
+        17977  & 21637  & 26015  & 31185  \\
+        37338  & 44583  & 53174  & 63261  \\
+        75175  & 89134  & 105558 & 124754 \\
+        147273 & 173525 &        &        \\
+        \bottomrule
+    \end{tabular}
+    \caption{Values of a(n) for n from 0 to 49}
+\end{table}
+
+For instance, whenever the decimal representation of $n$ ends in the digit 4 or 9, the number of partitions of $n$ will be divisible by 5.
+
+$P(n,k)$ denotes the number of ways of writing $n$ as a sum of exactly $k$ terms or, equivalently, the number of partitions into parts of which the largest is exactly $k$. $P(n,k)$ can be computed from the recurrence relation
+
+\begin{equation}
+  P(n,k)=P(n-1,k-1)+P(n-k,k)
+\end{equation}
