@@ -1,0 +1,7 @@
+\subsection{Maximum flow}
+
+\subsection{Maximum of disjoint nodes paths}
+
+Given a directed graph count the maximum number of distinct paths, such that there isn't two paths that share a node.
+
+Run a flow on the graph but uses two nodes to represent a single node in the origial graph, let $I_u$ be the "input node of $u$", and $O_u$ be the "output node of $u$". for each edge $(u, v)$ in the original graph put an edge $(O_u), I_v$ in the flow graph. Also add an edge between $I_u, O_u$ for every $u$ that way even that multiple edges "chooses $I_u$", as between $I_u$ and $O_u$ there is only 1 of capacity, $O_u$ will have at most one edge leaving it.
