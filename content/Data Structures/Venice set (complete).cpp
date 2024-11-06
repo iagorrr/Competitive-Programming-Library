@@ -70,56 +70,56 @@ value by $x$
     stuff
 >8*/
 struct VeniceSet {
-  set<pll> st;
-  ll acc;
-  VeniceSet() : acc() {}
+    set<pll> st;
+    ll acc;
+    VeniceSet() : acc() {}
 
-  ll add_element(ll e, ll q = 1) {
-    q += erase(e);
-    e -= acc;
-    st.emplace(e, q);
-    return q;
-  }
-
-  void update_all(ll x) { acc += x; }
-
-  ll erase(ll e) {
-    e -= acc;
-    auto it = st.lb({e, LLONG_MIN});
-    if (it == end(st) || (*it).first != e) return 0;
-    ll ret = (*it).second;
-    st.erase(it);
-    return ret;
-  }
-
-  ll count(ll x) {
-    x -= acc;
-    auto it = st.lb({x, LLONG_MIN});
-    if (it == end(st) || (*it).first != x) return 0;
-    return (*it).second;
-  }
-
-  pll high() { return *rbegin(st); }
-
-  pll low() { return *begin(st); }
-
-  void pop_high(ll q = -1) {
-    if (q == -1) q = high().second;
-    while (q) {
-      auto [e, eq] = high();
-      st.erase(prev(end(st)));
-      if (eq > q) add_element(e, eq - q);
-      q = max(0ll, q - eq);
+    ll add_element(ll e, ll q = 1) {
+        q += erase(e);
+        e -= acc;
+        st.emplace(e, q);
+        return q;
     }
-  }
 
-  void pop_low(ll q = -1) {
-    if (q == -1) q = low().second;
-    while (q) {
-      auto [e, eq] = low();
-      st.erase(st.begin());
-      if (eq > q) add_element(e, eq - q);
-      q = max(0ll, q - eq);
+    void update_all(ll x) { acc += x; }
+
+    ll erase(ll e) {
+        e -= acc;
+        auto it = st.lb({e, LLONG_MIN});
+        if (it == end(st) || (*it).first != e) return 0;
+        ll ret = (*it).second;
+        st.erase(it);
+        return ret;
     }
-  }
+
+    ll count(ll x) {
+        x -= acc;
+        auto it = st.lb({x, LLONG_MIN});
+        if (it == end(st) || (*it).first != x) return 0;
+        return (*it).second;
+    }
+
+    pll high() { return *rbegin(st); }
+
+    pll low() { return *begin(st); }
+
+    void pop_high(ll q = -1) {
+        if (q == -1) q = high().second;
+        while (q) {
+            auto [e, eq] = high();
+            st.erase(prev(end(st)));
+            if (eq > q) add_element(e, eq - q);
+            q = max(0ll, q - eq);
+        }
+    }
+
+    void pop_low(ll q = -1) {
+        if (q == -1) q = low().second;
+        while (q) {
+            auto [e, eq] = low();
+            st.erase(st.begin());
+            if (eq > q) add_element(e, eq - q);
+            q = max(0ll, q - eq);
+        }
+    }
 };

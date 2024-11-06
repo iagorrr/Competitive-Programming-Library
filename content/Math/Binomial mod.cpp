@@ -12,20 +12,20 @@
 >8*/
 const ll MOD = 998244353;
 inline ll binom(ll n, ll k) {
-  static const int BINMAX = 2'000'000;
-  static vll FAC(BINMAX + 1), FINV(BINMAX + 1);
-  static bool done = false;
-  if (!done) {
-    vll INV(BINMAX + 1);
-    FAC[0] = FAC[1] = INV[1] = FINV[0] = FINV[1] = 1;
-    for (int i = 2; i <= BINMAX; i++) {
-      FAC[i] = FAC[i - 1] * i % MOD;
-      INV[i] = MOD - MOD / i * INV[MOD % i] % MOD;
-      FINV[i] = FINV[i - 1] * INV[i] % MOD;
+    static const int BINMAX = 2'000'000;
+    static vll FAC(BINMAX + 1), FINV(BINMAX + 1);
+    static bool done = false;
+    if (!done) {
+        vll INV(BINMAX + 1);
+        FAC[0] = FAC[1] = INV[1] = FINV[0] = FINV[1] = 1;
+        for (int i = 2; i <= BINMAX; i++) {
+            FAC[i] = FAC[i - 1] * i % MOD;
+            INV[i] = MOD - MOD / i * INV[MOD % i] % MOD;
+            FINV[i] = FINV[i - 1] * INV[i] % MOD;
+        }
+        done = true;
     }
-    done = true;
-  }
 
-  if (n < k || n < 0 || k < 0) return 0;
-  return FAC[n] * FINV[k] % MOD * FINV[n - k] % MOD;
+    if (n < k || n < 0 || k < 0) return 0;
+    return FAC[n] * FINV[k] % MOD * FINV[n - k] % MOD;
 }

@@ -8,7 +8,7 @@ for entry in "$algo_path"/*/; do
 	fi
 
 	echo -e "\tProblem: $entry"
-	g++ -std=c++20 -O2 "$entry"/main.cpp -o main
+	g++ -std=c++20 -O2 "$entry"/main.cpp -o main -D LOCAL
 	for infile in "$entry"/in/*; do
 
 		filename="${infile##*/}"
@@ -26,7 +26,7 @@ done
 
 # Test the main file test
 if [ -f "$algo_path"/main.cpp ]; then
-	g++ -std=c++20 -O2 "$algo_path"/main.cpp -o main
+	g++ -std=c++20 -O2 "$algo_path"/main.cpp -o main -D LOCAL
 	./main
 	rm main
 fi

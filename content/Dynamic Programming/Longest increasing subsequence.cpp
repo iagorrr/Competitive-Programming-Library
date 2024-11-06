@@ -21,41 +21,41 @@ subsequence.
 
 template <typename T>
 pair<int, vi> lis(const vector<T> &xs, int n) {
-  vector<T> dp(n + 1, numeric_limits<T>::max());
-  dp[0] = numeric_limits<T>::min();
+    vector<T> dp(n + 1, numeric_limits<T>::max());
+    dp[0] = numeric_limits<T>::min();
 
-  int sz = 0;
-  vi psx(n);
+    int sz = 0;
+    vi psx(n);
 
-  rep(i, 0, n) {
-    int pos = lower_bound(all(dp), xs[i]) - dp.begin();
+    rep(i, 0, n) {
+        int pos = lower_bound(all(dp), xs[i]) - dp.begin();
 
-    sz = max(sz, pos);
+        sz = max(sz, pos);
 
-    dp[pos] = xs[i];
+        dp[pos] = xs[i];
 
-    psx[i] = pos;
-  }
+        psx[i] = pos;
+    }
 
-  return {sz, psx};
+    return {sz, psx};
 }
 
 template <typename T>
 vi get_idx(vector<T> xs) {
-  int n = xs.size();
+    int n = xs.size();
 
-  auto [sz1, psx1] = lis(xs, n);
+    auto [sz1, psx1] = lis(xs, n);
 
-  transform(rall(xs), xs.begin(), [](T x) { return -x; });
+    transform(rall(xs), xs.begin(), [](T x) { return -x; });
 
-  auto [sz2, psx2] = lis(xs, n);
+    auto [sz2, psx2] = lis(xs, n);
 
-  vi ans;
-  rep(i, 0, n) {
-    int l = psx1[i];
-    int r = psx2[n - i - 1];
-    if (l + r - 1 == sz1) ans.eb(i);
-  }
+    vi ans;
+    rep(i, 0, n) {
+        int l = psx1[i];
+        int r = psx2[n - i - 1];
+        if (l + r - 1 == sz1) ans.eb(i);
+    }
 
-  return ans;
+    return ans;
 }

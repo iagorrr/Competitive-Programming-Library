@@ -23,22 +23,22 @@
 
 template <typename T>
 ll countInversions(vector<T> l, vector<T> r = {}) {
-  if (!len(r)) r = l, sort(all(r));
-  int n = len(l);
-  vi v(n), bit(n);
-  vector<pair<T, int>> w;
-  rep(i, 0, n) w.eb(r[i], i + 1);
-  sort(all(w));
-  rep(i, 0, n) {
-    auto it = lower_bound(all(w), make_pair(l[i], 0));
-    if (it == w.end() or it->first != l[i]) return -1;  // impossible
-    v[i] = it->second;
-    it->second = -1;
-  }
-  ll ans = 0;
-  rrep(i, n - 1, 0 - 1) {
-    for (int j = v[i] - 1; j; j -= j & -j) ans += bit[j];
-    for (int j = v[i]; j < n; j += j & -j) bit[j]++;
-  }
-  return ans;
+    if (!len(r)) r = l, sort(all(r));
+    int n = len(l);
+    vi v(n), bit(n);
+    vector<pair<T, int>> w;
+    rep(i, 0, n) w.eb(r[i], i + 1);
+    sort(all(w));
+    rep(i, 0, n) {
+        auto it = lower_bound(all(w), make_pair(l[i], 0));
+        if (it == w.end() or it->first != l[i]) return -1;  // impossible
+        v[i] = it->second;
+        it->second = -1;
+    }
+    ll ans = 0;
+    rrep(i, n - 1, 0 - 1) {
+        for (int j = v[i] - 1; j; j -= j & -j) ans += bit[j];
+        for (int j = v[i]; j < n; j += j & -j) bit[j]++;
+    }
+    return ans;
 }

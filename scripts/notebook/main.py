@@ -29,7 +29,7 @@ def extract_by_tag(content: str, tag: Tag) -> Optional[str]:
         match = f"""
 
             \\begingroup
-                \\fontsize{{7}}{{10pt}}\\selectfont 
+                \\fontsize{{10}}{{10pt}}\\selectfont 
                 \n\n\\textbf{{{tag.value}}}: 
                 {match}
             \\endgroup

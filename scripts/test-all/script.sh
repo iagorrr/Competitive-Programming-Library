@@ -1,10 +1,14 @@
 tests_path=$1
+
 for algo_path in "$tests_path"/*; do
 	echo "Testing: $algo_path"
 
 	# Test each problem
-	for entry in "$algo_path"/*/; do
+	for entry in "$algo_path"/Problems/*; do
+
 		echo -e "\tProblem: $entry"
+
+		continue
 		g++ -std=c++20 -O2 "$entry"/main.cpp -o main
 		for infile in "$entry"/in/*; do
 

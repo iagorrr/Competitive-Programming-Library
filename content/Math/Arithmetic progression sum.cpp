@@ -8,5 +8,5 @@
     \end{compactitem}
 >8*/
 ll arithmeticProgressionSum(ll s, ll d, ll n) {
-  return (s + (s + d * (n - 1))) * n / 2ll;
+    return (s + (s + d * (n - 1))) * n / 2ll;
 }

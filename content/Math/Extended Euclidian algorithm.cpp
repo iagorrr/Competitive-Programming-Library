@@ -14,8 +14,8 @@
 
 template <typename T>
 tuple<T, T, T> extGcd(T a, T b) {
-  if (!b) return {a, 1, 0};
-  auto [d, x1, y1] = extGcd(b, a % b);
-  T x = y1, y = x1 - y1 * (a / b);
-  return {d, x, y};
+    if (!b) return {a, 1, 0};
+    auto [d, x1, y1] = extGcd(b, a % b);
+    T x = y1, y = x1 - y1 * (a / b);
+    return {d, x, y};
 }

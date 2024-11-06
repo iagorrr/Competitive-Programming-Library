@@ -7,21 +7,21 @@
 
 >8*/
 vll2d getPermutationCicles(const vll &ps) {
-  ll n = len(ps);
-  vector<char> visited(n);
-  vector<vll> cicles;
-  rep(i, 0, n) {
-    if (visited[i]) continue;
+    ll n = len(ps);
+    vector<char> visited(n);
+    vector<vll> cicles;
+    rep(i, 0, n) {
+        if (visited[i]) continue;
 
-    vll cicle;
-    ll pos = i;
-    while (!visited[pos]) {
-      cicle.pb(pos);
-      visited[pos] = true;
-      pos = ps[pos];
+        vll cicle;
+        ll pos = i;
+        while (!visited[pos]) {
+            cicle.pb(pos);
+            visited[pos] = true;
+            pos = ps[pos];
+        }
+
+        cicles.push_back(vll(all(cicle)));
     }
-
-    cicles.push_back(vll(all(cicle)));
-  }
-  return cicles;
+    return cicles;
 }

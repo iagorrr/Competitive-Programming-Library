@@ -19,12 +19,12 @@
 >8*/
 const int LOG = 20;
 vc build(const vi &masks) {
-  vc ret(1 << LOG);
-  trav(mi, masks) ret[mi] = 1;
-  rep(b, 0, LOG) {
-    rep(mask, 0, (1 << LOG)) {
-      if (mask & (1 << b)) ret[mask] |= ret[mask ^ (1 << b)];
+    vc ret(1 << LOG);
+    trav(mi, masks) ret[mi] = 1;
+    rep(b, 0, LOG) {
+        rep(mask, 0, (1 << LOG)) {
+            if (mask & (1 << b)) ret[mask] |= ret[mask ^ (1 << b)];
+        }
     }
-  }
-  return ret;
+    return ret;
 }

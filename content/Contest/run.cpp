@@ -2,17 +2,17 @@ void run();
 
 int32_t main() {
 #ifndef LOCAL
-  fastio;
+    fastio;
 #endif
 
-  int T = 1;
+    int T = 1;
 
-  cin >> T;
+    cin >> T;
 
-  rep(t, 0, T) {
-    dbg(t);
-    run();
-  }
+    rep(t, 0, T) {
+        dbg(t);
+        run();
+    }
 }
 
 void run() {}

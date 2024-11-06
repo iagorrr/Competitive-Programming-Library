@@ -1,22 +1,25 @@
-\documentclass[9pt]{extarticle}
+\documentclass[10pt]{extarticle}
 
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{multicol}
+\usepackage{amssymb}
 \usepackage{fontspec}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{hyperref}
-%\usepackage{amsfonts}
+\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{soul}
 \usepackage{setspace}
 \usepackage{paralist}
 \usepackage{unicode-math}
-\usepackage[a4paper,  portrait, top=1cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
+\usepackage[a4paper,  landscape, top=1cm, bottom=1cm, left=0.5cm, right=0.5cm, bmargin=1cm, footnotesep=0.0cm, footskip=0.5cm]{geometry}
+\usepackage{courier}
 
 \title{Competitive Programming Library}
 \author{@iagorrr}
@@ -25,12 +28,9 @@
 \setlength{\columnseprule}{0.01cm}
 \singlespacing
 \setstretch{0.2}
-\makeatletter
-\newcommand\BeraMonottfamily{%
-  \def\fvm@Scale{1.0}% scales the font down
-  \fontfamily{fvm}\selectfont% selects the Bera Mono font
-}
-\makeatother
+
+
+\newfontface\DejaVuSansMono{DejaVu Sans Mono}[Contextuals={WordInitial,WordFinal}]
 
 \lstdefinestyle{genericstyle}{
   tabsize=2,
@@ -43,29 +43,40 @@
   showtabs=false,
   extendedchars=false,
   inputencoding=utf8,
-  basicstyle=\BeraMonottfamily,
-  keywordstyle=\BeraMonottfamily,
-  stringstyle=\BeraMonottfamily,
-  commentstyle=\BeraMonottfamily,
+  %basicstyle=\DejavuSansMono,
+  %keywordstyle=\DejavuSansMono,
+  %stringstyle=\DejavuSansMono,
+  %commentstyle=\DejavuSansMono,
 }
+
+
 
 \lstdefinestyle{cppstyle}{
   language=C++,
-  tabsize=2,
+  tabsize=4,
   breakatwhitespace=false,
   breaklines=true,
-  captionpos=b,
   keepspaces=true,
   showspaces=false,
   showstringspaces=false,
   showtabs=true,
   extendedchars=false,
   inputencoding=utf8,
-  basicstyle=\BeraMonottfamily,
-  keywordstyle=\BeraMonottfamily,
-  stringstyle=\BeraMonottfamily,
-  commentstyle=\BeraMonottfamily,
 }
+
+\lstset{
+  basicstyle=\ttfamily\small\DejaVuSansMono,     % Set the font for the code
+  numberstyle=\tiny\color{gray},          % Set the line numbers style
+  keywordstyle=\color{blue}\bfseries,     % Keyword style (optional)
+  commentstyle=\color{OliveGreen},             % Comment style (optional)
+  %stringstyle=\color{red},                % String style (optional)
+  breaklines=true,                        % Automatic line breaking
+  showstringspaces=false,                 % Hide spaces in strings
+  tabsize=4,                              % Set tab size to 2
+  literate={~}{$\sim$}{1},                % Properly render tilde characters
+}
+
+
 
 \usepackage{titling}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill}

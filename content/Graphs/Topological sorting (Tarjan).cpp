@@ -21,29 +21,29 @@ int not_found = 0, found = 1, processed = 2;
 int state[maxn];
 
 bool dfs(int u, vi &order) {
-  if (state[u] == processed) return true;
-  if (state[u] == found) return false;
+    if (state[u] == processed) return true;
+    if (state[u] == found) return false;
 
-  state[u] = found;
+    state[u] = found;
 
-  for (auto v : g[u]) {
-    if (not dfs(v, order)) return false;
-  }
+    for (auto v : g[u]) {
+        if (not dfs(v, order)) return false;
+    }
 
-  state[u] = processed;
-  order.emplace_back(u);
+    state[u] = processed;
+    order.emplace_back(u);
 
-  return true;
+    return true;
 }
 
 vi topo_sort() {
-  vi order;
-  memset(state, 0, sizeof state);
+    vi order;
+    memset(state, 0, sizeof state);
 
-  for (int u = 0; u < n; u++) {
-    if (state[u] == not_found and not dfs(u, order)) return {};
-  }
+    for (int u = 0; u < n; u++) {
+        if (state[u] == not_found and not dfs(u, order)) return {};
+    }
 
-  reverse(all(order));
-  return order;
+    reverse(all(order));
+    return order;
 }

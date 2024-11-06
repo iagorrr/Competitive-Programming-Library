@@ -8,16 +8,16 @@
   @Time:$O(\binom{N}{K} \cdot O(process))$
 >8*/
 void process(vi &index) {
-  for (int i = 0; i < len(index); i++) {
-    if (index[i]) cout << i << " \n"[i == len(index) - 1];
-  }
+    for (int i = 0; i < len(index); i++) {
+        if (index[i]) cout << i << " \n"[i == len(index) - 1];
+    }
 }
 
 void n_choose_k(int n, in k) {
-  vi index(n);
-  fill(index.end() - k, index.end(), 1);
+    vi index(n);
+    fill(index.end() - k, index.end(), 1);
 
-  do {
-    process(index);
-  } while (next_permutation(all(index)));
+    do {
+        process(index);
+    } while (next_permutation(all(index)));
 }
