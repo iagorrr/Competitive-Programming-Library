@@ -1,12 +1,15 @@
 
 \subsection{Matrix Multiplication}
 
-Let \( A \in \mathbb{R}^{m \times n} \) and \( B \in \mathbb{R}^{n \times p} \). The product \( C = AB \in \mathbb{R}^{m \times p} \) is defined as:
+Let \( A \in \mathbb{R}^{n \times m} \) and \( B \in \mathbb{R}^{m \times c} \). The product \( C = AB \in \mathbb{R}^{n \times m} \) is defined as:
 
-\[
-c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
-\]
+\begin{equation}
+  c_{ij} = \sum_{k=1}^{m} a_{ik} b_{kj}
+\end{equation}
 
-for \( i = 1, \ldots, m \) and \( j = 1, \ldots, p \).
+
+for \( i = 1, \ldots, n \) and \( j = 1, \ldots, m \).
+
+Note that the number of rows in A must be the same as the number of columns in B.
 
 Matrix multiplication is associative and distributive, but not commutative: \( AB \neq BA \) in general.
