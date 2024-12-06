@@ -17,12 +17,12 @@ vector<vector<T>> prod(vector<vector<T>> &a, vector<vector<T>> &b,
                        const ll mod) {
     assert(a.back().size() == b.size());
     int n = a.size();
-    int m = b.back().size();
+    int m = a.back().size();
     vector<vector<T>> c(n, vector<T>(m));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            for (int k = 0; k < n; k++) {
+            for (int k = 0; k < m; k++) {
                 c[i][j] = (c[i][j] + ((a[i][k] * b[k][j]) % mod)) % mod;
             }
         }
