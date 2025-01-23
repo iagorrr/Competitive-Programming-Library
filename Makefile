@@ -13,11 +13,22 @@ notebook-pdf:
 	@lualatex  notebook.tex
 	@lualatex  notebook.tex
 
+theoretical-pdf:
+	# Yeah you have to run it twice to work :P
+	@cd theoretical && ls  && \
+	lualatex  theoretical.tex && \
+	lualatex  theoretical.tex  && \
+	cd .. \
 
 clean:
-	@rm -f notebook.log notebook.out notebook.toc notebook.aux notebook.tex
+	@rm -f *.log *.out *.aux *.toc notebook.tex
+	@rm -f theoretical/*.log theoretical/*.out theoretical/*.aux theoretical*.toc
 
-notebook: format notebook-tex notebook-pdf clean
+notebook: clean format notebook-tex notebook-pdf
+
+theoretical: clean theoretical-pdf
 
 test-all:
 	@bash scripts/test-all/script.sh ./tests
+
+

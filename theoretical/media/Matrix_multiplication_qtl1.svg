@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="350" viewBox="0 0 620 350">
+	<defs>
+		<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+			<rect width="40" height="40" fill="none" stroke="#000"/>
+		</pattern>
+	</defs>
+	
+	<g transform="translate(47,50)">
+		<rect width="120" height="200" fill="#afe9af" stroke="#000"/>
+		<rect width="120" height="200" fill="url(#grid)"/>
+	</g>
+	
+	<g transform="translate(225,90)">
+		<rect width="160" height="120" fill="#faa" stroke="#000"/>
+		<rect width="160" height="120" fill="url(#grid)"/>
+	</g>
+	
+	<g transform="translate(445,50)">
+		<rect width="160" height="200" fill="#acf" stroke="#000"/>
+		<rect width="160" height="200" fill="url(#grid)"/>
+	</g>
+
+	<g font-family="Times New Roman" text-anchor="end">
+		<text x="205" y="172" font-size="64">∙</text>
+		<text x="429" y="166" font-size="48">=</text>
+		<text x="205" y="324" font-size="64">∙</text>
+		<text x="429" y="318" font-size="48">=</text>
+	</g>
+	
+	<g font-family="Sans" font-size="32" text-anchor="end">
+		<g font-size="48">
+			<text x="124" y="320">A</text>
+			<text x="321" y="320">B</text>
+			<text x="542" y="320">C</text>
+		</g>
+		<text x="37" y="250">m</text>
+		<text x="167" y="40">n</text>
+		<text x="215" y="210">n</text>
+		<text x="385" y="80">p</text>
+		<text x="435" y="250">m</text>
+		<text x="605" y="40">p</text>
+	</g>
+</svg>
