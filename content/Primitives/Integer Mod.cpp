@@ -1,35 +1,32 @@
-const ll MOD = 1'000'000'000 + 7;
-template <ll _mod = MOD>
-struct mint {
-    ll value;
-    static const ll MOD_value = _mod;
+#include "../Contest/template.cpp"
 
-    mint(ll v = 0) {
-        value = v % _mod;
-        if (value < 0) value += _mod;
-    }
-    mint(ll a, ll b) : value(0) {
-        *this += a;
-        *this /= b;
+template <ll m>
+struct mod_int {
+    ll x;
+
+    mod_int(ll v = 0) {
+        x = v % m;
+        if (x < 0) v += m;
     }
 
-    mint &operator+=(mint const &b) {
-        value += b.value;
-        if (value >= _mod) value -= _mod;
-        return *this;
-    }
-    mint &operator-=(mint const &b) {
-        value -= b.value;
-        if (value < 0) value += _mod;
-        return *this;
-    }
-    mint &operator*=(mint const &b) {
-        value = (ll)value * b.value % _mod;
+    mod_int &operator+=(mod_int const &b) {
+        x += b.x;
+        if (x >= m) x -= m;
         return *this;
     }
 
-    friend mint mexp(mint a, ll e) {
-        mint res = 1;
+    mod_int &operator-=(mod_int const &b) {
+        x -= b.x;
+        if (x < 0) x += m;
+        return *this;
+    }
+    mod_int &operator*=(mod_int const &b) {
+        x = (ll)x * b.x % m;
+        return *this;
+    }
+
+    friend mod_int mpow(mod_int a, ll e) {
+        mod_int res = 1;
         while (e) {
             if (e & 1) res *= a;
             a *= a;
@@ -37,28 +34,27 @@ struct mint {
         }
         return res;
     }
-    friend mint inverse(mint a) { return mexp(a, _mod - 2); }
+    friend mod_int inverse(mod_int a) { return mpow(a, m - 2); }
 
-    mint &operator/=(mint const &b) { return *this *= inverse(b); }
-    friend mint operator+(mint a, mint const b) { return a += b; }
-    mint operator++(int) { return this->value = (this->value + 1) % _mod; }
-    mint operator++() { return this->value = (this->value + 1) % _mod; }
-    friend mint operator-(mint a, mint const b) { return a -= b; }
-    friend mint operator-(mint const a) { return 0 - a; }
-    mint operator--(int) {
-        return this->value = (this->value - 1 + _mod) % _mod;
-    }
+    mod_int &operator/=(mod_int const &b) { return *this *= inverse(b); }
+    friend mod_int operator+(mod_int a, mod_int const b) { return a += b; }
+    mod_int operator++(int) { return this->x = (this->x + 1) % m; }
+    mod_int operator++() { return this->x = (this->x + 1) % m; }
+    friend mod_int operator-(mod_int a, mod_int const b) { return a -= b; }
+    friend mod_int operator-(mod_int const a) { return 0 - a; }
+    mod_int operator--(int) { return this->x = (this->x - 1 + m) % m; }
 
-    mint operator--() { return this->value = (this->value - 1 + _mod) % _mod; }
-    friend mint operator*(mint a, mint const b) { return a *= b; }
-    friend mint operator/(mint a, mint const b) { return a /= b; }
-    friend std::ostream &operator<<(std::ostream &os, mint const &a) {
-        return os << a.value;
+    mod_int operator--() { return this->x = (this->x - 1 + m) % m; }
+    friend mod_int operator*(mod_int a, mod_int const b) { return a *= b; }
+    friend mod_int operator/(mod_int a, mod_int const b) { return a /= b; }
+    friend ostream &operator<<(ostream &os, mod_int const &a) {
+        return os << a.x;
     }
-    friend bool operator==(mint const &a, mint const &b) {
-        return a.value == b.value;
+    friend bool operator==(mod_int const &a, mod_int const &b) {
+        return a.x == b.x;
     }
-    friend bool operator!=(mint const &a, mint const &b) {
-        return a.value != b.value;
+    friend bool operator!=(mod_int const &a, mod_int const &b) {
+        return a.x != b.x;
     }
 };
+
