@@ -1,0 +1,73 @@
+\subsection{Bell number}
+
+Count the possible partitions of a set, denoted $B_n$, where $n$ is an integer greater than or equal to zero.
+
+As an examplle $B_3 = 5$, because the $3-element$ set $a, b, c$ can be partionated in $5$ distinct ways:
+
+\begin{equation}
+\begin{array}{c}
+        \{\{a\}, \{b\}, \{c\}\}, \\
+        \{\{a\}, \{b, c\}\}, \\
+        \{\{b\}, \{a, c\}\}, \\
+        \{\{c\}, \{a, b\}\}, \\
+        \{\{a, b, c\}\} 
+\end{array}
+\end{equation}
+
+The ordering of subsets within the family is not considered.
+
+The first few values, starting from 0.
+
+\begin{equation}
+        \begin{array}{l}
+        1, 1, 2, 5, 15, 52, 203, 877, 4140, 21147, \\
+        115975, 678570, 4213597, 27644437, 190899322, \\
+        1382958545, 10480142147, 82864869804, 682076806159, \\
+        5832742205057, 51724158235372, 474869816156751, \\ 
+        4506715738447323, 44152005855084346, 445958869294805289, \\
+        4638590332229999353, 49631246523618756274
+        \end{array}
+\end{equation}
+
+\subsubsection{Bell Triangle}
+
+The Bell numbers can be found using a triangle.
+
+\begin{enumerate}
+    \item Start with the number one. Put this on a row by itself. ( $x_{0,1}=1$)
+
+    \item Start a new row with the rightmost element from the previous row as the leftmost number ( $x_{i,1} \leftarrow x_{i-1,r}$ where $r$ is the last element of (i-1)-th row)
+
+    \item Determine the numbers not on the left column by taking the sum of the number to the left and the number above the number to the left, that is, the number diagonally up and left of the number we are calculating  $x_{i,j}\leftarrow x_{i,j-1}+x_{i-1,j-1}$
+
+    \item Repeat step three until there is a new row with one more number than the previous row (do step 3 until $j=r+1$)
+
+    \item The number on the left hand side of a given row is the Bell number for that row. ( $ B_{i} \leftarrow x_{i,1}$)
+\end{enumerate}
+
+\begin{equation}
+\begin{array}{l}
+        1                       \\
+        1 \quad 2                     \\
+        2 \quad 3 \quad 5                   \\
+        5 \quad 10 \quad 15                    \\
+        15 \quad 20 \quad 27 \quad 37 \quad 52
+\end{array}
+\end{equation}
+
+\subsubsection{Summation formulas}
+
+Using binomial coefficients.
+
+\begin{equation} 
+        B_{n+1}=\sum _{k=0}^{n}{\binom {n}{k}}B_{k}
+        \label{Bell number using binomial coefficients}
+\end{equation}
+
+Using Stirling numbers of the second kind
+
+\begin{equation}
+        B_{n}=\sum _{k=0}^{n}\left\{{n \atop k}\right\}
+        \label{Bell number using Stirling numbers of second kind}
+\end{equation}
+
