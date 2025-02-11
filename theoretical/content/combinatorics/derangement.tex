@@ -1,0 +1,30 @@
+\subsection{Derangement / Montmort Number / Subfactorial}
+
+In combinatorial mathematics, a derangement is a permutation of the elements of a set in which no element appears in its original position. In other words, a derangement is a permutation that has no fixed points.
+
+The number of derangements of an $n$-element set is called the $n$th derangement number or rencontres number, or the subfactorial of $n$ and is sometimes denoted $!n$ or $D_n$
+
+\begin{equation}
+        D_n = !n = n! \sum_{k=0}^{n} \frac{(-1)^k}{k!}
+\end{equation}
+
+It also satisfies the following recurrences:
+
+\begin{equation}
+        !n = n \cdot !(n - 1) + (-1)^n
+\end{equation}
+
+\begin{equation}
+        !n = (n - 1)\cdot (!(n - 1) + !(n - 2))
+\end{equation}
+
+The first few values, starting from $D_0$: 
+\begin{equation}
+        \begin{array}{l}
+                1, 0, 1, 2, 9, 44, 265, 1854, 14833, 133496, \\
+                1334961, 14684570, 176214841, 2290792932, 32071101049,\\
+                481066515734, 7697064251745, 130850092279664, 2355301661033953, \\
+                44750731559645106, 895014631192902121, 18795307255050944540, \\
+                413496759611120779881, 9510425471055777937262
+        \end{array}
+\end{equation}
