@@ -20,7 +20,7 @@ using namespace std;
 #define trav(xi, xs) for (auto &xi : xs)
 #define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
 using ll = long long;
-#define inte ll
+#define endl '\n'
 #define pb push_back
 #define pf push_front
 #define ppb pop_back
@@ -59,4 +59,13 @@ template <typename T, typename U>
 inline bool chmin(T &a, U const &b) {
     return (a > b ? a = b, 1 : 0);
 }
+
+template <typename T>
+std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
+    for (auto &element : vec) {
+        is >> element;
+    }
+    return is;
+}
+
 /*8<============~ END TEMPLATE ~============}>8*/

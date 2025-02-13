@@ -1,8 +1,10 @@
+#include "../Contest/template.cpp"
+
 using ll = long long;
 using vll = vector<ll>;
 using pll = pair<ll, ll>;
 
-const int MAXN(1 '000' 000);
+const int MAXN(1'000'000);
 const ll MOD = 1000027957;
 const ll MOD2 = 1000015187;
 const ll P = 31;

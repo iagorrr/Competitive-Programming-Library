@@ -57,4 +57,3 @@ struct mod_int {
         return a.x != b.x;
     }
 };
-

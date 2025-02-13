@@ -16,7 +16,9 @@
 
     $O(V \log{E})$
 >8*/
-const int MAXN(1 '00' 000);
+#include "../Contest/template.cpp"
+
+const int MAXN(1'00'000);
 int N;
 vector<pair<ll, int>> G[MAXN];
 ll prim(vi s = vi(1, 0)) {

@@ -1,3 +1,5 @@
+#include "../Contest/template.cpp"
+
 const ll P = 31;
 const ll MOD = 1e9 + 9;
 const int MAXN(1e6);

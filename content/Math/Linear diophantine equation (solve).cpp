@@ -15,10 +15,10 @@ optional<pair<T, T>> diophantineEquationSolution(T a, T b, T c) {
         if (c)
             return nullopt;
         else
-            return pair<T, T>{0, 0};
+            return pair<T, T>{(T)0, (T)0};
     }
 
-    auto [g, x0, y0] = extGcd(abs(a), abs(b));
+    auto [g, x0, y0] = extGcd(a < 0 ? a * -1 : a, b < 0 ? b * -1 : b);
 
     if (c % g) return nullopt;
 
@@ -26,5 +26,8 @@ optional<pair<T, T>> diophantineEquationSolution(T a, T b, T c) {
 
     if (a < 0) x0 = -x0;
     if (b < 0) y0 = -y0;
-    return pair<T, T>{x0, y0};
+
+    pair<T, T> ret;
+    ret.first = x0, ret.second = y0;
+    return ret;
 }

@@ -12,6 +12,7 @@
     note that when acessing $polyominoes[x]$ only
     the first $x$ coordinates are valid.
 >8*/
+#include "../Contest/template.cpp"
 const int MAXP = 10;
 
 using pii = pair<int, int>;

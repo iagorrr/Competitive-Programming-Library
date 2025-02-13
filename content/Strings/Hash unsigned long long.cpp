@@ -10,7 +10,8 @@
     "typedef ull H;" instead if you think test
     data is random.
 >8*/
-typedef uint64_t ull;
+#include "../Contest/template.cpp"
+
 struct H {
     ull x;
     H(ull x = 0) : x(x) {}
@@ -24,6 +25,7 @@ struct H {
     bool operator==(H o) const { return get() == o.get(); }
     bool operator<(H o) const { return get() < o.get(); }
 };
+
 static const H C = (long long)1e11 + 3;  // (order ~ 3e9; random also ok)
 
 struct Hash {

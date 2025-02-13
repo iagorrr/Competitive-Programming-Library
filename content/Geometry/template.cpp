@@ -8,7 +8,7 @@ using Point = pair<T, T>;
 #define x first
 #define y second
 
-const double EPS{1e-9};
+const double EPS{1e-6};
 const ld PI = acos(-1);
 
 template <typename T>

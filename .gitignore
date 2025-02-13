@@ -4,3 +4,4 @@ notebook.tex
 *.toc
 *.log
 *.aux
+build/

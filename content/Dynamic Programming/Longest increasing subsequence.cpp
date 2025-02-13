@@ -19,6 +19,8 @@ subsequence.
     $O(n\log{n})$
 >8*/
 
+#include "../Contest/template.cpp"
+
 template <typename T>
 pair<int, vi> lis(const vector<T> &xs, int n) {
     vector<T> dp(n + 1, numeric_limits<T>::max());
