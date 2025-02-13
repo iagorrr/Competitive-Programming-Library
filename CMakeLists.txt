@@ -13,17 +13,10 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
+
 enable_testing()
 
-# hello_test
-add_executable(
-  hello_test
-  ./tests/hello_test.cc
-)
-target_link_libraries(
-  hello_test
-  GTest::gtest_main
-)
+include(GoogleTest)
 
 # extended-euclidian-algorithm
 add_executable(
@@ -34,6 +27,7 @@ target_link_libraries (
         test_extended_euclidian_algorithm
         GTest::gtest_main
 )
+gtest_discover_tests(test_extended_euclidian_algorithm)
 
 # linear_diophantine_equation_solve
 add_executable(
@@ -44,11 +38,7 @@ target_link_libraries (
         test_linear_diophantine_equation_solve
         GTest::gtest_main
 )
-
-include(GoogleTest)
-
-gtest_discover_tests(hello_test)
-gtest_discover_tests(test_extended_euclidian_algorithm)
 gtest_discover_tests(test_linear_diophantine_equation_solve)
+
 
 

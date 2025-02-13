@@ -169,11 +169,13 @@ For more information please see the [about section](#about).
 - [Trie](/content/Strings/Trie.cpp)
 - [Z function](/content/Strings/Z-function.cpp)
 
-## About section
+## About
 
 The style used is the [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) (WIP).
 
-## References & Courses
+The library is tested using both "unit tests" and problems, to run the "unit tests" you may run `make test-unit` and to test the problems just run `make test-problems`.
+
+## References, and other libraries
 
 - [KACTL ICPC Code Library](https://github.com/kth-competitive-programming/kactl)
 - [PauloMiranda98's Library](https://github.com/PauloMiranda98/Competitive-Programming-Notebook)

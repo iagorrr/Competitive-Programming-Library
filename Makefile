@@ -1,3 +1,8 @@
+.PHONY: clean
+clean:
+	@rm -f *.log *.out *.aux *.toc notebook.tex
+	@rm -f theoretical/*.log theoretical/*.out theoretical/*.aux theoretical*.toc
+
 .PHONY: readme
 readme:
 	@python scripts/gen-readme/gen-readme.py > README.md
@@ -17,39 +22,25 @@ notebook-pdf:
 	@lualatex  notebook.tex
 	@lualatex  notebook.tex
 
-.PHONY: theoretical-pdf
-theoretical-pdf:
-	# Yeah you have to run it twice to work :P
-	@cd theoretical &&  \
-	lualatex  theoretical.tex && \
-	lualatex  theoretical.tex
-
-.PHONY: clean
-clean:
-	@rm -f *.log *.out *.aux *.toc notebook.tex
-	@rm -f theoretical/*.log theoretical/*.out theoretical/*.aux theoretical*.toc
-
 .PHONY: notebook 
 notebook:
 	clean format notebook-tex notebook-pdf
 
 .PHONY: theoretical
 theoretical:
-	clean theoretical-pdf
+	# Yeah you have to run it twice to work :P
+	@cd theoretical &&  \
+	lualatex  theoretical.tex && \
+	lualatex  theoretical.tex
 
-.PHONY: test-algorithm
-test-algorithm:
-	echo "Test: $1" 
-	# @echo "Tests path: $$1"
-	# @bash scripts/test-algorithm/script.sh $$1
-
-.PHONY: test-all
-test-all:
+.PHONY: test-problems 
+test-problems:
 	@bash scripts/test-all/script.sh ./tests
 
-.PHONY: new-test
-new-test:
+.PHONY: test-unit
+test-unit:
 	cmake -S . -B build
 	cmake --build build
 	cd build && ctest --output-on-failure --verbose
 
+all: clean test-unit test-problems format readme notebook theoretical 
