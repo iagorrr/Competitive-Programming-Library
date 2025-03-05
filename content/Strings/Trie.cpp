@@ -1,24 +1,32 @@
 /*8<
-  @Tittle:Trie
-  @Description:
-    \begin{compactitem}
-      \item build with the size of the alphabet
-      $(sigma)$ and the first char $(norm)$ \item
-      $insert(s)$ insert the string in the trie
-      $O(|s|*sigma)$ \item $erase(s)$ remove the
-      string from the trie $O(|s|)$ \item
-      $find(s)$ return the last node from the
-      string s, 0 if not found $O(|s|)$
-    \end{compactitem}
+@Tittle: Trie
+
+@Description:
+        \begin{compactitem}
+                \item build with the size of the alphabet
+                $(sigma)$ and the first char $(norm)$
+
+                \item $insert(s)$ insert the string in the trie
+                $O(|s|*sigma)$
+
+                \item $erase(s)$ remove the string from the trie $O(|s|)$
+
+                \item $find(s)$ return the last node from the
+                string s, 0 if not found $O(|s|)$
+        \end{compactitem}
+@Usage:
 >8*/
 
-struct trie {
+#include "../Contest/template.cpp"
+
+struct Trie {
     vi2d to;
     vi end, pref;
     int sigma;
     char norm;
 
-    trie(int sigma_ = 26, char norm_ = 'a') : sigma(sigma_), norm(norm_) {
+    Trie(int sigma_ = 'z' - 'a' + 1, char norm_ = 'a')
+        : sigma(sigma_), norm(norm_) {
         to = {vector<int>(sigma)};
         end = {0}, pref = {0};
     }
@@ -38,6 +46,7 @@ struct trie {
         }
         end[x]++, pref[0]++;
     }
+
     void erase(const string &s) {
         int x = 0;
         for (char c : s) {
@@ -47,6 +56,7 @@ struct trie {
         }
         end[x]--, pref[0]--;
     }
+
     int find(const string &s) {
         int x = 0;
         for (auto c : s) {
