@@ -1,11 +1,22 @@
-struct block_cut_tree {
+/*
+ * @Title: Block-Cut Tree
+ * @Description:
+ *      Builds the Block-Cut of a undirected graph.
+ * @Time: $O(N+M)$
+ * @Memory: $O(N)$
+ * @Problems:
+ *      https://codeforces.com/group/btcK4I5D5f/contest/601720/problem/I
+ * */
+#pragma once
+#include "../Contest/template.cpp"
+
+struct BlockCutTree {
     int n;
-    vector<int> id, is_cutpoint, tin, low, stk;
-    vector<vector<int>> comps, tree;
-    block_cut_tree(vector<vector<int>> &g)
-        : n(g.size()), id(n), is_cutpoint(n), tin(n), low(n) {
-        // build comps
-        for (int i = 0; i < n; i++) {
+    vi idOnTree, tin, low, stk, isGraphCutpoint, isTreeCutpoint;
+    vi2d comps, treeAdj;
+    BlockCutTree(vi2d &g)
+        : n(len(g)), idOnTree(n), tin(n), low(n), isGraphCutpoint(n) {
+        rep(i, 0, n) {
             if (!tin[i]) {
                 int timer = 0;
                 dfs(i, -1, timer, g);
@@ -13,30 +24,33 @@ struct block_cut_tree {
         }
 
         int node_id = 0;
-        for (int u = 0; u < n; u++) {
-            if (is_cutpoint[u]) {
-                id[u] = node_id++;
-                tree.push_back({});
+        rep(u, 0, n) {
+            if (isGraphCutpoint[u]) {
+                idOnTree[u] = node_id++;
+                isTreeCutpoint.eb(true);
+
+                treeAdj.pb({});
             }
         }
 
         for (auto &comp : comps) {
             int node = node_id++;
-            tree.push_back({});
+            treeAdj.pb({});
+            isTreeCutpoint.eb(false);
             for (int u : comp) {
-                if (!is_cutpoint[u]) {
-                    id[u] = node;
+                if (!isGraphCutpoint[u]) {
+                    idOnTree[u] = node;
                 } else {
-                    tree[node].emplace_back(id[u]);
-                    tree[id[u]].emplace_back(node);
+                    treeAdj[node].eb(idOnTree[u]),
+                        treeAdj[idOnTree[u]].eb(node);
                 }
             }
         }
     }
 
-    void dfs(int u, int p, int &timer, vector<vector<int>> &g) {
+    void dfs(int u, int p, int &timer, vi2d &g) {
         tin[u] = low[u] = ++timer;
-        stk.emplace_back(u);
+        stk.eb(u);
 
         for (auto v : g[u]) {
             if (v == p) continue;
@@ -44,10 +58,10 @@ struct block_cut_tree {
                 dfs(v, u, timer, g);
                 low[u] = min(low[u], low[v]);
                 if (low[v] >= tin[u]) {
-                    is_cutpoint[u] = (tin[u] > 1 or tin[v] > 2);
-                    comps.push_back({u});
+                    isGraphCutpoint[u] = (tin[u] > 1 or tin[v] > 2);
+                    comps.pb({u});
                     while (comps.back().back() != v) {
-                        comps.back().emplace_back(stk.back());
+                        comps.back().eb(stk.back());
                         stk.pop_back();
                     }
                 }
@@ -55,4 +69,42 @@ struct block_cut_tree {
                 low[u] = min(low[u], tin[v]);
         }
     }
+
+    void debug() {
+        dbg(n);
+        dbg(id);
+        dbg(isGraphCutpoint);
+        dbg(isTreeCutpoint);
+        dbg(tin);
+        dbg(low);
+        dbg(stk);
+        dbg(comps);
+        dbg(tree);
+    }
+
+    int countMandatoryNodesOnPath(int startNode, int endNode) {
+        startNode = idOnTree[startNode], endNode = idOnTree[endNode];
+
+        int ans = !isTreeCutpoint[startNode] + !isTreeCutpoint[endNode];
+
+        int artPoints = 0;
+        function<void(int, int)> dfsCount = [&](int u, int p) {
+            artPoints += isTreeCutpoint[u];
+
+            if (u == endNode) ans += artPoints;
+
+            for (auto v : treeAdj[u]) {
+                if (v != p) {
+                    dfsCount(v, u);
+                }
+            }
+
+            artPoints -= isTreeCutpoint[u];
+        };
+
+        dfsCount(startNode, -1);
+
+        return ans;
+    }
 };
+
