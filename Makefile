@@ -43,4 +43,4 @@ test-unit:
 	cmake --build build
 	cd build && ctest --output-on-failure --verbose
 
-all: clean test-unit test-problems format readme notebook theoretical 
+all: clean test-unit test-problems format readme notebook theoretical build

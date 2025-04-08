@@ -40,5 +40,20 @@ target_link_libraries (
 )
 gtest_discover_tests(test_linear_diophantine_equation_solve)
 
+# count_mandatory_nodes_on_single_path
+add_executable(
+        test_count_mandatory_nodes_on_single_path
+        ./tests/count-mandatory-nodes-on-single-path/test.cc
+)
+target_link_libraries (
+        test_count_mandatory_nodes_on_single_path
+        GTest::gtest_main
+)
+gtest_discover_tests(test_count_mandatory_nodes_on_single_path)
+
+# Suffix Automaton
+# add_executable(
+#
+# )
 
 

@@ -68,4 +68,11 @@ std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
     return is;
 }
 
+template <typename T>  // print vector
+ostream& operator<<(ostream& os, vector<T>& xs) {
+    rep(i, os.iword(0), xs.size()) os << xs[i] << (i == xs.size() ? "" : " ");
+    os.iword(0) = 0;
+    return os;
+}
+
 /*8<============~ END TEMPLATE ~============}>8*/

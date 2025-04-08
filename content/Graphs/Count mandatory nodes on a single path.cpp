@@ -6,7 +6,8 @@
  * that are present in every possible such path.
  *
  * @Warning: The $startNode$ and $endNode$ is always included in the counting,
- * ajust your final answer depending on the problem.
+ * ajust your final answer depending on the problem. Be careful with a
+ * \textbf{disconnected graph} where the path may not exist, treat it appart !.
  *
  * @Time: $O(N+M)$
  *

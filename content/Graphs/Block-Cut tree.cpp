@@ -10,6 +10,9 @@
  * $isGraphCutpoint[u]$ is greater than $1$, it means that $u$ is a
  * cutpoint.
  *
+ * @Warning: Always careful with disconnected graphs ! you may end up having
+ * multiple trees.
+ *
  * @Memory: $O(N)$
  *
  * @Time: $O(N+M)$
@@ -75,7 +78,6 @@ struct BlockCutTree {
                 chmin(low[u], low[v]);
                 if (low[v] >= tin[u]) {
                     isGraphCutpoint[u] += (tin[u] > 1 or tin[v] > 2);
-                    assert(isGraphCutpoint[u]);
                     comps.pb({u});
                     while (comps.back().back() != v) {
                         comps.back().eb(stk.back());
