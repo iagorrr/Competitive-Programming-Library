@@ -1,12 +1,23 @@
-/*
+/*8<
  * @Title: Block-Cut Tree
- * @Description:
- *      Builds the Block-Cut of a undirected graph.
+ *
+ * @Description: Builds the Block-Cut of a undirected graph.
+ *
  * @Time: $O(N+M)$
+ *
+ * @Usage: \textbf{$isGraphCutpoint[u]$} answers how many connected components
+ * are created when the node u is removed from the graph, if
+ * $isGraphCutpoint[u]$ is greater than $1$, it means that $u$ is a
+ * cutpoint.
+ *
  * @Memory: $O(N)$
+ *
+ * @Time: $O(N+M)$
+ *
  * @Problems:
- *      https://codeforces.com/group/btcK4I5D5f/contest/601720/problem/I
- * */
+ * https://codeforces.com/group/btcK4I5D5f/contest/601720/problem/I
+ * >8*/
+
 #pragma once
 #include "../Contest/template.cpp"
 
@@ -14,6 +25,7 @@ struct BlockCutTree {
     int n;
     vi idOnTree, tin, low, stk, isGraphCutpoint, isTreeCutpoint;
     vi2d comps, treeAdj;
+
     BlockCutTree(vi2d &g)
         : n(len(g)), idOnTree(n), tin(n), low(n), isGraphCutpoint(n) {
         rep(i, 0, n) {
@@ -23,6 +35,10 @@ struct BlockCutTree {
             }
         }
 
+        buildTree();
+    }
+
+    void buildTree() {
         int node_id = 0;
         rep(u, 0, n) {
             if (isGraphCutpoint[u]) {
@@ -56,13 +72,14 @@ struct BlockCutTree {
             if (v == p) continue;
             if (!tin[v]) {
                 dfs(v, u, timer, g);
-                low[u] = min(low[u], low[v]);
+                chmin(low[u], low[v]);
                 if (low[v] >= tin[u]) {
-                    isGraphCutpoint[u] = (tin[u] > 1 or tin[v] > 2);
+                    isGraphCutpoint[u] += (tin[u] > 1 or tin[v] > 2);
+                    assert(isGraphCutpoint[u]);
                     comps.pb({u});
                     while (comps.back().back() != v) {
                         comps.back().eb(stk.back());
-                        stk.pop_back();
+                        stk.ppb();
                     }
                 }
             } else
@@ -70,41 +87,5 @@ struct BlockCutTree {
         }
     }
 
-    void debug() {
-        dbg(n);
-        dbg(id);
-        dbg(isGraphCutpoint);
-        dbg(isTreeCutpoint);
-        dbg(tin);
-        dbg(low);
-        dbg(stk);
-        dbg(comps);
-        dbg(tree);
-    }
-
-    int countMandatoryNodesOnPath(int startNode, int endNode) {
-        startNode = idOnTree[startNode], endNode = idOnTree[endNode];
-
-        int ans = !isTreeCutpoint[startNode] + !isTreeCutpoint[endNode];
-
-        int artPoints = 0;
-        function<void(int, int)> dfsCount = [&](int u, int p) {
-            artPoints += isTreeCutpoint[u];
-
-            if (u == endNode) ans += artPoints;
-
-            for (auto v : treeAdj[u]) {
-                if (v != p) {
-                    dfsCount(v, u);
-                }
-            }
-
-            artPoints -= isTreeCutpoint[u];
-        };
-
-        dfsCount(startNode, -1);
-
-        return ans;
-    }
+    int countMandatoryNodesOnPath(int startNode, int endNode);
 };
-
