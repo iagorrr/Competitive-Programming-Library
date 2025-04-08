@@ -1,4 +1,3 @@
-#pragma once
 /*8<{==========~ BEGIN TEMPLATE ~============>8*/
 #include <bits/stdc++.h>
 using namespace std;
@@ -26,6 +25,7 @@ using ll = long long;
 #define ppb pop_back
 #define ppf pop_front
 #define eb emplace_back
+#define ef emplace_back
 #define lb lower_bound
 #define ub upper_bound
 #define fi first
@@ -69,7 +69,7 @@ std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
 }
 
 template <typename T>  // print vector
-ostream& operator<<(ostream& os, vector<T>& xs) {
+ostream &operator<<(ostream &os, vector<T> &xs) {
     rep(i, os.iword(0), xs.size()) os << xs[i] << (i == xs.size() ? "" : " ");
     os.iword(0) = 0;
     return os;
