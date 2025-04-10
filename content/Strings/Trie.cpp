@@ -14,8 +14,10 @@
                 \item $find(s)$ return the last node from the
                 string s, 0 if not found $O(|s|)$
         \end{compactitem}
-@Usage:
->8*/
+
+@Warnings:
+Be careful when saving some information for each node, save as you
+access the node to don't miss the firs or last node >8*/
 
 #include "../Contest/template.cpp"
 
