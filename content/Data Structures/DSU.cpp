@@ -14,7 +14,7 @@
 >8*/
 
 struct DSU {
-    vi ps, sz;
+    vector<int> ps, sz;
 
     // vector<unordered_set<int>> sts;
 
