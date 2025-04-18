@@ -46,9 +46,7 @@ template <typename Seq>
 vector<int> z_function_pattern_matching(const Seq& s, const Seq& p) {
     if (s.empty() or p.empty()) return {};
 
-    Seq concatenated = p + "$" + s;
-
-    vector<int> z = z_function_build(concatenated);
+    vector<int> z = z_function_build(p + "$" + s);
 
     vector<int> occurrences;
 
