@@ -51,9 +51,17 @@ target_link_libraries (
 )
 gtest_discover_tests(test_count_mandatory_nodes_on_single_path)
 
-# Suffix Automaton
-# add_executable(
-#
-# )
+# Z-Function build
+add_executable(
+        test_z_function_build
+        ./tests/z-function-build/test.cc
+)
+target_link_libraries (
+        test_z_function_build
+        GTest::gtest_main
+)
+gtest_discover_tests(test_z_function_build)
+
+
 
 
