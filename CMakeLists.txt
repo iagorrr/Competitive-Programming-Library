@@ -62,6 +62,36 @@ target_link_libraries (
 )
 gtest_discover_tests(test_z_function_build)
 
+# z-function-pattern-matching
+add_executable(
+        test_z_function_pattern_matching
+        ./tests/z-function-pattern-matching/test.cc
+)
+target_link_libraries (
+        test_z_function_pattern_matching
+        GTest::gtest_main
+)
+gtest_discover_tests(test_z_function_pattern_matching)
 
 
+# z-function-find-period
+add_executable(
+        test_z_function_find_period
+        ./tests/z-function-find-period/test.cc
+)
+target_link_libraries (
+        test_z_function_find_period
+        GTest::gtest_main
+)
+gtest_discover_tests(test_z_function_find_period)
 
+# z-function-approximate-pattern-matching
+add_executable(
+        test_z_function_approximate_pattern_matching
+        ./tests/z-function-approximate-pattern-matching/test.cc
+)
+target_link_libraries (
+        test_z_function_approximate_pattern_matching
+        GTest::gtest_main
+)
+gtest_discover_tests(test_z_function_approximate_pattern_matching)
