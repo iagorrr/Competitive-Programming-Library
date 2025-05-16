@@ -57,3 +57,5 @@ Thumbs.db
 # Python scripts cache (if you use any)
 __pycache__/
 *.pyc
+
+_deps
