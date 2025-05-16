@@ -23,8 +23,7 @@ notebook-pdf:
 	@lualatex  notebook.tex
 
 .PHONY: notebook 
-notebook:
-	clean format notebook-tex notebook-pdf
+notebook: clean format notebook-tex notebook-pdf
 
 .PHONY: theoretical
 theoretical:

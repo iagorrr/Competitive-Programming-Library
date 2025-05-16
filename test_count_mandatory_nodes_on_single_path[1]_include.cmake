@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_count_mandatory_nodes_on_single_path[1]_tests.cmake")
+  include("/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_count_mandatory_nodes_on_single_path[1]_tests.cmake")
+else()
+  add_test(test_count_mandatory_nodes_on_single_path_NOT_BUILT test_count_mandatory_nodes_on_single_path_NOT_BUILT)
+endif()

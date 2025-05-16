@@ -1,3 +1,4 @@
+#pragma once
 /*8<{==========~ BEGIN TEMPLATE ~============>8*/
 #include <bits/stdc++.h>
 using namespace std;

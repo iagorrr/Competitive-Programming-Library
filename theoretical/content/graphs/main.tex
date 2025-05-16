@@ -1,8 +1,5 @@
 \section{Graphs}
 
-\input{content/graphs/maximum_flow.tex}
-
-\input{content/graphs/scc.tex}
 
 \subsection{Bipartite Graph}
 
@@ -103,6 +100,8 @@ To get the tree from the sequence:
     \item The degree of each vertex is 1 more than the number of occurrences of that vertex in the sequence. Compute the degree $d$, then do the following: for every value $x$ in the sequence (in order), find the vertex with smallest label $y$ such that $d(y) = 1$ and add an edge between $x$ and $y$, and also decrease their degrees by 1. At the end of this procedure, there will be two vertices left with degree 1; add an edge between them.
 \end{itemize}
 
+\input{content/graphs/maximum_flow.tex}
 
+\input{content/graphs/scc.tex}
 
-
+\input{content/graphs/cutpoints.tex}

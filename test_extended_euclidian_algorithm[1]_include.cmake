@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_extended_euclidian_algorithm[1]_tests.cmake")
+  include("/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_extended_euclidian_algorithm[1]_tests.cmake")
+else()
+  add_test(test_extended_euclidian_algorithm_NOT_BUILT test_extended_euclidian_algorithm_NOT_BUILT)
+endif()

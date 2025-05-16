@@ -1,0 +1,81 @@
+\subsection{Binomial Coefficients}
+
+Binomial coefficients $\binom n k$ are the number of ways to select a set of $k$ elements from $n$ different elements without taking into account the order of arrangement of these elements (i.e., the number of unordered sets).
+
+Binomial coefficients are also the coefficients in the expansion of $(a + b) ^ n$ (so-called binomial theorem):
+
+$$ (a+b)^n = \binom n 0 a^n + \binom n 1 a^{n-1} b + \binom n 2 a^{n-2} b^2 + \cdots + \binom n k a^{n-k} b^k + \cdots + \binom n n b^n $$
+
+$$ \binom n k = \frac {n!} {k!(n-k)!} $$
+
+\textbf{Recurrence} formula** (which is associated with the famous "Pascal's Triangle"):
+
+$$ \binom n k = \binom {n-1} {k-1} + \binom {n-1} k $$
+
+\subsubsection{Odd numbers in the i-th line}
+
+
+The number of odd elementsin the $n-th$ row in the Pascal's triangle is $2^{c}$, where $c$ is the number of $1$ bits in the binary representation of $n$ (popcount)
+
+\subsubsection{Symmetry rule}
+
+    \[ \binom n k = \binom n {n-k} \]
+
+\subsubsection{Factoring in}
+
+    \[ \binom n k = \frac n k \binom {n-1} {k-1} \]
+
+
+\subsubsection{Sum over $k$ (row)}
+
+    \[ \sum_{k = 0}^n \binom n k = 2 ^ n \]
+
+\subsubsection{Sum over $n$ (column)}
+
+    \[ \sum_{m = 0}^n \binom m k = \binom {n + 1} {k + 1} \]
+
+
+
+\subsubsection{Sum over $n$ and $k$}
+
+    \[ \sum_{k = 0}^m  \binom {n + k} k = \binom {n + m + 1} m \]
+
+\subsubsection{Sum of the squares}
+
+\[ {\binom n 0}^2 + {\binom n 1}^2 + \cdots + {\binom n n}^2 = \binom {2n} n \]
+
+
+\subsubsection{Weighted sum}
+
+    \[ 1 \binom n 1 + 2 \binom n 2 + \cdots + n \binom n n = n 2^{n-1} \]
+
+
+
+\subsubsection{Connection with the Fibonacci numbers}
+
+\[ \binom n 0 + \binom {n-1} 1 + \cdots + \binom {n-k} k + \cdots + \binom 0 n = F_{n+1} \]
+
+
+\subsubsection{Pascal's Triangle}
+
+ \begin{figure}[h]
+    \centering
+    \includegraphics[height=200px]{media/pascal-triangle.jpeg}
+    \caption{Pascal's Triangle}
+    \label{fig:pascal-triangle}
+\end{figure}
+
+\subsubsection{N-th first terms of P-th column}
+
+\begin{equation}
+    \binom{p}{p} + \binom{p+1}{p} + ... + \binom{p+n}{p} = \binom{p+n+1}{p+1}
+\end{equation}
+
+
+\subsubsection{Find if the $\binom{n}{k}$ is odd}
+
+In C-style languages, it's just: !(p \& (n-p)).
+
+Or, considering that $$ \binom n k = \frac {n!} {k!(n-k)!} $$, you can just see if the power of two in each $n!$ is equal to the sum of the powers of two in $r!$ and $(n-r)!$.
+
+

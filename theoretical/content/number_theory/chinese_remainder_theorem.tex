@@ -1,0 +1,32 @@
+\subsection{Chinese Remainder Theorem}
+Let  $m = m_1 \cdot m_2 \cdots m_k$ , where  $m_i$  are pairwise coprime. In addition to  
+
+$m_i$ , we are also given a system of congruences
+ 
+$$
+\left\{\begin{array}{rcl}
+        x & \equiv & a_1 \pmod{m_1} \\
+        x & \equiv & a_2 \pmod{m_2} \\ 
+        & \vdots & \\
+        x & \equiv & a_k \pmod{m_k}
+\end{array}\right.
+$$ 
+
+where  $a_i$  are some given constants. The original form of CRT then states that the given system of congruences always has one and exactly one solution modulo  $m$ .
+
+\subsubsection{Corollary: number modulo a non prime number}
+
+A consequence of the CRT is that the equation
+ 
+$$x \equiv a \pmod{m}$$ 
+
+is equivalent to the system of equations
+ 
+$$\left\{\begin{array}{rcl} x & \equiv & a_1 \pmod{m_1} \\ & \vdots & \\ x & \equiv & a_k \pmod{m_k} \end{array}\right.$$ 
+
+(As above, assume that  
+$m = m_1 m_2 \cdots m_k$  and  $m_i$  are pairwise coprime).
+
+\subsubsection{Finding solution}
+
+Let $M = m_{1}m_{2} \cdots m_{k}$, and $o_{i} = \frac{M}{m_{i}}$. If the numbers $a_{i}$ satisfy $a_{i}o_{i} \equiv 1 \pmod {m_{i}}$, for every $1 \leq i \leq n$, then a solution for $x$ is $\sum_{i=1}^n a_{i}o_{i}a_{i} \pmod M$

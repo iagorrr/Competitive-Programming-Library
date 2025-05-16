@@ -43,7 +43,8 @@ of the pattern $p$.
 #include "./z-function-build.cpp"
 
 template <typename Seq>
-vector<int> z_function_pattern_matching(const Seq& s, const Seq& p) {
+vector<int> z_function_approximate_pattern_matching(const Seq& s,
+                                                    const Seq& p) {
     if (s.empty() or p.empty()) return {};
 
     vector<int> z = z_function_build(p + "$" + s);

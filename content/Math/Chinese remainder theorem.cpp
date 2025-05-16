@@ -19,6 +19,8 @@
     The $m_i$ don't need to be coprime, if there
     is no solution then it returns -1.
 >8*/
+#include "../Contest/template.cpp"
+
 tuple<ll, ll, ll> ext_gcd(ll a, ll b) {
     if (!a) return {b, 0, 1};
     auto [g, x, y] = ext_gcd(b % a, a);

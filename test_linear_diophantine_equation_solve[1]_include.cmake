@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_linear_diophantine_equation_solve[1]_tests.cmake")
+  include("/mnt/extra-disk/Code/Competitive-Libraries/cpa/test_linear_diophantine_equation_solve[1]_tests.cmake")
+else()
+  add_test(test_linear_diophantine_equation_solve_NOT_BUILT test_linear_diophantine_equation_solve_NOT_BUILT)
+endif()
