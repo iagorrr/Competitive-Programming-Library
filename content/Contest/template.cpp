@@ -61,6 +61,8 @@ inline bool chmin(T &a, U const &b) {
     return (a > b ? a = b, 1 : 0);
 }
 
+// read vector
+// TODO: abstract this to any container.
 template <typename T>
 std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
     for (auto &element : vec) {
@@ -69,11 +71,20 @@ std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
     return is;
 }
 
-template <typename T>  // print vector
+// print vector
+// TODO: abstract this to any container.
+template <typename T>
 ostream &operator<<(ostream &os, vector<T> &xs) {
     rep(i, os.iword(0), xs.size()) os << xs[i] << (i == xs.size() ? "" : " ");
     os.iword(0) = 0;
     return os;
+}
+
+// sum a vector, using the default constructor as initial value
+// TODO: abstract this to any container.
+template <typename T>
+T sumList(vector<T> &xs) {
+    return accumulate(all(xs), T());
 }
 
 /*8<============~ END TEMPLATE ~============}>8*/
