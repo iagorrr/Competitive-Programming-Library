@@ -1,9 +1,12 @@
-void run();
+void __init();
+void __run();
+void __pre_run();
 
 int32_t main() {
 #ifndef LOCAL
     fastio;
 #endif
+    __init();
 
     int T = 1;
 
@@ -11,11 +14,24 @@ int32_t main() {
 
     rep(t, 0, T) {
         dbg(t);
-        run();
+        __pre_run();
+        __run();
     }
 }
 
-void run() {}
+/*
+ *
+ *
+ *
+ *
+ *
+ * */
+
+void __init() {}
+
+void __pre_run() {}
+
+void __run() {}
 
 /*8<
 >8*/
