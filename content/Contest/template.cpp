@@ -87,4 +87,15 @@ T sumList(vector<T> &xs) {
     return accumulate(all(xs), T());
 }
 
+/*
+ * verify if a `predicate` is valid for
+ * values in range [l, r]
+ *
+ * TODO: put a type in predicate ??
+ * */
+bool all_of_in_range(T l, T r, auto predicate) {
+    return ranges::all_of(views::iota(l, r + 1),
+                          [&](T v) { return predicate(v); });
+}
+
 /*8<============~ END TEMPLATE ~============}>8*/
