@@ -46,25 +46,20 @@ using pii = pair<int, int>;
 using vpii = vector<pii>;
 using vc = vector<char>;
 using vs = vector<str>;
-template <typename T, typename T2>
-using umap = unordered_map<T, T2>;
-template <typename T>
-using pqmn = priority_queue<T, vector<T>, greater<T>>;
-template <typename T>
-using pqmx = priority_queue<T, vector<T>>;
-template <typename T, typename U>
-inline bool chmax(T &a, U const &b) {
-    return (a < b ? a = b, 1 : 0);
-}
-template <typename T, typename U>
-inline bool chmin(T &a, U const &b) {
-    return (a > b ? a = b, 1 : 0);
-}
+
+#define TT template <typename T>
+#define TTU template <typename T, typename U>
+
+TTU using umap = unordered_map<T, U>;
+TT using pqmn = priority_queue<T, vector<T>, greater<T>>;
+TT using pqmx = priority_queue<T, vector<T>>;
+
+TTU inline bool chmax(T &a, U const &b) { return (a < b ? a = b, 1 : 0); }
+TTU inline bool chmin(T &a, U const &b) { return (a > b ? a = b, 1 : 0); }
 
 // read vector
 // TODO: abstract this to any container.
-template <typename T>
-std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
+TT std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
     for (auto &element : vec) {
         is >> element;
     }
@@ -73,8 +68,7 @@ std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
 
 // print vector
 // TODO: abstract this to any container.
-template <typename T>
-ostream &operator<<(ostream &os, vector<T> &xs) {
+TT ostream &operator<<(ostream &os, vector<T> &xs) {
     rep(i, os.iword(0), xs.size()) os << xs[i] << (i == xs.size() ? "" : " ");
     os.iword(0) = 0;
     return os;
@@ -82,10 +76,7 @@ ostream &operator<<(ostream &os, vector<T> &xs) {
 
 // sum a vector, using the default constructor as initial value
 // TODO: abstract this to any container.
-template <typename T>
-T sumList(vector<T> &xs) {
-    return accumulate(all(xs), T());
-}
+TT T sumList(vector<T> &xs) { return accumulate(all(xs), T()); }
 
 /*
  * verify if a `predicate` is valid for
@@ -93,9 +84,12 @@ T sumList(vector<T> &xs) {
  *
  * TODO: put a type in predicate ??
  * */
-bool all_of_in_range(T l, T r, auto predicate) {
-    return ranges::all_of(views::iota(l, r + 1),
-                          [&](T v) { return predicate(v); });
-}
+// bool all_of_in_range(T l, T r, auto predicate) {
+//     return ranges::all_of(views::iota(l, r + 1),
+//                           [&](T v) { return predicate(v); });
+// }
+
+// checks if a  value v is the interval [l, r]
+TT bool inline between(T v, T l, T r) { return clamp(v, l, r) == v; }
 
 /*8<============~ END TEMPLATE ~============}>8*/
