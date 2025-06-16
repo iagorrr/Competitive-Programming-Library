@@ -2,6 +2,7 @@
 clean:
 	@rm -f *.log *.out *.aux *.toc notebook.tex
 	@rm -f theoretical/*.log theoretical/*.out theoretical/*.aux theoretical*.toc
+	@rm -rf ./CMakeCache.txt  ./CTestTestfile.cmake ./cmake_install.cmake ./CMakeFiles ./_deps ./build ./bin
 
 .PHONY: readme
 readme:
