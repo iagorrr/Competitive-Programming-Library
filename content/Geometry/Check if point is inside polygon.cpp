@@ -1,6 +1,7 @@
 /*8<
   @Description: checks if the point $p$ is inside the polygon with vertices in
   $pts$, works for both convex and concave polygons.
+  @Warning: If not working for integers points try to use long double.
 >8*/
 #pragma once
 #include "./Angle between three points.cpp"
