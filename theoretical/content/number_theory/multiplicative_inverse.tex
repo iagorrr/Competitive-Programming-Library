@@ -1,0 +1,25 @@
+% Text about the multiplicative inverse in number theory.
+
+\subsection{Multiplicative Inverse}
+
+\subsubsection{Definition}
+
+A multiplicative inverse of an integer \( a \) modulo \( m \) is an integer \( x \) such that:
+\[
+a \cdot x \equiv 1 \pmod{m}
+\]
+
+\subsubsection{Existence}
+
+A multiplicative inverse exists if and only if \( a \) and \( m \) are coprime, i.e., \( \gcd(a, m) = 1 \).
+
+\subsubsection{Euler totient}
+If \( a \) and \( m \) are coprime, the multiplicative inverse
+can be computed using Euler's theorem:
+
+\[
+x \equiv a^{\varphi(m) - 1} \pmod{m}
+\]
+
+If you want to find the smallest $i$ such that $x^i \equiv 1 \pmod{m}$, we can test every divisor of \( \varphi(m) \) until we find the smallest \( i \), such that \( x^i \equiv 1 \pmod{m} \).
+
