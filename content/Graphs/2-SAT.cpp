@@ -40,27 +40,36 @@ struct TwoSat {
         return N++;
     }
 
-    void either(int f, int j) {
-        f = max(2 * f, -1 - 2 * f);
-        j = max(2 * j, -1 - 2 * j);
-        gr[f].pb(j ^ 1);
-        gr[j].pb(f ^ 1);
+    void add_or(int x, int y) {
+        x = max(2 * x, -1 - 2 * x);
+        y = max(2 * y, -1 - 2 * y);
+        gr[x].pb(y ^ 1);
+        gr[y].pb(x ^ 1);
     }
-    void setValue(int x) { either(x, x); }
 
-    void implies(int f, int j) { either(~f, j); }  // (optional)
+    void add_true(int x) { add_or(x, x); }
 
-    void atMostOne(const vi &li) {  // (optional)
+    void add_impl(int f, int j) { add_or(~f, j); }  // (optional)
+
+    void add_xor(int x, int y) {  // (optional) not tested yet
+        add_or(x, y), add_or(~x, ~y);
+    }
+
+    void add_eq(int x, int y) {  // (optional) not tested yeat
+        add_xor(~x, y);
+    }
+
+    void at_most_one(const vi &li) {  // (optional)
         if (len(li) <= 1) return;
         int cur = ~li[0];
         rep(i, 2, len(li)) {
             int next = addVar();
-            either(cur, ~li[i]);
-            either(cur, next);
-            either(~li[i], next);
+            add_or(cur, ~li[i]);
+            add_or(cur, next);
+            add_or(~li[i], next);
             cur = ~next;
         }
-        either(cur, ~li[1]);
+        add_or(cur, ~li[1]);
     }
 
     vi val, comp, z;
