@@ -17,8 +17,10 @@ using namespace std;
     for (common_type_t<decltype(a), decltype(b)> i = (a); i < (b); i++)
 #define rrep(i, a, b) \
     for (common_type_t<decltype(a), decltype(b)> i = (a); i > (b); i--)
+#define repn(i, b) for (auto i = 0; i < (b); i++)
 #define trav(xi, xs) for (auto &xi : xs)
 #define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
+#define loop while (1)
 using ll = long long;
 #define endl '\n'
 #define pb push_back
@@ -71,6 +73,14 @@ TT std::istream &operator>>(std::istream &is, std::vector<T> &vec) {
 TT ostream &operator<<(ostream &os, vector<T> &xs) {
     rep(i, os.iword(0), xs.size()) os << xs[i] << (i == xs.size() ? "" : " ");
     os.iword(0) = 0;
+    return os;
+}
+
+// print multiset
+// TODO: abstract this to any container.
+TT ostream &operator<<(ostream &os, multiset<T> &xs) {
+    for (auto it = xs.begin(); it != xs.end(); it++)
+        os << *it << (next(it) == end(xs) ? "" : " ");
     return os;
 }
 
