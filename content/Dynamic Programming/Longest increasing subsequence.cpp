@@ -14,6 +14,9 @@
 indices could be in the longest increasing
 subsequence.
 
+    If you want the "Longest Non Decreasing Subsequence"
+    you can just change the lower\_bound to an upper\_bound
+
   @Time:
 
     $O(n\log{n})$
