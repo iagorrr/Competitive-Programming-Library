@@ -1,6 +1,7 @@
 # Competitive Programming Library
 
 [PDF Version](./notebook.pdf)
+[Theoretical](./theoretical/theoretical.pdf)
 ## Algorithms
 
 
@@ -116,6 +117,7 @@
 - [Polygon (regular): circumradius](/content/Geometry/Polygon%20(regular):%20circumradius.cpp)
 - [Polygon: check if is convex](/content/Geometry/Polygon:%20check%20if%20is%20convex.cpp)
 - [Rectangle intersection](/content/Geometry/Rectangle%20intersection.cpp)
+- [point rotation](/content/Geometry/point-rotation.cpp)
 - [template](/content/Geometry/template.cpp)
 
 
