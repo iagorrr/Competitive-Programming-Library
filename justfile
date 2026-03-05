@@ -1,7 +1,6 @@
 # Clean build and temporary files
 clean:
     @rm -f *.log *.out *.aux *.toc notebook.tex
-    @rm -f theoretical/*.log theoretical/*.out theoretical/*.aux theoretical*.toc
     @rm -rf ./CMakeCache.txt ./CTestTestfile.cmake ./cmake_install.cmake ./CMakeFiles ./_deps ./build ./bin
 
 # Generate README
@@ -25,12 +24,6 @@ notebook-pdf:
 # Build complete notebook (format -> TeX -> PDF)
 notebook: clean format notebook-tex notebook-pdf
 
-# Build theoretical document (requires running twice)
-theoretical:
-    @cd theoretical && \
-    lualatex theoretical.tex && \
-    lualatex theoretical.tex
-
 # Run problem tests
 test-problems:
     @bash scripts/test-all/script.sh ./tests
@@ -42,4 +35,4 @@ test-unit:
     cd build && ctest --output-on-failure --verbose
 
 # Run all tasks
-do-it: clean test-unit test-problems readme notebook theoretical
+do-it: clean test-unit test-problems readme notebook
