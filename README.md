@@ -1,7 +1,6 @@
 # Competitive Programming Library
 
 [PDF Version](./notebook.pdf)
-
 ## Algorithms
 
 
@@ -226,7 +225,8 @@
 
 
 #### Probability
-- [k success in binomial distribution](/content/Probability/k-success-in-binomial-distribution.cpp)
+- [binomial distribution probability mass function dp](/content/Probability/binomial-distribution-probability-mass-function-dp.cpp)
+- [binomial distribution probability mass function log](/content/Probability/binomial-distribution-probability-mass-function-log.cpp)
 
 
 
