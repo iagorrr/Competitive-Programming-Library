@@ -1,9 +1,9 @@
 # notebook & theoretical
 notebook.tex
-*.out
-*.toc
-*.log
-*.aux
+notebook.out
+notebook.toc
+notebook.log
+notebook.aux
 
 # Build artifacts
 /build/
