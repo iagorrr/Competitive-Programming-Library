@@ -46,6 +46,7 @@ using vi = vector<int>;
 using vi2d = vector<vi>;
 using pii = pair<int, int>;
 using vpii = vector<pii>;
+using vpll = vector<pll>;
 using vc = vector<char>;
 using vs = vector<str>;
 
