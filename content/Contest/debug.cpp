@@ -1,10 +1,14 @@
+// ANSI color code for blue
+#define BLUE "\033[34m"
+#define RESET "\033[0m"
+
 template <typename T>
 concept Printable = requires(T t) {
     { std::cout << t } -> std::same_as<std::ostream &>;
 };
 template <Printable T>
 void __print(const T &x) {
-    cerr << x;
+    cerr << BLUE << x << RESET;
 }
 template <size_t T>
 void __print(const bitset<T> &x) {
@@ -80,7 +84,7 @@ void __print(priority_queue<T, U...> q) {
     }
     __print(debugVector);
 }
-void _print() { cerr << "]\n"; }
+void _print() { cerr << BLUE << "]\n" << RESET; }
 template <typename Head, typename... Tail>
 void _print(const Head &H, const Tail &...T) {
     __print(H);
@@ -88,6 +92,6 @@ void _print(const Head &H, const Tail &...T) {
     _print(T...);
 }
 
-#define dbg(x...)                 \
-    cerr << "[" << #x << "] = ["; \
+#define dbg(x...)                    \
+    cerr << BLUE << "[" << #x << "] = [" << RESET; \
     _print(x)
