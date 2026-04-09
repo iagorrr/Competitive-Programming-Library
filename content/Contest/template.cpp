@@ -77,6 +77,18 @@ TT ostream &operator<<(ostream &os, vector<T> &xs) {
     return os;
 }
 
+// print pair
+TTU ostream &operator<<(ostream &os, pair<T, U> &p) {
+    os << p.first << " " << p.second;
+    return os;
+}
+
+// read pair
+TTU std::istream &operator>>(std::istream &is, pair<T, U> &p) {
+    is >> p.first >> p.second;
+    return is;
+}
+
 // print multiset
 // TODO: abstract this to any container.
 TT ostream &operator<<(ostream &os, multiset<T> &xs) {
