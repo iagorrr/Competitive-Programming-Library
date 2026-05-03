@@ -41,7 +41,7 @@ void fft(vector<num> &a, bool invert) {
         for (num &x : a) x = x / n;
 }
 
-vi conv(vi const a, vi const b) {
+vi conv(vi const &a, vi const &b) {
     vector<num> fa(all(a));
     vector<num> fb(all(b));
     int n = 1;
