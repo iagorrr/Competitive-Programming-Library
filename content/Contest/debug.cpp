@@ -92,6 +92,6 @@ void _print(const Head &H, const Tail &...T) {
     _print(T...);
 }
 
-#define dbg(x...)                    \
+#define dbg(x...)                                  \
     cerr << BLUE << "[" << #x << "] = [" << RESET; \
     _print(x)
