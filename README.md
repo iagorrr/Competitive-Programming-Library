@@ -29,49 +29,46 @@
 
 #### Data Structures
 - 2D Segment Tree
-    - [Point update query sum](/content/Data%20Structures/2D%20Segment%20Tree/Point%20update%20query%20sum.cpp)
+    - [Point update query sum](/content/data-structures/2D%20Segment%20Tree/Point%20update%20query%20sum.cpp)
 
-- Segment Tree (Dynamic)
-    - [Range query sum point sum update](/content/Data%20Structures/Segment%20tree%20(dynamic)/Range%20query%20sum%20point%20sum%20update.cpp)
-    - [Range query max point max assign](/content/Data%20Structures/Segment%20tree%20(dynamic)/Range%20query%20max%20point%20max%20assign.cpp)
+- Hash
+    - [Hash range query](/content/data-structures/hash/Hash%20range%20query.cpp)
+    - [Double hash range query](/content/data-structures/hash/Double%20hash%20range%20query.cpp)
+    - [Hash unsigned long long](/content/data-structures/hash/Hash%20unsigned%20long%20long.cpp)
 
-- Segment Tree Point Update Range Query (Bottom Up)
-    - [Struct](/content/Data%20Structures/Segment%20Tree%20Point%20Update%20Range%20Query%20(bottom-up)/Struct.cpp)
-    - [Query GCD](/content/Data%20Structures/Segment%20Tree%20Point%20Update%20Range%20Query%20(bottom-up)/Query%20GCD.cpp)
-    - [Query min](/content/Data%20Structures/Segment%20Tree%20Point%20Update%20Range%20Query%20(bottom-up)/Query%20min.cpp)
-    - [Query sum](/content/Data%20Structures/Segment%20Tree%20Point%20Update%20Range%20Query%20(bottom-up)/Query%20sum.cpp)
-    - [Query Max Subarray Sum](/content/Data%20Structures/Segment%20Tree%20Point%20Update%20Range%20Query%20(bottom-up)/Query%20Max%20Subarray%20Sum.cpp)
+- Segment Tree
+    - [struct](/content/data-structures/Segment%20Tree/struct.cpp)
+    - [query min](/content/data-structures/Segment%20Tree/query-min.cpp)
+
+- Segment Tree Lazy Sparse
+    - [range add sum query modular](/content/data-structures/Segment%20tree%20lazy%20sparse/range-add-sum-query-modular.cpp)
+    - [struct](/content/data-structures/Segment%20tree%20lazy%20sparse/struct.cpp)
 
 - Segment Tree Point Update Range Query (Top Down)
-    - [Query hash (top down)](/content/Data%20Structures/Segment%20tree%20point%20update%20range%20query%20(top-down)/Query%20hash%20(top%20down).cpp)
+    - [Query hash (top down)](/content/data-structures/Segment%20tree%20point%20update%20range%20query%20(top-down)/Query%20hash%20(top%20down).cpp)
 
-- Segment Tree Range Update Range Query
-    - [Increment update query min & max (bottom up)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20query%20min%20&%20max%20(bottom%20up).cpp)
-    - [Arithmetic progression sum update query sum (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Arithmetic%20progression%20sum%20update%20query%20sum%20(top%20down).cpp)
-    - [Increment update sum query (top down)](/content/Data%20Structures/Segment%20tree%20range%20update%20range%20query/Increment%20update%20sum%20query%20(top%20down).cpp)
-
-- Segtree
-    - [lazysparseseg](/content/Data%20Structures/SegTree/lazysparseseg.cpp)
+- Segment Tree Range Update Range Query (Bottom Up Monoid)
+    - [struct](/content/data-structures/Segment%20tree%20range%20update%20range%20query%20(bottom-up%20monoid)/struct.cpp)
+    - [increment update sum query](/content/data-structures/Segment%20tree%20range%20update%20range%20query%20(bottom-up%20monoid)/increment-update-sum-query.cpp)
 
 - Sqrt Decomposition
-    - [two sequence queries](/content/Data%20Structures/SQRT%20decomposition/two-sequence-queries.cpp)
+    - [two sequence queries](/content/data-structures/SQRT%20decomposition/two-sequence-queries.cpp)
 
-- [2D Sparse Table](/content/Data%20Structures/2D%20Sparse%20Table.cpp)
-- [Bitree 2D](/content/Data%20Structures/Bitree%202D.cpp)
-- [Convex hull trick](/content/Data%20Structures/Convex%20hull%20trick.cpp)
-- [DSU (with rollback)](/content/Data%20Structures/DSU%20(with%20rollback).cpp)
-- [DSU](/content/Data%20Structures/DSU.cpp)
-- [Lichao tree dynamic](/content/Data%20Structures/Lichao%20tree%20dynamic.cpp)
-- [Merge sort tree](/content/Data%20Structures/Merge%20sort%20tree.cpp)
-- [Mex with update](/content/Data%20Structures/Mex%20with%20update.cpp)
-- [Ordered set (GNU PBDS)](/content/Data%20Structures/Ordered%20set%20(GNU%20PBDS).cpp)
-- [Prefix sum 2D](/content/Data%20Structures/Prefix%20sum%202D.cpp)
-- [Segment Tree Update Range Query (bottom up)](/content/Data%20Structures/Segment%20Tree%20Update%20Range%20Query%20(bottom-up).cpp)
-- [Sparse table](/content/Data%20Structures/Sparse%20table.cpp)
-- [Static range queries](/content/Data%20Structures/Static%20range%20queries.cpp)
-- [Venice set (complete)](/content/Data%20Structures/Venice%20set%20(complete).cpp)
-- [Venice set](/content/Data%20Structures/Venice%20set.cpp)
-- [Wavelet tree](/content/Data%20Structures/Wavelet%20tree.cpp)
+- [2D Sparse Table](/content/data-structures/2D%20Sparse%20Table.cpp)
+- [Bitree 2D](/content/data-structures/Bitree%202D.cpp)
+- [Convex hull trick](/content/data-structures/Convex%20hull%20trick.cpp)
+- [DSU (with rollback)](/content/data-structures/DSU%20(with%20rollback).cpp)
+- [DSU](/content/data-structures/DSU.cpp)
+- [Lichao tree dynamic](/content/data-structures/Lichao%20tree%20dynamic.cpp)
+- [Merge sort tree](/content/data-structures/Merge%20sort%20tree.cpp)
+- [Mex with update](/content/data-structures/Mex%20with%20update.cpp)
+- [Ordered set (GNU PBDS)](/content/data-structures/Ordered%20set%20(GNU%20PBDS).cpp)
+- [Prefix sum 2D](/content/data-structures/Prefix%20sum%202D.cpp)
+- [Sparse table](/content/data-structures/Sparse%20table.cpp)
+- [Static range queries](/content/data-structures/Static%20range%20queries.cpp)
+- [Venice set (complete)](/content/data-structures/Venice%20set%20(complete).cpp)
+- [Venice set](/content/data-structures/Venice%20set.cpp)
+- [Wavelet tree](/content/data-structures/Wavelet%20tree.cpp)
 
 
 
@@ -112,6 +109,7 @@
 - [Determinant](/content/Geometry/Determinant.cpp)
 - [Distance: point to point](/content/Geometry/Distance:%20point%20to%20point.cpp)
 - [Halfplane intersection](/content/Geometry/Halfplane%20intersection.cpp)
+- [Integer angle comparison](/content/Geometry/Integer%20angle%20comparison.cpp)
 - [Lattice points](/content/Geometry/Lattice%20points.cpp)
 - [Left of polygon cut](/content/Geometry/Left%20of%20polygon%20cut.cpp)
 - [Perimeter: polygon](/content/Geometry/Perimeter:%20polygon.cpp)
@@ -159,7 +157,6 @@
 - [Minimum cost flow](/content/Graphs/Minimum%20cost%20flow.cpp)
 - [Minimum vertex cover (already divided)](/content/Graphs/Minimum%20vertex%20cover%20(already%20divided).cpp)
 - [Prim](/content/Graphs/Prim.cpp)
-- [Reachability Tree](/content/Graphs/Reachability%20Tree.cpp)
 - [Shortest path with K edges](/content/Graphs/Shortest%20path%20with%20K%20edges.cpp)
 - [Strongly connected components](/content/Graphs/Strongly%20connected%20components.cpp)
 - [Topological sorting (Kahn)](/content/Graphs/Topological%20sorting%20(Kahn).cpp)
@@ -213,6 +210,7 @@
 - [Polyominoes](/content/Math/Polyominoes.cpp)
 - [fibonacci mod m period](/content/Math/fibonacci-mod-m-period.cpp)
 - [polynomial composition](/content/Math/polynomial-composition.cpp)
+- [spf](/content/Math/spf.cpp)
 
 
 
@@ -230,24 +228,14 @@
 
 
 
-#### Problems
-- [2081   Fixed Lenght Paths II](/content/Problems/2081%20-%20Fixed-Lenght%20Paths%20II.cpp)
-- [Fixed lenght pahts I](/content/Problems/Fixed%20lenght%20pahts%20I.cpp)
-- [Fixed lenght paths II](/content/Problems/Fixed%20lenght%20paths%20II.cpp)
-
-
-
 #### Strings
 - Z Function
+    - [z function build](/content/Strings/Z-Function/z-function-build.cpp)
     - [z function approximate pattern matching](/content/Strings/Z-Function/z-function-approximate-pattern-matching.cpp)
     - [z function pattern matching](/content/Strings/Z-Function/z-function-pattern-matching.cpp)
-    - [z function build](/content/Strings/Z-Function/z-function-build.cpp)
     - [z function find period](/content/Strings/Z-Function/z-function-find-period.cpp)
 
 - [Count distinct anagrams](/content/Strings/Count%20distinct%20anagrams.cpp)
-- [Double hash range query](/content/Strings/Double%20hash%20range%20query.cpp)
-- [Hash range query](/content/Strings/Hash%20range%20query.cpp)
-- [Hash unsigned long long](/content/Strings/Hash%20unsigned%20long%20long.cpp)
 - [K th digit in digit string](/content/Strings/K-th%20digit%20in%20digit%20string.cpp)
 - [KMP](/content/Strings/KMP.cpp)
 - [Longest palindrome substring (Manacher)](/content/Strings/Longest%20palindrome%20substring%20(Manacher).cpp)
@@ -260,6 +248,11 @@
 - [Trie](/content/Strings/Trie.cpp)
 - [kmp automaton](/content/Strings/kmp_automaton.cpp)
 - [suffix automaton](/content/Strings/suffix-automaton.cpp)
+
+
+
+#### Tree
+- [tree flatten](/content/Tree/tree-flatten.cpp)
 
 
 
