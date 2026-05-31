@@ -109,7 +109,8 @@ class Subsection:
 
     @classmethod
     def from_path(cls, path: Path) -> "Subsection":
-        title = path.name.replace("_", "\\_")
+        title = path.name.replace("_", "\\_").replace("-", " ")
+        title = title[0].upper() + title[1:] if title else title
         return cls(title=title)
 
     def get_tex(self) -> str:
@@ -127,7 +128,8 @@ class Section:
 
     @classmethod
     def from_path(cls, path: Path) -> "Section":
-        title = path.name.replace("_", "\\_")
+        title = path.name.replace("_", "\\_").replace("-", " ")
+        title = title[0].upper() + title[1:] if title else title
         return cls(title=title)
 
     def get_tex(self) -> str:
