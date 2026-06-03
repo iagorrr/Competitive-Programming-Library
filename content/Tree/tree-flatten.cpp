@@ -40,6 +40,6 @@ struct TreeFlatten {
     pair<int, int> get_range(int u) { return {tin[u], tout[u]}; }
 
     bool on_subtree(int u, int v) {
-        return tin[u] <= tin[v] and tin[v] <= tout[u];
+        return tin[u] <= tin[v] and tout[v] <= tout[u];
     }
 };
