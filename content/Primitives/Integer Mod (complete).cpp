@@ -88,7 +88,7 @@ struct modint {
         while (y != 1) {
             ll j = 0;
             for (modint t = y; t != 1; t *= t, ++j);
-            z.pow(1ll << (e - j - 1));
+            z = z.pow(1ll << (e - j - 1));
             x *= z;
             z *= z;
             y *= z;

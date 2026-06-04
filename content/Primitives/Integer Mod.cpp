@@ -6,7 +6,7 @@ struct mod_int {
 
     mod_int(ll v = 0) {
         x = v % m;
-        if (x < 0) v += m;
+        if (x < 0) x += m;
     }
 
     mod_int &operator+=(mod_int const &b) {
