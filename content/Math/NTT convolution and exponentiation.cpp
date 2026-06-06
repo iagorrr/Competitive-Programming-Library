@@ -39,7 +39,7 @@ struct mint {
         return *this;
     }
     m &operator*=(const m &a) {
-        v = v * ll(a.v) % _mod;
+        v = v * (ll)a.v % _mod;
         return *this;
     }
     m &operator/=(const m &a) {
