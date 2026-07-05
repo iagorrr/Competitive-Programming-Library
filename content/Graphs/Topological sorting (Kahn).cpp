@@ -1,42 +1,49 @@
-/*8<
-  @Title:
-
-    Topological Sorting (Kahn)
-
+/*
+  @Title: Topological Sorting (Kahn)
   @Description:
+    Finds the topological sorting in a DAG.
+    If the given graph is not a DAG (contains a cycle),
+    an empty vector is returned.
+  @Time: O(V + E)
+*/
 
-    Finds the topological sorting in a
-    \textbf{DAG}, if the given graph is not a
-    \textbf{DAG} than an empty vector is returned,
-    need to 'initialize' the \textbf{INCNT} as
-    you build the graph.
+#pragma once
+#include "../Contest/template.cpp"
 
-  @Time:
+vector<int> toposort(const vector<vector<int>>& graph) {
+    int n = graph.size();
+    vector<int> in_degree(n, 0);
 
-    $O(V + E)$
->8*/
-
-const int MAXN(2 '00' 000);
-int INCNT[MAXN];
-vi2d GOUT(MAXN);
-int N;
-
-vi toposort() {
-    vi order;
-    queue<int> q;
-
-    for (int i = 0; i < N; i++)
-        if (!INCNT[i]) q.emplace(i);
-
-    while (!q.empty()) {
-        auto u = q.front();
-        q.pop();
-        order.emplace_back(u);
-        for (auto v : GOUT[u]) {
-            INCNT[v]--;
-            if (INCNT[v] == 0) q.emplace(v);
+    for (int u = 0; u < n; ++u) {
+        for (int v : graph[u]) {
+            in_degree[v]++;
         }
     }
 
-    return len(order) == N ? order : vi();
+    queue<int> q;
+    for (int i = 0; i < n; ++i) {
+        if (in_degree[i] == 0) {
+            q.push(i);
+        }
+    }
+
+    vector<int> order;
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        order.push_back(u);
+
+        for (int v : graph[u]) {
+            in_degree[v]--;
+            if (in_degree[v] == 0) {
+                q.push(v);
+            }
+        }
+    }
+
+    if (order.size() == n) {
+        return order;
+    } else {
+        return {};
+    }
 }
