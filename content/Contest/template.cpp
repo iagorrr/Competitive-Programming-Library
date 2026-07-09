@@ -54,6 +54,7 @@ using vs = vector<str>;
 #define TTU template <typename T, typename U>
 
 TTU using umap = unordered_map<T, U>;
+TT using uset = unordered_set<T>;
 TT using pqmn = priority_queue<T, vector<T>, greater<T>>;
 TT using pqmx = priority_queue<T, vector<T>>;
 
