@@ -67,4 +67,37 @@ struct Trie {
         }
         return x;
     }
+
+    pair<vi2d, vi> compress() {
+        vi2d compAdj;
+        vi compEnd;
+
+        auto dfs = [&](auto &self, int u, int lastValid) -> void {
+            int adjCnt = 0;
+            for (int v : to[u]) adjCnt += v != 0;
+
+            bool isValid = (u == 0) or (adjCnt > 1) || (end[u] > 0);
+
+            int currentValid = lastValid;
+
+            if (isValid) {
+                int newId = len(compAdj);
+                compAdj.pb(vi());
+                compEnd.pb(pref[u]);
+
+                if (lastValid != -1) {
+                    compAdj[lastValid].pb(newId);
+                }
+                currentValid = newId;
+            }
+
+            for (int v : to[u])
+                if (v != 0) {
+                    self(self, v, currentValid);
+                }
+        };
+
+        dfs(dfs, 0, -1);
+        return {compAdj, compEnd};
+    }
 };
