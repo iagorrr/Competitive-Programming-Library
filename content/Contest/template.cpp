@@ -1,3 +1,8 @@
+/*
+...
+
+...
+ */
 #pragma once
 /*8<{==========~ BEGIN TEMPLATE ~============>8*/
 #include <bits/stdc++.h>
@@ -11,6 +16,7 @@ using namespace std;
     ios_base::sync_with_stdio(0); \
     cin.tie(0);
 #define all(j) j.begin(), j.end()
+#define found(x, y) ((x).find((y)) != (x).end())
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
 #define rep(i, a, b) \
@@ -21,6 +27,7 @@ using namespace std;
 #define trav(xi, xs) for (auto &xi : xs)
 #define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
 #define loop while (1)
+#define iter(x) repn(__, x)
 using ll = long long;
 #define endl '\n'
 #define pb push_back
