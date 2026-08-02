@@ -19,15 +19,22 @@ using namespace std;
 #define found(x, y) ((x).find((y)) != (x).end())
 #define rall(j) j.rbegin(), j.rend()
 #define len(j) (int)j.size()
-#define rep(i, a, b) \
-    for (common_type_t<decltype(a), decltype(b)> i = (a); i < (b); i++)
-#define rrep(i, a, b) \
-    for (common_type_t<decltype(a), decltype(b)> i = (a); i > (b); i--)
-#define repn(i, b) for (auto i = 0; i < (b); i++)
 #define trav(xi, xs) for (auto &xi : xs)
 #define rtrav(xi, xs) for (auto &xi : ranges::views::reverse(xs))
-#define loop while (1)
-#define iter(x) repn(__, x)
+// Stolen from https://codeforces.com/profile/Geothermal
+// https:trap.jp/post/1224/
+#define rep1(a) for (int _ = 0; _ < int(a); ++_)
+#define rep2(i, a) for (int i = 0; i < int(a); ++i)
+#define rep3(i, a, b) for (int i = int(a); i < int(b); ++i)
+#define rep4(i, a, b, c) for (int i = int(a); i < int(b); i += int(c))
+#define rep1_R(a) for (int i = int(a) - 1; i >= 0; --i)
+#define rep2_R(i, a) for (int i = int(a) - 1; i >= 0; --i)
+#define rep3_R(i, a, b) for (int i = int(b) - 1; i >= int(a); --i)
+#define overload4(a, b, c, d, e, ...) e
+#define overload3(a, b, c, d, ...) d
+#define rep(...) overload4(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
+#define rep_R(...) overload3(__VA_ARGS__, rep3_R, rep2_R, rep1_R)(__VA_ARGS__)
+
 using ll = long long;
 #define endl '\n'
 #define pb push_back
@@ -67,6 +74,31 @@ TT using pqmx = priority_queue<T, vector<T>>;
 
 TTU inline bool chmax(T &a, U const &b) { return (a < b ? a = b, 1 : 0); }
 TTU inline bool chmin(T &a, U const &b) { return (a > b ? a = b, 1 : 0); }
+
+// bit operations, i may remove this soon
+using u8 = uint8_t;
+using u16 = uint16_t;
+using u32 = uint32_t;
+using u64 = uint64_t;
+using i128 = __int128;
+using u128 = unsigned __int128;
+// using f128 = __float128;
+int popcnt(int x) { return __builtin_popcount(x); }
+int popcnt(u32 x) { return __builtin_popcount(x); }
+int popcnt(ll x) { return __builtin_popcountll(x); }
+int popcnt(u64 x) { return __builtin_popcountll(x); }
+int popcnt_sgn(int x) { return (__builtin_parity(unsigned(x)) & 1 ? -1 : 1); }
+int popcnt_sgn(u32 x) { return (__builtin_parity(x) & 1 ? -1 : 1); }
+int popcnt_sgn(ll x) { return (__builtin_parityll(x) & 1 ? -1 : 1); }
+int popcnt_sgn(u64 x) { return (__builtin_parityll(x) & 1 ? -1 : 1); }
+int topbit(int x) { return (x == 0 ? -1 : 31 - __builtin_clz(x)); }
+int topbit(u32 x) { return (x == 0 ? -1 : 31 - __builtin_clz(x)); }
+int topbit(ll x) { return (x == 0 ? -1 : 63 - __builtin_clzll(x)); }
+int topbit(u64 x) { return (x == 0 ? -1 : 63 - __builtin_clzll(x)); }
+int lowbit(int x) { return (x == 0 ? -1 : __builtin_ctz(x)); }
+int lowbit(u32 x) { return (x == 0 ? -1 : __builtin_ctz(x)); }
+int lowbit(ll x) { return (x == 0 ? -1 : __builtin_ctzll(x)); }
+int lowbit(u64 x) { return (x == 0 ? -1 : __builtin_ctzll(x)); }
 
 // read vector
 // TODO: abstract this to any container.
