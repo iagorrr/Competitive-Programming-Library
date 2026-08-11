@@ -29,12 +29,14 @@ struct FunctionalGraph {
     vector<int> cycleSizes;
     vector<int> distanceToCycle;
     vector<int> cyclePos;
+    vector<int> rootCycle;
     vector<vector<int>> succ;
 
-    FunctionalGraph(const vector<int>& next) : n(next.size()), next(next) {
+    FunctionalGraph(const vector<int> &next) : n(next.size()), next(next) {
         cycleIds.assign(n, 0);
         distanceToCycle.assign(n, 0);
         cyclePos.assign(n, -1);
+        rootCycle.assign(n, -1);
 
         vector<int> inDegree(n, 0);
         for (int i = 0; i < n; i++) {
@@ -85,6 +87,7 @@ struct FunctionalGraph {
             int nv = next[v];
             cycleIds[v] = cycleIds[nv];
             distanceToCycle[v] = distanceToCycle[nv] + 1;
+            rootCycle[v] = rootCycle[nv] == -1 ? nv : rootCycle[nv];
         }
     }
 
@@ -147,5 +150,33 @@ struct FunctionalGraph {
         }
 
         return -1;
+    }
+
+    // Requires that buildBinaryLifting was called
+    int midpoint(int u, int v) const {
+        // If they don't point to the same cycle
+        // there is no midpoint for them
+        if (cycleIds[u] != cycleIds[v]) {
+            return -1;
+        }
+
+        // Make u the farthest node from the cycle
+        if (distanceToCycle[u] < distanceToCycle[v]) swap(u, v);
+
+        // Put them at the same distance from the cycle
+        u = kth(u, distanceToCycle[u] - distanceToCycle[v]);
+
+        // u was an ancestor of v
+        if (u == v) return v;
+
+        // find their "closest common ancestor"
+        for (int i = succ.size() - 1; i >= 0; i--) {
+            if (succ[i][u] != succ[i][v]) {
+                u = succ[i][u];
+                v = succ[i][v];
+            }
+        }
+
+        return succ[0][u];
     }
 };
