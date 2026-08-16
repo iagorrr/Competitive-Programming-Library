@@ -40,8 +40,16 @@ def get_subsection_md(section: Path) -> str:
     return "- " + section.name.__str__().replace("-", " ").title()
 
 
+def is_test_file(file: Path) -> bool:
+    return ".test." in file.name
+
+
 def valid_file(file: Path) -> bool:
-    return file.is_file() and file.name.endswith((".py", ".cpp", ".sh", ".vim"))
+    return (
+        file.is_file()
+        and file.name.endswith((".py", ".cpp", ".sh", ".vim"))
+        and not is_test_file(file)
+    )
 
 
 def get_algorithm_name(algorithm_path: Path) -> str:

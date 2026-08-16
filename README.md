@@ -40,16 +40,16 @@
     - [struct](/content/data-structures/Segment%20Tree/struct.cpp)
     - [query min](/content/data-structures/Segment%20Tree/query-min.cpp)
 
+- Segment Tree Lazy
+    - [struct](/content/data-structures/segment-tree-lazy/struct.cpp)
+    - [increment update sum query](/content/data-structures/segment-tree-lazy/increment-update-sum-query.cpp)
+
 - Segment Tree Lazy Sparse
     - [range add sum query modular](/content/data-structures/Segment%20tree%20lazy%20sparse/range-add-sum-query-modular.cpp)
     - [struct](/content/data-structures/Segment%20tree%20lazy%20sparse/struct.cpp)
 
 - Segment Tree Point Update Range Query (Top Down)
     - [Query hash (top down)](/content/data-structures/Segment%20tree%20point%20update%20range%20query%20(top-down)/Query%20hash%20(top%20down).cpp)
-
-- Segment Tree Range Update Range Query (Bottom Up Monoid)
-    - [struct](/content/data-structures/Segment%20tree%20range%20update%20range%20query%20(bottom-up%20monoid)/struct.cpp)
-    - [increment update sum query](/content/data-structures/Segment%20tree%20range%20update%20range%20query%20(bottom-up%20monoid)/increment-update-sum-query.cpp)
 
 - Sqrt Decomposition
     - [two sequence queries](/content/data-structures/SQRT%20decomposition/two-sequence-queries.cpp)
@@ -82,6 +82,7 @@
 - [SOS](/content/Dynamic%20Programming/SOS.cpp)
 - [Steiner tree](/content/Dynamic%20Programming/Steiner%20tree.cpp)
 - [Travelling salesman problem](/content/Dynamic%20Programming/Travelling%20salesman%20problem.cpp)
+- [tree knapsack](/content/Dynamic%20Programming/tree-knapsack.cpp)
 
 
 
@@ -96,9 +97,10 @@
 
 
 #### Geometry
+- .Verify Helper
+
 - [All i know about 2D stuff](/content/Geometry/All%20i%20know%20about%202D%20stuff.cpp)
 - [Angle between three points](/content/Geometry/Angle%20between%20three%20points.cpp)
-- [Area of union of rectangles](/content/Geometry/Area%20of%20union%20of%20rectangles.cpp)
 - [Area: polygon](/content/Geometry/Area:%20polygon.cpp)
 - [Check if point belongs to line](/content/Geometry/Check%20if%20point%20belongs%20to%20line.cpp)
 - [Check if point belongs to segment](/content/Geometry/Check%20if%20point%20belongs%20to%20segment.cpp)
@@ -118,12 +120,17 @@
 - [Polygon (regular): circumradius](/content/Geometry/Polygon%20(regular):%20circumradius.cpp)
 - [Polygon: check if is convex](/content/Geometry/Polygon:%20check%20if%20is%20convex.cpp)
 - [Rectangle intersection](/content/Geometry/Rectangle%20intersection.cpp)
+- [area of union of rectangles](/content/Geometry/area-of-union-of-rectangles.cpp)
 - [point rotation](/content/Geometry/point-rotation.cpp)
 - [template](/content/Geometry/template.cpp)
 
 
 
 #### Graphs
+- Flow
+    - [Maximum flow (Dinic)](/content/Graphs/flow/Maximum%20flow%20(Dinic).cpp)
+    - [Minimum cost flow](/content/Graphs/flow/Minimum%20cost%20flow.cpp)
+
 - Heavy Light Decomposition (Point Update)
     - [Maximum number on path](/content/Graphs/Heavy-Light%20Decomposition%20(point%20update)/Maximum%20number%20on%20path.cpp)
 
@@ -144,30 +151,29 @@
 - [Extra edges to make directed graph fully connected](/content/Graphs/Extra%20edges%20to%20make%20directed%20graph%20fully%20connected.cpp)
 - [Find Bridges](/content/Graphs/Find%20Bridges.cpp)
 - [Find articulation points](/content/Graphs/Find%20articulation%20points.cpp)
-- [Find bridge tree components](/content/Graphs/Find%20bridge-tree%20components.cpp)
 - [Find bridges (online)](/content/Graphs/Find%20bridges%20(online).cpp)
 - [Find centroid](/content/Graphs/Find%20centroid.cpp)
 - [Floyd Warshall](/content/Graphs/Floyd%20Warshall.cpp)
-- [Function graph](/content/Graphs/Function%20graph.cpp)
 - [Heavy light decomposition (supreme)](/content/Graphs/Heavy%20light%20decomposition%20(supreme).cpp)
 - [Kruskal](/content/Graphs/Kruskal.cpp)
 - [Lowest common ancestor (binary lifting)](/content/Graphs/Lowest%20common%20ancestor%20(binary-lifting).cpp)
 - [Lowest common ancestor (sparse table)](/content/Graphs/Lowest%20common%20ancestor%20(sparse%20table).cpp)
-- [Maximum flow (Dinic)](/content/Graphs/Maximum%20flow%20(Dinic).cpp)
-- [Minimum cost flow](/content/Graphs/Minimum%20cost%20flow.cpp)
 - [Minimum vertex cover (already divided)](/content/Graphs/Minimum%20vertex%20cover%20(already%20divided).cpp)
 - [Prim](/content/Graphs/Prim.cpp)
 - [Shortest path with K edges](/content/Graphs/Shortest%20path%20with%20K%20edges.cpp)
 - [Strongly connected components](/content/Graphs/Strongly%20connected%20components.cpp)
 - [Topological sorting (Kahn)](/content/Graphs/Topological%20sorting%20(Kahn).cpp)
-- [Topological sorting (Tarjan)](/content/Graphs/Topological%20sorting%20(Tarjan).cpp)
 - [Tree diameter (DP)](/content/Graphs/Tree%20diameter%20(DP).cpp)
 - [Tree edge queries](/content/Graphs/Tree%20edge%20queries.cpp)
 - [Tree isomorphism (non rooted)](/content/Graphs/Tree%20isomorphism%20(non%20rooted).cpp)
 - [Tree isomorphism (rooted)](/content/Graphs/Tree%20isomorphism%20(rooted).cpp)
 - [Virtual Tree](/content/Graphs/Virtual%20Tree.cpp)
+- [eulerian cycle undirected](/content/Graphs/eulerian-cycle-undirected.cpp)
+- [eulerian path undirected](/content/Graphs/eulerian-path-undirected.cpp)
 - [find undirected unweighted graph diameter](/content/Graphs/find-undirected-unweighted-graph-diameter.cpp)
+- [functional graph](/content/Graphs/functional-graph.cpp)
 - [reroot dp](/content/Graphs/reroot_dp.cpp)
+- [two edge connected component](/content/Graphs/two-edge-connected-component.cpp)
 
 
 
@@ -247,6 +253,7 @@
 - [Suffix array](/content/Strings/Suffix%20array.cpp)
 - [Trie](/content/Strings/Trie.cpp)
 - [kmp automaton](/content/Strings/kmp_automaton.cpp)
+- [preffix automaton](/content/Strings/preffix-automaton.cpp)
 - [suffix automaton](/content/Strings/suffix-automaton.cpp)
 
 
