@@ -9,13 +9,6 @@ notebook.aux
 /build/
 /build-*/ 
 
-# CMake files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-CTestTestfile.cmake
-install_manifest.txt
-
 # Compilation databases
 compile_commands.json
 
@@ -30,9 +23,6 @@ compile_commands.json
 
 # Logs
 *.log
-
-# Test binaries
-/test-unit
 
 # VSCode / CLion / IDE metadata
 .vscode/
@@ -57,5 +47,3 @@ Thumbs.db
 # Python scripts cache (if you use any)
 __pycache__/
 *.pyc
-
-_deps

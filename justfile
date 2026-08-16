@@ -1,7 +1,7 @@
 # Clean build and temporary files
 clean:
     @rm -f *.log *.out *.aux *.toc notebook.tex
-    @rm -rf ./CMakeCache.txt ./CTestTestfile.cmake ./cmake_install.cmake ./CMakeFiles ./_deps ./build ./bin
+    @rm -rf ./build ./bin
 
 # Generate README
 readme:
@@ -24,15 +24,5 @@ notebook-pdf:
 # Build complete notebook (format -> TeX -> PDF)
 notebook: clean format notebook-tex notebook-pdf
 
-# Run problem tests
-test-problems:
-    @bash scripts/test-all/script.sh ./tests
-
-# Run unit tests
-test-unit:
-    cmake -S . -B build
-    cmake --build build
-    cd build && ctest --output-on-failure --verbose
-
 # Run all tasks
-do-it: clean test-unit test-problems readme notebook
+do-it: clean readme notebook
