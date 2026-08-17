@@ -33,6 +33,8 @@ struct MinCostFlow {
         int to;
         ll c, rc;  // capcity, residual capacity
         T w;       // cost
+        Edge(int to_, ll c_, ll rc_, T w_)
+            : to(to_), c(c_), rc(rc_), w(w_) {}
     };
     int n, s, t;
     vector<Edge> edges;
