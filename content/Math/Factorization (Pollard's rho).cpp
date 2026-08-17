@@ -43,8 +43,7 @@ ll rho(ll n) {
 
     ll x = 0, y = 0, t = 30, prd = 2, x0 = 1, q;
     while (t % 40 != 0 or gcd(prd, n) == 1) {
-        Minimum Cost Flowif(x == y) c = (ll)rand() % (n - 1) + 1, x = ++x0,
-                                    y = f(x);
+        if (x == y) c = (ll)rand() % (n - 1) + 1, x = ++x0, y = f(x);
         q = mul(prd, abs(x - y), n);
         if (q != 0) prd = q;
         x = f(x), y = f(f(y)), t++;

@@ -1,3 +1,6 @@
+verify:
+    oj-verify run
+
 # Clean build and temporary files
 clean:
     @rm -f *.log *.out *.aux *.toc notebook.tex
@@ -25,4 +28,4 @@ notebook-pdf:
 notebook: clean format notebook-tex notebook-pdf
 
 # Run all tasks
-do-it: clean readme notebook
+do-it: clean verify readme notebook
