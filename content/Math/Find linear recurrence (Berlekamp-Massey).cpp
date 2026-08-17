@@ -21,7 +21,7 @@ ll modpow(ll b, ll e) {
     return ans;
 }
 
-vl berlekampMassey(vll s) {
+vll berlekampMassey(vll s) {
     int n = len(s), L = 0, m = 0;
     if (!n) return {};
     vll C(n), B(n), T;
