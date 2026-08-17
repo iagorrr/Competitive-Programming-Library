@@ -31,7 +31,7 @@
     $O(\log{N})$
 >8*/
 
-template <typename T = ll, T MAXL = 0, T MAXR = 1 '000' 000'001>
+template <typename T = ll, T MAXL = 0, T MAXR = 1'000'000'001>
 struct LiChaoTree {
     static const T inf = -numeric_limits<T>::max() / 2;
     bool first_best(T a, T b) { return a > b; }
