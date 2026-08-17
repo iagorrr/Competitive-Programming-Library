@@ -17,7 +17,7 @@
 
     $O(N+M)$
 >8*/
-const int maxn(5 '00' 000);
+const int maxn(500'000);
 int tin[maxn], stck[maxn], bcc_cnt, n, top = 0, timer = 1;
 vector<int> g[maxn], nodes[maxn];
 
