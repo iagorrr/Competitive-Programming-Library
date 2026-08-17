@@ -38,11 +38,13 @@ bool prime(ll n) {
 
 ll rho(ll n) {
     if (n == 1 or prime(n)) return n;
-    auto f = [n](ll x) { return mul(x, x, n) + 1; };
+    ll c = 1;
+    auto f = [n, &c](ll x) { return mul(x, x, n) + c; };
 
     ll x = 0, y = 0, t = 30, prd = 2, x0 = 1, q;
     while (t % 40 != 0 or gcd(prd, n) == 1) {
-        if (x == y) x = ++x0, y = f(x);
+        Minimum Cost Flowif(x == y) c = (ll)rand() % (n - 1) + 1, x = ++x0,
+                                    y = f(x);
         q = mul(prd, abs(x - y), n);
         if (q != 0) prd = q;
         x = f(x), y = f(f(y)), t++;
