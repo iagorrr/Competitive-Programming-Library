@@ -1,0 +1,7 @@
+# oj-verify compile configuration.
+# The library targets modern C++ (lambda non-type template params,
+# std::midpoint, `auto` template parameters, ranges), so pin GCC to
+# gnu++23 instead of oj-verify's C++17 default.
+[[languages.cpp.environments]]
+CXX = "g++"
+CXXFLAGS = ["-std=gnu++23", "-O2", "-Wall", "-Wno-unused-result", "-Wno-sign-compare", "-g"]
