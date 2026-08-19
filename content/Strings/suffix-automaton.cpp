@@ -26,20 +26,14 @@ struct SuffixAutomaton {
         for (int i = 1; i < sz; i++) {
             st[i].cnt = !cloned[i];
         }
-        vector<pair<state, int>> aux;
-        for (int i = 0; i < sz; i++) {
-            aux.push_back({st[i], i});
-        }
+        vi cntLen(maxlen + 2, 0), order(sz);
+        for (int i = 0; i < sz; i++) cntLen[st[i].len]++;
+        for (int i = 1; i <= maxlen; i++) cntLen[i] += cntLen[i - 1];
+        for (int i = 0; i < sz; i++) order[--cntLen[st[i].len]] = i;
 
-        sort(all(aux),
-             [](const pair<state, int> &a, const pair<state, int> &b) {
-                 return a.fi.len > b.fi.len;
-             });
-
-        for (auto &[stt, id] : aux) {
-            if (stt.link != -1) {
-                st[stt.link].cnt += st[id].cnt;
-            }
+        for (int i = sz - 1; i >= 1; i--) {
+            int v = order[i];
+            st[st[v].link].cnt += st[v].cnt;
         }
 
         // for find every occurende position
@@ -137,5 +131,31 @@ struct SuffixAutomaton {
     void getEveryOccurence(int v, int P_length, vi &ans) {
         if (!cloned[v]) ans.pb(st[v].firstpos - P_length + 1);
         for (int u : st[v].inv_link) getEveryOccurence(u, P_length, ans);
+    }
+
+    // O(len(t))
+    // Longest Common Substring between both
+    pair<int, int> LCS(const string &t) {
+        int v = 0, l = 0, best = 0, bestpos = -2;
+
+        for (int i = 0; i < t.size(); i++) {
+            auto it = st[v].next.find(t[i]);
+            while (v && it == st[v].next.end()) {
+                v = st[v].link;
+                l = st[v].len;
+                it = st[v].next.find(t[i]);
+            }
+            if (it != st[v].next.end()) {
+                v = it->second;
+                l++;
+            }
+            if (l > best) {
+                best = l;
+                bestpos = i;
+            }
+        }
+
+        // {startIdx, len} in T
+        return {bestpos - best + 1, best};
     }
 };
