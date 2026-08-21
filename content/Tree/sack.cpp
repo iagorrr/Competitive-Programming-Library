@@ -18,6 +18,17 @@
     (handy to reset aggregates in $O(1)$ instead of per-element
     deletions).
 
+    \textbf{runPairs / goPairs} is a variant for aggregating over
+    \emph{pairs} of vertices whose LCA is the current root $u$. It
+    adds a fifth callback \textbf{QRY(a, u)}: before a light subtree
+    is merged, every one of its vertices $a$ is queried against the
+    structure, which at that moment holds the heavy child plus all
+    earlier-processed light subtrees. Because the heavy child is
+    processed first and light subtrees one by one, each unordered
+    pair sharing LCA $u$ is reported exactly once (with $a$ taken
+    from the later subtree in processing order). Same $O(N\log N)$
+    bound.
+
   @Usage:
     Sack sack(g, root);
     unordered\_map<int,int> cnt; int distinct = 0;
@@ -93,5 +104,39 @@ struct Sack {
     void run(FA ADD, FS ANS, FD DEL) {
         auto E = [] {};
         go(root, true, ADD, ANS, DEL, E);
+    }
+
+    template <class FA, class FS, class FD, class FE, class FQ>
+    void goPairs(int u, bool keep, FA& ADD, FS& SNAP, FD& DEL, FE& EMPTY,
+                 FQ& QRY) {
+        // process light children first, discarding their structures
+        for (int v : g[u])
+            if (v != par[u] && v != heavy[u])
+                goPairs(v, false, ADD, SNAP, DEL, EMPTY, QRY);
+
+        // keep the heavy child's structure as the base to merge into
+        if (heavy[u] != -1) goPairs(heavy[u], true, ADD, SNAP, DEL, EMPTY, QRY);
+
+        for (int v : g[u])
+            if (v != par[u] && v != heavy[u]) {
+                // match this light subtree against everything merged so far
+                for (int i = tin[v]; i < tout[v]; i++) QRY(ord[i], u);
+                // then merge it in for the next sibling / for u itself
+                for (int i = tin[v]; i < tout[v]; i++) ADD(ord[i]);
+            }
+
+        QRY(u, u);  // pairs with one endpoint equal to u
+        ADD(u);
+        SNAP(u);  // whole subtree of u is now present
+
+        if (!keep) {
+            for (int i = tin[u]; i < tout[u]; i++) DEL(ord[i]);
+            EMPTY();
+        }
+    }
+
+    template <class FA, class FQ, class FS, class FD, class FE>
+    void runPairs(FA ADD, FS SNAP, FD DEL, FE EP, FQ QRY) {
+        goPairs(root, true, ADD, SNAP, DEL, EP, QRY);
     }
 };
