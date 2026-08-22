@@ -7,6 +7,7 @@
       \item Exponentiation: $O(\log{K} \cdot N
       \cdot \log{N})$
   \end{compactitem}
+
 >8*/
 template <int _mod>
 struct mint {
@@ -106,7 +107,7 @@ void ntt(vector<mint<_mod>> &a, bool rev) {
     }
 }
 
-template <ll _mod>
+template <int _mod>
 vector<mint<_mod>> convolution(const vector<mint<_mod>> &a,
                                const vector<mint<_mod>> &b) {
     vector<mint<_mod>> l(all(a)), r(all(b));
@@ -129,7 +130,7 @@ vector<mint<_mod>> convolution(const vector<mint<_mod>> &a,
     return l;
 }
 
-template <ll _mod>
+template <int _mod>
 vector<mint<_mod>> poly_exp(vector<mint<_mod>> &ps, int k) {
     vector<mint<_mod>> ret(len(ps));
     auto base = ps;
@@ -138,8 +139,11 @@ vector<mint<_mod>> poly_exp(vector<mint<_mod>> &ps, int k) {
     while (k) {
         if (k & 1) ret = convolution(ret, base);
         k >>= 1;
+        //if(k) if tle 
         base = convolution(base, base);
     }
 
     return ret;
 }
+
+
