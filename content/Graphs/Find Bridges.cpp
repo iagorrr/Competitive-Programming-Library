@@ -13,21 +13,24 @@
     Remember to read the graph as pair where the
     second is the id of the edge !
 
-  @Time : $O(N + M) $ const int MAXN(10000), MAXM(100000);
+  @Time : $O(N + M) $
 >8*/
+#pragma once
+#include "../Contest/template.cpp"
 
+const int MAXN = 1e5 + 5, MAXM = 1e5 + 5;
 int N, M, clk, tin[MAXN], low[MAXN], isBridge[MAXM];
 vector<pii> G[MAXN];
 
-void dfs(int u, int p = -1) {
+void dfs(int u, int pe = -1) {
     tin[u] = low[u] = clk++;
 
     for (auto [v, i] : G[u]) {
-        if (v == p) continue;
+        if (i == pe) continue;
         if (tin[v]) {
             low[u] = min(low[u], tin[v]);
         } else {
-            dfs(v, u);
+            dfs(v, i);
             low[u] = min(low[u], low[v]);
             if (low[v] > tin[u]) {
                 isBridge[i] = 1;
