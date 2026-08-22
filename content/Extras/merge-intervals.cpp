@@ -11,16 +11,16 @@ vector<pair<T, T>> merge_intervals(vector<pair<T, T>> &intervals) {
 
     using Pt = pair<T, T>;
 
-    sort(all(intervals));
+    sort(intervals.begin(), intervals.end());
 
     vector<Pt> ret{intervals.front()};
-    rep(i, 1, len(ret)) {
+    for (int i = 1; i < len(intervals); i++) {
         auto &[pl, pr] = ret.back();
         auto &[l, r] = intervals[i];
         if (l <= pr)
-            chmax(pr, r);
+            pr = max(pr, r);
         else
-            ret.eb(l, r);
+            ret.emplace_back(l, r);
     }
 
     return ret;
