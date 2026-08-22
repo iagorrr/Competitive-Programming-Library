@@ -5,9 +5,18 @@
 
   @Description:
 
-    Find the connected component for each edge
-    (already in a topological order), some
-    additional functions are also provided.
+    Computes $scc\_id[v]$, the strongly connected
+    component of each vertex $v$.
+
+  @Warning:
+
+    Components are numbered in \textbf{reverse}
+    topological order: $scc\_id = 0$ is a sink of
+    the condensation and increasing ids move
+    towards the sources. To process components in
+    topological order, iterate ids from
+    $num\_sccs - 1$ down to $0$ (or remap with
+    $id' = num\_sccs - 1 - id$).
 
   @Time:
 
